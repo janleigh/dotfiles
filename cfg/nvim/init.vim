@@ -10,7 +10,7 @@ set guicursor=
 
 " Fix colorscheme
 set termguicolors
-colorscheme kizu
+colorscheme iceburg
 
 " Enable mouse support
 set mouse=a
