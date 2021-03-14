@@ -44,7 +44,7 @@
    The repository contains submodules. Make sure to clone it properly
 
    ```bash
-    $ git clone https://github.com/TheRealKizu/dotfiles.git
+    $ git clone --recurse-submodules https://github.com/TheRealKizu/dotfiles.git
     $ cd dotfiles && git submodule update --remote --merge
    ```
 
