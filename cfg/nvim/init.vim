@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""
 "             GENERAL CONFIGURATION             "
-""""""""""""""""""""""""""""""""""""""""""""""'""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set encoding
 set encoding=utf8
@@ -61,7 +61,7 @@ set noshowmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "              PLUGIN CONFIGURATION             "
-""""""""""""""""""""""""""""""""""""""""""""""'""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -69,6 +69,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Stoozy/vimcord'
+
+Plug 'akinsho/nvim-bufferline.lua'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -85,9 +87,6 @@ Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'rust-lang/rust.vim'
 
 " GUI Plugins
-Plug 'ntk148v/vim-horizon'
-
-Plug 'romgrk/barbar.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -111,28 +110,21 @@ let g:ale_linters = {
 " Disablel YCM preview
 let g:ycm_add_preview_to_completeopt = 1
 
-" Set colorscheme
-" colorscheme horizon
+" Init nvim-bufferline.lua
+lua require'bufferline'.setup{}
 
-" NOTE: If barbar's option dict isn't created yet, create it
-let bufferline = get(g:, 'bufferline', {})
-
-" Disable barbar notifications
-let bufferline.icons = v:false
-
-" Change bufferline icons
-let bufferline.icon_separator_active = ' '
-let bufferline.icon_separator_inactive = ' '
-
-" Set barbar.nvim keybinds
+" Set nvim-bufferline.lua keybinds
 nmap <F2> :BufferPrevious<CR>
-nmap <F2> :BufferNext<CR>
-
-" Set vim-airline font
-let g:airline_powerline_fonts = 1
+nmap <F3> :BufferNext<CR>
 
 " Set vim-airline theme
-let g:airline_theme='minimalist'
+let g:airline_theme = 'minimalist'
 
 " Bind a keybind to Telescope
 nmap <F7> :Telescope<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"            BUFFERLINE CONFIGURATION           "
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+highlight BufferLineFill guibg=NONE
