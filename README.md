@@ -51,6 +51,7 @@
 
    I only listed the important shortcuts. There's still more but have fun discovering it.
 
+   ```
    * XF86AudioRaiseVolume  ~> Raise volume by 5%
    * XF86AudioLowerVolume  ~> Lower volume by 5%
    * XF86MonBrightnessUp   ~> Raise brightness by 5%
@@ -71,6 +72,7 @@
    * Super + Shift + {1-6} ~> Move window to workspace #
 
    * Super + Shift + R     ~> Restart i3
+   ```
 
 ### ❖ System Info
    
