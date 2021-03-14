@@ -118,7 +118,7 @@ nmap <F2> :BufferPrevious<CR>
 nmap <F3> :BufferNext<CR>
 
 " Set vim-airline theme
-let g:airline_theme = 'minimalist'
+let g:airline_theme = 'iceburg'
 
 " Bind a keybind to Telescope
 nmap <F7> :Telescope<CR>

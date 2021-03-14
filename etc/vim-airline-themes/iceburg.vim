@@ -1,15 +1,6 @@
-" Minimalist Airline - A Material Color Scheme
-"
-" Author:       Diki Ananta <diki1aap@gmail.com>
-" Repository:   https://github.com/dikiaap/minimalist
-" Version:      2.0
-" License:      MIT
+let s:theme = 'iceburg'
 
-let s:theme = 'minimalist'
-
-" To highlight when the buffer is modified:
-"     let g:airline_minimalist_showmod = 1
-let s:want_showmod = get(g:, 'airline_minimalist_showmod', 0)
+let s:want_showmod = get(g:, 'airline_iceburg_showmod', 0)
 
 function! airline#themes#{s:theme}#refresh()
     if &background == "dark"
@@ -26,20 +17,6 @@ function! airline#themes#{s:theme}#refresh()
 
         " Warning
         let WI = [ '#13141d', '#ebcb8b', ER[2], 215 ]
-    "else
-        " Normal
-     "   let N1 = [ 'gray30', 'gray70', 235, 249 ]
-      "  let N2 = [ 'gray20', 'gray60', 233, 246 ]
-       " let N3 = [ 'gray20', 'gray80', 233, 251 ]
-
-        " Inactive
-        "let IA = [ 'gray15', N3[1], 244, N3[3] ]
-
-        " Error
-        "let ER = [ '#1C1C1C', '#D75F5F', 234, 167 ]
-
-        " Warning
-      "  let WI = [ ER[0], '#FFAF5F', ER[2], 215 ]
     endif
 
     " Terminal
@@ -47,7 +24,6 @@ function! airline#themes#{s:theme}#refresh()
 
     " Reverse
     let NR = [ N2[1], N2[0], N2[3], N2[2], 'bold' ]
-
 
     let palette = {}
 
