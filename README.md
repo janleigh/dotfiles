@@ -39,6 +39,15 @@
     $ yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot xautolock
    ``` 
         
+### ❖ Cloning
+
+   The repository contains submodules. Make sure to clone it properly
+
+   ```bash
+    $ git clone https://github.com/TheRealKizu/dotfiles.git
+    $ cd dotfiles && git submodule update --remote --merge
+   ```
+
 ### ❖ System Info
    
    Have fun reading this neofetch.
