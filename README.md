@@ -31,12 +31,11 @@
    * amixer
    * dunst
    * hsetroot
-   * xautolock
 
    If you are on Arch Linux, you can easily run this command to install all dependencies.
 
    ```bash
-    $ yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot xautolock
+    $ yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot
    ``` 
         
 ### ❖ Cloning
