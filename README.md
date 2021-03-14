@@ -40,7 +40,7 @@
         
 ### ❖ Cloning
 
-   The repository contains submodules. Make sure to clone it properly
+   The repository contains submodules. Make sure to clone it properly.
 
    ```bash
     $ git clone --recurse-submodules https://github.com/TheRealKizu/dotfiles.git
