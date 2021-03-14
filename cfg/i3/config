@@ -1,0 +1,173 @@
+# ##############################################################################
+# #                            GENERAL CONFIGURATION                           #
+# ##############################################################################
+
+# Set key modifiers
+set $super Mod4
+set $alt Mod1
+
+# Add Border
+for_window [class=".*"] border pixel 4
+
+# Setup rounded corners
+# border_radius 5
+
+# Add title bar
+font pango:JetBrains Mono 9
+
+title_align center
+
+for_window [class=".*"] title_format "%title"
+
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+
+# Auto start apps
+exec --no-startup-id dunst --config $HOME/.config/dunst/dunstrc
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id hsetroot -fill "$HOME/Pictures/Wallpapers/Shore.jpg"
+exec_always --no-startup-id xautolock -time 5 -locker "$HOME/.local/bin/sh/lock.sh"
+exec_always --no-startup-id xsettingsd
+exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
+
+# Run an Terminal
+bindsym $super+Return exec alacritty
+
+# ##############################################################################
+# #                                   KEYBINDS                                 #
+# ##############################################################################
+
+# Hide/show polybar
+bindsym $super+Shift+b exec polybar-msg cmd hide
+bindsym $super+b exec polybar-msg cmd show
+
+# Open application menu
+bindsym $super+d exec "sh $HOME/.local/bin/menus/appmenu"
+
+# Open eww
+bindsym $super+p exec "sh $HOME/.local/bin/dshbrd open"
+bindsym $super+Shift+p exec "sh $HOME/.local/bin/dshbrd close"
+
+# Screenshot
+bindsym Print exec "sh $HOME/.local/bin/menus/scrotmenu"
+
+# Lock screen
+bindsym $super+Shift+l exec betterlockscreen -l dim
+
+# Change volume
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+
+# Change brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# Kill focused window
+bindsym $super+c kill
+bindsym $alt+F4 kill
+
+# Change focus
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
+
+# Move focused window
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Right move right
+
+# Split in horizontal orientation
+bindsym $super+h split h
+
+# Split in vertical orientation
+bindsym $super+v split v
+
+# Enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+# Change container layout split
+bindsym $super+s layout toggle split
+
+# Change container layout tabbing
+bindsym $super+t layout tabbed
+
+# Toggle tiling / floating
+bindsym $super+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# Switch to workspace
+bindsym $alt+Control+Right workspace next
+bindsym $alt+Control+Left workspace prev
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+bindsym $super+5 workspace 5
+bindsym $super+6 workspace 6
+# bindsym $super+7 workspace 7
+# bindsym $super+8 workspace 8
+
+# Move focused container to workspace
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+bindsym $super+Shift+5 move container to workspace 5
+bindsym $super+Shift+6 move container to workspace 6
+# bindsym $super+Shift+7 move container to workspace 7
+# bindsym $super+Shift+8 move container to workspace 8
+
+# ##############################################################################
+# #                                MISCELLANEOUS                               #
+# ##############################################################################
+
+# Exit i3
+# bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg exit'"
+
+# Restart i3 inplace
+bindsym $super+Shift+r restart
+
+# Resize window (you can also use the mouse for that)
+mode "resize" {
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+    bindsym Return mode "default"
+}
+bindsym $super+r mode "resize"
+
+# ##############################################################################
+# #                             WINDOWS AND BORDERS                            #
+# ##############################################################################
+
+# Window Rules
+assign [class=Vivaldi] 1
+assign [class=discord] 2
+assign [class=Code|jetbrains-webstorm|jetbrains-pycharm] 3
+assign [class=Gimp*|Thunar|Slack] 4
+assign [class=lunarclient|Client|retroarch] 5
+for_window [class=Viewnior|feh|Lxappearance|Pavucontrol] floating enable
+for_window [class=lunarclient] floating disable
+for_window [class=Vivaldi|Thunar] focus
+for_window [class=Spotify] move to workspace 5
+
+# Colour of border, background, text, indicator, and child_border
+#                            border     bg     text   indi.  chi. bdr
+client.focused               #13141D #13141D #84A0C6 #13141D #13141D
+client.focused_inactive      #13141D #13141D #84A0C6 #13141D #13141D
+client.unfocused             #13141D #13141D #84A0C6 #13141D #13141D
+client.urgent                #13141D #13141D #84A0C6 #13141D #13141D
+client.placeholder           #13141D #13141D #84A0C6 #13141D #13141D
+client.background            #13141D
+
+# Set inner/outer gaps
+gaps outer 2
+gaps inner 25
+gaps bottom 37
