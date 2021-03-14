@@ -1,4 +1,4 @@
-<h3 align="center"> ━━━━━━  ❖  ━━━━━━ </h3>
+<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
 <div align="center">
     <code>bin</code> for scripts,
@@ -10,15 +10,15 @@
 
 ![img](https://cdn.mythcord.cf/u/b8RyLg4.png)
 
-<h3 align="center"> ━━━━━━  ❖  ━━━━━━ </h3>
+<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
 <!---
     Got lazy using tags lol.
  --->
 
-#### ◈ Dependencies
+### ◈ Dependencies
 
-   ##### This are all optional but you can install if you want to replicate my desktop or something.
+   This are all optional but you can install if you want to replicate my desktop or something.
 
    * [i3-gaps](https://github.com/Airblader/i3)
    * [rofi](https://github.com/davatorium/rofi)
