@@ -37,20 +37,6 @@ bindsym $super+Return exec alacritty
 # #                                   KEYBINDS                                 #
 # ##############################################################################
 
-# Hide/show polybar
-bindsym $super+Shift+b exec polybar-msg cmd hide
-bindsym $super+b exec polybar-msg cmd show
-
-# Open application menu
-bindsym $super+d exec "sh $HOME/.local/bin/menus/appmenu"
-
-# Open eww
-bindsym $super+p exec "sh $HOME/.local/bin/dshbrd open"
-bindsym $super+Shift+p exec "sh $HOME/.local/bin/dshbrd close"
-
-# Screenshot
-bindsym Print exec "sh $HOME/.local/bin/menus/scrotmenu"
-
 # Change volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
@@ -87,9 +73,6 @@ bindsym $super+f fullscreen toggle
 
 # Change container layout split
 bindsym $super+s layout toggle split
-
-# Change container layout tabbing
-bindsym $super+t layout tabbed
 
 # Toggle tiling / floating
 bindsym $super+space floating toggle

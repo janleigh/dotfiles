@@ -47,6 +47,31 @@
     $ cd dotfiles && git submodule update --remote --merge
    ```
 
+### ❖ Keybinds
+
+   I only listed the important shortcuts. There's still more but have fun discovering it.
+
+   * XF86AudioRaiseVolume  ~> Raise volume by 5%
+   * XF86AudioLowerVolume  ~> Lower volume by 5%
+   * XF86MonBrightnessUp   ~> Raise brightness by 5%
+   * XF86MonBrightnessDown ~> Lower brightness by 5%
+
+   * Super + C | Alt + F4  ~> Kill focused window
+   * Super + Left          ~> Change focus to left
+   * Super + Right         ~> Change focus to right
+   * Super + Up            ~> Change focus to up
+   * Super + Down          ~> Change focus to down
+
+   * Super + Shift + Left  ~> Move window leftwards 
+   * Super + Shift + Right ~> Move window rightwards
+   * Super + Shift + Up    ~> Move window upwards
+   * Super + Shift + Down  ~> Move window downwards
+
+   * Super + {1-6}         ~> Move to workspace #
+   * Super + Shift + {1-6} ~> Move window to workspace #
+
+   * Super + Shift + R     ~> Restart i3
+
 ### ❖ System Info
    
    Have fun reading this neofetch.
