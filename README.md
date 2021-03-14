@@ -23,7 +23,7 @@
    * [i3-gaps](https://github.com/Airblader/i3)
    * [rofi](https://github.com/davatorium/rofi)
    * [polybar](https://github.com/polybar/polybar)
-   * [neovim](https://neovim.io/)
+   * [neovim](https://neovim.io/) (Must be the nightly version)
    * A terminal emulator (I use alacritty)
    * picom
    * brightnessctl
@@ -36,6 +36,11 @@
    If you are on Arch Linux, you can easily run this command to install all dependencies.
 
    ```bash
-    $ yay -S i3-gaps rofi polybar neovim picom brightnessctl playerctl amixer dunst hsetroot xautolock
+    $ yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot xautolock
    ``` 
         
+### ❖ System Info
+   
+   Have fun reading this neofetch.
+   
+   ![img](https://cdn.mythcord.cf/u/bBfDYEO.png)
