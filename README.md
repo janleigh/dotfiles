@@ -16,7 +16,7 @@
     Got lazy using tags lol.
  --->
 
-### ◈ Dependencies
+### ❖ Dependencies
 
    This are all optional but you can install if you want to replicate my desktop or something.
 
@@ -33,5 +33,9 @@
    * hsetroot
    * xautolock
 
-    
+   If you are on Arch Linux, you can easily run this command to install all dependencies.
+
+   ```bash
+    $ yay -S i3-gaps rofi polybar neovim picom brightnessctl playerctl amixer dunst hsetroot xautolock
+   ``` 
         
