@@ -108,7 +108,7 @@ fuckUser() {
 welcome() {
     whiptail --title "$title" \
         --no-button "Exit" --yes-button "Continue" \
-        --yesno "This process will download the need dependencies and copy the config files to $HOME/.config. Would you like to continue?" 13 80
+        --yesno "This process will download the need dependencies and copy the config files to $HOME/.config. Would you like to continue?" 10 70
 }
 
 success() {
