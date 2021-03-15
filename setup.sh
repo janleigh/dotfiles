@@ -2,29 +2,90 @@
 # Messy code! You have been warned.
 
 title="kizu's rice setup script"
-packages="i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl dunst hsetroot"
 
 downloadDependencies() {
-    if grep "Manjaro\|Arch\|EndeavourOS\|Artix" /etc/*-release; then
+    if grep "Arch\|Artix\|EndeavourOS\|Manjaro" /etc/*-release; then
         clear 
-        echo "[*] Downloading dependencies..."
-        # yay -S "$packages"
+        echo "[*] Running an system update..."
+        sudo pacman --noconfirm -Syu
 
-        echo "[*] Downloaded dependencies."
+        mkdir -p $HOME/.setup-scripto
 
-        sleep 0.5
+        # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
+        read -r -p "Would you like to install yay? [y/n]: " yay
+        sleep 1.5
+
+        case $yay in
+            [yY][*])
+                git clone https://aur.archlinux.org/yay.git $HOME/.setup-scripto
+                (cd $HOME/.setup-scripto && makepkg -si)
+
+                yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot
+                ;;
+            [nN])
+                echo "[*] Well fuck you then... sike ily"
+
+                yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot
+                ;;
+        esac
+
+        sleep 1
     else
         clear
-        echo "[*] Not on Arch based system. Failed to download dependencies."
+        echo "[*] Not on a Arch based system. Failed to download dependencies. Please manually install it."
 
-        sleep 0.5
+        sleep 1
     fi
 }
 
 copyConfigFiles() {
     clear
+    
+    sleep 1
     echo "[*] Copying files..."
-    cp -r ./cfg $HOME/.config
+    echo "[*] Will make backups if there are configurations found."
+
+    if [ -d $HOME/.config/alacritty ]; then
+        mkdir $HOME/.config/alacritty.bak && mv $HOME/.config/alacritty/* $HOME/.config/alacritty.bak
+        cp -r ./cfg/alacritty/* $HOME/.config/alacritty/
+    else
+        mkdir $HOME/.config/alacritty && cp -r ./cfg/alacritty/* $HOME/.config/alacritty
+    fi
+
+    if [ -d $HOME/.config/i3 ]; then
+        mkdir $HOME/.config/i3.bak && mv $HOME/.config/i3/* $HOME/.config/i3.bak
+        cp -r ./cfg/i3/* $HOME/.config/i3/
+    else
+        mkdir $HOME/.config/i3 && cp -r ./cfg/i3/* $HOME/.config/i3
+    fi
+
+    if [ -d $HOME/.config/nvim ]; then
+        mkdir $HOME/.config/nvim.bak && mv $HOME/.config/nvim/* $HOME/.config/nvim.bak
+        cp -r ./cfg/nvim/* $HOME/.config/nvim/
+    else
+        mkdir $HOME/.config/nvim && cp -r ./cfg/nvim/* $HOME/.config/nvim
+    fi
+
+    if [ -d $HOME/.config/picom ]; then
+        mkdir $HOME/.config/picom.bak && mv $HOME/.config/picom/* $HOME/.config/picom.bak
+        cp -r ./cfg/picom/* $HOME/.config/picom/
+    else
+        mkdir $HOME/.config/picom && cp -r ./cfg/picom/* $HOME/.config/picom
+    fi
+
+    if [ -d $HOME/.config/polybar ]; then
+        mkdir $HOME/.config/polybar.bak && mv $HOME/.config/polybar/* $HOME/.config/polybar.bak
+        cp -r ./cfg/polybar/* $HOME/.config/polybar/
+    else
+        mkdir $HOME/.config/polybar && cp -r ./cfg/polybar/* $HOME/.config/polybar
+    fi
+
+    if [ -d $HOME/.config/starship ]; then
+        mkdir $HOME/.config/starship.bak && mv $HOME/.config/starship/* $HOME/.config/starship.bak
+        cp -r ./cfg/starship/* $HOME/.config/starship/
+    else
+        mkdir $HOME/.config/starship && cp -r ./cfg/starship/* $HOME/.config/starship
+    fi
 
     sleep 1
     echo "[*] Copied files successfully."
@@ -34,12 +95,9 @@ copyConfigFiles() {
 
 fuckUser() {
     clear
-    echo "[*] User interrupted process. Exiting."
+    echo "[*] An error occured. Exiting."
     exit
 }
-
-echo "[*] Starting setup script..."
-sleep 0.5
 
 welcome() {
     dialog --backtitle "$title" --title "$title" \
@@ -51,11 +109,14 @@ success() {
         --msgbox "Setup success. You can now close this window." 10 50
 }
 
+echo "[*] Starting setup script..."
+sleep 0.5
+
 # Prompt user the welcome dialog
 welcome || fuckUser
 
 # Download dependencies
-# downloadDependencies
+downloadDependencies
 
 # Copy files from the repo to $HOME/.config
 copyConfigFiles

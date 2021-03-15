@@ -30,12 +30,6 @@
    * playerctl
    * dunst
    * hsetroot
-
-   If you are on Arch Linux, you can easily run this command to install all dependencies.
-
-   ```bash
-    $ yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot
-   ``` 
         
 ### ❖ Cloning
 
@@ -48,9 +42,9 @@
 
 ### ❖ Installation
 
-   I provided an script to install my configuration. It only copies the config files to `$HOME/.config/` for now.
+   I provided an script to install my configuration. It will download the dependencies and copy the config files to `$HOME/.config/`.
    
-   You can run it by running `setup.sh`. You may need to have `yay` installed to run this.
+   You can run it by running `setup.sh`.
 
    ```bash
     $ ./setup.sh
