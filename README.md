@@ -47,6 +47,16 @@
     $ cd dotfiles && git submodule update --remote --merge
    ```
 
+### ❖ Installation
+
+   I provided an script to install my configuration. It only copies the config files to $HOME/.config/ for now.
+   
+   You can run it by running `setup.sh`.
+
+   ```bash
+    $ ./setup.sh
+   ```
+
 ### ❖ Keybinds
 
    I only listed the important shortcuts. There's still more but have fun discovering it.
