@@ -87,6 +87,12 @@ copyConfigFiles() {
         mkdir $HOME/.config/starship && cp -r ./cfg/starship/* $HOME/.config/starship
     fi
 
+    if [ -d $HOME/Pictures/Wallpapers ]; then
+        cp -r ./etc/walls/iceburg/Shore.jpg $HOME/Pictures/Wallpapers 
+    else 
+        mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/iceburg/Shore.png $HOME/Pictures/Wallpapers
+    fi
+
     sleep 1
     echo "[*] Copied files successfully."
 
@@ -102,7 +108,7 @@ fuckUser() {
 welcome() {
     whiptail --title "$title" \
         --no-button "Exit" --yes-button "Continue" \
-        --yesno "This process will download the need dependencies and copy the config files to $HOME/.config. Would you like to continue?\n\nNOTE: Press CTRL + C to exit this window." 13 80
+        --yesno "This process will download the need dependencies and copy the config files to $HOME/.config. Would you like to continue?" 13 80
 }
 
 success() {
