@@ -28,7 +28,6 @@
    * picom
    * brightnessctl
    * playerctl
-   * amixer
    * dunst
    * hsetroot
 
@@ -51,9 +50,7 @@
 
    I provided an script to install my configuration. It only copies the config files to `$HOME/.config/` for now.
    
-   You can run it by running `setup.sh`.
-
-   Tools needed for the script: `yay`, `dialog`
+   You can run it by running `setup.sh`. You may need to have `yay` installed to run this.
 
    ```bash
     $ ./setup.sh
