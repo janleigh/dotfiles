@@ -8,7 +8,7 @@
 
 <p/>
 
-![img](https://cdn.mythcord.cf/u/o9STEOT.png)
+![img](https://cdn.mythcord.cf/u/zohXid1.png)
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
