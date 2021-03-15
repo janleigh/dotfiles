@@ -12,9 +12,9 @@
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
-<!---
+<!--
     Got lazy using tags lol.
- --->
+ -->
 
 ### ❖ Dependencies
 
@@ -49,9 +49,11 @@
 
 ### ❖ Installation
 
-   I provided an script to install my configuration. It only copies the config files to $HOME/.config/ for now.
+   I provided an script to install my configuration. It only copies the config files to `$HOME/.config/` for now.
    
    You can run it by running `setup.sh`.
+
+   Tools needed for the script: `yay`, `dialog`
 
    ```bash
     $ ./setup.sh

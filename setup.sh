@@ -1,6 +1,25 @@
 #!/bin/bash
+# Messy code! You have been warned.
 
 title="kizu's rice setup script"
+packages="i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl dunst hsetroot"
+
+downloadDependencies() {
+    if grep "Manjaro\|Arch\|EndeavourOS\|Artix" /etc/*-release; then
+        clear 
+        echo "[*] Downloading dependencies..."
+        # yay -S "$packages"
+
+        echo "[*] Downloaded dependencies."
+
+        sleep 0.5
+    else
+        clear
+        echo "[*] Not on Arch based system. Failed to download dependencies."
+
+        sleep 0.5
+    fi
+}
 
 copyConfigFiles() {
     clear
@@ -24,7 +43,7 @@ sleep 0.5
 
 welcome() {
     dialog --backtitle "$title" --title "$title" \
-        --msgbox "This process will only copy my config files to $HOME/.config. Would you like to continue?" 10 70
+        --msgbox "This process will download the need dependencies and copy the config files to $HOME/.config. Would you like to continue?" 10 70
 }
 
 success() {
@@ -34,6 +53,9 @@ success() {
 
 # Prompt user the welcome dialog
 welcome || fuckUser
+
+# Download dependencies
+# downloadDependencies
 
 # Copy files from the repo to $HOME/.config
 copyConfigFiles
