@@ -133,7 +133,7 @@ welcome || fuckUser
 downloadDependencies
 
 # Copy files from the repo to $HOME/.config
-# copyConfigFiles
+copyConfigFiles
 
 # Show the success dialog when everything is fine
 success && clear
