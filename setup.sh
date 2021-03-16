@@ -11,23 +11,27 @@ downloadDependencies() {
 
         mkdir -p $HOME/.setup-scripto
 
-        # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
-        read -r -p "Would you like to install yay? [y/n]: " yay
-        sleep 1.5
+        if [[ -s /usr/bin/yay ]]; then
+            # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
+            read -r -p "Would you like to install yay? [y/n]: " yay
+            sleep 1.5
 
-        case $yay in
-            [yY][*])
-                git clone https://aur.archlinux.org/yay.git $HOME/.setup-scripto
-                (cd $HOME/.setup-scripto && makepkg -si)
+            case $yay in
+                [yY][*])
+                    git clone https://aur.archlinux.org/yay.git $HOME/.setup-scripto
+                    (cd $HOME/.setup-scripto && makepkg -si)
 
-                yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
-                ;;
-            [nN])
-                echo "[*] Well fuck you then... sike ily"
-
-                yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
-                ;;
-        esac
+                    echo "[*] yay installed. Installing dependencies..."
+                    yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
+                    ;;
+                [nN])
+                    echo "[*] Well fuck you then... sike ily"
+                    ;;
+            esac 
+        else
+            echo "[*] yay detected. Installing dependencies..."
+            yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
+        fi
 
         sleep 1
     else
@@ -112,6 +116,9 @@ welcome() {
 }
 
 success() {
+    # Remove the custom directory made by the script
+    rm -rf $HOME/.setup-scripto
+
     whiptail --title "$title" \
         --msgbox "Setup success. You can now close this window." 10 50
 }
@@ -126,7 +133,7 @@ welcome || fuckUser
 downloadDependencies
 
 # Copy files from the repo to $HOME/.config
-copyConfigFiles
+# copyConfigFiles
 
 # Show the success dialog when everything is fine
 success && clear
