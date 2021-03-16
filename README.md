@@ -24,7 +24,7 @@
    * [rofi](https://github.com/davatorium/rofi)
    * [polybar](https://github.com/polybar/polybar)
    * [neovim](https://neovim.io/) (Must be the nightly version)
-   * A terminal emulator (I use alacritty)
+   * alacritty
    * picom
    * brightnessctl
    * playerctl

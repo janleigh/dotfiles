@@ -20,12 +20,12 @@ downloadDependencies() {
                 git clone https://aur.archlinux.org/yay.git $HOME/.setup-scripto
                 (cd $HOME/.setup-scripto && makepkg -si)
 
-                yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot
+                yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
                 ;;
             [nN])
                 echo "[*] Well fuck you then... sike ily"
 
-                yay -S i3-gaps rofi polybar neovim-nightly-bin picom brightnessctl playerctl amixer dunst hsetroot
+                yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
                 ;;
         esac
 
