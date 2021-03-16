@@ -11,7 +11,10 @@ downloadDependencies() {
 
         mkdir -p $HOME/.setup-scripto
 
-        if [[ -s /usr/bin/yay ]]; then
+        if [[ -e /usr/bin/yay ]]; then
+            echo "[*] yay detected. Installing dependencies..."
+            yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
+        else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
             read -r -p "Would you like to install yay? [y/n]: " yay
             sleep 1.5
@@ -28,9 +31,6 @@ downloadDependencies() {
                     echo "[*] Well fuck you then... sike ily"
                     ;;
             esac 
-        else
-            echo "[*] yay detected. Installing dependencies..."
-            yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
         fi
 
         sleep 1
