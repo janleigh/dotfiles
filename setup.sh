@@ -10,12 +10,14 @@ downloadDependencies() {
         sudo pacman --noconfirm -Syu
 
         mkdir -p $HOME/.setup-scripto
+        sleep 0.5
+        clear
 
         if [[ -e /usr/bin/paru ]]; then
-            echo -e "[*] paru detected. Installing dependencies...\n"
+            echo -e "[*] paru detected. Installing dependencies..."
             paru -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot            
         elif [[ -e /usr/bin/yay ]]; then
-            echo -e "[*] yay detected. Installing dependencies...\n"
+            echo -e "[*] yay detected. Installing dependencies..."
             yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
@@ -45,7 +47,7 @@ downloadDependencies() {
     fi
 }
 
-copyConfigFiles() {
+copyFiles() {
     clear
     
     sleep 1
@@ -94,6 +96,12 @@ copyConfigFiles() {
         mkdir $HOME/.config/starship && cp -r ./cfg/starship/* $HOME/.config/starship
     fi
 
+    if [ -d $HOME/.local/share/fonts ]; then
+        cp -r ./etc/fonts/* $HOME/.local/share/fonts
+    else
+        mkdir $HOME/.local/share/fonts && cp -r ./etc/fonts/* $HOME/.local/share/fonts
+    fi
+
     if [ -d $HOME/Pictures/Wallpapers ]; then
         cp -r ./etc/walls/iceburg/Shore.jpg $HOME/Pictures/Wallpapers 
     else 
@@ -136,7 +144,7 @@ welcome || fuckUser
 downloadDependencies
 
 # Copy files from the repo to $HOME/.config
-copyConfigFiles
+# copyFiles
 
 # Show the success dialog when everything is fine
 success && clear
