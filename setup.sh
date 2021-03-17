@@ -11,8 +11,11 @@ downloadDependencies() {
 
         mkdir -p $HOME/.setup-scripto
 
-        if [[ -e /usr/bin/yay ]]; then
-            echo "[*] yay detected. Installing dependencies..."
+        if [[ -e /usr/bin/paru ]]; then
+            echo -e "[*] paru detected. Installing dependencies...\n"
+            paru -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot            
+        elif [[ -e /usr/bin/yay ]]; then
+            echo -e "[*] yay detected. Installing dependencies...\n"
             yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
@@ -28,7 +31,7 @@ downloadDependencies() {
                     yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
                     ;;
                 [nN])
-                    echo "[*] Well fuck you then... sike ily"
+                    echo "[*] Okay. Will not install yay."
                     ;;
             esac 
         fi
