@@ -108,7 +108,7 @@ let g:ale_linters = {
     \ }
 
 " Disablel YCM preview
-let g:ycm_add_preview_to_completeopt = 1
+set completeopt-=preview
 
 " Init nvim-bufferline.lua
 lua require'bufferline'.setup{}
@@ -118,7 +118,7 @@ nmap <F2> :BufferPrevious<CR>
 nmap <F3> :BufferNext<CR>
 
 " Set vim-airline theme
-let g:airline_theme = 'iceburg'
+let g:airline_theme = 'minimalist'
 
 " Bind a keybind to Telescope
 nmap <F7> :Telescope<CR>
