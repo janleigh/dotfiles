@@ -114,6 +114,15 @@ copyFiles() {
     sleep 0.5
 }
 
+refreshFontCache() {
+    clear
+    echo "[*] Refreshing font cache..."
+    fc-cache -v
+
+    sleep 0.5
+    clear
+}
+
 fuckUser() {
     clear
     echo "[*] An error occured. Exiting."
@@ -144,7 +153,10 @@ welcome || fuckUser
 downloadDependencies
 
 # Copy files from the repo to $HOME/.config
-# copyFiles
+copyFiles
+
+# Refresh font cache after copying fonts
+refreshFontCache
 
 # Show the success dialog when everything is fine
 success && clear
