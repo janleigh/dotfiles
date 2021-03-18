@@ -16,10 +16,10 @@ downloadDependencies() {
 
         if [[ -e /usr/bin/paru ]]; then
             echo -e "[*] paru detected. Installing dependencies..."
-            paru -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot            
+            paru -S i3-gaps rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot            
         elif [[ -e /usr/bin/yay ]]; then
             echo -e "[*] yay detected. Installing dependencies..."
-            yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
+            yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
             read -r -p "Would you like to install yay? [y/n]: " yay
@@ -55,49 +55,56 @@ copyFiles() {
     echo "[*] Copying files..."
     echo "[*] Will make backups if there are configurations found."
 
-    if [ -d $HOME/.config/alacritty ]; then
+    if [[ -d $HOME/.config/alacritty ]]; then
         mkdir $HOME/.config/alacritty.bak && mv $HOME/.config/alacritty/* $HOME/.config/alacritty.bak
         cp -r ./cfg/alacritty/* $HOME/.config/alacritty/
     else
         mkdir $HOME/.config/alacritty && cp -r ./cfg/alacritty/* $HOME/.config/alacritty
     fi
 
-    if [ -d $HOME/.config/i3 ]; then
+    if [[ -d $HOME/.config/dunst ]]; then
+        mkdir $HOME/.config/dunst.bak && mv $HOME/.config/dunst/* $HOME/.config/dunst.bak
+        cp -r ./cfg/dunst/* $HOME/.config/dunst/
+    else
+        mkdir $HOME/.config/dunst && cp -r ./cfg/dunst/* $HOME/.config/dunst
+    fi
+
+    if [[ -d $HOME/.config/i3 ]]; then
         mkdir $HOME/.config/i3.bak && mv $HOME/.config/i3/* $HOME/.config/i3.bak
         cp -r ./cfg/i3/* $HOME/.config/i3/
     else
         mkdir $HOME/.config/i3 && cp -r ./cfg/i3/* $HOME/.config/i3
     fi
 
-    if [ -d $HOME/.config/nvim ]; then
+    if [[ -d $HOME/.config/nvim ]]; then
         mkdir $HOME/.config/nvim.bak && mv $HOME/.config/nvim/* $HOME/.config/nvim.bak
         cp -r ./cfg/nvim/* $HOME/.config/nvim/
     else
         mkdir $HOME/.config/nvim && cp -r ./cfg/nvim/* $HOME/.config/nvim
     fi
 
-    if [ -d $HOME/.config/picom ]; then
+    if [[ -d $HOME/.config/picom ]]; then
         mkdir $HOME/.config/picom.bak && mv $HOME/.config/picom/* $HOME/.config/picom.bak
         cp -r ./cfg/picom/* $HOME/.config/picom/
     else
         mkdir $HOME/.config/picom && cp -r ./cfg/picom/* $HOME/.config/picom
     fi
 
-    if [ -d $HOME/.config/polybar ]; then
+    if [[ -d $HOME/.config/polybar ]]; then
         mkdir $HOME/.config/polybar.bak && mv $HOME/.config/polybar/* $HOME/.config/polybar.bak
         cp -r ./cfg/polybar/* $HOME/.config/polybar/
     else
         mkdir $HOME/.config/polybar && cp -r ./cfg/polybar/* $HOME/.config/polybar
     fi
 
-    if [ -d $HOME/.config/starship ]; then
+    if [[ -d $HOME/.config/starship ]]; then
         mkdir $HOME/.config/starship.bak && mv $HOME/.config/starship/* $HOME/.config/starship.bak
         cp -r ./cfg/starship/* $HOME/.config/starship/
     else
         mkdir $HOME/.config/starship && cp -r ./cfg/starship/* $HOME/.config/starship
     fi
 
-    if [ -d $HOME/.local/bin ]; then
+    if [[ -d $HOME/.local/bin ]]; then
         cp -r ./bin/* $HOME/.local/bin
     else
         mkdir $HOME/.local/bin && cp -r ./bin/* $HOME/.local/bin
@@ -149,7 +156,7 @@ fuckUser() {
 welcome() {
     whiptail --title "$title" \
         --no-button "Exit" --yes-button "Continue" \
-        --yesno "This process will download the need dependencies and copy the config files to $HOME/.config. Would you like to continue?" 10 70
+        --yesno "This process will download the needed dependencies and copy the config files to $HOME/.config. Would you like to continue?" 10 70
 }
 
 success() {

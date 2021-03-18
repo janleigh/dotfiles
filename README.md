@@ -25,6 +25,7 @@
    * polybar
    * neovim
    * alacritty
+   * dunst
    * picom
    * brightnessctl
    * playerctl
