@@ -2,6 +2,7 @@
 # Messy code! You have been warned.
 
 title="kizu's rice setup script"
+session=$(echo $XDG_CURRENT_DESKTOP | grep "i3")
 
 downloadDependencies() {
     if grep "Arch\|Artix\|EndeavourOS\|Manjaro" /etc/*-release; then
@@ -116,16 +117,26 @@ copyFiles() {
 
     sleep 1
     echo "[*] Copied files successfully."
-
     sleep 0.5
 }
 
-refreshFontCache() {
+finalizeChanges() {
     clear
     echo "[*] Refreshing font cache..."
     fc-cache -v
 
-    sleep 0.5
+    clear
+    sleep 1.3
+    if [ "$session" == "i3" ]; then
+        echo "[*] Using an i3 session. Restarting i3..."
+        i3-msg restart
+
+        sleep 3
+    fi
+
+    clear
+    echo "[*] Finalizing changes..."
+    sleep 3
     clear
 }
 
@@ -156,13 +167,13 @@ sleep 0.5
 welcome || fuckUser
 
 # Download dependencies
-downloadDependencies
+# downloadDependencies
 
 # Copy files from the repo to $HOME/.config
-copyFiles
+# copyFiles
 
-# Refresh font cache after copying fonts
-refreshFontCache
+# Restart everything lol
+finalizeChanges
 
 # Show the success dialog when everything is fine
 success && clear
