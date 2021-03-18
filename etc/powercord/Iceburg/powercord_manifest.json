@@ -1,0 +1,9 @@
+{
+    "name": "Iceburg",
+    "version": "0.0.1",
+    "author": "TheRealKizu#3267",
+
+    "theme": "src/theme.css",
+    "description": "STRENG GEHEIM",
+    "license": "UNLICENSE"
+}

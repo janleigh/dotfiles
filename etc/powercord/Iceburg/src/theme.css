@@ -1,0 +1,314 @@
+:root {
+    --accent: #84a0c6;
+    --accent-secondary: #575b73;
+    --bg-primary: #13141d;
+    --bg-secondary: #161825;
+
+    /* Hide Scrollbar BG*/
+    --scrollbar-thin-thumb: var(--bg-primary);
+    --scrollbar-auto-thumb: var(--bg-primary);
+    --scrollbar-auto-track: var(--bg-secondary);
+}
+
+/* Guild List */
+
+.scroller-2TZvBN, .childWrapper-anI2G9 {
+    background-color: var(--bg-secondary);
+}
+
+.expandedFolderIconWrapper-1xLaU-, .expandedFolderBackground-2sPsd- {
+    background-color: var(--bg-primary);
+}
+
+/* Guild List Buttons */
+
+.wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9, 
+.childWrapper-anI2G9:hover {
+    background-color: var(--accent);
+}
+
+.circleIconButton-jET_ig {
+    color: var(--accent);
+    background-color: var(--bg-primary);
+}
+
+/* Guild Channel List */
+
+.container-3w7J-x {
+    background-color: var(--bg-secondary);
+}
+
+.modeSelected-346R90 .content-1x5b-n,
+.modeSelected-346R90:hover .content-1x5b-n {
+    background-color: var(--bg-primary);
+}
+
+.users-3kndPl,
+.total-i6us2n {
+    background-color: var(--bg-primary);
+}
+
+.total-i6us2n:after {
+    background-color: var(--bg-primary);
+    border: 0;
+}
+
+.unread-1xRYoj {
+    background-color: var(--accent-secondary);
+}
+
+/* DM List */
+
+.searchBar-6Kv8R2 {
+    background-color: var(--bg-secondary);
+}
+
+.searchBar-6Kv8R2 .searchBarComponent-32dTOx {
+    background-color: var(--bg-primary);
+}
+
+.scroller-1JbKMe {
+    background-color: var(--bg-secondary);
+}
+
+.selected-aXhQR6 .layout-2DM8Md {
+    background-color: var(--bg-primary);
+}
+
+/* Chat Section */
+
+.chatContent-a9vAAp,
+.container-1r6BKw.themed-ANHk51 {
+    background-color: var(--bg-primary);
+}
+
+.scrollableContainer-2NUZem {
+    background-color: var(--bg-secondary);
+}
+
+.jumpToPresentBar-G1R9s6 {
+    visibility: hidden;
+    bottom: 15px;
+}
+
+.barButtonIcon-3t4V3d {
+    visibility: visible;
+    padding: 11px;
+    background-color: var(--bg-secondary);
+    border-radius: 50%;
+}
+
+.theme-dark .form-2fGMdU:before,
+.theme-dark .children-19S4PO:after {
+    background: none !important;
+}
+
+/* Member List */
+
+.members-1998pB,
+.members-1998pB > div {
+    background-color: var(--bg-primary);
+}
+
+.peopleList-3c4jOR,
+.friendsEmpty-1K9B4k,
+.actionButton-uPB8Fs:hover,
+.actionButton-uPB8Fs.highlight-Lf97TE {
+    background-color: var(--bg-primary);
+}
+
+.actionButton-uPB8Fs,
+.wrapper-3D2qGf {
+    background-color: var(--bg-secondary);
+}
+
+.nowPlayingColumn-2sl4cE {
+    background-color: var(--bg-primary);
+}
+
+/* User Shit */
+
+.container-3baos1,
+.panels-j1Uci_ {
+    background-color: var(--bg-primary);
+}
+
+/* Settings shit */
+
+.sidebarRegionScroller-3MXcoP {
+    background-color: var(--bg-primary);
+}
+
+.side-8zPYf6 .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ, .topPill-30KHOu .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ {
+    background-color: var(--accent-secondary);
+}
+
+/* User Settings Part */
+
+.background-1QDuV2,
+.fieldList-21DyL8  {
+    background-color: var(--bg-primary);
+}
+
+.contentRegionScroller-26nc1e {
+    background-color: var(--bg-secondary);
+}
+
+.radioBar-bMNUI-,
+.cardPrimary-1Hv-to, .cardPrimaryEditable-3KtE4g,
+.cardPrimaryOutline-29Ujqw {
+    background-color: var(--bg-primary);
+}
+
+.cardPrimary-1Hv-to, .cardPrimaryEditable-3KtE4g,
+.cardPrimaryOutline-29Ujqw {
+    border-color: var(--bg-primary);
+}
+
+.accountList-33MS45 {
+    background-color: var(--bg-primary);
+}
+
+.accountBtn-2Nozo3 .accountBtnInner-sj5jLs {
+    background-color: var(--bg-secondary);
+}
+
+.connectionHeader-2MDqhu {
+    background-color: var(--bg-primary);
+}
+
+.connectionOptionsWrapper-3KIj1Z {
+    background-color: var(--bg-primary);
+    border-radius: 0 0 8px 8px;
+}
+
+.header-1TKi98,
+.container-1_ClKi,
+.theme-dark .footer-2gL1pp {
+    background-color: var(--bg-primary);
+}
+
+/* Server Settings Menu */
+
+.scroller-305q3I,
+.scroller-1J_F7B {
+    background-color: var(--bg-primary);
+}
+
+.theme-dark .headerClickable-2IVFo9, .theme-dark .headerDefault-1wrJcN,
+.auditLog-3jNbM6 {
+    background-color: var(--bg-secondary);
+    border-color: var(--bg-primary);
+}
+
+/* Menu and Modals shit */
+
+.scroller-3BxosC {
+    background-color: var(--bg-primary);
+
+    border-radius: 5px;
+}
+
+.theme-dark .uploadModal-2ifh8j,
+.uploadModal-2ifh8j .footer-3mqk7D.hasSpoilers-1IRtQC {
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+}
+
+.lookFilled-1Gx00P.colorBrand-3pXr91 {
+    background-color: var(--accent);
+}
+
+.button-1ZiXG9 {
+    background-color: var(--bg-secondary);
+}
+
+.button-1ZiXG9:hover,
+.button-1ZiXG9.selected-LCBEAU {
+    background-color: var(--bg-primary);
+}
+
+.searchBar-3dMhjb {
+    background-color: var(--bg-primary);
+    width: 28px;
+    transition: width 0.1s ease-in-out;
+}
+
+.search-2oPWTC .DraftEditor-root {
+    background-color: var(--bg-secondary);
+}
+
+/* User Modals */
+
+.theme-dark .body-3iLsc4, 
+.theme-dark .footer-1fjuF6 {
+    background-color: var(--bg-secondary);
+}
+
+.headerTop-3C2Zn0,
+.activity-11LB_k{
+    background-color: var(--bg-primary);
+}
+
+.textarea-2r0oV8:focus {
+    background-color: var(--bg-primary);
+}
+
+/* Embeds Shit */
+
+.embedFull-2tM8-- {
+    border-color: var(--accent);
+    background-color: var(--bg-secondary);
+}
+
+/* Powercord stuff */
+
+.markup-2BOw-j code {
+    background-color: var(--bg-secondary);
+    border-color: var(--bg-primary);
+}
+
+/* Bubble Guild List */
+
+.sidebar-2K8pFh {
+    width: 0px;
+    transition: .5s ease;
+}
+
+.platform-win .base-3dtUhz {
+    border-radius: 8px 0 0;
+}
+
+.wrapper-1Rf91z:hover + .base-3dtUhz > .content-98HsJk > .sidebar-2K8pFh {
+    width: 240px;
+}
+
+.sidebar-2K8pFh:hover {
+    width: 240px;
+}
+
+/* Bubble Member List */
+
+.membersWrap-2h-GB4 {
+    min-width: unset;
+}
+
+.members-1998pB {
+    max-width: 65px;
+    min-width: 65px;
+    transition: .5s ease;
+}
+
+.members-1998pB:hover {
+    max-width: 240px;
+    min-width: 240px;
+}
+
+div:not(:hover)>.membersGroup-v9BXpm {
+    height: 0px;
+    padding: 0%;
+}
+
+div:not(:hover)>.members-1998pB>div{ 
+    padding-top: 10px;
+}
