@@ -31,6 +31,7 @@
    * playerctl
    * dunst
    * hsetroot
+   * xsettingsd
         
 ### ❖ Installation
 
