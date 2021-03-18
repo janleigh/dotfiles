@@ -96,6 +96,12 @@ copyFiles() {
         mkdir $HOME/.config/starship && cp -r ./cfg/starship/* $HOME/.config/starship
     fi
 
+    if [ -d $HOME/.local/bin ]; then
+        cp -r ./bin/* $HOME/.local/bin
+    else
+        mkdir $HOME/.local/bin && cp -r ./bin/* $HOME/.local/bin
+    fi
+
     if [ -d $HOME/.local/share/fonts ]; then
         cp -r ./etc/fonts/* $HOME/.local/share/fonts
     else
