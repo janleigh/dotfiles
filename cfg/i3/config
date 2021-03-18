@@ -37,6 +37,9 @@ bindsym $super+Return exec alacritty
 # #                                   KEYBINDS                                 #
 # ##############################################################################
 
+# Open application menu
+bindsym $super+d exec sh $HOME/.local/bin/menus/appmenu
+
 # Change volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
