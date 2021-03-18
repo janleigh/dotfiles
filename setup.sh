@@ -167,10 +167,10 @@ sleep 0.5
 welcome || fuckUser
 
 # Download dependencies
-# downloadDependencies
+downloadDependencies
 
 # Copy files from the repo to $HOME/.config
-# copyFiles
+copyFiles
 
 # Restart everything lol
 finalizeChanges
