@@ -20,10 +20,10 @@
 
    This are all optional but you can install if you want to replicate my desktop or something.
 
-   * [i3-gaps](https://github.com/Airblader/i3)
-   * [rofi](https://github.com/davatorium/rofi)
-   * [polybar](https://github.com/polybar/polybar)
-   * [neovim](https://neovim.io/) (Must be the nightly version)
+   * i3-gaps
+   * rofi
+   * polybar
+   * neovim
    * alacritty
    * picom
    * brightnessctl
