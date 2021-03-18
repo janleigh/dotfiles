@@ -31,15 +31,6 @@
    * dunst
    * hsetroot
         
-### ❖ Cloning
-
-   The repository contains submodules. Make sure to clone it properly.
-
-   ```bash
-    $ git clone --recurse-submodules https://github.com/TheRealKizu/dotfiles.git
-    $ cd dotfiles && git submodule update --remote --merge
-   ```
-
 ### ❖ Installation
 
    I provided an script to install my configuration. It will download the dependencies and copy the config files to `$HOME/.config/`.
@@ -77,6 +68,7 @@
    * XF86MonBrightnessUp   ~> Raise brightness by 5%
    * XF86MonBrightnessDown ~> Lower brightness by 5%
 
+   * Super + D             ~> Open application menu
    * Super + Shift + R     ~> Restart i3
    ```
 
