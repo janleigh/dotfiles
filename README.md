@@ -71,6 +71,10 @@
    * XF86MonBrightnessDown ~> Lower brightness by 5%
 
    * Super + D             ~> Open application menu
+
+   * Super + P             ~> Open dashboard
+   * Super + Shift + P     ~> Close dashboard
+
    * Super + Shift + R     ~> Restart i3
    ```
 

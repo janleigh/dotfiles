@@ -69,6 +69,13 @@ copyFiles() {
         mkdir $HOME/.config/dunst && cp -r ./cfg/dunst/* $HOME/.config/dunst
     fi
 
+    if [[ -d $HOME/.config/eww ]]; then
+        mkdir $HOME/.config/eww.bak && mv $HOME/.config/eww/* $HOME/.config/eww.bak
+        cp -r ./cfg/eww/* $HOME/.config/eww/
+    else
+        mkdir $HOME/.config/eww && cp -r ./cfg/eww/* $HOME/.config/eww
+    fi
+
     if [[ -d $HOME/.config/i3 ]]; then
         mkdir $HOME/.config/i3.bak && mv $HOME/.config/i3/* $HOME/.config/i3.bak
         cp -r ./cfg/i3/* $HOME/.config/i3/

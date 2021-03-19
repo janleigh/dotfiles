@@ -1,0 +1,217 @@
+* {
+    all: unset;
+}
+
+window {
+    color: #84A0C6;
+    font-family: "JetBrains Mono";
+}
+
+button:hover {
+    color: #89B8C2;
+}
+
+.eww-window, .profile, .date, .player, .system-info, .powermenu {
+    background-color: #13141D;
+    border-radius: 10px;
+}
+
+.eww-window {
+    background-color: #161825;
+
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.titlebar {
+    color: #84A0C6;
+    font-size: 16px;
+    font-weight: bolder;
+
+    margin-top: -685px;
+    margin-left: -20px;
+}
+
+// PROFILE
+
+.pfp {
+    background-image: url("/home/kizu/.config/eww/avatar.png");
+    background-size: 80px;
+
+    margin-top: 20px;
+    margin-bottom: -40px;
+    margin-left: 23px;
+    margin-right: 207px;
+    
+    border-radius: 5px;
+}
+
+.username {
+    margin-top: -75px;
+    margin-right: -75px;
+
+    color: #89B8C2;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.realname {
+    margin-top: -55px;
+    margin-right: -75px;
+
+    color: #95c4ce;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+// DATE
+
+.time {
+    margin: 15px 65px -20px 65px;
+    font-size: 50px;
+}
+
+.semicolon {
+    margin: 0px;
+    margin-top: -5px;
+    color: #95c4ce;
+}
+
+.day {
+    margin-top: 25px;
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: #95c4ce;
+}
+
+// PLAYER
+
+.song-art {
+    background-size: 80px;
+
+    margin-top: 16px;
+    margin-bottom: 15px;
+    margin-left: 23px;
+    margin-right: 52px;
+    
+    border-radius: 5px;
+}
+
+.song-data {
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 25px 0px 0px -50px;
+}
+
+.song-title {
+    font-family: "JetBrains Mono", "Stick";
+    font-size: 14px;
+    font-weight: bold;
+
+    padding-right: 30px;
+}
+
+.player-btn {
+    padding: 25px 25px 5px;
+
+    margin-top: -5px;
+}
+
+.player-btn button {
+    color: #89b8c2;
+
+    font-family: "Material Icons";
+
+    padding-right: 30px;
+}
+
+.player-btn button:hover {
+    color: #95c4ce;
+}
+
+// SYSTEM INFO
+
+.system-info {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.system-info slider {
+    all: unset;
+}
+
+.label-ram-bar, .label-vol-bar, .label-brightness-bar {
+    font-size: 23px;
+    font-weight: bold;
+
+    margin-top: 10px;
+    margin-left: -37px;
+}
+
+.label-ram-bar {
+    margin-top: 25px;
+}
+
+.label-vol-bar {
+    margin-left: -35px;
+}
+
+.ram-bar scale trough highlight, .vol-bar scale trough highlight, .brightness-bar scale trough highlight {
+    all: unset;
+    background-image: linear-gradient(to right, #84A0C6, #95c4ce);
+	color: #000000;
+	border-radius: 10px;
+}
+
+.ram-bar scale trough {
+	all: unset;
+	background-color: #191C2A;
+	border-radius: 50px;
+
+	min-height: 5px;
+    min-width: 150px;
+
+    margin: 23px 45px 0px -50px;
+}
+
+.vol-bar scale trough, .brightness-bar scale trough {
+	all: unset;
+	background-color: #191C2A;
+	border-radius: 50px;
+
+	min-height: 5px;
+    min-width: 150px;
+
+    margin: 8px 45px 0px -50px;
+}
+
+// POWERMENU
+
+.powermenu-btn button {
+    font-family: "Material Icons";
+    font-size: 50px;
+
+    background-color: #181925;
+    border-radius: 15px;
+
+    margin: 15px;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding: 0px 15px 0px 15px;
+}
+
+.shutdown-btn {
+    color: #E27878;
+}
+
+.lock-btn {
+    color: #EBCB8B;
+}
+
+.logout-btn {
+    color: #A093C7;
+}
