@@ -16,7 +16,7 @@
                 </box>
                 <box orientation="v">
                     <box class="username">Logged in as</box>
-                    <box class="realname">Jan Leigh</box>
+                    <box class="realname">USERNAME</box>
                 </box>
             </box>
         </def>
