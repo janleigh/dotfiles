@@ -5,5 +5,5 @@
 
     "theme": "src/theme.css",
     "description": "STRENG GEHEIM",
-    "license": "UNLICENSE"
+    "license": "GPL-3.0"
 }
