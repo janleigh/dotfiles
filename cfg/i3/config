@@ -40,6 +40,10 @@ bindsym $super+Return exec alacritty
 # Open application menu
 bindsym $super+d exec sh $HOME/.local/bin/menus/appmenu
 
+# Open eww
+bindsym $super+p exec "sh $HOME/.local/bin/dshbrd open"
+bindsym $super+Shift+p exec "sh $HOME/.local/bin/dshbrd close"
+
 # Change volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
