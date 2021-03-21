@@ -8,7 +8,7 @@ set encoding=utf8
 " Set cursor
 set guicursor=
 
-" Fix colorscheme
+" Set colorscheme
 set termguicolors
 colorscheme iceburg
 
@@ -68,7 +68,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " General Vim Plugins
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
+
 Plug 'Stoozy/vimcord'
+Plug 'voldikss/vim-floaterm'
 
 Plug 'akinsho/nvim-bufferline.lua'
 
@@ -99,6 +101,11 @@ call plug#end()
 
 " Show NERDTree window
 nmap <F6> :NERDTreeToggle<CR>
+nmap <F18> :NERDTreeRefreshRoot<CR>
+
+" Show Floaterm
+nmap <F5> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=Terminal --position=bottomright<CR>
+nmap <F17> :FloatermKill!<CR>
 
 " Set ALE
 let g:ale_linters = {
@@ -114,14 +121,20 @@ set completeopt-=preview
 lua require'bufferline'.setup{}
 
 " Set nvim-bufferline.lua keybinds
-nmap <F2> :BufferPrevious<CR>
-nmap <F3> :BufferNext<CR>
+nmap <F2> :BufferLineCycleNext<CR>
+nmap <F3> :BufferLineCyclePrev<CR>
 
 " Set vim-airline theme
 let g:airline_theme = 'minimalist'
 
 " Bind a keybind to Telescope
 nmap <F7> :Telescope<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"             FLOATERM CONFIGURATION            "
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+highlight FloatermBorder guibg=#13141d
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "            BUFFERLINE CONFIGURATION           "
