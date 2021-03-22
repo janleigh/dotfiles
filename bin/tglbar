@@ -1,0 +1,22 @@
+#!/bin/bash
+# Toggles polybar and resizes i3s bottom gaps
+
+case $1 in
+    "hide")
+        polybar-msg cmd hide
+
+        sleep 0.4
+        i3-msg gaps inner all set 10
+        i3-msg gaps bottom all set 0
+        ;;
+
+    "show")
+        # Is reversed so it would like the action was undoed.
+
+        i3-msg gaps inner all set 25
+        i3-msg gaps bottom all set 37
+
+        sleep 0.4
+        polybar-msg cmd show
+        ;;
+esac

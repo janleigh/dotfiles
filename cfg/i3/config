@@ -78,6 +78,10 @@ bindsym $super+v split v
 # Enter fullscreen mode for the focused container
 bindsym $super+f fullscreen toggle
 
+# Better fullscreen but can see window
+bindsym $alt+f exec sh $HOME/.local/bin/tglbar hide
+bindsym $alt+Shift+f exec sh $HOME/.local/bin/tglbar show
+
 # Change container layout split
 bindsym $super+s layout toggle split
 
