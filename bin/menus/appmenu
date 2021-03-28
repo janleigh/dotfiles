@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-style="Iceburg"
+#!/bin/bash
 
 rofi -no-lazy-grab \
 -disable-history \
@@ -10,8 +8,9 @@ rofi -no-lazy-grab \
 -line-padding 10 \
 -padding 20 \
 -width 27 \
--location 0 \
+-location 1 \
+-xoffset 5 -yoffset +40 \
 -font "JetBrains Mono 9" \
--theme ~/.config/rofi/"$style".rasi
+-theme ~/.config/rofi/Iceburg.rasi
 
-#  -xoffset +25 -yoffset -60 \
+#  
