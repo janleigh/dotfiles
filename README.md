@@ -8,7 +8,7 @@
 
 <p/>
 
-![img](https://cdn.discordapp.com/attachments/635625917623828520/825336808396685332/G1WSVrr.png)
+![img](https://img.kizu.cf/u/Ly0o1hJ.png)
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
