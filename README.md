@@ -32,7 +32,6 @@
    * playerctl
    * dunst
    * hsetroot
-   * xsettingsd
         
 ### ❖ Installation
 
@@ -72,11 +71,16 @@
    * Super + P             ~> Open dashboard
    * Super + Shift + P     ~> Close dashboard
 
-   * Super + Shift + R     ~> Restart i3
+   * Super + Shift Alt + R     ~> Restart bspwm
    ```
+
+### ❖ FAQ
+
+   * Where is your i3 dots?
+      * It's on the `i3-gaps` branch of this repo.
 
 ### ❖ System Info
    
    Have fun reading this neofetch.
    
-   ![img](https://cdn.mythcord.cf/u/bBfDYEO.png)
+   ![img](https://cdn.mythcord.cf/u/wkfO2PJ.png)
