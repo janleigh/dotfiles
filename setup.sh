@@ -16,10 +16,10 @@ downloadDependencies() {
 
         if [[ -e /usr/bin/paru ]]; then
             echo -e "[*] paru detected. Installing dependencies..."
-            paru -S i3-gaps rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot xsettingsd        
+            paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot xsettingsd        
         elif [[ -e /usr/bin/yay ]]; then
             echo -e "[*] yay detected. Installing dependencies..."
-            yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot xsettingsd
+            yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot xsettingsd
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
             read -r -p "Would you like to install yay? [y/n]: " yay
@@ -31,7 +31,7 @@ downloadDependencies() {
                     (cd $HOME/.setup-scripto && makepkg -si)
 
                     echo "[*] yay installed. Installing dependencies..."
-                    yay -S i3-gaps rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
+                    yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
                     ;;
                 [nN])
                     echo "[*] Okay. Will not install yay."
@@ -62,6 +62,13 @@ copyFiles() {
         mkdir $HOME/.config/alacritty && cp -r ./cfg/alacritty/* $HOME/.config/alacritty
     fi
 
+    if [[ -d $HOME/.config/bspwm ]]; then
+        mkdir $HOME/.config/bspwm.bak && mv $HOME/.config/bspwm/* $HOME/.config/bspwm.bak
+        cp -r ./cfg/bspwm/* $HOME/.config/bspwm/
+    else
+        mkdir $HOME/.config/bspwm && cp -r ./cfg/bspwm/* $HOME/.config/bspwm
+    fi
+
     if [[ -d $HOME/.config/dunst ]]; then
         mkdir $HOME/.config/dunst.bak && mv $HOME/.config/dunst/* $HOME/.config/dunst.bak
         cp -r ./cfg/dunst/* $HOME/.config/dunst/
@@ -74,13 +81,6 @@ copyFiles() {
         cp -r ./cfg/eww/* $HOME/.config/eww/
     else
         mkdir $HOME/.config/eww && cp -r ./cfg/eww/* $HOME/.config/eww
-    fi
-
-    if [[ -d $HOME/.config/i3 ]]; then
-        mkdir $HOME/.config/i3.bak && mv $HOME/.config/i3/* $HOME/.config/i3.bak
-        cp -r ./cfg/i3/* $HOME/.config/i3/
-    else
-        mkdir $HOME/.config/i3 && cp -r ./cfg/i3/* $HOME/.config/i3
     fi
 
     if [[ -d $HOME/.config/nvim ]]; then
@@ -109,6 +109,13 @@ copyFiles() {
         cp -r ./cfg/starship/* $HOME/.config/starship/
     else
         mkdir $HOME/.config/starship && cp -r ./cfg/starship/* $HOME/.config/starship
+    fi
+
+    if [[ -d $HOME/.config/sxhkd ]]; then
+        mkdir $HOME/.config/sxhkd.bak && mv $HOME/.config/sxhkd/* $HOME/.config/sxhkd.bak
+        cp -r ./cfg/sxhkd/* $HOME/.config/sxhkd/
+    else
+        mkdir $HOME/.config/sxhkd && cp -r ./cfg/sxhkd/* $HOME/.config/sxhkd
     fi
 
     if [[ -d $HOME/.local/bin ]]; then
@@ -141,9 +148,9 @@ finalizeChanges() {
 
     clear
     sleep 1.3
-    if [ "$session" == "i3" ]; then
-        echo "[*] Using an i3 session. Restarting i3..."
-        i3-msg restart
+    if [ "$session" == "bspwm" ]; then
+        echo "[*] Using an bpswm session. Restarting bspwm..."
+        bspc wm -r
 
         sleep 3
     fi

@@ -1,0 +1,67 @@
+# ##############################################################################
+# #                                   KEYBINDS                                 #
+# ##############################################################################
+
+# NOTE: This is directly ported from my i3wim config.
+
+# Focus next/prev window
+super + {_,shift + }f
+    bspc node -f {next,prev}.local.!hidden.windowi
+
+# Fullscreen window with gaps
+alt + {_,shift + }f
+    sh $HOME/.local/bin/tglbar {hide,show}
+
+# Move the focused window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Kill the focused window
+super + c
+    bspc node -c
+
+# Move to or send window to workspace #
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Resize window
+super + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Set window state
+super + {t,shift + t,space,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Start alacritty
+super + Return
+    alacritty
+
+# Open application menu
+super + d
+    sh $HOME/.local/bin/menus/appmenu
+
+# Open screenshot menu
+Print
+    sh $HOME/.local/bin/menus/scrotmenu
+
+# Toggle eww dashboard
+super + {_,shift + }p
+    sh $HOME/.local/bin/dshbrd {open,close}
+
+# Manage volume
+XF86Audio{Raise,Lower}Volume
+    amixer -q set Master 5%{+,-}
+
+XF86AudioMute
+    amixer set Master toggle
+
+# Manage brightness
+XF86MonBrightness{Up,Down}
+    brightnessctl set 5%{+,-}
+   
+# Quit and restart bspwm
+super + alt + {q,shift + }r
+    bspc {quit,wm -r}

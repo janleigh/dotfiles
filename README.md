@@ -8,7 +8,7 @@
 
 <p/>
 
-![img](https://cdn.mythcord.cf/u/zohXid1.png)
+![img](https://cdn.discordapp.com/attachments/635625917623828520/825336808396685332/G1WSVrr.png)
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
@@ -20,7 +20,8 @@
 
    This are all optional but you can install if you want to replicate my desktop or something.
 
-   * i3-gaps
+   * bspwm
+   * sxhkd
    * rofi
    * polybar
    * neovim
@@ -48,22 +49,18 @@
    I only listed the important shortcuts. There's still more but have fun discovering it.
 
    ```
-   * Super + C | Alt + F4  ~> Kill focused window
-   * Super + Left          ~> Change focus to left
-   * Super + Right         ~> Change focus to right
-   * Super + Up            ~> Change focus to up
-   * Super + Down          ~> Change focus to down
+   * Super + C             ~> Kill focused window
+   * Super + Space         ~> Float the focused window
+   * Super + F             
+     Super + Shift + F     ~> Focus next/previous window
 
-   * Super + Shift + Left  ~> Move window leftwards 
-   * Super + Shift + Right ~> Move window rightwards
-   * Super + Shift + Up    ~> Move window upwards
-   * Super + Shift + Down  ~> Move window downwards
+   * Super + Left          ~> Move window leftwards 
+   * Super + Right         ~> Move window rightwards
+   * Super + Up            ~> Move window upwards
+   * Super + Down          ~> Move window downwards
 
    * Super + {1-6}         ~> Move to workspace #
    * Super + Shift + {1-6} ~> Move window to workspace #
-
-   * Super + Space         ~> Float the focused window
-   * Super + F             ~> Toggle fullscreen
 
    * XF86AudioRaiseVolume  ~> Raise volume by 5%
    * XF86AudioLowerVolume  ~> Lower volume by 5%

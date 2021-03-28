@@ -3,15 +3,21 @@
 
 case $1 in
     "open")
-        $HOME/.local/bin/eww daemon; sleep 0.5
+        $HOME/.local/bin/eww daemon; sleep 0.4
 
         $HOME/.local/bin/eww close-all
-        $HOME/.local/bin/eww open-many eww-window profile date player system-info powermenu
+        $HOME/.local/bin/eww open-many eww-window profile date player system-manager
+
+        # i3-msg gaps right all set 343
+        bspc config right_padding 340
         exit
     ;;
 
     "close")
         $HOME/.local/bin/eww close-all;
+
+        # i3-msg gaps right all set 0
+        bspc config right_padding 0
         exit
     ;;
 esac
