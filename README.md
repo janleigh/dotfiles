@@ -24,7 +24,7 @@
    * sxhkd
    * rofi
    * polybar
-   * neovim
+   * neovim-nightly
    * alacritty
    * dunst
    * picom
@@ -48,30 +48,30 @@
    I only listed the important shortcuts. There's still more but have fun discovering it.
 
    ```
-   * Super + C             ~> Kill focused window
-   * Super + Space         ~> Float the focused window
+   * Super + C                ~> Kill focused window
+   * Super + Space            ~> Float the focused window
    * Super + F             
-     Super + Shift + F     ~> Focus next/previous window
+     Super + Shift + F        ~> Focus next/previous window
 
-   * Super + Left          ~> Move window leftwards 
-   * Super + Right         ~> Move window rightwards
-   * Super + Up            ~> Move window upwards
-   * Super + Down          ~> Move window downwards
+   * Super + Left             ~> Move window leftwards 
+   * Super + Right            ~> Move window rightwards
+   * Super + Up               ~> Move window upwards
+   * Super + Down             ~> Move window downwards
 
-   * Super + {1-6}         ~> Move to workspace #
-   * Super + Shift + {1-6} ~> Move window to workspace #
+   * Super + {1-6}            ~> Move to workspace #
+   * Super + Shift + {1-6}    ~> Move window to workspace #
 
-   * XF86AudioRaiseVolume  ~> Raise volume by 5%
-   * XF86AudioLowerVolume  ~> Lower volume by 5%
-   * XF86MonBrightnessUp   ~> Raise brightness by 5%
-   * XF86MonBrightnessDown ~> Lower brightness by 5%
+   * XF86AudioRaiseVolume     ~> Raise volume by 5%
+   * XF86AudioLowerVolume     ~> Lower volume by 5%
+   * XF86MonBrightnessUp      ~> Raise brightness by 5%
+   * XF86MonBrightnessDown    ~> Lower brightness by 5%
 
-   * Super + D             ~> Open application menu
+   * Super + D                ~> Open application menu
 
-   * Super + P             ~> Open dashboard
-   * Super + Shift + P     ~> Close dashboard
+   * Super + P                ~> Open dashboard
+   * Super + Shift + P        ~> Close dashboard
 
-   * Super + Shift Alt + R     ~> Restart bspwm
+   * Super + Shift + Alt + R  ~> Restart bspwm
    ```
 
 ### ❖ FAQ
