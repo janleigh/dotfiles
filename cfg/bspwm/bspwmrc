@@ -8,6 +8,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
+hsetroot -fill "$HOME/Pictures/Wallpapers/Stars.png"
 sh $HOME/.config/polybar/launch.sh
 
 # ##############################################################################
