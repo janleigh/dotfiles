@@ -6,7 +6,7 @@
 
 # Focus next/prev window
 super + {_,shift + }f
-    bspc node -f {next,prev}.local.!hidden.windowi
+    bspc node -f {next,prev}.local.!hidden.window
 
 # Fullscreen window with gaps
 alt + {_,shift + }f
@@ -21,8 +21,8 @@ super + c
     bspc node -c
 
 # Move to or send window to workspace #
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-7}
+	bspc {desktop -f,node -d} '^{1-7}'
 
 # Resize window
 super + shift + {h,j,k,l}
@@ -32,8 +32,17 @@ super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # Set window state
-super + {t,shift + t,space,f}
+super + {alt + t,shift + t,space,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Add focused window to a tabbed instance
+super + t; {h,j,k,l}
+    tabc $(bspc query -N -n {west,south,north,east}) add $(bspc query -N -n focused)
+# Remove the focused window from a tabbed instance
+super + t; r
+    tabbed=$(bspc query -N -n focused); \
+    child=$(tabc list $tabbed | head -n1); \
+    tabc $tabbed remove $child
 
 # Set new window orientation
 super + ctrl + {h,j,k,l}
@@ -41,7 +50,7 @@ super + ctrl + {h,j,k,l}
 
 # Cancel the new window orientation
 super + ctrl + space
-	bspc node -p cance
+	bspc node -p cancel
 
 # Start alacritty
 super + Return
