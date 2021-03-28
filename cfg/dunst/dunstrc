@@ -19,7 +19,6 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    # format = "<b>%s</b>\n%b\n%p"
     format = "<b>%s</b>\n%b"
 
     # Sort messages by urgency
@@ -59,7 +58,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "250x200-20-60"
+    geometry = "250x200-5+40"
 
     # Frame
     frame_width = 0
