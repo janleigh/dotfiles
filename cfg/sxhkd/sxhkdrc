@@ -35,6 +35,14 @@ super + alt + {h,j,k,l}
 super + {t,shift + t,space,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+# Set new window orientation
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# Cancel the new window orientation
+super + ctrl + space
+	bspc node -p cance
+
 # Start alacritty
 super + Return
     alacritty
