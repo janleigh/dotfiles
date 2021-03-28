@@ -58,8 +58,8 @@
    * Super + Up               ~> Move window upwards
    * Super + Down             ~> Move window downwards
 
-   * Super + {1-6}            ~> Move to workspace #
-   * Super + Shift + {1-6}    ~> Move window to workspace #
+   * Super + {1-7}            ~> Move to workspace #
+   * Super + Shift + {1-7}    ~> Move window to workspace #
 
    * XF86AudioRaiseVolume     ~> Raise volume by 5%
    * XF86AudioLowerVolume     ~> Lower volume by 5%
