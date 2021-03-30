@@ -2,7 +2,7 @@
 # Messy code! You have been warned.
 
 title="kizu's rice setup script"
-session=$(echo $XDG_CURRENT_DESKTOP | grep "i3")
+session=$(echo $XDG_CURRENT_DESKTOP | grep "bspwm")
 
 downloadDependencies() {
     if grep "Arch\|Artix\|EndeavourOS\|Manjaro" /etc/*-release; then
