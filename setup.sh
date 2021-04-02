@@ -1,8 +1,6 @@
 #!/bin/bash
-# Messy code! You have been warned.
 
 title="kizu's rice setup script"
-session=$(echo $XDG_CURRENT_DESKTOP | grep "bspwm")
 
 downloadDependencies() {
     if grep "Arch\|Artix\|EndeavourOS\|Manjaro" /etc/*-release; then
@@ -22,7 +20,7 @@ downloadDependencies() {
             yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
-            read -r -p "Would you like to install yay? [y/n]: " yay
+            read -r -p "Would you like to install yay? [Y/n]: " yay
             sleep 1.5
 
             case $yay in
@@ -148,12 +146,6 @@ finalizeChanges() {
 
     clear
     sleep 1.3
-    if [ "$session" == "bspwm" ]; then
-        echo "[*] Using an bpswm session. Restarting bspwm..."
-        bspc wm -r
-
-        sleep 3
-    fi
 
     clear
     echo "[*] Finalizing changes..."
@@ -178,7 +170,7 @@ success() {
     rm -rf $HOME/.setup-scripto
 
     whiptail --title "$title" \
-        --msgbox "Setup success. You can now close this window." 10 50
+        --msgbox "Setup success. Please restart BSPWM if you are on an active session." 10 50
 }
 
 echo "[*] Starting setup script..."
