@@ -35,10 +35,9 @@ bspc config gapless_monocle      true
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-bpsc rule -a Vivaldi-stable desktop=^1
+bpsc rule -a vivaldi-stable desktop=^1
 bspc rule -a discord desktop=^2
 bspc rule -a Code desktop=^3
 bspc rule -a Thunar desktop=^4
 bspc rule -a Spotify desktop=^5
 
-bspc rule -a alacritty state=floating

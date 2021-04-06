@@ -58,15 +58,24 @@ super + Return
 
 # Open application menu
 super + d
-    sh $HOME/.local/bin/menus/appmenu
-
-# Open screenshot menu
-Print
-    sh $HOME/.local/bin/menus/scrotmenu
+    sh $HOME/.local/bin/appmnu
 
 # Toggle eww dashboard
 super + {_,shift + }p
     sh $HOME/.local/bin/dshbrd {open,close}
+
+# Screenshot
+# Save to local storage
+Print
+    DATE=$(date '+%b%d-%H-%M.png'); \
+    maim --select "$HOME/Pictures/Screenshots/$DATE"; \
+    sh ~/.local/bin/viewscr ~/Pictures/Screenshots/$DATE | xclip -selection clipboard -t image/png
+
+# Upload to CDN
+super + Print
+    DATE=$(date '+%b%d-%H-%M.png'); \
+    maim --select "$HOME/Pictures/Screenshots/$DATE"; \
+    sh ~/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
 
 # Manage volume
 XF86Audio{Raise,Lower}Volume
