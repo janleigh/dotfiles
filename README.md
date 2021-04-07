@@ -50,6 +50,8 @@
    ```
    * Super + C                ~> Kill focused window
    * Super + Space            ~> Float the focused window
+   * Super + Alt + T          ~> Tile the floating focused window
+
    * Super + F             
      Super + Shift + F        ~> Focus next/previous window
 
@@ -73,11 +75,6 @@
 
    * Super + Shift + Alt + R  ~> Restart bspwm
    ```
-
-### ❖ FAQ
-
-   * Where is your i3 dots?
-      * It's on the `i3-gaps` branch of this repo.
 
 ### ❖ System Info
    
