@@ -129,9 +129,9 @@ copyFiles() {
     fi
 
     if [ -d $HOME/Pictures/Wallpapers ]; then
-        cp -r ./etc/walls/iceburg/Shore.jpg $HOME/Pictures/Wallpapers 
+        cp -r ./etc/walls/Stars.png $HOME/Pictures/Wallpapers 
     else 
-        mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/iceburg/Shore.png $HOME/Pictures/Wallpapers
+        mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/iceburg/Stars.png $HOME/Pictures/Wallpapers
     fi
 
     sleep 1
