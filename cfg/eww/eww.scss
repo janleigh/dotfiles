@@ -11,16 +11,26 @@ button:hover {
     color: #89B8C2;
 }
 
-.eww-window, .profile, .date, .player, .system-info, .powermenu {
-    background-color: #13141D;
+.eww-window, .profile, .date, .player{
+    background-color: #161825;
     border-radius: 10px;
 }
 
 .eww-window {
-    background-color: #161825;
+    background-color: #13141D;
 
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 10px;
+}
+
+.profile {
+    background-color: #13141D;
+}
+
+.system-manager {
+    background-color: #13141D;
+
+    border-radius: inherit;
 }
 
 .titlebar {
@@ -36,31 +46,21 @@ button:hover {
 
 .pfp {
     background-image: url("/home/kizu/.config/eww/avatar.png");
-    background-size: 80px;
+    background-size: 100px;
 
-    margin-top: 20px;
-    margin-bottom: -40px;
-    margin-left: 23px;
-    margin-right: 207px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    margin-left: 105px;
+    margin-right: 105px;
     
-    border-radius: 5px;
+    border-radius: 50px;
 }
 
 .username {
-    margin-top: -75px;
-    margin-right: -75px;
+    margin-top: -45px;
 
     color: #89B8C2;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.realname {
-    margin-top: -55px;
-    margin-right: -75px;
-
-    color: #95c4ce;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -89,22 +89,11 @@ button:hover {
 
 // PLAYER
 
-.song-art {
-    background-size: 80px;
-
-    margin-top: 16px;
-    margin-bottom: 15px;
-    margin-left: 23px;
-    margin-right: 52px;
-    
-    border-radius: 5px;
-}
-
 .song-data {
     font-size: 16px;
     font-weight: bold;
 
-    margin: 25px 0px 0px -50px;
+    margin: 25px 0px 0px -35px;
 }
 
 .song-title {
@@ -133,14 +122,29 @@ button:hover {
     color: #95c4ce;
 }
 
-// SYSTEM INFO
+.player-btn pause-play button  {
+    font-size: 16px;
+}
 
-.system-info {
+.song-art {
+    background-size: 85px;
+
+    margin-top: 13px;
+    margin-bottom: 12px;
+    margin-left: 17px;
+    margin-right: 53px;
+    
+    border-radius: 6px;
+}
+
+// SYSTEM MANAGER
+
+.system-manager {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-.system-info slider {
+.system-manager slider {
     all: unset;
 }
 
@@ -189,16 +193,11 @@ button:hover {
     margin: 8px 45px 0px -50px;
 }
 
-// POWERMENU
-
 .powermenu-btn button {
     font-family: "Material Icons";
     font-size: 50px;
 
-    background-color: #181925;
-    border-radius: 15px;
-
-    margin: 15px;
+    margin: 23px;
     margin-left: 7px;
     margin-right: 7px;
     padding: 0px 15px 0px 15px;
