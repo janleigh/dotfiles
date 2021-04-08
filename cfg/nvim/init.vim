@@ -66,10 +66,10 @@ set noshowmode
 call plug#begin('~/.local/share/nvim/plugged')
 
 " General Vim Plugins
-Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
-
 Plug 'Stoozy/vimcord'
+Plug 'kyazdani42/nvim-tree.lua'
+
 Plug 'voldikss/vim-floaterm'
 
 Plug 'akinsho/nvim-bufferline.lua'
@@ -80,6 +80,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Programming Languages Support Plugins
 " Global
 Plug 'dense-analysis/ale'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Python
@@ -100,8 +101,8 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 call plug#end()
 
 " Show NERDTree window
-nmap <F6> :NERDTreeToggle<CR>
-nmap <F18> :NERDTreeRefreshRoot<CR>
+nmap <F6> :NvimTreeToggle<CR>
+nmap <F18> :NvimTreeRefresh<CR>
 
 " Show Floaterm
 nmap <F5> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=Terminal --position=bottomright<CR>
@@ -128,16 +129,31 @@ nmap <F3> :BufferLineCyclePrev<CR>
 let g:airline_theme = 'minimalist'
 
 " Bind a keybind to Telescope
-nmap <F7> :Telescope<CR>
+nmap <F7> :Telescope find_files<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-"             FLOATERM CONFIGURATION            "
+"             HIGHLIGHT CONFIGURATION           "
 """""""""""""""""""""""""""""""""""""""""""""""""
 
+" Floaterm
 highlight FloatermBorder guibg=#13141d
 
+" Bufferline
+highlight BufferLineFill guibg=NONE
+
+" nvim-tree
+highlight NvimTreeRootFolder guifg=#89b8c2
+
 """""""""""""""""""""""""""""""""""""""""""""""""
-"            BUFFERLINE CONFIGURATION           "
+"               LUA CONFIGURATION               "
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-highlight BufferLineFill guibg=NONE
+lua << EOF
+require('telescope').setup{
+    defaults = {
+        prompt_position = "top",
+        prompt_prefix = " ",
+        selection_caret = " "
+    }
+} 
+EOF
