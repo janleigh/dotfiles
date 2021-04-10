@@ -35,10 +35,17 @@
         
 ### ❖ Installation
 
-   I provided an script to install my configuration. It will download the dependencies and copy the config files to `$HOME/.config/`.
-   
-   You can run it by running `setup.sh`.
+   First, clone the repo.
+   ```bash
+    $ git clone --recurse-submodules https://github.com/JavaCafe01/dotfiles.git
+   ```
 
+   Then, update the submodules.
+   ```bash
+    $ cd dotfiles && git submodule update --remote --merge
+   ```
+
+   Finally, run the setup script.
    ```bash
     $ ./setup.sh
    ```
