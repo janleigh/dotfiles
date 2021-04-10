@@ -1,6 +1,8 @@
-let s:theme = 'iceburg'
+let s:theme = 'kizu'
 
-let s:want_showmod = get(g:, 'airline_iceburg_showmod', 0)
+" To highlight when the buffer is modified:
+"     let g:airline_minimalist_showmod = 1
+let s:want_showmod = get(g:, 'airline_minimalist_showmod', 0)
 
 function! airline#themes#{s:theme}#refresh()
     if &background == "dark"
@@ -24,6 +26,7 @@ function! airline#themes#{s:theme}#refresh()
 
     " Reverse
     let NR = [ N2[1], N2[0], N2[3], N2[2], 'bold' ]
+
 
     let palette = {}
 

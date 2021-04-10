@@ -10,7 +10,9 @@ set guicursor=
 
 " Set colorscheme
 set termguicolors
-colorscheme iceburg
+
+" Refer to https://github.com/TheRealKizu/kizu.vim
+colorscheme kizu 
 
 " Enable mouse support
 set mouse=a
@@ -71,7 +73,6 @@ Plug 'Stoozy/vimcord'
 Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'voldikss/vim-floaterm'
-
 Plug 'akinsho/nvim-bufferline.lua'
 
 Plug 'ryanoasis/vim-devicons'
@@ -100,9 +101,15 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 
 call plug#end()
 
-" Show NERDTree window
+" Show NvimTree window
 nmap <F6> :NvimTreeToggle<CR>
 nmap <F18> :NvimTreeRefresh<CR>
+
+" Set NvimTree
+let g:nvim_tree_indent_markers = 1
+let g:nvim_tree_quit_on_open = 1
+let g:nvim_tree_auto_open = 1
+let g:nvim_tree_git_hl = 1
 
 " Show Floaterm
 nmap <F5> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=Terminal --position=bottomright<CR>
@@ -126,7 +133,7 @@ nmap <F2> :BufferLineCycleNext<CR>
 nmap <F3> :BufferLineCyclePrev<CR>
 
 " Set vim-airline theme
-let g:airline_theme = 'minimalist'
+let g:airline_theme = 'kizu'
 
 " Bind a keybind to Telescope
 nmap <F7> :Telescope find_files<CR>
