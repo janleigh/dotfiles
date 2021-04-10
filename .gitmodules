@@ -1,0 +1,3 @@
+[submodule "etc/startpage"]
+	path = etc/startpage
+	url = https://github.com/TheRealKizu/startpage
