@@ -170,7 +170,7 @@ success() {
     rm -rf $HOME/.setup-scripto
 
     whiptail --title "$title" \
-        --msgbox "Setup success. Please restart BSPWM if you are on an active session." 10 50
+        --msgbox "Setup success. Please restart BSPWM if you are on an active session.\n\nThings I recommend for you to do:\n\n- Unpack GTK theme\n- Copy vim-airline-status\n\n Files can be found in the repos etc/ folder." 20 50
 }
 
 echo "[*] Starting setup script..."
