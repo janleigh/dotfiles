@@ -8,7 +8,7 @@
 
 <p/>
 
-![img](https://img.kizu.cf/u/Ly0o1hJ.png)
+![img](https://img.kizu.cf/u/rGCWY03.png)
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
@@ -37,7 +37,7 @@
 
    First, clone the repo.
    ```bash
-    $ git clone --recurse-submodules https://github.com/JavaCafe01/dotfiles.git
+    $ git clone --recurse-submodules https://github.com/TheRealKizu/dotfiles.git
    ```
 
    Then, update the submodules.
@@ -87,4 +87,4 @@
    
    Have fun reading this neofetch.
    
-   ![img](https://cdn.mythcord.cf/u/wkfO2PJ.png)
+   ![img](https://img.kizu.cf/u/zQpOoZi.png)
