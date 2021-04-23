@@ -5,19 +5,12 @@
             FOLLOWING THE ONE ON THE DOCUMENTATION WILL BREAK THE WHOLE CONFIG.
           -->
         <def name="eww-window">
-            <box class="window-title" orientation="h" space-evenly="true">
-                <box class="titlebar"> ━━━━━━  ❖  ━━━━━━ </box>
-            </box>
+            <box/>
         </def>
         <def name="profile">
-            <box class="profile" orientation="v" space-evenly="true">
-                <box orientation="h">
-                    <box class="pfp"></box>
-                </box>
-                <box orientation="v">
-                    <box class="username">Logged in as</box>
-                    <box class="realname">USERNAME</box>
-                </box>
+            <box orientation="v" space-evenly="true">
+                <box class="pfp"/>
+                <box class="username">@KizuWasTaken</box>
             </box>
         </def>
         <def name="date">
@@ -43,8 +36,8 @@
                 </box>
             </box>
         </def>
-        <def name="system-info">
-            <box class="system-info" orientation="v" space-evenly="false">
+        <def name="system-manager">
+            <box orientation="v" space-evenly="false">
                 <box class="ram-bar" orientation="h">
                     <box class="label-ram-bar">RAM</box>
                     <scale min="0" max="101" active="false" value="{{used_ram}}"></scale>
@@ -57,14 +50,12 @@
                     <box class="label-vol-bar">VOL</box>
                     <scale min="0" max="101" active="false" value="{{volume}}"></scale>
                 </box>
-            </box>
-        </def>
-        <def name="powermenu">
-            <box orientation="h" space-evenly="true"> 
-                <box class="powermenu-btn" halign="center" space-evenly="false">
-                    <button class="lock-btn" onclick="i3lock-fancy -pf JetBrains Mono"></button>
-                    <button class="logout-btn" onclick="i3-msg exit"></button>
-                    <button class="shutdown-btn" onclick="systemctl poweroff"></button> 
+                <box class="powermenu" orientation="h">
+                    <box class="powermenu-btn" halign="center" space-evenly="false">
+                        <button class="lock-btn" onclick="betterlockscreen -l dimblur"></button>
+                        <button class="logout-btn" onclick="bspc quit"></button>
+                        <button class="shutdown-btn" onclick="systemctl poweroff"></button> 
+                    </box>
                 </box>
             </box>
         </def>
@@ -90,39 +81,33 @@
 
     <windows>
         <window name="eww-window">
-            <geometry x="1025px" y="0px" width="360px" height="735px"/>
+            <geometry x="1025px" y="35px" width="360px" height="1000px"/>
             <widget>
                 <eww-window/>
             </widget>
         </window>
         <window name="profile">
-            <geometry x="1041px" y="50px" width="310px" height="120px"/>
+            <geometry x="1041px" y="50px" width="310px" height="240px"/>
             <widget>
                 <profile/>
             </widget>
         </window>
         <window name="date">
-            <geometry x="1041px" y="185px" width="310px" height="100px"/>
+            <geometry x="1041px" y="250px" width="310px" height="100px"/>
             <widget>
                 <date/>
             </widget>
         </window>
         <window name="player">
-            <geometry x="1041px" y="335px" width="310px" height="110px"/>
+            <geometry x="1041px" y="400px" width="310px" height="110px"/>
             <widget>
                 <player/>
             </widget>
         </window>
-        <window name="system-info">
-            <geometry x="1041px" y="460px" width="310px" height="170px"/>
+        <window name="system-manager">
+            <geometry x="1041px" y="520px" width="310px" height="160px"/>
             <widget>
-                <system-info/>
-            </widget>
-        </window>
-        <window name="powermenu">
-            <geometry x="1041px" y="600px" width="310px" height="120px"/>
-            <widget>
-                <powermenu/>
+                <system-manager/>
             </widget>
         </window>
     </windows>

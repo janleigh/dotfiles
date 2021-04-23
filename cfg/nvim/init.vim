@@ -67,25 +67,27 @@ set noshowmode
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" General Vim Plugins
+" Miscellaneous Vim Plugins
 Plug 'jiangmiao/auto-pairs'
-Plug 'Stoozy/vimcord'
+Plug 'ObserverOfTime/discord.nvim', {' do': ':UpdateRemotePlugins' }
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'gko/vim-coloresque'
 
-Plug 'voldikss/vim-floaterm'
-Plug 'akinsho/nvim-bufferline.lua'
-
-Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'akinsho/nvim-bufferline.lua'
+Plug 'voldikss/vim-floaterm'
 
 " Programming Languages Support Plugins
 " Global
 Plug 'dense-analysis/ale'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
-" Python
-Plug 'jeetsukumaran/vim-pythonsense'
+" Lua
+Plug 'tjdevries/nlua.nvim'
+Plug 'euclidianAce/BetterLua.vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -101,9 +103,9 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 
 call plug#end()
 
-" Show NvimTree window
-nmap <F6> :NvimTreeToggle<CR>
-nmap <F18> :NvimTreeRefresh<CR>
+" Fix Discord RPC
+let g:discord_activate_on_enter = 1
+let g:discord_log_debug = 0
 
 " Set NvimTree
 let g:nvim_tree_indent_markers = 1
@@ -111,13 +113,8 @@ let g:nvim_tree_quit_on_open = 1
 let g:nvim_tree_auto_open = 1
 let g:nvim_tree_git_hl = 1
 
-" Show Floaterm
-nmap <F5> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=Terminal --position=bottomright<CR>
-nmap <F17> :FloatermKill!<CR>
-
 " Set ALE
 let g:ale_linters = {
-    \   'python': ['flake8', 'pylint'],
     \   'javascript': ['eslint'],
     \   'typescript': ['eslint'],
     \ }
@@ -125,42 +122,63 @@ let g:ale_linters = {
 " Disablel YCM preview
 set completeopt-=preview
 
-" Init nvim-bufferline.lua
-lua require'bufferline'.setup{}
-
-" Set nvim-bufferline.lua keybinds
-nmap <F2> :BufferLineCycleNext<CR>
-nmap <F3> :BufferLineCyclePrev<CR>
-
 " Set vim-airline theme
 let g:airline_theme = 'kizu'
 
-" Bind a keybind to Telescope
-nmap <F7> :Telescope find_files<CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""
-"             HIGHLIGHT CONFIGURATION           "
+"             KEYBINDS CONFIGURATION            "
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-" Floaterm
-highlight FloatermBorder guibg=#13141d
+" New vertical window
+nmap <F4> :vnew<CR>
 
-" Bufferline
-highlight BufferLineFill guibg=NONE
+" Resize window by 5%
+nmap <F9> :vertical resize 5<CR>
+nmap <F10> :vertical resize -5<CR>
 
 " nvim-tree
-highlight NvimTreeRootFolder guifg=#89b8c2
+nmap <F6> :NvimTreeToggle<CR>
+nmap <F18> :NvimTreeRefresh<CR>
+
+" floaterm
+nmap <F5> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=Terminal --position=bottomright<CR>
+nmap <F17> :FloatermKill!<CR>
+
+" nvim-bufferline.lua
+nmap <F2> :BufferLineCycleNext<CR>
+nmap <F3> :BufferLineCyclePrev<CR>
+
+" Telescope
+nmap <F7> :Telescope find_files<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "               LUA CONFIGURATION               "
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 lua << EOF
+require('bufferline').setup{}
+
 require('telescope').setup{
     defaults = {
         prompt_position = "top",
         prompt_prefix = " ",
         selection_caret = " "
     }
-} 
+}
 EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"             HIGHLIGHT CONFIGURATION           "
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" floaterm
+highlight FloatermBorder guibg=#13141d
+
+" bufferline
+highlight BufferLineFill guibg=NONE
+
+" nvim-tree
+highlight NvimTreeFileDirty guifg=#e27878
+highlight NvimTreeGitDirty guifg=#e27878
+highlight NvimTreeRootFolder guifg=#89b8c2
+
