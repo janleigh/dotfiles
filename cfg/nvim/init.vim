@@ -61,36 +61,32 @@ set nobackup
 " Turn off second status bar
 set noshowmode
 
+" Change update time for coc.nvim
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
 """""""""""""""""""""""""""""""""""""""""""""""""
 "              PLUGIN CONFIGURATION             "
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Miscellaneous Vim Plugins
-Plug 'jiangmiao/auto-pairs'
-Plug 'ObserverOfTime/discord.nvim', {' do': ':UpdateRemotePlugins' }
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'gko/vim-coloresque'
-
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ryanoasis/vim-devicons'
-
-Plug 'akinsho/nvim-bufferline.lua'
-Plug 'voldikss/vim-floaterm'
-
 " Programming Languages Support Plugins
 " Global
-Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Lua
 Plug 'tjdevries/nlua.nvim'
 Plug 'euclidianAce/BetterLua.vim'
-
 " Rust
 Plug 'rust-lang/rust.vim'
+
+" Git Plugins
+Plug 'f-person/git-blame.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 " GUI Plugins
 Plug 'vim-airline/vim-airline'
@@ -101,26 +97,25 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
 
-call plug#end()
+" Miscellaneous Vim Plugins
+Plug 'jiangmiao/auto-pairs'
+Plug 'kyazdani42/nvim-tree.lua'
 
-" Fix Discord RPC
-let g:discord_activate_on_enter = 1
-let g:discord_log_debug = 0
+Plug 'gko/vim-coloresque'
+
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'akinsho/nvim-bufferline.lua'
+Plug 'voldikss/vim-floaterm'
+
+call plug#end()
 
 " Set NvimTree
 let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_quit_on_open = 1
 let g:nvim_tree_auto_open = 1
 let g:nvim_tree_git_hl = 1
-
-" Set ALE
-let g:ale_linters = {
-    \   'javascript': ['eslint'],
-    \   'typescript': ['eslint'],
-    \ }
-
-" Disablel YCM preview
-set completeopt-=preview
 
 " Set vim-airline theme
 let g:airline_theme = 'kizu'
@@ -156,6 +151,8 @@ nmap <F7> :Telescope find_files<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 lua << EOF
+require('gitsigns').setup{}
+
 require('bufferline').setup{}
 
 require('telescope').setup{

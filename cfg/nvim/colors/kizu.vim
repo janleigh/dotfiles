@@ -43,7 +43,7 @@ let g:colors_name = "kizu"
 " Normal "
 """"""""""
 
-exec "hi Normal guifg=".s:guishade6." guibg=".s:guishade0
+exec "hi Normal guifg=".s:guishade6
 exec "hi Normal ctermfg=".s:ctermshade6." ctermbg=".s:ctermshade0
 
 """""""""""""""""
