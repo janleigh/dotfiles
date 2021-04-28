@@ -89,8 +89,7 @@ Plug 'f-person/git-blame.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 " GUI Plugins
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'glepnir/galaxyline.nvim' , { 'branch': 'main' }
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -109,6 +108,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'voldikss/vim-floaterm'
 
+" ;)
+Plug 'willelz/badapple.nvim'
+
 call plug#end()
 
 " Set NvimTree
@@ -116,32 +118,31 @@ let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_quit_on_open = 1
 let g:nvim_tree_auto_open = 1
 let g:nvim_tree_git_hl = 1
-
-" Set vim-airline theme
-let g:airline_theme = 'kizu'
+let g:nvim_tree_ignore = [ ".cache", ".git", "node_modules", "data" ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "             KEYBINDS CONFIGURATION            "
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-" New vertical window
-nmap <F4> :vnew<CR>
+" Quick window switching
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
-" Resize window by 5%
-nmap <F9> :vertical resize 5<CR>
-nmap <F10> :vertical resize -5<CR>
+" Make new window
+nmap <C-a> :vsplit<CR>
+nmap <C-s> :split<CR>
+
+" Open terminal
+nmap <S-a> :vsplit term://zsh<CR>
+nmap <S-s> :split term://zsh<CR>
 
 " nvim-tree
-nmap <F6> :NvimTreeToggle<CR>
-nmap <F18> :NvimTreeRefresh<CR>
-
-" floaterm
-nmap <F5> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=Terminal --position=bottomright<CR>
-nmap <F17> :FloatermKill!<CR>
+nmap <C-n> :NvimTreeToggle<CR>
 
 " nvim-bufferline.lua
-nmap <F2> :BufferLineCycleNext<CR>
-nmap <F3> :BufferLineCyclePrev<CR>
+nmap <S-n> :BufferLineCycleNext<CR>
 
 " Telescope
 nmap <F7> :Telescope find_files<CR>
@@ -150,10 +151,24 @@ nmap <F7> :Telescope find_files<CR>
 "               LUA CONFIGURATION               "
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-lua << EOF
+lua << EOS
 require('gitsigns').setup{}
 
-require('bufferline').setup{}
+require('bufferline').setup{
+    options = {
+        max_name_length = 14,
+    },
+    highlights = {
+        -- Focused Window
+        buffer_selected = {
+            guibg = "#191C2A",
+            gui = "bold"
+        },
+        modified_selected = {
+            guibg = "#191C2A"
+        }
+    }
+}
 
 require('telescope').setup{
     defaults = {
@@ -162,11 +177,137 @@ require('telescope').setup{
         selection_caret = " "
     }
 }
-EOF
+EOS
+
+lua << EOS
+local gl = require("galaxyline")
+local gls = gl.section
+
+local colors = {
+    bg = "#13141d",
+    fg = "#cfd1dd",
+
+    bgAlt = "#191C2A",
+
+    red = "#e27878",
+    green = "#a3be8c",
+    yellow = "#ebcb8b",
+    cyan = "#89b8c2"
+}
+
+gl.short_line_list = {" "}
+
+gls.left[1] = {
+    StartBorder = {
+        provider = function()
+            return "▋"
+        end,
+        highlight = { colors.cyan, colors.bg }
+    }
+}
+
+gls.left[2] = {
+    Separator = {
+        provider = function()
+            return " "
+        end,
+        highlight = { colors.bg, colors.bg }
+    }
+}
+
+gls.left[3] = {
+    FileIcon = {
+        provider = "FileIcon",
+        condition = buffer_not_empty,
+        highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg }
+    }
+}
+
+gls.left[4] = {
+    FileName = {
+        provider = "FileName",
+        condition = buffer_not_empty,
+        highlight = { colors.fg, colors.bg }
+    }
+}
+
+gls.right[1] = {
+    DiffModified = {
+        provider = "DiffModified",
+        condition = checkwidth,
+        icon = " ",
+        highlight = { colors.yellow, colors.bg }
+    }
+}
+
+gls.right[2] = {
+    DiffRemove = {
+        provider = "DiffRemove",
+        condition = checkwidth,
+        icon = " ",
+        highlight = { colors.red, colors.bg }
+    }
+}
+
+gls.right[3] = {
+    DiagnosticError = {
+        provider = "DiagnosticError",
+        icon = "  ",
+        highlight = { colors.red, colors.bg }
+    }
+}
+
+
+gls.right[4] = {
+    DiagnosticWarn = {
+        provider = "DiagnosticWarn",
+        icon = "  ",
+        highlight = { colors.yellow, colors.bg }
+    }
+}
+
+gls.right[5] = {
+    ViMode = {
+        provider = function()
+
+            local alias = {
+                n = 'NORMAL',
+                i = 'INSERT',
+                c = 'COMMAND',
+                V = 'VISUAL',
+                [''] = 'VISUAL',
+                v = 'VISUAL',
+                R = 'REPLACE',
+            }
+
+            return alias[vim.fn.mode()]
+
+        end,
+        separator = " ",
+        separator_highlight = { colors.bgAlt, colors.bgAlt },
+        highlight = { colors.fg, colors.bgAlt },
+    }
+}
+
+gls.right[6] = {
+    EndBorder = {
+        provider = function()
+            return "▋"
+        end,
+        separator = " ",
+        separator_highlight = { colors.bgAlt, colors.bgAlt },
+        highlight = { colors.cyan, colors.bg }
+    }
+}
+EOS
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "             HIGHLIGHT CONFIGURATION           "
 """""""""""""""""""""""""""""""""""""""""""""""""
+
+" coc.nvim
+highlight CocErrorSign guifg=#e27878
+highlight CocWarningSign guifg=#ebcb8b
 
 " floaterm
 highlight FloatermBorder guibg=#13141d
@@ -179,3 +320,4 @@ highlight NvimTreeFileDirty guifg=#e27878
 highlight NvimTreeGitDirty guifg=#e27878
 highlight NvimTreeRootFolder guifg=#89b8c2
 
+highlight StatusLineNC gui=underline guibg=NONE guifg=#383c44
