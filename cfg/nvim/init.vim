@@ -195,7 +195,7 @@ local colors = {
     cyan = "#89b8c2"
 }
 
-gl.short_line_list = {" "}
+gl.short_line_list = { "NvimTree" }
 
 gls.left[1] = {
     StartBorder = {
@@ -285,7 +285,7 @@ gls.right[5] = {
         end,
         separator = " ",
         separator_highlight = { colors.bgAlt, colors.bgAlt },
-        highlight = { colors.fg, colors.bgAlt },
+        highlight = { colors.fg, colors.bgAlt }
     }
 }
 
@@ -299,6 +299,24 @@ gls.right[6] = {
         highlight = { colors.cyan, colors.bg }
     }
 }
+
+-- Short Line
+
+gls.short_line_left[1] = {
+    FileIcon = {
+        provider = "FileIcon",
+        condition = buffer_not_empty
+    }
+}
+
+gls.short_line_left[2] = {
+    FileName = {
+        provider = "FileName",
+        condition = buffer_not_empty,
+        separator = " "
+    }
+}
+
 EOS
 
 """""""""""""""""""""""""""""""""""""""""""""""""
