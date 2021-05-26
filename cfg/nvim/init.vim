@@ -140,6 +140,7 @@ nmap <S-s> :split term://zsh<CR>
 
 " nvim-tree
 nmap <C-n> :NvimTreeToggle<CR>
+nmap <F6> :NvimTreeRefresh<CR>
 
 " nvim-bufferline.lua
 nmap <S-n> :BufferLineCycleNext<CR>
@@ -207,27 +208,34 @@ gls.left[1] = {
 }
 
 gls.left[2] = {
+    ViMode = {
+        provider = function()
+
+            local alias = {
+                n = '  NORMAL',
+                i = '  INSERT',
+                c = '  COMMAND',
+                V = '  VISUAL',
+                [''] = '  VISUAL',
+                v = '  VISUAL',
+                R = '  REPLACE',
+            }
+
+            return alias[vim.fn.mode()]
+
+        end,
+        separator = " ",
+        separator_highlight = { colors.bgAlt, colors.bgAlt },
+        highlight = { colors.fg, colors.bgAlt }
+    }
+}
+
+gls.left[3] = {
     Separator = {
         provider = function()
             return " "
         end,
         highlight = { colors.bg, colors.bg }
-    }
-}
-
-gls.left[3] = {
-    FileIcon = {
-        provider = "FileIcon",
-        condition = buffer_not_empty,
-        highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg }
-    }
-}
-
-gls.left[4] = {
-    FileName = {
-        provider = "FileName",
-        condition = buffer_not_empty,
-        highlight = { colors.fg, colors.bg }
     }
 }
 
@@ -267,29 +275,24 @@ gls.right[4] = {
 }
 
 gls.right[5] = {
-    ViMode = {
-        provider = function()
-
-            local alias = {
-                n = 'NORMAL',
-                i = 'INSERT',
-                c = 'COMMAND',
-                V = 'VISUAL',
-                [''] = 'VISUAL',
-                v = 'VISUAL',
-                R = 'REPLACE',
-            }
-
-            return alias[vim.fn.mode()]
-
-        end,
+    FileIcon = {
+        provider = "FileIcon",
+        condition = buffer_not_empty,
         separator = " ",
         separator_highlight = { colors.bgAlt, colors.bgAlt },
-        highlight = { colors.fg, colors.bgAlt }
+        highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bgAlt }
     }
 }
 
 gls.right[6] = {
+    FileName = {
+        provider = "FileName",
+        condition = buffer_not_empty,
+        highlight = { colors.fg, colors.bgAlt }
+    }
+}
+
+gls.right[7] = {
     EndBorder = {
         provider = function()
             return "▋"
@@ -303,13 +306,21 @@ gls.right[6] = {
 -- Short Line
 
 gls.short_line_left[1] = {
-    FileIcon = {
-        provider = "FileIcon",
-        condition = buffer_not_empty
+    Space = {
+        provider = function()
+            return " "
+        end,
     }
 }
 
 gls.short_line_left[2] = {
+    FileIcon = {
+        provider = "FileIcon",
+        condition = buffer_not_empty,
+    }
+}
+
+gls.short_line_left[3] = {
     FileName = {
         provider = "FileName",
         condition = buffer_not_empty,
