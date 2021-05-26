@@ -116,6 +116,13 @@ copyFiles() {
         mkdir $HOME/.config/sxhkd && cp -r ./cfg/sxhkd/* $HOME/.config/sxhkd
     fi
 
+    if [[ -d $HOME/.config/rofi ]]; then
+        mkdir $HOME/.config/rofi.bak && mv $HOME/.config/rofi/* $HOME/.config/rofi.bak
+        cp -r ./cfg/rofi/* $HOME/.config/rofi/
+    else
+        mkdir $HOME/.config/rofi && cp -r ./cfg/rofi/* $HOME/.config/rofi
+    fi
+
     if [[ -d $HOME/.local/bin ]]; then
         cp -r ./bin/* $HOME/.local/bin
     else
