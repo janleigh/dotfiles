@@ -71,8 +71,8 @@
    * Super + Up               ~> Move window upwards
    * Super + Down             ~> Move window downwards
 
-   * Super + {1-7}            ~> Move to workspace #
-   * Super + Shift + {1-7}    ~> Move window to workspace #
+   * Super + {1-8}            ~> Move to workspace #
+   * Super + Shift + {1-8}    ~> Move window to workspace #
 
    * XF86AudioRaiseVolume     ~> Raise volume by 5%
    * XF86AudioLowerVolume     ~> Lower volume by 5%
@@ -89,7 +89,8 @@
 
 ### ❖ Notes
 
-   * **Soon!**
+   * Install NeoVim plugins
+   * Install [GTK and Icon theme](https://github.com/sainnhe/gruvbox-material-gtk)
 
 ### ❖ System Info
    
