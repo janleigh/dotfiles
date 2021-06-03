@@ -19,9 +19,9 @@ configuration {
 }
 
 * {
-    bg:                             #13141D;
-    fg:                             #CFD1DD;
-    ac:                             #84A0C6;
+    bg:                             #1D2021;
+    fg:                             #FBF1C7;
+    ac:                             #7daea3;
 
     background-color:               @bg;
     text-color:                     @fg;
@@ -37,7 +37,7 @@ prompt {
     margin:                         0 0 0 0;
 	background-color: 				@bg;
 	text-color: 					@fg;
-	font:							"JetBrainsMono Nerd Font 12";
+	font:							"CaskaydiaCove Nerd Font 12";
 }
 
 entry {
