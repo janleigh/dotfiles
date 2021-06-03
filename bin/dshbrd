@@ -1,23 +1,20 @@
 #!/bin/bash
 # Opens eww dashboard
 
-case $1 in
-    "open")
-        $HOME/.local/bin/eww daemon; sleep 0.4
+if [ ! -d /tmp/i3 ]; then
+    mkdir -p /tmp/i3
+fi
 
-        $HOME/.local/bin/eww close-all
-        $HOME/.local/bin/eww open-many eww-window profile date player system-manager
+if [ -e /tmp/i3/eww.lock ]; then
+    $HOME/.local/bin/eww close-all; rm -rf /tmp/i3/eww.lock
+else
+    $HOME/.local/bin/eww daemon; sleep 0.4
 
-        # i3-msg gaps right all set 343
-        bspc config right_padding 340
-        exit
-    ;;
+    $HOME/.local/bin/eww close-all
+    $HOME/.local/bin/eww open-many triangle eww-window date layout-manager system-manager
 
-    "close")
-        $HOME/.local/bin/eww close-all;
+    echo "test" | tee /tmp/i3/eww.lock
 
-        # i3-msg gaps right all set 0
-        bspc config right_padding 0
-        exit
-    ;;
-esac
+    # i3-msg gaps right all set 343
+    # bspc config right_padding 340
+fi
