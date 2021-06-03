@@ -87,6 +87,10 @@
    * Super + Shift + Alt + R  ~> Restart bspwm
    ```
 
+### ❖ Notes
+
+   * **Soon!**
+
 ### ❖ System Info
    
    Have fun reading this neofetch.

@@ -14,10 +14,10 @@ downloadDependencies() {
 
         if [[ -e /usr/bin/paru ]]; then
             echo -e "[*] paru detected. Installing dependencies..."
-            paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot        
+            paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip
         elif [[ -e /usr/bin/yay ]]; then
             echo -e "[*] yay detected. Installing dependencies..."
-            yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl amixer dunst hsetroot
+            yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
             read -r -p "Would you like to install yay? [Y/n]: " yay
@@ -29,7 +29,7 @@ downloadDependencies() {
                     (cd $HOME/.setup-scripto && makepkg -si)
 
                     echo "[*] yay installed. Installing dependencies..."
-                    yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl amixer dunst hsetroot
+                    yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip
                     ;;
                 [nN])
                     echo "[*] Okay. Will not install yay."
@@ -138,12 +138,12 @@ copyFiles() {
     if [ -d $HOME/Pictures/Wallpapers ]; then
         cp -r ./etc/walls/Stars.png $HOME/Pictures/Wallpapers 
     else 
-        mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/iceburg/Stars.png $HOME/Pictures/Wallpapers
+        mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/gruv.png $HOME/Pictures/Wallpapers
     fi
 
     sleep 1
     echo "[*] Copied files successfully."
-    sleep 0.5
+    sleep 0.7
 }
 
 finalizeChanges() {
@@ -177,7 +177,7 @@ success() {
     rm -rf $HOME/.setup-scripto
 
     whiptail --title "$title" \
-        --msgbox "Setup success. Please restart BSPWM if you are on an active session.\n\nThings I recommend for you to do:\n\n- Unpack GTK theme\n- Copy vim-airline-status\n\n Files can be found in the repos etc/ folder." 20 50
+        --msgbox "Setup success. Please restart BSPWM if you are on an active session. Check notes on the repository's README." 20 50
 }
 
 echo "[*] Starting setup script..."
