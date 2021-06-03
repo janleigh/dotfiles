@@ -7,15 +7,16 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # ##############################################################################
 
 dunst --config $HOME/.config/dunst/dunstrc &
+eww daemon &
 picom --config $HOME/.config/picom/picom.conf &
-hsetroot -fill "$HOME/Pictures/Wallpapers/Stars.png"
+hsetroot -fill "$HOME/Pictures/Wallpapers/gruv.png"
 sh $HOME/.config/polybar/launch.sh
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
 # ##############################################################################
 
-bspc monitor -d I II III IV V VI VII
+bspc monitor -d I II III IV V VI VII VIII
 
 bspc config border_width         3
 bspc config window_gap           25
@@ -23,9 +24,9 @@ bspc config window_gap           25
 bspc config top_padding          37
 bspc config bottom_padding       0
 
-bspc config normal_border_color  "#13141d"
-bspc config active_border_color  "#13141d"
-bspc config focused_border_color "#13141d"
+bspc config normal_border_color  "#282828"
+bspc config active_border_color  "#282828"
+bspc config focused_border_color "#282828"
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true

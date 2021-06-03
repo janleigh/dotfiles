@@ -8,11 +8,8 @@ set encoding=utf8
 " Set cursor
 set guicursor=
 
-" Set colorscheme
+" Fix colorscheme
 set termguicolors
-
-" Refer to https://github.com/TheRealKizu/kizu.vim
-colorscheme kizu 
 
 " Enable mouse support
 set mouse=a
@@ -111,7 +108,15 @@ Plug 'voldikss/vim-floaterm'
 " ;)
 Plug 'willelz/badapple.nvim'
 
+" Colors
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
+
 call plug#end()
+
+" Set colorscheme
+let g:gruvbox_material_background = "hard"
+colorscheme gruvbox-material
 
 " Set NvimTree
 let g:nvim_tree_indent_markers = 1
@@ -162,11 +167,11 @@ require('bufferline').setup{
     highlights = {
         -- Focused Window
         buffer_selected = {
-            guibg = "#191C2A",
+            guibg = "#282828",
             gui = "bold"
         },
         modified_selected = {
-            guibg = "#191C2A"
+            guibg = "#282828"
         }
     }
 }
@@ -185,15 +190,15 @@ local gl = require("galaxyline")
 local gls = gl.section
 
 local colors = {
-    bg = "#13141d",
-    fg = "#cfd1dd",
+    bg = "#1d2021",
+    fg = "#f1fdc7",
 
-    bgAlt = "#191C2A",
+    bgAlt = "#282828",
 
-    red = "#e27878",
-    green = "#a3be8c",
-    yellow = "#ebcb8b",
-    cyan = "#89b8c2"
+    red = "#EA6962",
+    green = "#A9B665",
+    yellow = "#FFC745",
+    cyan = "#7DAEA3"
 }
 
 gl.short_line_list = { "NvimTree" }
@@ -334,19 +339,22 @@ EOS
 "             HIGHLIGHT CONFIGURATION           "
 """""""""""""""""""""""""""""""""""""""""""""""""
 
+" colorscheme
+highlight LineNr guibg=#1d2021
+
 " coc.nvim
-highlight CocErrorSign guifg=#e27878
-highlight CocWarningSign guifg=#ebcb8b
+highlight CocErrorSign guifg=#EA6962
+highlight CocWarningSign guifg=#FFC745
 
 " floaterm
-highlight FloatermBorder guibg=#13141d
+highlight FloatermBorder guibg=#1d2021
 
 " bufferline
 highlight BufferLineFill guibg=NONE
 
 " nvim-tree
-highlight NvimTreeFileDirty guifg=#e27878
-highlight NvimTreeGitDirty guifg=#e27878
-highlight NvimTreeRootFolder guifg=#89b8c2
+highlight NvimTreeFileDirty guifg=#EA6962
+highlight NvimTreeGitDirty guifg=#EA6962
+highlight NvimTreeRootFolder guifg=#7DAEA3
 
-highlight StatusLineNC gui=underline guibg=NONE guifg=#383c44
+highlight StatusLineNC gui=underline guibg=NONE guifg=#282828

@@ -8,7 +8,7 @@
 
 <p/>
 
-![img](https://img.kizu.cf/u/rGCWY03.png)
+![img](https://media.discordapp.net/attachments/635625917623828520/849960859627421726/Jun03-18-40.png?width=780&height=439)
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
@@ -32,6 +32,10 @@
    * playerctl
    * dunst
    * hsetroot
+   * maim
+   * viewnior
+   * jq
+   * xclip
         
 ### ❖ Installation
 
@@ -82,6 +86,10 @@
 
    * Super + Shift + Alt + R  ~> Restart bspwm
    ```
+
+### ❖ Notes
+
+   * **Soon!**
 
 ### ❖ System Info
    

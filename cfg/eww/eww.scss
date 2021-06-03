@@ -1,81 +1,61 @@
+// This is literally messy as fuck.
+// Please make a PR if your eyes are bleeding :)
+
 * {
     all: unset;
 }
 
 window {
-    color: #84A0C6;
-    font-family: "JetBrains Mono";
+    color: #d5c4a1;
+    font-family: "CaskaydiaCove Nerd Font";
 }
 
 button:hover {
     color: #89B8C2;
 }
 
-.eww-window, .profile, .date, .player{
-    background-color: #161825;
+.eww-window, .layout-manager, .system-manager {
     border-radius: 10px;
 }
 
+.triangle, .date {
+    background-color: transparent;
+}
+
 .eww-window {
-    background-color: #13141D;
-
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 10px;
+    background-color: #1D2021;
 }
 
-.profile {
-    background-color: #13141D;
+.layout-manager, .system-manager {
+    background-color: #282828;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.system-manager {
-    background-color: #13141D;
-
-    border-radius: inherit;
+.layout-manager {
+    background-color: transparent;
+    margin-top: -25px;
 }
 
-.titlebar {
-    color: #84A0C6;
-    font-size: 16px;
-    font-weight: bolder;
+// TRIANGLE
 
-    margin-top: -685px;
-    margin-left: -20px;
+.tr-text {
+    font-size: 26px;
+    color: #1D2021;
 }
-
-// PROFILE
-
-.pfp {
-    background-image: url("/home/kizu/.config/eww/avatar.png");
-    background-size: 100px;
-
-    margin-top: 25px;
-    margin-bottom: 0px;
-    margin-left: 105px;
-    margin-right: 105px;
-    
-    border-radius: 50px;
-}
-
-.username {
-    margin-top: -45px;
-
-    color: #89B8C2;
-    font-size: 16px;
-    font-weight: bold;
-}
-
 
 // DATE
 
 .time {
-    margin: 15px 65px -20px 65px;
+    margin: 15px 75px -20px 75px;
     font-size: 50px;
+    color: #d5c4a1;
 }
 
 .semicolon {
     margin: 0px;
     margin-top: -5px;
-    color: #95c4ce;
+    color: #282828;
 }
 
 .day {
@@ -84,65 +64,21 @@ button:hover {
 
     font-size: 16px;
     font-weight: bold;
-    color: #95c4ce;
+    color: #83a598;
 }
 
-// PLAYER
+// LAYOUT MANAGER
 
-.song-data {
-    font-size: 16px;
-    font-weight: bold;
-
-    margin: 25px 0px 0px -35px;
-}
-
-.song-title {
-    font-family: "JetBrains Mono", "Stick";
-    font-size: 14px;
-    font-weight: bold;
-
-    padding-right: 30px;
-}
-
-.player-btn {
-    padding: 25px 25px 5px;
-
-    margin-top: -5px;
-}
-
-.player-btn button {
-    color: #89b8c2;
-
+.layout-btn button {
     font-family: "Material Icons";
+    font-size: 27px;
 
-    padding-right: 30px;
-}
-
-.player-btn button:hover {
-    color: #95c4ce;
-}
-
-.player-btn pause-play button  {
-    font-size: 16px;
-}
-
-.song-art {
-    background-size: 85px;
-
-    margin-top: 13px;
-    margin-bottom: 12px;
-    margin-left: 17px;
-    margin-right: 53px;
-    
-    border-radius: 6px;
+    margin: 30px;
+    margin-left: 7px;
+    margin-right: 7px;
 }
 
 // SYSTEM MANAGER
-
-.system-manager {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
 
 .system-manager slider {
     all: unset;
@@ -150,67 +86,80 @@ button:hover {
 
 .label-ram-bar, .label-vol-bar, .label-brightness-bar {
     font-size: 23px;
-    font-weight: bold;
+    font-family: "Material Icons";
 
-    margin-top: 10px;
-    margin-left: -37px;
+    margin-top: 12px;
+    margin-left: -35px;
 }
 
 .label-ram-bar {
     margin-top: 25px;
+    margin-left: -62px;
+    font-size: 27px;
+    color: #fb4939;
+}
+
+.label-brightness-bar {
+    margin-left: -64px;
+    color: #B8BB26;
 }
 
 .label-vol-bar {
-    margin-left: -35px;
+    margin-left: -64px;
+    color: #FABD2F;
 }
 
-.ram-bar scale trough highlight, .vol-bar scale trough highlight, .brightness-bar scale trough highlight {
+.ram-bar scale trough highlight {
     all: unset;
-    background-image: linear-gradient(to right, #84A0C6, #95c4ce);
+    background-image: linear-gradient(to right, #fb4939, #EA6962);
 	color: #000000;
 	border-radius: 10px;
 }
 
+.brightness-bar scale trough highlight {
+    all: unset;
+    background-image: linear-gradient(to right, #B8BB26, #A9B665);
+    color: #000000;
+    border-radius: 10px;
+
+}
+
+.vol-bar scale trough highlight {
+    all: unset;
+    background-image: linear-gradient(to right, #FABD2F, #FFC745);
+    color: #000000;
+    border-radius: 10px;
+
+}
+
 .ram-bar scale trough {
 	all: unset;
-	background-color: #191C2A;
+	background-color: #32302f;
 	border-radius: 50px;
 
 	min-height: 5px;
     min-width: 150px;
 
-    margin: 23px 45px 0px -50px;
+    margin: 25px 40px 0px -65px;
 }
 
 .vol-bar scale trough, .brightness-bar scale trough {
 	all: unset;
-	background-color: #191C2A;
+	background-color: #32302f;
 	border-radius: 50px;
 
 	min-height: 5px;
     min-width: 150px;
 
-    margin: 8px 45px 0px -50px;
+    margin: 10px 40px 0px -65px;
 }
 
 .powermenu-btn button {
     font-family: "Material Icons";
-    font-size: 50px;
+    font-size: 30px;
 
     margin: 23px;
     margin-left: 7px;
     margin-right: 7px;
     padding: 0px 15px 0px 15px;
-}
-
-.shutdown-btn {
-    color: #E27878;
-}
-
-.lock-btn {
-    color: #EBCB8B;
-}
-
-.logout-btn {
-    color: #A093C7;
 }
