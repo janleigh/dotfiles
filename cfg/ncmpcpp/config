@@ -1,0 +1,34 @@
+[mpd]
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "~/Music"
+
+[global]
+colors_enabled = "yes"
+
+enable_window_title = "yes"
+main_window_color = "default"
+
+user_interface = "alternative"
+
+[header]
+header_visibility = "no"
+header_window_color = "default"
+state_line_color = "black"
+
+[statusbar]
+progressbar_look = "─╼ "
+progressbar_color = "black"
+statusbar_visibility = "no"
+statusbar_color = "blue"
+song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
+
+[library]
+song_library_format = "{{%a - %t}|{%f}}{$R%l}"
+empty_tag_color = "black"
+
+[playlist]
+playlist_display_mode = "classic"
+song_list_format = "{{%a - %t}|{%f}}{$R%l}"
+now_playing_prefix = "$b$2"
+now_playing_suffix = "$/b$9"
