@@ -15,28 +15,7 @@
 <!--
     Got lazy using tags lol.
  -->
-
-### ❖ Dependencies
-
-   This are all optional but you can install if you want to replicate my desktop or something.
-
-   * bspwm
-   * sxhkd
-   * rofi
-   * polybar
-   * neovim-nightly
-   * alacritty
-   * dunst
-   * picom
-   * brightnessctl
-   * playerctl
-   * dunst
-   * hsetroot
-   * maim
-   * viewnior
-   * jq
-   * xclip
-        
+       
 ### ❖ Installation
 
    First, clone the repo.
@@ -58,35 +37,39 @@
 
    I only listed the important shortcuts. There's still more but have fun discovering it.
 
-   ```
-   * Super + C                ~> Kill focused window
-   * Super + Space            ~> Float the focused window
-   * Super + Alt + T          ~> Tile the floating focused window
+   |          Keybind          |         Description         |
+   | ------------------------- | --------------------------- |
+   | `Super + C`               | Kill focused window         |   
+   | `Super + Space`           | Float the focused window    |
+   | `Super + Alt + T`         | Tile the floating window    |
+   |                           |                             |
+   | `Super + F`               | Focus next window           |
+   | `Super + Shift + F`       | Focus previous window       |
+   |                           |                             |
+   | `Super + {1-8}`           | Move to workspace #         |
+   | `Super + Shift + {1-8}`   | Move window to workspace #  |
+   |                           |                             |
+   | `Super + D`               | Open rofi menu              |
+   | `Super + P`               | Open eww dashboard          |
+   | `Super + Shift + P`       | Close eww dashboard         |
+   |                           |                             | 
+   | `Super + Enter`           | Open an terminal instance   |
+   | `Super + Shift + Alt + R` | Restart bspwm               |
 
-   * Super + F             
-     Super + Shift + F        ~> Focus next/previous window
+### ❖ Dependencies
 
-   * Super + Left             ~> Move window leftwards 
-   * Super + Right            ~> Move window rightwards
-   * Super + Up               ~> Move window upwards
-   * Super + Down             ~> Move window downwards
+   This are all optional but you can install if you want to replicate my desktop or something.
 
-   * Super + {1-8}            ~> Move to workspace #
-   * Super + Shift + {1-8}    ~> Move window to workspace #
-
-   * XF86AudioRaiseVolume     ~> Raise volume by 5%
-   * XF86AudioLowerVolume     ~> Lower volume by 5%
-   * XF86MonBrightnessUp      ~> Raise brightness by 5%
-   * XF86MonBrightnessDown    ~> Lower brightness by 5%
-
-   * Super + D                ~> Open application menu
-
-   * Super + P                ~> Open dashboard
-   * Super + Shift + P        ~> Close dashboard
-
-   * Super + Shift + Alt + R  ~> Restart bspwm
-   ```
-
+   * bspwm, sxhkd and bsp-layout
+   * rofi
+   * polybar
+   * neovim-nightly
+   * alacritty
+   * dunst
+   * picom
+   * brightnessctl and playerctl
+   * maim, jq, xclip and viewnior
+ 
 ### ❖ Notes
 
    * Install NeoVim plugins
@@ -96,4 +79,4 @@
    
    Have fun reading this neofetch.
    
-   ![img](https://img.kizu.cf/u/zQpOoZi.png)
+   ![img](https://img.kizu.cf/u/92dlr89.png)
