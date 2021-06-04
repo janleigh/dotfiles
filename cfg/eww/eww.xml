@@ -70,7 +70,7 @@
 
     <windows>
         <window name="triangle">
-            <geometry x="1291px" y="15px" width="70px" height="70px"/>
+            <geometry x="1292px" y="15px" width="70px" height="70px"/>
             <widget>
                 <triangle/>
             </widget>

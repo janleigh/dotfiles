@@ -83,7 +83,7 @@ mainbox {
 	border-color:					@bg;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
-    padding:                        1%;
+    padding:                        10px;
 }
 
 element {
