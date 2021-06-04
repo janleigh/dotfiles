@@ -10,8 +10,7 @@
 
 configuration {
     show-icons:                     true;
-	icon-theme: 					"Iceburg";
-    display-drun: 					"";
+    display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
 	hide-scrollbar: 				true;
@@ -25,43 +24,45 @@ configuration {
 
     background-color:               @bg;
     text-color:                     @fg;
+    alt-bg:                         #282828;
 }
 
 window {    
 	width:							40%;
+    border-radius:                  10px;
 }
 
 prompt {
     enabled: 						true;
 	padding: 						0.30% 1% 0% -0.5%;
     margin:                         0 0 0 0;
-	background-color: 				@bg;
+	background-color: 				#282828;
 	text-color: 					@fg;
 	font:							"CaskaydiaCove Nerd Font 12";
 }
 
 entry {
-    background-color:               @bg;
+    background-color:               @alt-bg;
     text-color:                     @fg;
     placeholder-color:              @fg;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "Type to search";
-    padding:                        0.10% 0% 0% 0%;
-    margin:                         0.6% 0 0 0;
+    placeholder:                    "Type to search...";
+    padding:                        0% 0% 0% 0%;
+    margin:                         0.3% 0 0 0;
     blink:                          true;
 }
 
 inputbar {
 	children: 						[ prompt, entry ];
-    background-color:               @bg;
+    background-color:               @alt-bg;
     text-color:                     @bg;
     expand:                         false;
 	border:							0% 0% 0% 0%;
-    border-radius:                  0px;
+    border-radius:                  10px;
 	border-color:					@ac;
     margin:                         0% 0% 0% 0%;
-    padding:                        1.5%;
+    padding:                        1%;
 }
 
 listview {
@@ -108,4 +109,5 @@ element-text {
 element selected {
     background-color:               @ac;
     text-color:                     @bg;
+    border-radius:                  10px;
 }
