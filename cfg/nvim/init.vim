@@ -148,7 +148,8 @@ nmap <C-n> :NvimTreeToggle<CR>
 nmap <F6> :NvimTreeRefresh<CR>
 
 " nvim-bufferline.lua
-nmap <S-n> :BufferLineCycleNext<CR>
+nmap <TAB> :BufferLineCyclePrev<CR>
+nmap <S-TAB> :BufferLineCycleNext<CR>
 
 " Telescope
 nmap <F7> :Telescope find_files<CR>
@@ -172,6 +173,9 @@ require('bufferline').setup{
         },
         modified_selected = {
             guibg = "#282828"
+        },
+        indicator_selected = {
+            guifg = "#1d2021"
         }
     }
 }
@@ -208,7 +212,7 @@ gls.left[1] = {
         provider = function()
             return "▋"
         end,
-        highlight = { colors.cyan, colors.bg }
+        highlight = { colors.cyan, colors.bgAlt }
     }
 }
 
@@ -217,19 +221,25 @@ gls.left[2] = {
         provider = function()
 
             local alias = {
-                n = '  NORMAL',
-                i = '  INSERT',
-                c = '  COMMAND',
-                V = '  VISUAL',
-                [''] = '  VISUAL',
-                v = '  VISUAL',
-                R = '  REPLACE',
+                n = 'NORMAL',
+                i = 'INSERT',
+                c = 'COMMAND',
+                V = 'VISUAL',
+                [''] = 'VISUAL',
+                v = 'VISUAL',
+                R = 'REPLACE',
             }
 
-            return alias[vim.fn.mode()]
+            local mode = alias[vim.fn.mode()]
+
+            if mode == nil then
+                return "  TERM "
+            else
+                return "  " .. mode .. " "
+            end
 
         end,
-        separator = " ",
+        separator = "",
         separator_highlight = { colors.bgAlt, colors.bgAlt },
         highlight = { colors.fg, colors.bgAlt }
     }
@@ -298,12 +308,20 @@ gls.right[6] = {
 }
 
 gls.right[7] = {
+    LineColumn = {
+        provider = "LineColumn",
+        condition = buffer_not_empty,
+        separator = " ",
+        separator_highlight = { colors.bg, colors.bg },
+        highlight = { colors.fg, colors.bg }
+    }
+}
+
+gls.right[8] = {
     EndBorder = {
         provider = function()
             return "▋"
         end,
-        separator = " ",
-        separator_highlight = { colors.bgAlt, colors.bgAlt },
         highlight = { colors.cyan, colors.bg }
     }
 }
