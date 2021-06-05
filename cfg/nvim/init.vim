@@ -359,6 +359,7 @@ EOS
 
 " colorscheme
 highlight LineNr guibg=#1d2021
+highlight SignColumn guibg=#1d2021
 
 " coc.nvim
 highlight CocErrorSign guifg=#EA6962
@@ -374,5 +375,11 @@ highlight BufferLineFill guibg=NONE
 highlight NvimTreeFileDirty guifg=#EA6962
 highlight NvimTreeGitDirty guifg=#EA6962
 highlight NvimTreeRootFolder guifg=#7DAEA3
+
+" gitsigns
+highlight GitSignsAdd guibg=#1d2021 guifg=#A9B665
+highlight GitSignsChange guibg=#1d2021 guifg=#7DAEA3
+highlight GitSignsChangeDelete guibg=#1d2021 guifg=#EA6962
+highlight GitSignsDelete guibg=#1d2021 guifg=#EA6962
 
 highlight StatusLineNC gui=underline guibg=NONE guifg=#282828
