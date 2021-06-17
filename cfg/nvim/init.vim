@@ -77,7 +77,6 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
 " Lua
 Plug 'tjdevries/nlua.nvim'
-Plug 'euclidianAce/BetterLua.vim'
 " Rust
 Plug 'rust-lang/rust.vim'
 
@@ -105,11 +104,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'voldikss/vim-floaterm'
 
-" ;)
-Plug 'willelz/badapple.nvim'
-
 " Colors
-Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 
 call plug#end()
@@ -164,6 +159,7 @@ require('gitsigns').setup{}
 require('bufferline').setup{
     options = {
         max_name_length = 14,
+        separator_style = "thin"
     },
     highlights = {
         -- Focused Window
@@ -174,9 +170,7 @@ require('bufferline').setup{
         modified_selected = {
             guibg = "#282828"
         },
-        indicator_selected = {
-            guifg = "#1d2021"
-        }
+
     }
 }
 
