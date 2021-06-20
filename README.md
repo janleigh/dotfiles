@@ -79,4 +79,4 @@
    
    Have fun reading this neofetch.
    
-   ![img](https://img.kizu.cf/u/92dlr89.png)
+   ![img](https://kizu.shx.gg/hrvGSg.png)
