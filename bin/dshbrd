@@ -1,20 +1,29 @@
 #!/bin/bash
 # Opens eww dashboard
 
-if [ ! -d /tmp/i3 ]; then
-    mkdir -p /tmp/i3
+LOCK_FILE="$HOME/.cache/eww.lock"
+EWW_BIN="$HOME/.local/bin/eww"
+
+run() {
+    ${EWW_BIN} open-many \
+        triangle \
+        eww-window \
+        date \
+        layout-manager \
+        system-manager
+}
+
+# Run eww daemon if not running
+if [[ ! `pidof eww` ]]; then
+    ${EWW_BIN} daemon
+    sleep 1
 fi
 
-if [ -e /tmp/i3/eww.lock ]; then
-    $HOME/.local/bin/eww close-all; rm -rf /tmp/i3/eww.lock
+# Open widgets
+if [[ ! -f "$LOCK_FILE" ]]; then
+    touch "$LOCK_FILE"
+    run
 else
-    $HOME/.local/bin/eww daemon; sleep 0.4
-
-    $HOME/.local/bin/eww close-all
-    $HOME/.local/bin/eww open-many triangle eww-window date layout-manager system-manager
-
-    echo "test" | tee /tmp/i3/eww.lock
-
-    # i3-msg gaps right all set 343
-    # bspc config right_padding 340
+    ${EWW_BIN} close-all
+    rm "$LOCK_FILE"
 fi

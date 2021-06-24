@@ -49,9 +49,8 @@
    | `Super + {1-8}`           | Move to workspace #         |
    | `Super + Shift + {1-8}`   | Move window to workspace #  |
    |                           |                             |
-   | `Super + D`               | Open rofi menu              |
-   | `Super + P`               | Open eww dashboard          |
-   | `Super + Shift + P`       | Close eww dashboard         |
+   | `Super + D`               | Open application menu       |
+   | `Super + P`               | Open dashboard              |
    |                           |                             | 
    | `Super + Enter`           | Open an terminal instance   |
    | `Super + Shift + Alt + R` | Restart bspwm               |

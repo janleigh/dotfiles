@@ -21,8 +21,8 @@ super + c
     bspc node -c
 
 # Move to or send window to workspace #
-super + {_,shift + }{1-7}
-	bspc {desktop -f,node -d} '^{1-7}'
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
 
 # Resize window
 super + shift + {h,j,k,l}
@@ -61,8 +61,8 @@ super + d
     sh $HOME/.local/bin/appmnu
 
 # Toggle eww dashboard
-super + {_,shift + }p
-    sh $HOME/.local/bin/dshbrd {open,close}
+super + p
+    sh $HOME/.local/bin/dshbrd
 
 # Screenshot
 # Save to local storage
