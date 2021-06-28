@@ -158,6 +158,7 @@ require('gitsigns').setup{}
 
 require('bufferline').setup{
     options = {
+        indicator_icon = "▋",
         max_name_length = 14,
         separator_style = "thin"
     },
@@ -170,7 +171,6 @@ require('bufferline').setup{
         modified_selected = {
             guibg = "#282828"
         },
-
     }
 }
 
@@ -358,6 +358,7 @@ highlight SignColumn guibg=#1d2021
 " coc.nvim
 highlight CocErrorSign guifg=#EA6962
 highlight CocWarningSign guifg=#FFC745
+highlight CocInfoSign guifg=#7DAEA3
 
 " floaterm
 highlight FloatermBorder guibg=#1d2021
