@@ -4,6 +4,14 @@
     <code>bin</code> for scripts,
     <code>cfg</code> for configs,
     <code>etc</code> for other stuff
+    <p></p>
+    <a href="https://github.com/TheRealKizu/dotfiles/stargazers">
+        <img src="https://img.shields.io/github/stars/TheRealKizu/dotfiles?color=%23a9b665&labelColor=%231d2021&style=flat-square">
+    </a>
+    <a href="https://github.com/TheRealKizu/dotfiles/network/members/">
+        <img src="https://img.shields.io/github/forks/TheRealKizu/dotfiles?color=%237daea3&labelColor=%231d2021&style=flat-square">
+    </a>
+    <img src="https://img.shields.io/github/repo-size/TheRealKizu/dotfiles?color=%23ea6962&labelColor=%231d2021&style=flat-square">
 </div>
 
 <p/>
@@ -15,7 +23,7 @@
 <!--
     Got lazy using tags lol.
  -->
-       
+
 ### ❖ Installation
 
    First, clone the repo.
@@ -67,15 +75,15 @@
    * dunst
    * picom
    * brightnessctl and playerctl
-   * maim, jq, xclip and viewnior
- 
+   * maim, jq, xclip, imagemagick and viewnior
+
 ### ❖ Notes
 
    * Install NeoVim plugins
    * Install [GTK and Icon theme](https://github.com/sainnhe/gruvbox-material-gtk)
 
 ### ❖ System Info
-   
+
    Have fun reading this neofetch.
-   
+
    ![img](https://kizu.shx.gg/hrvGSg.png)
