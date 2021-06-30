@@ -2,14 +2,24 @@
 mpd_host = "localhost"
 mpd_port = "6600"
 mpd_music_dir = "~/Music"
+mpd_crossfade_time = "2"
 
 [global]
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = "~/.config/ncmpcpp/lyrics"
+
 colors_enabled = "yes"
 
 enable_window_title = "yes"
 main_window_color = "default"
 
 user_interface = "alternative"
+startup_screen = "visualizer"
+
+alternative_header_first_line_format = "$5kizu's $4epic $7music player"
+alternative_header_second_line_format = "Now Playing: $4%t $9by $5%a"
+
+follow_now_playing_lyrics = "yes"
 
 [header]
 header_visibility = "no"
@@ -19,8 +29,8 @@ state_line_color = "black"
 [statusbar]
 progressbar_look = "─╼ "
 progressbar_color = "black"
-statusbar_visibility = "no"
-statusbar_color = "blue"
+statusbar_visibility = "yes"
+statusbar_color = "green"
 song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
 
 [library]
@@ -30,5 +40,12 @@ empty_tag_color = "black"
 [playlist]
 playlist_display_mode = "classic"
 song_list_format = "{{%a - %t}|{%f}}{$R%l}"
-now_playing_prefix = "$b$2"
+now_playing_prefix = "$b$4"
 now_playing_suffix = "$/b$9"
+
+[browser]
+browser_sort_mode = "format"
+
+[visualizer]
+visualizer_look = "▮▮"
+visualizer_type = "ellipse"
