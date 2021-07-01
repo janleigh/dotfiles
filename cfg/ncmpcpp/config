@@ -17,9 +17,11 @@ user_interface = "alternative"
 startup_screen = "visualizer"
 
 alternative_header_first_line_format = "$5kizu's $4epic $7music player"
-alternative_header_second_line_format = "Now Playing: $4%t $9by $5%a"
+alternative_header_second_line_format = "$9Now Playing: $4%t $9by $5%a"
 
 follow_now_playing_lyrics = "yes"
+
+execute_on_song_change="~/Documents/Workspace/Miscellaneous/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
 
 [header]
 header_visibility = "no"
@@ -27,11 +29,13 @@ header_window_color = "default"
 state_line_color = "black"
 
 [statusbar]
-progressbar_look = "─╼ "
+# progressbar_look = "─╼ "
+progressbar_look = "██▒"
 progressbar_color = "black"
-statusbar_visibility = "yes"
-statusbar_color = "green"
+progressbar_elapsed_color = "green"
+statusbar_visibility = "no"
 song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
+connected_message_on_startup = no
 
 [library]
 song_library_format = "{{%a - %t}|{%f}}{$R%l}"
@@ -39,8 +43,8 @@ empty_tag_color = "black"
 
 [playlist]
 playlist_display_mode = "classic"
-song_list_format = "{{%a - %t}|{%f}}{$R%l}"
-now_playing_prefix = "$b$4"
+song_list_format = "{{%a - %t$/r$R}|{%f}}"
+now_playing_prefix = "$b$6» $9"
 now_playing_suffix = "$/b$9"
 
 [browser]

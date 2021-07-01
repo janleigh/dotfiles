@@ -6,11 +6,14 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # #                                AUTOSTART APPS                              #
 # ##############################################################################
 
+mpd $HOME/.config/mpd/mpd.conf
 dunst --config $HOME/.config/dunst/dunstrc &
-eww daemon &
 picom --config $HOME/.config/picom/picom.conf &
+
 hsetroot -fill "$HOME/Pictures/Wallpapers/gruv.png"
 sh $HOME/.config/polybar/launch.sh
+
+xset r rate 250 40
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
@@ -18,27 +21,44 @@ sh $HOME/.config/polybar/launch.sh
 
 bspc monitor -d I II III IV V VI VII VIII
 
-bspc config border_width         3
+bspc config border_width         20
 bspc config window_gap           25
 
 bspc config top_padding          37
 bspc config bottom_padding       0
 
-bspc config normal_border_color  "#282828"
-bspc config active_border_color  "#282828"
-bspc config focused_border_color "#282828"
+# bspc config normal_border_color  "#282828"
+# bspc config active_border_color  "#282828"
+# bspc config focused_border_color "#282828"
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.62
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+outer='0x1d2021'   # outer
+inner1='0x282828'  # focused
+inner2='0x282828'  # normal
+
+targets() {
+ 	case $1 in
+		focused) bspc query -N -n .local.focused.\!fullscreen;;
+		normal)  bspc query -N -n .local.\!focused.\!fullscreen
+	esac | grep -iv "$v"
+}
+
+draw() { chwb2 -I "$inner" -O "$outer" -i "4" -o "9" $* |:; }
+
+initial draw, and then subscribe to events
+{ echo; bspc subscribe node_geometry node_focus; } |
+ 	while read -r _; do
+		[ "$v" ] || v='abcdefg'
+		inner=$inner1 draw "$(targets focused)"
+		inner=$inner2 draw "$(targets normal)"
+    done
 
 # ##############################################################################
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-bpsc rule -a vivaldi-stable desktop=^1
+bpsc rule -a Vivaldi-stable desktop=^1
 bspc rule -a discord desktop=^2
-bspc rule -a Code desktop=^3
-bspc rule -a Thunar desktop=^4
-bspc rule -a Spotify desktop=^5
-

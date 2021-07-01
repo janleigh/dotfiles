@@ -16,7 +16,7 @@
 
 <p/>
 
-![img](https://media.discordapp.net/attachments/635625917623828520/849960859627421726/Jun03-18-40.png?width=780&height=439)
+![img](https://cdn.kizu.cf/u/bV9ffkk.png)
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
