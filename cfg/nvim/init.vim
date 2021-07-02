@@ -104,6 +104,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'voldikss/vim-floaterm'
 
+Plug 'alec-gibson/nvim-tetris'
+
 " Colors
 Plug 'sainnhe/gruvbox-material'
 
@@ -158,9 +160,8 @@ require('gitsigns').setup{}
 
 require('bufferline').setup{
     options = {
-        indicator_icon = "▋",
-        max_name_length = 14,
-        separator_style = "thin"
+        indicator_icon = "█",
+        max_name_length = 16,
     },
     highlights = {
         -- Focused Window
@@ -170,7 +171,7 @@ require('bufferline').setup{
         },
         modified_selected = {
             guibg = "#282828"
-        },
+        }
     }
 }
 
@@ -204,7 +205,7 @@ gl.short_line_list = { "NvimTree" }
 gls.left[1] = {
     StartBorder = {
         provider = function()
-            return "▋"
+            return "█"
         end,
         highlight = { colors.cyan, colors.bgAlt }
     }
@@ -314,7 +315,7 @@ gls.right[7] = {
 gls.right[8] = {
     EndBorder = {
         provider = function()
-            return "▋"
+            return "█"
         end,
         highlight = { colors.cyan, colors.bg }
     }
@@ -365,6 +366,8 @@ highlight FloatermBorder guibg=#1d2021
 
 " bufferline
 highlight BufferLineFill guibg=NONE
+highlight BufferLineSeparator guibg=NONE
+highlight BufferLineCloseButtonSelected guibg=#282828
 
 " nvim-tree
 highlight NvimTreeFileDirty guifg=#EA6962
