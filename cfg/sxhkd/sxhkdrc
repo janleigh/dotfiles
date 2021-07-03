@@ -9,8 +9,8 @@ super + {_,shift + }f
     bspc node -f {next,prev}.local.!hidden.window
 
 # Fullscreen window with gaps
-alt + {_,shift + }f
-    sh $HOME/.local/bin/tglbar {hide,show}
+alt + f
+    sh $HOME/.local/bin/tglbar
 
 # Move the focused window
 super + {Left,Down,Up,Right}
