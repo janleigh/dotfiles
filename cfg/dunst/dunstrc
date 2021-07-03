@@ -101,7 +101,7 @@
 
     # Draw a line of 'separatpr_height' pixel height between two notifications.
     # Set to 0 to disable
-    separator_height = 2
+    separator_height = 3
 
     # Padding between text and separator
     padding = 8
@@ -115,7 +115,7 @@
     #  * foreground: use the same color as the foreground
     #  * frame: use the same color as the frame.
     #  * anything else will be interpreted as a X color
-    separator_color = #13141d
+    separator_color = frame
 
     # Print a notification on startup
     # This is mainly for error detection, since dbus (re-)starts dunst
