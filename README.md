@@ -16,7 +16,7 @@
 
 <p/>
 
-![img](https://cdn.kizu.cf/u/Y9hTMnB.png)
+![img](https://cdn.kizu.cf/u/Lqo9Ebq.png)
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
