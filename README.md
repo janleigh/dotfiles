@@ -1,5 +1,6 @@
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
+<!-- INFO -->
 <div align="center">
     <code>bin</code> for scripts,
     <code>cfg</code> for configs,
@@ -16,7 +17,11 @@
 
 <p/>
 
-![img](https://cdn.kizu.cf/u/Lqo9Ebq.png)
+<div align="center">
+    <img src="https://cdn.kizu.cf/u/WTcxwnD.png">
+    <img src="https://cdn.kizu.cf/u/TLrHuG3.png">
+    <img src="https://cdn.kizu.cf/u/ZWtiLmg.png">
+</div>
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
