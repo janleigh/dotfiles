@@ -21,7 +21,7 @@ downloadDependencies() {
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
             read -r -p "Would you like to install yay? [Y/n]: " yay
-            sleep 1.5
+            sleep 1.0
 
             case $yay in
                 [yY][*])
@@ -44,6 +44,25 @@ downloadDependencies() {
 
         sleep 1
     fi
+}
+
+installOptional() {
+    clear
+
+    read -r -p "[OPT] Would you like to install double borders? [y/N]: " opt
+    sleep 1.0
+
+    case $opt in
+        [yY])
+            git clone https://github.com/wmutils/opt.git $HOME/.setup-scripto
+            (cd $HOME/.setup-scripto && make && sudo make install)
+            ;;
+        [nN][*])
+            echo "[*] Okay. Will not install double border."
+            ;;
+    esac
+
+    sleep 1
 }
 
 copyFiles() {
@@ -209,7 +228,7 @@ success() {
     rm -rf $HOME/.setup-scripto
 
     whiptail --title "$title" \
-        --msgbox "Setup success. Please restart BSPWM if you are on an active session. Check notes on the repository's README." 20 50
+        --msgbox "Setup success. Please restart BSPWM if you are on an active session." 10 60
 }
 
 echo "[*] Starting setup script..."
@@ -220,6 +239,9 @@ welcome || fuckUser
 
 # Download dependencies
 downloadDependencies
+
+# Install optional shit
+installOptional
 
 # Copy files from the repo to $HOME/.config
 copyFiles
