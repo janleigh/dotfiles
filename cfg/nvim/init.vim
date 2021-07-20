@@ -21,9 +21,6 @@ set mouse=a
 filetype plugin on
 filetype indent on
 
-" Enable ruler
-set ruler
-
 " Enable numbering of lines
 set number 
 
@@ -60,6 +57,9 @@ set backspace=eol,start,indent
 
 " Turn off second status bar
 set noshowmode
+
+" Turn off ruler (for clear dashboard)
+set noruler
 
 " Change update time for coc.nvim
 set updatetime=300
