@@ -129,7 +129,7 @@ let g:nvim_tree_ignore = [ ".cache", ".git", "node_modules", "data" ]
 let g:dashboard_disable_statusline = 1
 let g:dashboard_default_executive = "telescope"
 
-nmap <Leader>n :NvimTreeToggle<CR>
+nmap <Leader>fn :DashboardNewFile<CR>
 nmap <Leader>q :q!<CR>
 
 let g:dashboard_custom_header = [
@@ -162,10 +162,6 @@ let g:dashboard_custom_section = {
         \ 'command': "DashboardNewFile"
     \ },
     \ 'find_file': {
-        \ 'description': [ "  Open NvimTree               SPC n" ],
-        \ 'command': "NvimTreeToggle"
-    \ },
-    \ 'find_history': {
         \ 'description': [ "  Quit Neovim                 SPC q" ],
         \ 'command': "q!"
     \ }
