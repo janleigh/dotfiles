@@ -84,8 +84,10 @@
 
 ### ❖ Notes
 
-   * Install NeoVim plugins
-   * Install [GTK and Icon theme](https://github.com/sainnhe/gruvbox-material-gtk)
+   ~~If I forgot something, please let me know.~~ 
+
+   * Run `:PlugInstall` to install Neovim plugins after opening neovim.
+   * Install this [GTK and Icon theme](https://github.com/sainnhe/gruvbox-material-gtk)
 
 ### ❖ System Info
 
