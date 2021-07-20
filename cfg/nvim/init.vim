@@ -8,6 +8,9 @@ set encoding=utf8
 " Set cursor
 set guicursor=
 
+" Set leaderkey
+let mapleader=","
+
 " Fix colorscheme
 set termguicolors
 
@@ -53,7 +56,7 @@ set incsearch
 set backspace=eol,start,indent
 
 " Turn off backups (cause I hate em)
-set nobackup
+" set nobackup
 
 " Turn off second status bar
 set noshowmode
@@ -95,17 +98,17 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 " Miscellaneous Vim Plugins
 Plug 'jiangmiao/auto-pairs'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'karb94/neoscroll.nvim'
+
+Plug 'glepnir/dashboard-nvim'
 
 Plug 'gko/vim-coloresque'
-
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ryanoasis/vim-devicons'
 
 Plug 'akinsho/nvim-bufferline.lua'
-Plug 'voldikss/vim-floaterm'
 
 Plug 'alec-gibson/nvim-tetris'
-
+Plug 'tweekmonster/startuptime.vim'
 " Colors
 Plug 'sainnhe/gruvbox-material'
 
@@ -118,13 +121,66 @@ colorscheme gruvbox-material
 " Set NvimTree
 let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_quit_on_open = 1
-let g:nvim_tree_auto_open = 1
+let g:nvim_tree_auto_open = 0
 let g:nvim_tree_git_hl = 1
 let g:nvim_tree_ignore = [ ".cache", ".git", "node_modules", "data" ]
+
+" Configure Dashboard
+let g:dashboard_disable_statusline = 1
+let g:dashboard_default_executive = "telescope"
+
+nmap <Leader>n :NvimTreeToggle<CR>
+nmap <Leader>q :q!<CR>
+
+let g:dashboard_custom_header = [
+    \ '',
+    \ '⡿⠋⠄⣀⣀⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣌⠻⣿⣿',
+    \ '⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠹⣿',
+    \ '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠹',
+    \ '⣿⣿⡟⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡛⢿⣿⣿⣿⣮⠛⣿⣿⣿⣿⣿⣿⡆',
+    \ '⡟⢻⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣣⠄⡀⢬⣭⣻⣷⡌⢿⣿⣿⣿⣿⣿',
+    \ '⠃⣸⡀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠈⣆⢹⣿⣿⣿⡈⢿⣿⣿⣿⣿',
+    \ '⠄⢻⡇⠄⢛⣛⣻⣿⣿⣿⣿⣿⣿⣿⣿⡆⠹⣿⣆⠸⣆⠙⠛⠛⠃⠘⣿⣿⣿⣿',
+    \ '⠄⠸⣡⠄⡈⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠁⣠⣉⣤⣴⣿⣿⠿⠿⠿⡇⢸⣿⣿⣿',
+    \ '⠄⡄⢿⣆⠰⡘⢿⣿⠿⢛⣉⣥⣴⣶⣿⣿⣿⣿⣻⠟⣉⣤⣶⣶⣾⣿⡄⣿⡿⢸',
+    \ '⠄⢰⠸⣿⠄⢳⣠⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣼⣿⣿⣿⣿⣿⣿⡇⢻⡇⢸',
+    \ '⢷⡈⢣⣡⣶⠿⠟⠛⠓⣚⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢸⠇⠘',
+    \ '⡀⣌⠄⠻⣧⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⢿⣿⣿⣿⣿⣿⡟⠘⠄⠄',
+    \ '⣷⡘⣷⡀⠘⣿⣿⣿⣿⣿⣿⣿⣿⡋⢀⣠⣤⣶⣶⣾⡆⣿⣿⣿⠟⠁⠄⠄⠄⠄',
+    \ '⣿⣷⡘⣿⡀⢻⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣿⣿⣿⣿⣷⡿⠟⠉⠄⠄⠄⠄⡄⢀',
+    \ '⣿⣿⣷⡈⢷⡀⠙⠛⠻⠿⠿⠿⠿⠿⠷⠾⠿⠟⣛⣋⣥⣶⣄⠄⢀⣄⠹⣦⢹⣿',
+    \ '',
+\ ]
+
+let g:dashboard_custom_section = {
+    \ 'book_marks': {
+        \ 'description': [ "  Find File                 SPC f f" ],
+        \ 'command': "Telescope find_files"
+    \ },
+    \ 'change_colorscheme': {
+        \ 'description': [ "洛 New File                  SPC f n" ],
+        \ 'command': "DashboardNewFile"
+    \ },
+    \ 'find_file': {
+        \ 'description': [ "  Open NvimTree               SPC n" ],
+        \ 'command': "NvimTreeToggle"
+    \ },
+    \ 'find_history': {
+        \ 'description': [ "  Quit Neovim                 SPC q" ],
+        \ 'command': "q!"
+    \ }
+\ }
+
+let g:dashboard_custom_footer = [
+    \ "Neovim v0.6.0"
+\ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "             KEYBINDS CONFIGURATION            "
 """""""""""""""""""""""""""""""""""""""""""""""""
+
+" ESC for turning off highlight searching
+nmap <Esc> :noh<CR>
 
 " Quick window switching
 nmap <C-h> <C-w>h
@@ -145,11 +201,23 @@ nmap <C-n> :NvimTreeToggle<CR>
 nmap <F6> :NvimTreeRefresh<CR>
 
 " nvim-bufferline.lua
-nmap <TAB> :BufferLineCyclePrev<CR>
 nmap <S-TAB> :BufferLineCycleNext<CR>
+nmap <C-c> :bd!<CR>
 
 " Telescope
-nmap <F7> :Telescope find_files<CR>
+nmap <Leader>ff :Telescope find_files<CR>
+nmap <Leader>gt :Telescope git_status<CR>
+
+" Use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "               LUA CONFIGURATION               "
@@ -161,7 +229,12 @@ require('gitsigns').setup{}
 require('bufferline').setup{
     options = {
         indicator_icon = "█",
-        max_name_length = 16,
+
+        buffer_close_icon = "",
+
+        max_name_length = 14,
+        max_prefix_length = 13,
+        tab_size = 20,
     },
     highlights = {
         -- Focused Window
@@ -170,7 +243,11 @@ require('bufferline').setup{
             gui = "bold"
         },
         modified_selected = {
+            guifg = "#A9B665",
             guibg = "#282828"
+        },
+        modified_visible = {
+            guifg = "#EA6962"
         }
     }
 }
@@ -322,7 +399,7 @@ gls.right[8] = {
 }
 
 -- Short Line
-
+--[[
 gls.short_line_left[1] = {
     Space = {
         provider = function()
@@ -345,7 +422,7 @@ gls.short_line_left[3] = {
         separator = " "
     }
 }
-
+]]--
 EOS
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -355,24 +432,33 @@ EOS
 " colorscheme
 highlight LineNr guibg=#1d2021
 highlight SignColumn guibg=#1d2021
+highlight EndOfBuffer guifg=#1d2021
 
 " coc.nvim
 highlight CocErrorSign guifg=#EA6962
 highlight CocWarningSign guifg=#FFC745
 highlight CocInfoSign guifg=#7DAEA3
 
-" floaterm
-highlight FloatermBorder guibg=#1d2021
+" dashboard
+highlight DashboardHeader guifg=#a89984
+highlight DashboardCenter guifg=#a89984
+highlight DashboardShortcut guifg=#a89984
+highlight DashboardFooter guifg=#a89984
 
 " bufferline
 highlight BufferLineFill guibg=NONE
-highlight BufferLineSeparator guibg=NONE
+highlight BufferLineSeparator guifg=bg guibg=NONE
 highlight BufferLineCloseButtonSelected guibg=#282828
 
 " nvim-tree
 highlight NvimTreeFileDirty guifg=#EA6962
 highlight NvimTreeGitDirty guifg=#EA6962
 highlight NvimTreeRootFolder guifg=#7DAEA3
+highlight NvimTreeVertSplit guifg=bg guibg=bg
+highlight NvimTreeStatusLine guifg=bg guibg=bg
+highlight NvimTreeStatusLineNC guibg=bg
+highlight NvimTreeEndOfBuffer guifg=#282828 guibg=#282828
+highlight NvimTreeNormal guibg=#282828
 
 " gitsigns
 highlight GitSignsAdd guibg=#1d2021 guifg=#A9B665
@@ -380,4 +466,4 @@ highlight GitSignsChange guibg=#1d2021 guifg=#7DAEA3
 highlight GitSignsChangeDelete guibg=#1d2021 guifg=#EA6962
 highlight GitSignsDelete guibg=#1d2021 guifg=#EA6962
 
-highlight StatusLineNC gui=underline guibg=NONE guifg=#282828
+highlight StatusLineNC gui=underline guibg=NONE guifg=NONE
