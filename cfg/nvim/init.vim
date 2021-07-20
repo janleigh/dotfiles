@@ -78,8 +78,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
-" Lua
-Plug 'tjdevries/nlua.nvim'
 " Rust
 Plug 'rust-lang/rust.vim'
 
@@ -94,6 +92,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
+
+Plug 'voldikss/vim-floaterm'
 
 " Miscellaneous Vim Plugins
 Plug 'jiangmiao/auto-pairs'
@@ -208,6 +208,13 @@ nmap <C-c> :bd!<CR>
 nmap <Leader>ff :Telescope find_files<CR>
 nmap <Leader>gt :Telescope git_status<CR>
 
+" Floaterm
+nmap <Leader>tn :FloatermNew --height=0.6 --width=0.4 --position=topright<CR>
+nmap <Leader>tf :FloatermKill!<CR>
+nmap <Leader>tt :FloatermToggle<CR>
+
+nmap <F10> :Tetris<CR> 
+
 " Use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -248,6 +255,16 @@ require('bufferline').setup{
         },
         modified_visible = {
             guifg = "#EA6962"
+        }
+    }
+}
+
+require('nvim-web-devicons').setup{
+    override = {
+        js = {
+            icon = "",
+            color = "#FFC745",
+            name = "js"
         }
     }
 }
@@ -455,8 +472,8 @@ highlight NvimTreeFileDirty guifg=#EA6962
 highlight NvimTreeGitDirty guifg=#EA6962
 highlight NvimTreeRootFolder guifg=#7DAEA3
 highlight NvimTreeVertSplit guifg=bg guibg=bg
-highlight NvimTreeStatusLine guifg=bg guibg=bg
-highlight NvimTreeStatusLineNC guibg=bg
+highlight NvimTreeStatusLine guifg=#282828 guibg=bg
+highlight NvimTreeStatusLineNC gui=underline guifg=#282828 guibg=bg
 highlight NvimTreeEndOfBuffer guifg=#282828 guibg=#282828
 highlight NvimTreeNormal guibg=#282828
 
@@ -466,4 +483,7 @@ highlight GitSignsChange guibg=#1d2021 guifg=#7DAEA3
 highlight GitSignsChangeDelete guibg=#1d2021 guifg=#EA6962
 highlight GitSignsDelete guibg=#1d2021 guifg=#EA6962
 
-highlight StatusLineNC gui=underline guibg=NONE guifg=NONE
+" floaterm
+highlight FloatermBorder guibg=#1d2021
+
+highlight StatusLineNC gui=underline guibg=NONE guifg=#282828
