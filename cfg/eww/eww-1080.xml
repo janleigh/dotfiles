@@ -1,0 +1,103 @@
+<eww>
+    <definitions>
+        <!--
+            THIS WAS MADE AFTER THE WIDGETS.
+            FOLLOWING THE ONE ON THE DOCUMENTATION WILL BREAK THE WHOLE CONFIG.
+        -->
+        <def name="triangle">
+            <box class="tr-text" orientation="h"> </box>
+        </def>
+        <def name="eww-window">
+            <box/>
+        </def>
+        <def name="date">
+            <box orientation="v" space-evenly="true">
+                <box orientation="h" class="time">
+                    <box class="hour">{{hour}}</box>
+                    <!-- <box class="semicolon">:</box> -->
+                    <box class="minute">{{minute}}</box>
+                </box>
+                <box class="day">{{day}}</box>
+            </box>
+        </def>
+        <def name="layout-manager">
+            <box class="layouts" orientation="h"> 
+                <box class="layout-btn" orientation="h" space-evenly="true">
+                    <button onclick="bsp-layout once even"> </button>
+                    <button onclick="bsp-layout once grid"> </button>
+                    <button onclick="bsp-layout once rtall"> </button>
+                    <button onclick="bsp-layout once monocle"> </button>
+                </box>
+            </box>
+        </def>
+        <def name="system-manager">
+            <box orientation="v" space-evenly="false">
+                <box class="ram-bar" orientation="h">
+                    <box class="label-ram-bar"> </box>
+                    <scale min="0" max="101" active="false" value="{{used_ram}}"></scale>
+                </box> 
+                <box class="vol-bar" orientation="h">
+                    <box class="label-vol-bar"> </box>
+                    <scale min="0" max="101" active="false" value="{{volume}}"></scale>
+                </box>
+                <box class="brightness-bar" orientation="h">
+                    <box class="label-brightness-bar"> </box>
+                    <scale min="0" max="101" active="false" value="{{brightness}}"></scale>
+                </box>
+                <box class="powermenu" orientation="h">
+                    <box class="powermenu-btn" halign="center" space-evenly="false">
+                        <button class="lock-btn" onclick="betterlockscreen -l dimblur"></button>
+                        <button class="logout-btn" onclick="bspc quit"></button>
+                        <button class="reboot-btn" onclick="systemctl reboot"></button>
+                        <button class="shutdown-btn" onclick="systemctl poweroff"></button> 
+                    </box>
+                </box>
+            </box>
+        </def>
+    </definitions>
+
+    <variables>
+        <!-- DATE VARS -->
+        <script-var name="minute" interval="10s">date "+%M"</script-var>
+        <script-var name="hour" interval="5m">date "+%H"</script-var>
+        <script-var name="day" interval="12h">~/.config/eww/scripts/getDay</script-var>
+
+        <!-- SYSTEM INFO VAR -->
+        <script-var name="used_ram" interval="2s">~/.config/eww/scripts/getUsedRam</script-var>
+        <script-var name="volume" interval="1s">~/.config/eww/scripts/getVolume</script-var>
+        <script-var name="brightness" interval="1s">~/.config/eww/scripts/getBrightness</script-var>
+    </variables>
+
+    <windows>
+        <window name="triangle">
+            <geometry x="1848px" y="15px" width="70px" height="70px"/>
+            <widget>
+                <triangle/>
+            </widget>
+        </window>
+        <window name="eww-window">
+            <geometry x="1575px" y="53px" width="330px" height="445px"/>
+            <widget>
+                <eww-window/>
+            </widget>
+        </window>
+        <window name="date">
+            <geometry x="1585px" y="75px" width="310px" height="100px"/>
+            <widget>
+                <date/>
+            </widget>
+        </window>
+        <window name="layout-manager">
+            <geometry x="1585px" y="220px" width="310px" height="20px"/>
+            <widget>
+                <layout-manager/>
+            </widget>
+        </window>
+        <window name="system-manager">
+            <geometry x="1585px" y="270px" width="310px" height="160px"/>
+            <widget>
+                <system-manager/>
+            </widget>
+        </window>
+    </windows>
+</eww>
