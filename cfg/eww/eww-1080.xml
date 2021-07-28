@@ -76,7 +76,7 @@
             </widget>
         </window>
         <window name="eww-window">
-            <geometry x="1575px" y="54px" width="330px" height="445px"/>
+            <geometry x="1575px" y="53px" width="330px" height="445px"/>
             <widget>
                 <eww-window/>
             </widget>
