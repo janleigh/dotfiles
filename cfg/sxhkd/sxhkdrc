@@ -32,7 +32,7 @@ super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # Set window state
-super + {alt + t,shift + t,space,f}
+super + {alt + t,shift + t,space,alt + f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # Add focused window to a tabbed instance
@@ -54,7 +54,7 @@ super + ctrl + space
 
 # Start alacritty
 super + Return
-    alacritty
+    tabbed alacritty -t "term" --embed
 
 # Open application menu
 super + d
