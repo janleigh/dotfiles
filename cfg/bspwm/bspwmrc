@@ -1,16 +1,26 @@
-#! /bin/sh
+#!/bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
+
+
+# ##############################################################################
+# #                                  FUNCTIONS                                 # 
+# ##############################################################################
+
+# Credits to 6gk/polka
+rule() { bspc rule -a "$@" & }
+config() { bspc config "$@" & }
 
 # ##############################################################################
 # #                                AUTOSTART APPS                              #
 # ##############################################################################
 
 mpd $HOME/.config/mpd/mpd.conf
+$HOME/.local/bin/mpd-discord-rpc &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
 
-hsetroot -fill "$HOME/Pictures/Wallpapers/gruv.png"
+hsetroot -fill "$HOME/Pictures/Wallpapers/Gruvbox/gruvbox_waterfall_ig.png"
 sh $HOME/.config/polybar/launch.sh
 
 xset r rate 250 40
@@ -19,9 +29,9 @@ xset r rate 250 40
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-bpsc rule -a Vivaldi-stable desktop=^1
-bspc rule -a vivaldi-stable desktop=^1
-bspc rule -a discord desktop=^2
+rule Vivaldi-stable                 desktop=^1
+rule discord                        desktop=^2
+rule code                           desktop=^3
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
@@ -29,19 +39,15 @@ bspc rule -a discord desktop=^2
 
 bspc monitor -d I II III IV V VI VII VIII
 
-bspc config border_width         20
-bspc config window_gap           25
+config border_width                 20
+config window_gap                   25
 
-bspc config top_padding          37
-bspc config bottom_padding       0
+config top_padding                  35
+config bottom_padding               0
 
-# bspc config normal_border_color  "#282828"
-# bspc config active_border_color  "#282828"
-# bspc config focused_border_color "#282828"
-
-bspc config split_ratio          0.62
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+config split_ratio                  0.62
+config borderless_monocle           true
+config gapless_monocle              true
 
 outer='0x1d2021'   # outer
 inner1='0x282828'  # focused
