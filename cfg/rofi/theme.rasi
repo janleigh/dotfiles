@@ -34,7 +34,7 @@ window {
 
 prompt {
     enabled: 						true;
-	padding: 						0.30% 1% 0% -0.5%;
+	padding: 						0.15% 1% 0% -0.5%;
     margin:                         0 0 0 0;
 	background-color: 				#282828;
 	text-color: 					@fg;
@@ -49,7 +49,7 @@ entry {
     horizontal-align:               0;
     placeholder:                    "Type to search...";
     padding:                        0% 0% 0% 0%;
-    margin:                         0.3% 0 0 0;
+    margin:                         0.6% 0 0 0;
     blink:                          true;
 }
 
@@ -94,8 +94,15 @@ element {
     padding:                        2% 0% 2% 0%;
 }
 
+element-icon, element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+}
+
 element-icon {
-    size:                           49px;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           48px;
     border:                         0px;
 }
 
