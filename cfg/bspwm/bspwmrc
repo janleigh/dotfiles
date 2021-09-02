@@ -20,7 +20,7 @@ $HOME/.local/bin/mpd-discord-rpc &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
 
-hsetroot -fill "$HOME/Pictures/Wallpapers/Gruvbox/gruvbox_waterfall_ig.png"
+hsetroot -fill "$HOME/Pictures/Wallpapers/gruvbox_waterfall_ig.png"
 sh $HOME/.config/polybar/launch.sh
 
 xset r rate 250 40

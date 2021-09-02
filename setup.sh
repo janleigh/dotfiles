@@ -185,9 +185,9 @@ copyFiles() {
     fi
 
     if [ -d $HOME/Pictures/Wallpapers ]; then
-        cp -r ./etc/walls/Stars.png $HOME/Pictures/Wallpapers 
+        cp -r ./etc/walls/gruvbox_waterfall_ig.png $HOME/Pictures/Wallpapers 
     else 
-        mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/gruv.png $HOME/Pictures/Wallpapers
+        mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/gruvbox_waterfall_ig.png $HOME/Pictures/Wallpapers
     fi
 
     echo "[*] Copied binaries, fonts and wallpapers successfully!"
