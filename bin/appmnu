@@ -8,8 +8,7 @@ rofi -no-lazy-grab \
 -line-padding 10 \
 -padding 20 \
 -width 27 \
--location 0 \
+-location 1 \
 -font "CaskaydiaCove Nerd Font 8" \
--theme ~/.config/rofi/theme.rasi
-
-# -xoffset 5 -yoffset +40 \
+-theme ~/.config/rofi/appmnu.rasi \
+-xoffset 15 -yoffset +53 \

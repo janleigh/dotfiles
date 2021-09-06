@@ -3,15 +3,15 @@
 
 # SETTINGS {{{ ---
 
-active_text_color="#FBF1C7"
+active_text_color="#ebdbb2"
 active_bg=
 active_underline="#ECB3B2"
 
-inactive_text_color="#32302F"
+inactive_text_color="#282828"
 inactive_bg=
 inactive_underline=
 
-separator=""
+separator=""
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"
 empty_desktop_message="Desktop"

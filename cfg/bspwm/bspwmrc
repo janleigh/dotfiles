@@ -19,8 +19,9 @@ mpd $HOME/.config/mpd/mpd.conf
 $HOME/.local/bin/mpd-discord-rpc &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-hsetroot -fill "$HOME/Pictures/Wallpapers/gruvbox_waterfall_ig.png"
+hsetroot -fill "$HOME/Pictures/Wallpapers/Gruvbox/gruvbox_waterfall_ig.png"
 sh $HOME/.config/polybar/launch.sh
 
 xset r rate 250 40
@@ -50,7 +51,7 @@ config borderless_monocle           true
 config gapless_monocle              true
 
 outer='0x1d2021'   # outer
-inner1='0x282828'  # focused
+inner1='0x32302f'  # focused
 inner2='0x282828'  # normal
 
 targets() {
