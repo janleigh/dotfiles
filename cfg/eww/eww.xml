@@ -7,7 +7,7 @@
         <def name="triangle">
             <box class="tr-text" orientation="h"> </box>
         </def>
-        <def name="eww-window">
+        <def name="dash-window">
             <box/>
         </def>
         <def name="date">
@@ -18,16 +18,6 @@
                     <box class="minute">{{minute}}</box>
                 </box>
                 <box class="day">{{day}}</box>
-            </box>
-        </def>
-        <def name="layout-manager">
-            <box class="layouts" orientation="h"> 
-                <box class="layout-btn" orientation="h" space-evenly="true">
-                    <button onclick="bsp-layout once even"> </button>
-                    <button onclick="bsp-layout once grid"> </button>
-                    <button onclick="bsp-layout once rtall"> </button>
-                    <button onclick="bsp-layout once monocle"> </button>
-                </box>
             </box>
         </def>
         <def name="system-manager">
@@ -46,7 +36,7 @@
                 </box>
                 <box class="powermenu" orientation="h">
                     <box class="powermenu-btn" halign="center" space-evenly="false">
-                        <button class="lock-btn" onclick="betterlockscreen -l dimblur"></button>
+                        <button class="lock-btn" onclick="sh ~/.local/bin/lck -nf Caskaydia-Cove-Regular-Nerd-Font-Complete"></button>
                         <button class="logout-btn" onclick="bspc quit"></button>
                         <button class="reboot-btn" onclick="systemctl reboot"></button>
                         <button class="shutdown-btn" onclick="systemctl poweroff"></button> 
@@ -75,26 +65,20 @@
                 <triangle/>
             </widget>
         </window>
-        <window name="eww-window">
-            <geometry x="1020px" y="53px" width="330px" height="445px"/>
+        <window name="dash-window">
+            <geometry x="1020px" y="53px" width="330px" height="387px"/>
             <widget>
-                <eww-window/>
+                <dash-window/>
             </widget>
         </window>
         <window name="date">
-            <geometry x="1030px" y="75px" width="310px" height="100px"/>
+            <geometry x="1030px" y="70px" width="310px" height="100px"/>
             <widget>
                 <date/>
             </widget>
         </window>
-        <window name="layout-manager">
-            <geometry x="1030px" y="220px" width="310px" height="20px"/>
-            <widget>
-                <layout-manager/>
-            </widget>
-        </window>
         <window name="system-manager">
-            <geometry x="1030px" y="270px" width="310px" height="160px"/>
+            <geometry x="1030px" y="210px" width="310px" height="160px"/>
             <widget>
                 <system-manager/>
             </widget>
