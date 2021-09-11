@@ -54,7 +54,7 @@ super + ctrl + space
 
 # Start alacritty
 super + Return
-    tabbed alacritty -t "term" --embed
+    alacritty -t "term"
 
 # Open application menu
 super + d
