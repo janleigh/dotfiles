@@ -2,7 +2,6 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-
 # ##############################################################################
 # #                                  FUNCTIONS                                 # 
 # ##############################################################################
@@ -15,16 +14,17 @@ config() { bspc config "$@" & }
 # #                                AUTOSTART APPS                              #
 # ##############################################################################
 
-mpd $HOME/.config/mpd/mpd.conf
-$HOME/.local/bin/mpd-discord-rpc &
+# mpd $HOME/.config/mpd/mpd.conf
+# $HOME/.local/bin/mpd-discord-rpc &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 hsetroot -fill "$HOME/Pictures/Wallpapers/Gruvbox/gruvbox_waterfall_ig.png"
 sh $HOME/.config/polybar/launch.sh
 
-xset r rate 250 40
+# xset r rate 250 40
+# xset mouse 2.5 0
 
 # ##############################################################################
 # #                                 WINDOW RULES                               #
@@ -32,7 +32,7 @@ xset r rate 250 40
 
 rule Vivaldi-stable                 desktop=^1
 rule discord                        desktop=^2
-rule code                           desktop=^3
+rule Code                           desktop=^3
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
