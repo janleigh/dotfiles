@@ -217,6 +217,12 @@ fuckUser() {
     exit
 }
 
+notice() {
+    whiptail --title "$title" \
+        --no-button "Exit" --yes-button "Continue" \
+        --yesno "This script is experimental! I recommend manually copying the files and installing the dependencies manually. Would you like to continue?" 10 75
+}
+
 welcome() {
     whiptail --title "$title" \
         --no-button "Exit" --yes-button "Continue" \
@@ -233,6 +239,9 @@ success() {
 
 echo "[*] Starting setup script..."
 sleep 0.5
+
+# Prompt notice
+notice || fuckUser
 
 # Prompt user the welcome dialog
 welcome || fuckUser

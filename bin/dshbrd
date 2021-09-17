@@ -9,7 +9,6 @@ run() {
         triangle \
         eww-window \
         date \
-        layout-manager \
         system-manager
 }
 
