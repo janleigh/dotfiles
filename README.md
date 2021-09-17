@@ -18,7 +18,7 @@
 <p/>
 
 <div align="center">
-   <img src="https://cdn.kizu.cf/u/lGkNpcu.png">
+   <img src="https://cdn.kizu.cf/u/r0ibwJf.png">
    <img src="https://cdn.kizu.cf/u/M9a68vS.png">
    <img src="https://cdn.kizu.cf/u/jYbkIRd.png">
 </div>
