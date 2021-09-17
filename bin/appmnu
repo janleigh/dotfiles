@@ -9,6 +9,6 @@ rofi -no-lazy-grab \
 -padding 20 \
 -width 27 \
 -location 1 \
--font "CaskaydiaCove Nerd Font 8" \
+-font "Iosevka Nerd Font 8.2" \
 -theme ~/.config/rofi/appmnu.rasi \
 -xoffset 15 -yoffset +53 \

@@ -1,11 +1,11 @@
-// This is literally messy as fuck.
-// Please make a PR if your eyes are bleeding :)
+// Yes, I'm bad at CSS :P
 
 $bg: #1D2021;
 $bgSecondary: #282828;
 $bgSecondaryAlt: #32302f;
 $blue: #83a598;
 $aqua: #89B8C2;
+$watermelon: #ff4757;
 $fg: #d5c4a1;
 
 * {
@@ -14,23 +14,28 @@ $fg: #d5c4a1;
 
 window {
     color: $fg;
-    font-family: "CaskaydiaCove Nerd Font";
+    font-family: "VictorMono Nerd Font";
 }
 
 button:hover {
     color: $aqua;
 }
 
-.dash-window, .layout-manager, .system-manager {
+.dash-window {
+    background-color: $bg;
+    border: 4px solid $bgSecondary;
+}
+
+.outer-window {
+    background-color: $bg;
+}
+
+.profile, .layout-manager, .system-manager {
     border-radius: 10px;
 }
 
-.triangle, .date {
-    background-color: transparent;
-}
-
-.dash-window {
-    background-color: $bg;
+.profile {
+    background-color: $bgSecondaryAlt;
 }
 
 .system-manager {
@@ -39,35 +44,70 @@ button:hover {
     margin-right: 5px;
 }
 
-// TRIANGLE
-.tr-text {
-    font-size: 26px;
-    color: $bg;
+.line {
+    background-color: $bgSecondary;
+    border-radius: 50px;
 }
 
-// DATE
+/* PROFILE */
+.pfp {
+    background-image: url("./assets/avatar.jpeg");
+    background-size: 100%;
+
+    margin: 15px 40px 20px 25px;
+    border-radius: 50px;
+}
+
+.welcome {
+    font-size: 20px;
+    font-style: italic;
+
+    margin-top: 20px;
+    margin-left: -65px;
+}
+
+.username {
+    font-size: 24px;
+    color: $watermelon;
+    
+    margin-top: -20px;
+    margin-left: -65px;
+}
+
+/* DATE */
 .time {
-    margin: 15px 75px -20px 75px;
     font-size: 50px;
+    font-family: "Iosevka Nerd Font", monospace;
     color: $fg;
+
+    margin: 15px 30px -20px 60px;
 }
 
 .semicolon {
+    padding: 0px;
     margin: 0px;
     margin-top: -5px;
-    color: $bgSecondary;
+
+    color: $blue;
 }
 
-.day {
-    margin-top: 25px;
-    margin-bottom: 20px;
+/* LAYOUTS */
+.layout-btn button {
+    background-color: $bgSecondaryAlt;
+    border-radius: 10px;
 
-    font-size: 16px;
-    font-weight: bold;
-    color: $blue
+    font-family: "Material Icons";
+    font-size: 27px;
+
+    margin: 30px;
+    margin-left: 7px;
+    margin-right: 7px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-// SYSTEM MANAGER
+/* SYS. MNGR */
 .system-manager slider {
     all: unset;
 }
@@ -84,17 +124,17 @@ button:hover {
     margin-top: 25px;
     margin-left: -62px;
     font-size: 27px;
-    color: #fb4939;
+    color: #EA6962;
 }
 
 .label-brightness-bar {
     margin-left: -64px;
-    color: #B8BB26;
+    color: #A9B665;
 }
 
 .label-vol-bar {
     margin-left: -64px;
-    color: #FABD2F;
+    color: #E0B34C;
 }
 
 .ram-bar scale trough highlight {
@@ -114,7 +154,7 @@ button:hover {
 
 .vol-bar scale trough highlight {
     all: unset;
-    background-image: linear-gradient(to right, #FABD2F, #FFC745);
+    background-image: linear-gradient(to right, #FABD2F, #e0b34c);
     color: #000000;
     border-radius: 10px;
 

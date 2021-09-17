@@ -52,9 +52,17 @@ super + ctrl + {h,j,k,l}
 super + ctrl + space
 	bspc node -p cancel
 
+# Lock screen
+super + l
+    sh $HOME/.local/bin/lck -nf Iosevka-Medium-Nerd-Font-Complete
+
 # Start alacritty
 super + Return
     alacritty -t "term"
+
+# Open Vivaldi
+super + b
+    vivaldi-stable
 
 # Open application menu
 super + d
@@ -68,13 +76,13 @@ super + p
 # Save to local storage
 Print
     DATE=$(date '+%b%d-%H-%M.png'); \
-    maim --select "$HOME/Pictures/Screenshots/$DATE"; \
+    maim -us "$HOME/Pictures/Screenshots/$DATE"; \
     sh ~/.local/bin/viewscr ~/Pictures/Screenshots/$DATE | xclip -selection clipboard -t image/png
 
 # Upload to CDN
 super + Print
     DATE=$(date '+%b%d-%H-%M.png'); \
-    maim --select "$HOME/Pictures/Screenshots/$DATE"; \
+    maim -us "$HOME/Pictures/Screenshots/$DATE"; \
     sh ~/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
 
 # Manage volume

@@ -34,10 +34,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: 'CaskaydiaCove Nerd Font'
+    family: 'Iosevka Nerd Font'
 
     # The `style` can be specified to pick a specific face.
-    style: SemiBold
+    style: Medium
 
   # Bold font face
   bold:
@@ -45,10 +45,10 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: 'JetBrainsMono Nerd Font'
+    family: 'Iosevka Nerd Font'
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
   italic:
@@ -56,13 +56,19 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: 'JetBrainsMono Nerd Font'
+    family: 'Iosevka Nerd Font'
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    # style: SemiBold Italic
 
   # Point size
-  size: 8.4
+  size: 9
+
+  offset:
+    y: -1
+
+  glyph_offset:
+    y: -1
 
 colors:
   # Default colors

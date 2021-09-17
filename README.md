@@ -18,9 +18,9 @@
 <p/>
 
 <div align="center">
-    <img src="https://cdn.kizu.cf/u/WTcxwnD.png">
-    <img src="https://cdn.kizu.cf/u/TLrHuG3.png">
-    <img src="https://cdn.kizu.cf/u/ZWtiLmg.png">
+   <img src="https://cdn.kizu.cf/u/lGkNpcu.png">
+   <img src="https://cdn.kizu.cf/u/M9a68vS.png">
+   <img src="https://cdn.kizu.cf/u/jYbkIRd.png">
 </div>
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
@@ -58,12 +58,13 @@
    |                           |                             |
    | `Super + F`               | Focus next window           |
    | `Super + Shift + F`       | Focus previous window       |
-   |                           |                             |
-   | `Super + {1-8}`           | Move to workspace #         |
-   | `Super + Shift + {1-8}`   | Move window to workspace #  |
+   | `Super + {1-6}`           | Move to workspace #         |
+   | `Super + Shift + {1-6}`   | Move window to workspace #  |
    |                           |                             |
    | `Super + D`               | Open application menu       |
    | `Super + P`               | Open dashboard              |
+   |                           |                             |
+   | `Alt + F`                 | Remove/Enable panel         |
    |                           |                             | 
    | `Super + Enter`           | Open an terminal instance   |
    | `Super + Shift + Alt + R` | Restart bspwm               |
@@ -94,3 +95,11 @@
    Have fun reading this neofetch.
 
    ![img](https://kizu.shx.gg/hrvGSg.png)
+
+### ❖ Old ***"Rice"***
+
+<div align="center">
+   <img src="https://cdn.kizu.cf/u/WTcxwnD.png">
+   <img src="https://cdn.kizu.cf/u/TLrHuG3.png">
+   <img src="https://cdn.kizu.cf/u/ZWtiLmg.png">
+</div>

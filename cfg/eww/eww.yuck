@@ -1,0 +1,120 @@
+(defwidget dash-window [] 
+    (box))
+(defwidget outer-window [] 
+    (box))
+(defwidget line [] 
+    (box))
+(defwidget profile [] 
+    (box :orientation "h"
+         :space-evenly "true"
+
+        (box :class "pfp")
+        (box :orientation "v"
+             :space-evenly "true"
+
+            (box :class "welcome" "Logged in as")
+            (box :class "username" "TheRealKizu"))))
+(defwidget date [] 
+    (box :orientation "h"
+         :class "time"
+
+        (box :class "hour" hour)
+        (box :class "semicolon" ":")
+        (box :class "minute" minute)))
+(defwidget system-manager [] 
+    (box :orientation "v" 
+         :space-evenly "false" 
+
+        (box :class "ram-bar" 
+             :orientation "h" 
+
+            (box :class "label-ram-bar" "")
+            (scale :min 0 :max 101 :active "false" :value used_ram))
+            (box :class "vol-bar" :orientation "h" 
+            (box :class "label-vol-bar" "")
+            (scale :min 0 :max 101 :active "false" :value volume))
+
+        (box :class "brightness-bar" 
+             :orientation "h" 
+
+            (box :class "label-brightness-bar" "")
+            (scale :min 0 :max 101 :active "false" :value brightness))
+        (box :class "powermenu" 
+             :orientation "h" 
+             
+            (box :class "powermenu-btn"
+                 :halign "center" 
+                 :space-evenly "false" 
+            (button :class "logout-btn" :onclick "bspc quit" "")
+            (button :class "reboot-btn" :onclick "systemctl reboot" "")
+            (button :class "shutdown-btn" :onclick "systemctl poweroff" "")))))
+(defwidget layout-manager [] 
+    (box :class "layouts" 
+         :orientation "h"
+
+        (box :class "layout-btn"
+             :orientation "h"
+             :space-evenly "true"
+
+            (button :onclick "bsp-layout once even" "")
+            (button :onclick "bsp-layout once grid" "")
+            (button :onclick "bsp-layout once rtall" "")
+            (button :onclick "bsp-layout once monocle" ""))))
+;;  DATE VARS 
+(defpoll minute :interval "10s"
+    "date '+%M'")
+(defpoll hour :interval "5m"
+    "date '+%H'")
+(defpoll day :interval "12h"
+    "./scripts/getDay")
+
+;;  SYSTEM INFO VAR 
+(defpoll used_ram :interval "2s"
+    "./scripts/getUsedRam")
+(defpoll volume :interval "1s"
+    "./scripts/getVolume")
+(defpoll brightness :interval "1s"
+    "./scripts/getBrightness")
+
+(defwindow outer-window 
+    :geometry (geometry :x "15px" 
+                        :y "50px" 
+                        :width "350px" 
+                        :height "610px")
+    (outer-window))
+(defwindow dash-window 
+    :geometry (geometry :x "25px"
+                        :y "60px" 
+                        :width "330px" 
+                        :height "590px")
+    (dash-window))
+(defwindow profile 
+    :geometry (geometry :x "35px" 
+                        :y "70px" 
+                        :width "310px" 
+                        :height "120px")
+    (profile))
+(defwindow date 
+    :geometry (geometry :x "35px"
+                        :y "200px"
+                        :width "280px" 
+                        :height "100px")
+    (date))
+(defwindow line 
+    :geometry (geometry :x "35px"
+                        :y "340px" 
+                        :width "310px" 
+                        :height "2px")
+    (line))
+(defwindow layout-manager 
+    :geometry (geometry :x "35px"
+                        :y "555px" 
+                        :width "310px" 
+                        :height "20px")
+    (layout-manager))
+(defwindow system-manager 
+    :geometry (geometry :x "35px"
+                        :y "355px" 
+                        :width "310px" 
+                        :height "150px")
+    (system-manager))

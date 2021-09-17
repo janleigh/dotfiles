@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# ##############################################################################
+# #                                  ENV VARS                                  # 
+# ##############################################################################
+
+# export BROWSER=vivaldi-stable
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # ##############################################################################
@@ -14,16 +20,23 @@ config() { bspc config "$@" & }
 # #                                AUTOSTART APPS                              #
 # ##############################################################################
 
+# Autostart Apps
+dunst --config $HOME/.config/dunst/dunstrc &
+$HOME/.local/bin/eww daemon &
 # mpd $HOME/.config/mpd/mpd.conf
 # $HOME/.local/bin/mpd-discord-rpc &
-dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
-# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
+# Start polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Set wallpaper
 hsetroot -fill "$HOME/Pictures/Wallpapers/Gruvbox/gruvbox_waterfall_ig.png"
+
+# Start polybar
 sh $HOME/.config/polybar/launch.sh
 
-# xset r rate 250 40
+# I hate mouse drift.
 # xset mouse 2.5 0
 
 # ##############################################################################
@@ -38,7 +51,9 @@ rule Code                           desktop=^3
 # #                            GENERAL CONFIGURATION                           #
 # ##############################################################################
 
-bspc monitor -d I II III IV V VI VII VIII
+bspc monitor -d I II III IV V VI
+
+config pointer_modifier             Mod4
 
 config border_width                 20
 config window_gap                   25
@@ -50,6 +65,7 @@ config split_ratio                  0.62
 config borderless_monocle           true
 config gapless_monocle              true
 
+# Yes, this is stolen from gk.
 outer='0x1d2021'   # outer
 inner1='0x32302f'  # focused
 inner2='0x282828'  # normal
