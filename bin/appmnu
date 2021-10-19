@@ -8,7 +8,7 @@ rofi -no-lazy-grab \
 -line-padding 10 \
 -padding 20 \
 -width 27 \
--location 1 \
+-location 0 \
 -font "Iosevka Nerd Font 8.2" \
--theme ~/.config/rofi/appmnu.rasi \
--xoffset 15 -yoffset +53 \
+-theme ~/.config/rofi/appmnu.rasi
+# -xoffset 15 -yoffset +50 \

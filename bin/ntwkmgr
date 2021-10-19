@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme ~/.config/rofi/ntwkmgr.rasi -location 3 -xoffset -15 -yoffset +53"
+rofi_command="rofi -theme ~/.config/rofi/ntwkmgr.rasi -location 3 -xoffset -15 -yoffset +50"
 
 ## Get info
 IFACE="$(nmcli | grep -i interface | awk '/interface/ {print $2}')"
@@ -11,29 +11,28 @@ if (ping -c 1 archlinux.org) &>/dev/null; then
 	if [[ $STATUS == *"enable"* ]]; then
         if [[ $IFACE == e* ]]; then
             amogus="Connected"
-            connected=" Disconnect from WiFi"
+            connected="Disconnect from WiFi"
         else
             amogus="Connected"
-            connected=" Disconnect from WiFi"
+            connected="Disconnect from WiFi"
         fi
 	SSID="$(iwgetid -r)"
-	PIP="$(wget --timeout=30 http://ipinfo.io/ip -qO -)"
 	fi
 else
     SSID="Disconnected"
     PIP="NA"
     amogus="Offline"
-    connected=" Connect to WiFi"
+    connected="Connect to WiFi"
 fi
 
 ## Icons
-launch_cli="  Open Network Manager"
-launch="  Open Connection Editor"
+launch_cli="Open Network Manager"
+launch="Open Connection Editor"
 
 options="$connected\n$launch_cli\n$launch"
 
 ## Main
-chosen="$(echo -e "$options" | $rofi_command -p " IF: $INTERFACE | STATUS: $amogus" -dmenu -selected-row 1)"
+chosen="$(echo -e "$options" | $rofi_command -p " Interface: $INTERFACE | Status: $amogus" -dmenu -selected-row 1)"
 case $chosen in
     $connected)
 		if [[ $STATUS == *"enable"* ]]; then

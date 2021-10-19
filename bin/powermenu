@@ -1,0 +1,69 @@
+#!/bin/sh
+rofi_command="rofi -theme $HOME/.config/rofi/ntwkmgr.rasi -l 5 -location 3 -xoffset -15 -yoffset +50"
+
+uptime=$(uptime -p | sed -e 's/up //g')
+
+shutdown=" Shutdown"
+reboot=" Restart"
+lock="  Lock"
+suspend="  Sleep"
+logout=" Logout"
+ddir="$HOME/.config/rofi"
+
+# Ask for confirmation
+rdialog () {
+rofi -dmenu \
+    -i \
+    -no-fixed-num-lines \
+    -p "Are You Sure? : " \
+    -theme "$ddir/confirm.rasi"
+}
+
+# Variable passed to rofi
+options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+
+chosen="$(echo -e "$options" | $rofi_command -p " UPTIME: $uptime" -dmenu)"
+case $chosen in
+    $shutdown)
+		ans=$(rdialog &)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+			systemctl poweroff
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+			exit
+        fi
+        ;;
+    $reboot)
+		ans=$(rdialog &)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+			systemctl reboot
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+			exit
+        fi
+        ;;
+    $lock)
+        ans=$(rdialog &)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+            sh $HOME/.local/bin/lck -nf Iosevka-Medium-Nerd-Font-Complete
+        elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+			exit
+        fi
+        ;;
+    $suspend)
+		ans=$(rdialog &)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+			mpc -q pause
+			amixer set Master mute
+            systemctl hybrid-sleep
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+			exit
+        fi
+        ;;
+    $logout)
+		ans=$(rdialog &)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+			bspc --quit
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+			exit
+        fi
+        ;;
+esac
