@@ -1,75 +1,75 @@
+/*
+ *
+ * Author  : Aditya Shakya
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ * 
+ * MODIFIED BY @TheRealKizu 
+ */
+
 configuration {
-    show-icons:                     false;
-    display-drun: 					":";
+    show-icons:                     true;
+    display-drun: 					"Applications";
     drun-display-format:            "{name}";
-    threads:                        0;
-    scroll-method:                  0;
     disable-history:                false;
-    fullscreen:                     false;
 	hide-scrollbar: 				true;
 	sidebar-mode: 					false;
-    location:                       0;
-    anchor:                         0;
-}
-
-* {
-    font:                           "CaskaydiaCove Nerd Font 9";
 }
 
 @import "colors.rasi"
 
-window {
-    background-color:               @background;
-    text-color:                     @foreground;
-    border-radius:                  10px;
-    width:                          27%;
+window {    
+	width:							20%;
+    border:                         4px;
+    border-color:                   #282828;
+    font:                           "Iosevka Nerd Font 8.2";
 }
 
 prompt {
     enabled: 						true;
-	padding: 						4px 4px 6px 6px;
+	padding: 						8px 16px 8px 8px;
+    margin:                         2px;
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
-}
-
-inputbar {
-	children: 						[ prompt ];
-    background-color:               @background-alt;
-    text-color:                     @foreground;
-    expand:                         false;
-    border:                  		0px 0px 0px 0px;
+    border:                         0 0 4px 0;
+    border-color:                   #32302f;
     border-radius:                  10px;
-    border-color:                  	@background;
-    margin:                         0px 0px 0px 0px;
-    padding:                        5px 0px 3px 0px;
-    position:                       center;
 }
-
 
 entry {
-    background-color:               @background;
+    enabled:                        false;
+    background-color:               @background-alt;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Type to search...";
+    padding:                        8px;
+    margin:                         2px;
     blink:                          true;
-    padding:                        4px 0px 0px 0px;
+    border:                         0 0 4px 0;
+    border-color:                   #32302f;
+    border-radius:                  10px;
 }
 
-case-indicator {
+inputbar {
+	children: 						[ prompt, entry ];
     background-color:               @background;
-    text-color:                     @foreground;
-    spacing:                        0;
+    text-color:                     @background;
+    expand:                         false;
+	border:							0% 0% 0% 0%;
+    border-radius:                  10px;
+	border-color:					@accent;
+    margin:                         0% 0% 0% 0%;
+    padding:                        1%;
 }
-
 
 listview {
     background-color:               @background;
     padding:                        10px;
-    columns:                        1;
-    lines:							3;
     spacing:                        0%;
+    lines:                          3;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
@@ -77,6 +77,9 @@ listview {
 
 mainbox {
     background-color:               @background;
+	border:							0% 0% 0% 0%;
+    border-radius:                  0% 0% 0% 0%;
+	border-color:					@background;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
     padding:                        10px;
@@ -85,9 +88,8 @@ mainbox {
 element {
     background-color:               @background;
     text-color:                     @foreground;
-    orientation:                    horizontal;
-    border-radius:                  0px;
-    padding:                        6px 6px 6px 6px;
+    border-radius:                  0%;
+    padding:                        2px; 
 }
 
 element-icon, element-text {
@@ -96,21 +98,23 @@ element-icon, element-text {
 }
 
 element-icon {
-    size:                           24px;
-    border:                         0px;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    size:                           0px;
+    border:                         8px;
 }
 
 element-text {
     expand:                         true;
     horizontal-align:               0;
-    vertical-align:                 0;
-    margin:                         2px 0px 2px 2px;
+    vertical-align:                 0.5;
+    margin:                         8px 0px 8px 0px;
 }
 
 element selected {
-    background-color:               @accent;
-    text-color:                     @background;
-    border:                  		0px;
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    border:                         0 0 4px 0;
+    border-color:                   #32302f;
     border-radius:                  10px;
-    border-color:                  	@background;
 }

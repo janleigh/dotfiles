@@ -10,7 +10,7 @@
 
 configuration {
     show-icons:                     true;
-    display-drun: 					"";
+    display-drun: 					"Applications";
     drun-display-format:            "{name}";
     disable-history:                false;
 	hide-scrollbar: 				true;
@@ -21,16 +21,19 @@ configuration {
 
 window {    
 	width:							40%;
-    border-radius:                  10px;
+    border:                         4px;
+    border-color:                   #282828;
 }
 
 prompt {
     enabled: 						true;
-	padding: 						0.15% 1% 0% -0.5%;
-    margin:                         0 0 0 0;
+	padding: 						8px;
+    margin:                         2px;
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
-	font:							"CaskaydiaCove Nerd Font 12";
+    border:                         0 0 4px 0;
+    border-color:                   #32302f;
+    border-radius:                  10px;
 }
 
 entry {
@@ -40,14 +43,17 @@ entry {
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Type to search...";
-    padding:                        0% 0% 0% 0%;
-    margin:                         0.6% 0 0 0;
+    padding:                        8px;
+    margin:                         2px;
     blink:                          true;
+    border:                         0 0 4px 0;
+    border-color:                   #32302f;
+    border-radius:                  10px;
 }
 
 inputbar {
 	children: 						[ prompt, entry ];
-    background-color:               @background-alt;
+    background-color:               @background;
     text-color:                     @background;
     expand:                         false;
 	border:							0% 0% 0% 0%;
@@ -60,8 +66,7 @@ inputbar {
 listview {
     background-color:               @background;
     padding:                        10px;
-    columns:                        4;
-    lines:                          3;
+    lines:                          7;
     spacing:                        0%;
     cycle:                          false;
     dynamic:                        true;
@@ -81,9 +86,8 @@ mainbox {
 element {
     background-color:               @background;
     text-color:                     @foreground;
-    orientation:                    vertical;
     border-radius:                  0%;
-    padding:                        2% 0% 2% 0%;
+    padding:                        6px; 
 }
 
 element-icon, element-text {
@@ -94,19 +98,21 @@ element-icon, element-text {
 element-icon {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    size:                           48px;
-    border:                         0px;
+    size:                           32px;
+    border:                         8px;
 }
 
 element-text {
     expand:                         true;
-    horizontal-align:               0.5;
+    horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         0.5% 0.5% -0.5% 0.5%;
+    margin:                         2px 0px 2px 0px;
 }
 
 element selected {
-    background-color:               @accent;
-    text-color:                     @background;
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+    border:                         0 0 4px 0;
+    border-color:                   #32302f;
     border-radius:                  10px;
 }

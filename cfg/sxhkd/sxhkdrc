@@ -58,19 +58,27 @@ super + l
 
 # Start alacritty
 super + Return
-    alacritty -t "term"
+    tabbed alacritty -t "term" --embed
 
 # Open Vivaldi
 super + b
-    vivaldi-stable
+    firefox
 
 # Open application menu
-super + d
+super + a
     sh $HOME/.local/bin/appmnu
 
 # Toggle eww dashboard
-super + p
+super + d
     sh $HOME/.local/bin/dshbrd
+
+# Toggle powermenu
+super + p
+    sh $HOME/.local/bin/powermenu
+
+# Toggle network menu
+super + n
+    sh $HOME/.local/bin/ntwkmgr
 
 # Screenshot
 # Save to local storage

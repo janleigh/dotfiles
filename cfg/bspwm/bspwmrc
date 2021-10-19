@@ -4,7 +4,8 @@
 # #                                  ENV VARS                                  # 
 # ##############################################################################
 
-# export BROWSER=vivaldi-stable
+export BROWSER=firefox
+export WINEARCH=win32
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -23,7 +24,7 @@ config() { bspc config "$@" & }
 # Autostart Apps
 dunst --config $HOME/.config/dunst/dunstrc &
 $HOME/.local/bin/eww daemon &
-# mpd $HOME/.config/mpd/mpd.conf
+mpd $HOME/.config/mpd/mpd.conf
 # $HOME/.local/bin/mpd-discord-rpc &
 picom --config $HOME/.config/picom/picom.conf &
 
@@ -37,15 +38,20 @@ hsetroot -fill "$HOME/Pictures/Wallpapers/Gruvbox/gruvbox_waterfall_ig.png"
 sh $HOME/.config/polybar/launch.sh
 
 # I hate mouse drift.
-# xset mouse 2.5 0
+xset mouse 2.5 0
 
 # ##############################################################################
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
 rule Vivaldi-stable                 desktop=^1
+rule firefox                        desktop=^1
 rule discord                        desktop=^2
 rule Code                           desktop=^3
+rule Spotify                        desktop=^5
+rule Lutris                         desktop=^5 state=floating
+rule Steam                          desktop=^5 state=floating
+rule Viewnior                       state=floating
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #

@@ -47,7 +47,8 @@
                  :space-evenly "false" 
             (button :class "logout-btn" :onclick "bspc quit" "")
             (button :class "reboot-btn" :onclick "systemctl reboot" "")
-            (button :class "shutdown-btn" :onclick "systemctl poweroff" "")))))
+            (button :class "shutdown-btn" :onclick "systemctl poweroff" "")
+            (button :class "sleep-btn" :onclick "systemctl hybrid-sleep" "")))))
 (defwidget layout-manager [] 
     (box :class "layouts" 
          :orientation "h"

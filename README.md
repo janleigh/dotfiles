@@ -18,9 +18,9 @@
 <p/>
 
 <div align="center">
-   <img src="https://cdn.kizu.cf/u/r0ibwJf.png">
-   <img src="https://cdn.kizu.cf/u/M9a68vS.png">
-   <img src="https://cdn.kizu.cf/u/jYbkIRd.png">
+   <img src="https://cdn.xndr.tech/u/8PDRqgy.png">
+   <img src="https://cdn.xndr.tech/u/ffD9iR6.png">
+   <img src="https://cdn.xndr.tech/u/kPeYRJx.png">
 </div>
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
@@ -61,8 +61,9 @@
    | `Super + {1-6}`           | Move to workspace #         |
    | `Super + Shift + {1-6}`   | Move window to workspace #  |
    |                           |                             |
-   | `Super + D`               | Open application menu       |
-   | `Super + P`               | Open dashboard              |
+   | `Super + A`               | Open application menu       |
+   | `Super + D`               | Open dashboard              |
+   | `Super + P`               | Open powermenu              |
    |                           |                             |
    | `Alt + F`                 | Remove/Enable panel         |
    |                           |                             | 
@@ -88,7 +89,7 @@
    ~~If I forgot something, please let me know.~~ 
 
    * Run `:PackerSync` upon starting neovim.
-   * Install this [GTK and Icon theme](https://github.com/sainnhe/gruvbox-material-gtk).
+   * Install this [icon](https://github.com/zayronxio/Zafiro-icons/) and [gtk](https://github.com/elkowar/gtk) theme.
 
 ### ❖ System Info
 
@@ -99,7 +100,7 @@
 ### ❖ Old ***"Rice"***
 
 <div align="center">
-   <img src="https://cdn.kizu.cf/u/WTcxwnD.png">
-   <img src="https://cdn.kizu.cf/u/TLrHuG3.png">
-   <img src="https://cdn.kizu.cf/u/ZWtiLmg.png">
+   <img src="https://cdn.xndr.tech/u/WTcxwnD.png">
+   <img src="https://cdn.xndr.tech/u/TLrHuG3.png">
+   <img src="https://cdn.xndr.tech/u/ZWtiLmg.png">
 </div>
