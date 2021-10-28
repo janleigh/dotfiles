@@ -46,25 +46,6 @@ downloadDependencies() {
     fi
 }
 
-installOptional() {
-    clear
-
-    read -r -p "[OPT] Would you like to install double borders? [y/N]: " opt
-    sleep 1.0
-
-    case $opt in
-        [yY])
-            git clone https://github.com/wmutils/opt.git $HOME/.setup-scripto
-            (cd $HOME/.setup-scripto && make && sudo make install)
-            ;;
-        [nN][*])
-            echo "[*] Okay. Will not install double border."
-            ;;
-    esac
-
-    sleep 1
-}
-
 copyFiles() {
     clear
     
@@ -248,9 +229,6 @@ welcome || fuckUser
 
 # Download dependencies
 downloadDependencies
-
-# Install optional shit
-installOptional
 
 # Copy files from the repo to $HOME/.config
 copyFiles
