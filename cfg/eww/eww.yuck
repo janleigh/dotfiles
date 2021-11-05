@@ -12,7 +12,7 @@
         (box :orientation "v"
              :space-evenly "true"
 
-            (box :class "welcome" "Logged in as")
+            (box :class "welcome" "Welcome")
             (box :class "username" "TheRealKizu"))))
 (defwidget date [] 
     (box :orientation "h"
@@ -27,40 +27,43 @@
 
         (box :class "ram-bar" 
              :orientation "h" 
-
-            (box :class "label-ram-bar" "")
-            (scale :min 0 :max 101 :active "false" :value used_ram))
-            (box :class "vol-bar" :orientation "h" 
-            (box :class "label-vol-bar" "")
-            (scale :min 0 :max 101 :active "false" :value volume))
+            (box :class "label-ram-bar" ""
+                (scale :min 0 :max 101 :active "false" :value used_ram
+        )))
+        (box :class "vol-bar" :orientation "h" 
+            (box :class "label-vol-bar" ""
+                (scale :min 0 :max 101 :value volume :onchange "amixer -q set Master {}%"
+        )))
 
         (box :class "brightness-bar" 
              :orientation "h" 
-
-            (box :class "label-brightness-bar" "")
-            (scale :min 0 :max 101 :active "false" :value brightness))
+            (box :class "label-brightness-bar" ""
+                (scale :min 0 :max 101 :value brightness :onchange "brightnessctl set {}%"
+        )))
         (box :class "powermenu" 
-             :orientation "h" 
-             
+             :orientation "h"      
             (box :class "powermenu-btn"
                  :halign "center" 
                  :space-evenly "false" 
-            (button :class "logout-btn" :onclick "bspc quit" "")
-            (button :class "reboot-btn" :onclick "systemctl reboot" "")
-            (button :class "shutdown-btn" :onclick "systemctl poweroff" "")
-            (button :class "sleep-btn" :onclick "systemctl hybrid-sleep" "")))))
+                (button :class "logout-btn" :onclick "bspc quit" "")
+                (button :class "reboot-btn" :onclick "systemctl reboot" "")
+                (button :class "shutdown-btn" :onclick "systemctl poweroff" "")
+                (button :class "sleep-btn" :onclick "systemctl hybrid-sleep" "")
+        ))
+    )
+)
 (defwidget layout-manager [] 
     (box :class "layouts" 
          :orientation "h"
-
         (box :class "layout-btn"
              :orientation "h"
              :space-evenly "true"
-
             (button :onclick "bsp-layout once even" "")
             (button :onclick "bsp-layout once grid" "")
             (button :onclick "bsp-layout once rtall" "")
-            (button :onclick "bsp-layout once monocle" ""))))
+            (button :onclick "bsp-layout once monocle" "")
+    ))
+)
 ;;  DATE VARS 
 (defpoll minute :interval "10s"
     "date '+%M'")

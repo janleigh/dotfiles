@@ -1,10 +1,10 @@
 // Yes, I'm bad at CSS :P
 
+$accent: #689d6a;
 $bg: #1D2021;
 $bgSecondary: #282828;
 $bgSecondaryAlt: #32302f;
 $blue: #83a598;
-$aqua: #89B8C2;
 $watermelon: #ff4757;
 $fg: #d5c4a1;
 
@@ -18,7 +18,7 @@ window {
 }
 
 button:hover {
-    color: $aqua;
+    color: $accent;
 }
 
 .dash-window {
@@ -51,7 +51,7 @@ button:hover {
 
 /* PROFILE */
 .pfp {
-    background-image: url("./assets/avatar.jpeg");
+    background-image: url("./assets/avatar.png");
     background-size: 80px;
 
     margin: 20px 40px 20px 35px;
@@ -81,14 +81,14 @@ button:hover {
     color: $fg;
 
     margin: 15px 30px -20px 60px;
-}
 
-.semicolon {
-    padding: 0px;
-    margin: 0px;
-    margin-top: -5px;
-
-    color: $blue;
+    .semicolon {
+        padding: 0px;
+        margin: 0px;
+        margin-top: -5px;
+    
+        color: $blue;
+    }
 }
 
 /* LAYOUTS */
@@ -107,60 +107,48 @@ button:hover {
     padding-bottom: 10px;
 }
 
-/* SYS. MNGR */
-.system-manager slider {
-    all: unset;
-}
-
+/* SYSTEM MANAGER */
 .label-ram-bar, .label-vol-bar, .label-brightness-bar {
     font-size: 23px;
     font-family: "Material Icons";
 
-    margin-top: 12px;
-    margin-left: -35px;
+    margin: 12px 0px 0px -54px;
 }
 
 .label-ram-bar {
     margin-top: 25px;
-    margin-left: -62px;
+    margin-left: -52px;
     font-size: 27px;
     color: #EA6962;
 }
 
-.label-brightness-bar {
-    margin-left: -64px;
+.label-brightness-bar, .label-vol-bar {
     color: #A9B665;
 }
 
 .label-vol-bar {
-    margin-left: -64px;
     color: #E0B34C;
 }
 
-.ram-bar scale trough highlight {
+.ram-bar scale trough highlight, .brightness-bar scale trough highlight, .vol-bar scale trough highlight {
     all: unset;
+    border-radius: 10px;
+}
+
+.ram-bar scale trough highlight {
     background-image: linear-gradient(to right, #fb4939, #EA6962);
-	color: #000000;
-	border-radius: 10px;
 }
 
 .brightness-bar scale trough highlight {
-    all: unset;
     background-image: linear-gradient(to right, #B8BB26, #A9B665);
-    color: #000000;
-    border-radius: 10px;
 
 }
 
 .vol-bar scale trough highlight {
-    all: unset;
     background-image: linear-gradient(to right, #FABD2F, #e0b34c);
-    color: #000000;
-    border-radius: 10px;
-
 }
 
-.ram-bar scale trough {
+.ram-bar scale trough, .vol-bar scale trough, .brightness-bar scale trough {
 	all: unset;
 	background-color: $bgSecondaryAlt;
 	border-radius: 50px;
@@ -168,18 +156,7 @@ button:hover {
 	min-height: 5px;
     min-width: 150px;
 
-    margin: 25px 40px 0px -65px;
-}
-
-.vol-bar scale trough, .brightness-bar scale trough {
-	all: unset;
-	background-color: $bgSecondaryAlt;
-	border-radius: 50px;
-
-	min-height: 5px;
-    min-width: 150px;
-
-    margin: 10px 40px 0px -65px;
+    margin: 0px 30px 0px -55px;
 }
 
 .powermenu-btn button {

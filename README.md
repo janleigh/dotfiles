@@ -50,25 +50,25 @@
 
    I only listed the important shortcuts. There's still more but have fun discovering it.
 
-   |          Keybind          |         Description         |
-   | ------------------------- | --------------------------- |
-   | `Super + C`               | Kill focused window         |   
-   | `Super + Space`           | Float the focused window    |
-   | `Super + Alt + T`         | Tile the floating window    |
-   |                           |                             |
-   | `Super + F`               | Focus next window           |
-   | `Super + Shift + F`       | Focus previous window       |
-   | `Super + {1-6}`           | Move to workspace #         |
-   | `Super + Shift + {1-6}`   | Move window to workspace #  |
-   |                           |                             |
-   | `Super + A`               | Open application menu       |
-   | `Super + D`               | Open dashboard              |
-   | `Super + P`               | Open powermenu              |
-   |                           |                             |
-   | `Alt + F`                 | Remove/Enable panel         |
-   |                           |                             | 
-   | `Super + Enter`           | Open an terminal instance   |
-   | `Super + Shift + Alt + R` | Restart bspwm               |
+   |                               Keybind                                |         Description         |
+   | -------------------------------------------------------------------- | --------------------------- |
+   | <kbd>Super</kbd> + <kbd>C</kbd>                                      | Kill focused window         ||                                                                      |                             |
+   | <kbd>Super</kbd> + <kbd>Space</kbd>                                  | Float the focused window    |
+   | <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>                     | Tile the floating window    |
+   |                                                                      |                             |
+   | <kbd>Super</kbd> + <kbd>F</kbd>                                      | Focus next window           |
+   | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>                   | Focus previous window       |
+   | <kbd>Super</kbd> + <kbd>1-6</kbd>                                    | Move to workspace #         |
+   | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>1-6</kbd>                 | Move window to workspace #  |
+   |                                                                      |                             |
+   | <kbd>Super</kbd> + <kbd>A</kbd>                                      | Open application menu       |
+   | <kbd>Super</kbd> + <kbd>D</kbd>                                      | Open dashboard              |
+   | <kbd>Super</kbd> + <kbd>P</kbd>                                      | Open powermenu              |
+   |                                                                      |                             |
+   | <kbd>Alt</kbd> + <kbd>F</kbd>                                        | Toggle polybar panel        |
+   |                                                                      |                             | 
+   | <kbd>Super</kbd> + <kbd>Enter</kbd>                                  | Open an terminal instance   |
+   | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>` | Restart bspwm               |
 
 ### ❖ Dependencies
 
@@ -95,7 +95,7 @@
 
    Have fun reading this neofetch.
 
-   ![img](https://kizu.shx.gg/hrvGSg.png)
+   <img align="center" src="https://cdn.xndr.tech/u/Yz4EvzZ.png">
 
 ### ❖ Old ***"Rice"***
 

@@ -1,6 +1,3 @@
-[submodule "etc/startpage"]
-	path = etc/startpage
-	url = https://github.com/TheRealKizu/startpage
 [submodule "cfg/nvim"]
 	path = cfg/nvim
 	url = https://github.com/TheRealKizu/neodots/
