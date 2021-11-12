@@ -1,5 +1,5 @@
 [global]
-    font = JetBrains Mono 9 
+    font = Iosevka Nerd Font 9 
 
     # Allow a small subset of html markup:
     # <b>bold</b>
@@ -123,7 +123,7 @@
     startup_notification = false
 
     # Browser for opening urls in context menu
-    browser = /usr/bin/vivaldi-stable
+    browser = /usr/bin/firefox
 
     # Align icons left/right/off
     icon_position = left
@@ -132,10 +132,10 @@
     max_icon_size = 40
 
     # Paths to default icons.
-    icon_path = /home/kizu/.icons/Horizon/16x16/status/:/home/kizu/.icons/Horizon/16x16/devices/:/home/kizu/.icons/Horizon/16x16/apps/
+    # icon_path = /home/kizu/.icons/Horizon/16x16/status/:/home/kizu/.icons/Horizon/16x16/devices/:/home/kizu/.icons/Horizon/16x16/apps/
 
     # Always run rule-defined scripts, even if the notification is suppressed
-    always_run_script = true
+    # always_run_script = true
 
 [shortcuts]
     close = ctrl+space
@@ -157,6 +157,3 @@
     background = "#1d2021"
     foreground = "#fbf1c7"
     timeout = 9
-
-[log_notifs]
-    script = /home/kizu/.local/bin/lognotif
