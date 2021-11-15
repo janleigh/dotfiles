@@ -20,7 +20,7 @@
 <div align="center">
    <img src="https://cdn.xndr.tech/u/aqpANVa.png">
    <img src="https://cdn.xndr.tech/u/UXyusOO.png">
-   <img src="https://cdn.xndr.tech/u/Op4BrBj.png">
+   <img src="https://cdn.xndr.tech/u/rq79jTw.png">
 </div>
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
@@ -83,6 +83,7 @@
    * picom
    * brightnessctl and playerctl
    * maim, jq, xclip, imagemagick and viewnior
+   * i3lock-color
 
 ### ❖ Notes
 

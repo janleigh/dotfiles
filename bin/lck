@@ -1,6 +1,9 @@
 #!/bin/bash
 
 lock() {
+    # Wait for eww to finish load widget
+    sleep 0.5
+
 	i3lock -n -c 00000000 -t -e --pass-media-keys --pass-power-keys --pass-volume-keys --indicator \
         --radius 40 --modif-size=9 --modif-pos="w/2:h/2-15" \
         \
@@ -42,4 +45,4 @@ if pgrep -x rofi; then
 fi
 
 # Haha, very funny lines :)
-tglbar && eww open lock-screen && lock && eww close-all && tglbar
+tglbar && eww open-many lock-notice lock-screen && lock && eww close-all && tglbar

@@ -220,6 +220,23 @@ button:hover {
 }
 
 // Lock Screen
+.lock-notice {
+    background-color: $bg;
+    border-radius: 10px;
+    margin: 10px 60px 0px 60px;
+
+    .lock-header-text {
+        font-size: 16px;
+        font-style: italic;
+        color: $watermelon;    
+    }
+
+    .lock-body-text {
+        font-size: 14px;
+        color: $fg;
+    }
+}
+
 .lock-screen {
     background: $bg;
     border-radius: 10px;

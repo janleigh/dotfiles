@@ -78,14 +78,21 @@
         )
     )
 )
+(defwidget lock-notice []
+    (box :class "lock-notice" :orientation "h"
+        (box :class "lock-header-text" "Lock On!")
+    )
+)
 (defwidget lock-screen [] 
-    (box :class "lock-screen"
-         :orientation "h"
+    (box :orientation "v" :space-evenly "true"
+        (box :class "lock-screen"
+             :orientation "h"
 
-        (box :class "lock-pfp")
-        (box :class "lock-text" :orientation "v"
-            (box :class "lock-username" username)
-            (box :class "lock-hostname" "@${hostname}")
+            (box :class "lock-pfp")
+            (box :class "lock-text" :orientation "v"
+                (box :class "lock-username" username)
+                (box :class "lock-hostname" "@${hostname}")
+            )
         )
     )
 )
@@ -166,6 +173,12 @@
                         :width "310px" 
                         :height "130px")
     (music-player))
+(defwindow lock-notice
+    :geometry (geometry :x "517px"
+                        :y "260px" 
+                        :width "310px" 
+                        :height "40px")
+    (lock-notice))
 (defwindow lock-screen
     :geometry (geometry :x "520px"
                         :y "315px" 
