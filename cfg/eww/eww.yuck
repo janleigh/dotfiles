@@ -1,5 +1,5 @@
-(defwidget dash-window [] 
-    (box))
+;; NOTE: This is only for 1366x768 resolution! Use at your own risk.
+
 (defwidget outer-window [] 
     (box))
 (defwidget line [] 
@@ -9,18 +9,28 @@
          :space-evenly "true"
 
         (box :class "pfp")
-        (box :orientation "v"
+        (box :class "text" :orientation "v"
              :space-evenly "true"
 
-            (box :class "welcome" "Welcome")
-            (box :class "username" "TheRealKizu"))))
+            (box :class "welcome" "welcome!")
+            (box :class "username" "TheRealKizu")
+        )
+    )
+)
 (defwidget date [] 
-    (box :orientation "h"
-         :class "time"
+    (box :orientation "v" :space-evenly "true"
+        (box :orientation "h"
+            :class "time"
 
-        (box :class "hour" hour)
-        (box :class "semicolon" ":")
-        (box :class "minute" minute)))
+            (box :class "hour" hour)
+            (box :class "semicolon" "⋮")
+            (box :class "minute" minute)
+        )
+        (box :orientation "v" :class "day"
+            (box :class "weekday" weekday)
+        )
+    )
+)
 (defwidget system-manager [] 
     (box :orientation "v" 
          :space-evenly "false" 
@@ -40,16 +50,6 @@
             (box :class "label-brightness-bar" ""
                 (scale :min 0 :max 101 :value brightness :onchange "brightnessctl set {}%"
         )))
-        (box :class "powermenu" 
-             :orientation "h"      
-            (box :class "powermenu-btn"
-                 :halign "center" 
-                 :space-evenly "false" 
-                (button :class "logout-btn" :onclick "bspc quit" "")
-                (button :class "reboot-btn" :onclick "systemctl reboot" "")
-                (button :class "shutdown-btn" :onclick "systemctl poweroff" "")
-                (button :class "sleep-btn" :onclick "systemctl hybrid-sleep" "")
-        ))
     )
 )
 (defwidget layout-manager [] 
@@ -58,67 +58,117 @@
         (box :class "layout-btn"
              :orientation "h"
              :space-evenly "true"
-            (button :onclick "bsp-layout once even" "")
-            (button :onclick "bsp-layout once grid" "")
-            (button :onclick "bsp-layout once rtall" "")
-            (button :onclick "bsp-layout once monocle" "")
+            (button :onclick "bsp-layout once tiled" "")
+            (button :onclick "bsp-layout once even" "")
+            (button :onclick "bsp-layout once tall" "")
     ))
 )
+(defwidget music-player [] 
+    (box :class "music-player"
+         :orientation "h"
+        (box :class "song-art" :style "background-image: url('${art}')" song_art)
+        (box :class "song-info" :orientation "v"
+            (label :class "song-title" :text song_title)
+            (box :class "song-artist" song_artist)
+            (box :class "song-controls" :orientation "h"
+                (button :onclick "playerctl previous" "")
+                (button :class "play-pause" :onclick "playerctl play-pause" player_status)
+                (button :onclick "playerctl next" "")
+            )
+        )
+    )
+)
+(defwidget lock-screen [] 
+    (box :class "lock-screen"
+         :orientation "h"
+
+        (box :class "lock-pfp")
+        (box :class "lock-text" :orientation "v"
+            (box :class "lock-username" username)
+            (box :class "lock-hostname" "@${hostname}")
+        )
+    )
+)
+
 ;;  DATE VARS 
 (defpoll minute :interval "10s"
     "date '+%M'")
 (defpoll hour :interval "5m"
     "date '+%H'")
-(defpoll day :interval "12h"
-    "./scripts/getDay")
+(defpoll weekday :interval "5s"
+    "date '+%A'")
 
-;;  SYSTEM INFO VAR 
+;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "2s"
     "./scripts/getUsedRam")
 (defpoll volume :interval "1s"
-    "./scripts/getVolume")
+    "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll brightness :interval "1s"
-    "./scripts/getBrightness")
+    "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+
+;; MUSIC PLAYER VARS
+(defpoll art :interval "5s"
+    "./scripts/echoSongArt")
+(defpoll song_art :interval "5s"
+    "./scripts/getSongArt")
+(defpoll song_artist :interval "2s"
+    "./scripts/getSongArtist")
+(defpoll song_title :interval "2s"
+    "./scripts/getSongTitle")
+(defpoll player_status :interval "1s"
+    "./scripts/getPlayerStatus")
+
+;; LOCK SCREEN VARS
+(defpoll username :interval "1s"
+    "whoami")
+(defpoll hostname :interval "1s"
+    "hostname")
 
 (defwindow outer-window 
-    :geometry (geometry :x "15px" 
-                        :y "50px" 
-                        :width "350px" 
-                        :height "610px")
-    (outer-window))
-(defwindow dash-window 
-    :geometry (geometry :x "25px"
+    :geometry (geometry :x "0px" 
                         :y "60px" 
-                        :width "330px" 
-                        :height "590px")
-    (dash-window))
+                        :width "345px" 
+                        :height "768px")
+    (outer-window))
 (defwindow profile 
-    :geometry (geometry :x "35px" 
-                        :y "70px" 
+    :geometry (geometry :x "17px" 
+                        :y "80px" 
                         :width "310px" 
                         :height "120px")
     (profile))
 (defwindow date 
-    :geometry (geometry :x "35px"
-                        :y "200px"
-                        :width "280px" 
+    :geometry (geometry :x "17px"
+                        :y "220px"
+                        :width "310px" 
                         :height "100px")
     (date))
 (defwindow line 
-    :geometry (geometry :x "35px"
-                        :y "340px" 
+    :geometry (geometry :x "17px"
+                        :y "355px" 
                         :width "310px" 
                         :height "2px")
     (line))
 (defwindow layout-manager 
-    :geometry (geometry :x "35px"
-                        :y "555px" 
+    :geometry (geometry :x "17px"
+                        :y "670px" 
                         :width "310px" 
                         :height "20px")
     (layout-manager))
 (defwindow system-manager 
-    :geometry (geometry :x "35px"
-                        :y "355px" 
+    :geometry (geometry :x "17px"
+                        :y "515px" 
                         :width "310px" 
-                        :height "150px")
+                        :height "50px")
     (system-manager))
+(defwindow music-player
+    :geometry (geometry :x "17px"
+                        :y "370px" 
+                        :width "310px" 
+                        :height "130px")
+    (music-player))
+(defwindow lock-screen
+    :geometry (geometry :x "520px"
+                        :y "315px" 
+                        :width "310px" 
+                        :height "130px")
+    (lock-screen))

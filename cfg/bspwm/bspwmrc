@@ -5,7 +5,6 @@
 # ##############################################################################
 
 export BROWSER=firefox
-export WINEARCH=win32
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -32,7 +31,7 @@ picom --config $HOME/.config/picom/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set wallpaper
-hsetroot -fill "$HOME/Pictures/Wallpapers/Gruvbox/gruvbox_waterfall_ig.png"
+feh --no-fehbg --bg-tile "$HOME/Pictures/Wallpapers/tiled.png"
 
 # Start polybar
 sh $HOME/.config/polybar/launch.sh

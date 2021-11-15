@@ -131,11 +131,8 @@
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 40
 
-    # Paths to default icons.
-    # icon_path = /home/kizu/.icons/Horizon/16x16/status/:/home/kizu/.icons/Horizon/16x16/devices/:/home/kizu/.icons/Horizon/16x16/apps/
-
     # Always run rule-defined scripts, even if the notification is suppressed
-    # always_run_script = true
+    always_run_script = true
 
 [shortcuts]
     close = ctrl+space

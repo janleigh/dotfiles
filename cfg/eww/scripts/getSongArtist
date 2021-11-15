@@ -1,0 +1,20 @@
+#!/bin/bash
+pattern='/\G[^\x00-\x7F]/gm'
+artist=$(playerctl -p spotify metadata --format '{{ artist }}')
+count=$(echo -n "$artist" | wc -c)
+
+if [ -z "$artist" ]; then
+	echo "Unknown Artist";
+else
+	if [ "$count" -le 18 ]; then
+        echo $artist | awk '{print tolower($0)}'
+	else	
+		if [[ "$artist" =~ [^\x00-\x7F] ]]; then
+			echo $(playerctl metadata --format '{{ artist }}' | awk '{ print substr($0, 1, 15) }')... | awk '{print tolower($0)}'
+        elif [[ "$artist" -le 15 ]]; then
+            echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2}') | awk '{print tolower($0)}'
+        else
+	    	echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2, $3}')... | awk '{print tolower($0)}'
+		fi
+	fi
+fi

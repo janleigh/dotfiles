@@ -1,12 +1,11 @@
-// Yes, I'm bad at CSS :P
-
+// Variables
 $accent: #689d6a;
 $bg: #1D2021;
 $bgSecondary: #282828;
 $bgSecondaryAlt: #32302f;
+$fg: #d5c4a1;
 $blue: #83a598;
 $watermelon: #ff4757;
-$fg: #d5c4a1;
 
 * {
     all: unset;
@@ -21,150 +20,229 @@ button:hover {
     color: $accent;
 }
 
-.dash-window {
-    background-color: $bg;
-    border: 4px solid $bgSecondary;
-}
-
+// Custom classes
 .outer-window {
     background-color: $bg;
-}
-
-.profile, .layout-manager, .system-manager {
     border-radius: 10px;
+    border-top-left-radius: 0;
 }
 
-.profile {
-    background-color: $bgSecondaryAlt;
-}
-
-.system-manager {
-    background-color: $bgSecondary;
-    margin-left: 5px;
-    margin-right: 5px;
-}
 
 .line {
     background-color: $bgSecondary;
     border-radius: 50px;
 }
 
-/* PROFILE */
-.pfp {
-    background-image: url("./assets/avatar.png");
-    background-size: 80px;
-
-    margin: 20px 40px 20px 35px;
-    border-radius: 40px;
+.profile, .layout-manager, .system-manager, .music-player {
+    border-radius: 10px;
 }
 
-.welcome {
-    font-size: 20px;
-    font-style: italic;
+// Profile
+.profile {
+    background-color: $bgSecondaryAlt;
 
-    margin-top: 20px;
-    margin-left: -65px;
-}
-
-.username {
-    font-size: 24px;
-    color: $watermelon;
+    .pfp {
+        background-image: url("./assets/avatar.png");
+        background-size: 80px;
     
-    margin-top: -20px;
-    margin-left: -65px;
-}
+        margin: 20px 40px 20px 35px;
+        border-radius: 40px;
+    }
 
-/* DATE */
-.time {
-    font-size: 50px;
-    font-family: "Iosevka Nerd Font", monospace;
-    color: $fg;
+    .text {
+        margin: 20px -20px 20px -70px;
 
-    margin: 15px 30px -20px 60px;
-
-    .semicolon {
-        padding: 0px;
-        margin: 0px;
-        margin-top: -5px;
-    
-        color: $blue;
+        .welcome, .username {
+            font-size: 20px;
+            font-style: italic;
+        }
+        
+        .username {
+            font-size: 24px;
+            color: $watermelon;
+        }    
     }
 }
 
-/* LAYOUTS */
-.layout-btn button {
-    background-color: $bgSecondaryAlt;
+// Date
+.date {
+    .time {
+        font-size: 50px;
+        font-family: "Iosevka Nerd Font", monospace;
+        color: $fg;
+    
+        margin: 10px 60px 0px 60px;
+
+        .semicolon {
+            padding: 0px;
+            margin-top: -3px;
+
+            color: $blue;
+        }
+    
+    }
+    
+    .day {
+        margin: 0px 60px 30px 60px;
+    
+        font-size: 20px;
+        font-style: italic;
+        color: $watermelon;
+    }
+}
+
+// Layout Manager
+.layout-manager {
+    background-color: $bgSecondary;
+    border-top: 2px solid $bgSecondaryAlt;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+
+    .layout-btn button {
+        background-color: $bgSecondaryAlt;
+        border-radius: 12px;
+    
+        font-family: "Material Icons";
+        font-size: 30px;
+
+        margin: 16px;
+        padding: 8px;
+    }
+}
+
+// System Manager
+.system-manager {
+    background-color: $bgSecondary;
+    padding: 0px 5px 18px 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    .label-ram-bar, .label-vol-bar, .label-brightness-bar {
+        font-size: 23px;
+        font-family: "Material Icons";
+    
+        margin: 12px 0px 0px -54px;
+    }
+    
+    .label-ram-bar {
+        margin-top: 25px;
+        margin-left: -52px;
+        font-size: 27px;
+        color: #EA6962;
+    }
+    
+    .label-brightness-bar {
+        color: #A9B665;
+    }
+    
+    .label-vol-bar {
+        color: #E0B34C;
+    }
+    
+    .ram-bar scale trough highlight, .brightness-bar scale trough highlight, .vol-bar scale trough highlight {
+        all: unset;
+        border-radius: 10px;
+    }
+    
+    .ram-bar scale trough highlight {
+        background-image: linear-gradient(to right, #fb4939, #EA6962);
+    }
+    
+    .brightness-bar scale trough highlight {
+        background-image: linear-gradient(to right, #B8BB26, #A9B665);
+    
+    }
+    
+    .vol-bar scale trough highlight {
+        background-image: linear-gradient(to right, #FABD2F, #e0b34c);
+    }
+    
+    .ram-bar scale trough, .vol-bar scale trough, .brightness-bar scale trough {
+        all: unset;
+        background-color: $bgSecondaryAlt;
+        border-radius: 50px;
+    
+        min-height: 5px;
+        min-width: 150px;
+    
+        margin: 0px 30px 0px -55px;
+    }
+}
+
+// Music Player
+.music-player {
+    background-color: $bgSecondary;
+    padding: 10px 0px 20px 0px;
+
+    .song-art {
+        background-size: 85px;
+    
+        margin: 15px 40px 0px 30px;
+        border-radius: 6px;
+    }
+    
+    .song-info {
+        font-size: 16px;
+        font-weight: bold;
+
+        margin: 20px 20px 0px -35px;
+    
+        .song-title {
+            color: $watermelon;
+            font-size: 14px;
+            font-family: "VictorMono Nerd Font", "Stick";
+            font-style: italic;
+        }
+
+        .song-artist {
+            color: $blue;
+            font-size: 12px;
+            font-style: italic;
+
+            margin-top: -20px;
+        }
+        
+        .song-controls button {
+            font-family: "Material Icons";    
+            font-size: 18px;    
+            margin-top: -10px;
+            margin-left: -5px;
+        }
+
+        .play-pause {
+            color: $watermelon;
+
+            &:hover {
+                color: $accent;
+            }
+        }
+    }
+}
+
+// Lock Screen
+.lock-screen {
+    background: $bg;
     border-radius: 10px;
 
-    font-family: "Material Icons";
-    font-size: 27px;
+    .lock-pfp {
+        background-image: url("./assets/avatar.png");
+        background-size: 80px;
 
-    margin: 30px;
-    margin-left: 7px;
-    margin-right: 7px;
+        margin: 25px 40px 25px 35px;
+        border-radius: 40px;
+    }
 
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+    .lock-text {
+        margin: 40px -20px 30px -70px;
+        
+        .lock-username {
+            font-size: 24px;
+            font-style: italic;
+            color: $watermelon;
+        }
 
-/* SYSTEM MANAGER */
-.label-ram-bar, .label-vol-bar, .label-brightness-bar {
-    font-size: 23px;
-    font-family: "Material Icons";
-
-    margin: 12px 0px 0px -54px;
-}
-
-.label-ram-bar {
-    margin-top: 25px;
-    margin-left: -52px;
-    font-size: 27px;
-    color: #EA6962;
-}
-
-.label-brightness-bar, .label-vol-bar {
-    color: #A9B665;
-}
-
-.label-vol-bar {
-    color: #E0B34C;
-}
-
-.ram-bar scale trough highlight, .brightness-bar scale trough highlight, .vol-bar scale trough highlight {
-    all: unset;
-    border-radius: 10px;
-}
-
-.ram-bar scale trough highlight {
-    background-image: linear-gradient(to right, #fb4939, #EA6962);
-}
-
-.brightness-bar scale trough highlight {
-    background-image: linear-gradient(to right, #B8BB26, #A9B665);
-
-}
-
-.vol-bar scale trough highlight {
-    background-image: linear-gradient(to right, #FABD2F, #e0b34c);
-}
-
-.ram-bar scale trough, .vol-bar scale trough, .brightness-bar scale trough {
-	all: unset;
-	background-color: $bgSecondaryAlt;
-	border-radius: 50px;
-
-	min-height: 5px;
-    min-width: 150px;
-
-    margin: 0px 30px 0px -55px;
-}
-
-.powermenu-btn button {
-    font-family: "Material Icons";
-    font-size: 30px;
-
-    margin: 23px;
-    margin-left: 7px;
-    margin-right: 7px;
-    padding: 0px 15px 0px 15px;
+        .lock-hostname {
+            font-size: 16px;
+        }
+    }
 }

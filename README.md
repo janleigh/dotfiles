@@ -18,9 +18,9 @@
 <p/>
 
 <div align="center">
-   <img src="https://cdn.xndr.tech/u/8PDRqgy.png">
-   <img src="https://cdn.xndr.tech/u/ffD9iR6.png">
-   <img src="https://cdn.xndr.tech/u/kPeYRJx.png">
+   <img src="https://cdn.xndr.tech/u/aqpANVa.png">
+   <img src="https://cdn.xndr.tech/u/UXyusOO.png">
+   <img src="https://cdn.xndr.tech/u/Op4BrBj.png">
 </div>
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
@@ -90,17 +90,10 @@
 
    * Run `:PackerSync` upon starting neovim.
    * Install this [icon](https://github.com/zayronxio/Zafiro-icons/) and [gtk](https://github.com/elkowar/gtk) theme.
+   * Modify `eww.yuck` for your resolution (default one is for 1366x768)
 
 ### ❖ System Info
 
    Have fun reading this neofetch.
 
    <img align="center" src="https://cdn.xndr.tech/u/Yz4EvzZ.png">
-
-### ❖ Old ***"Rice"***
-
-<div align="center">
-   <img src="https://cdn.xndr.tech/u/WTcxwnD.png">
-   <img src="https://cdn.xndr.tech/u/TLrHuG3.png">
-   <img src="https://cdn.xndr.tech/u/ZWtiLmg.png">
-</div>
