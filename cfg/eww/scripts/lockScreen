@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pkill eww
+sleep 0.5
+doas -u $USER $HOME/.local/bin/lck

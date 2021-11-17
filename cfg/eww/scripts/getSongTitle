@@ -13,6 +13,8 @@ else
 			echo $(playerctl metadata --format '{{ title }}' | awk '{ print substr($0, 1, 15) }')... | awk '{print tolower($0)}'
         elif [[ "$title" -le 15 ]]; then
             echo $(playerctl metadata --format '{{ title }}' | awk '{print $1, $2}') | awk '{print tolower($0)}'
+		elif [[ "$1" = "full" ]]; then
+			echo $title | awk '{print tolower($0)}'
         else
 	    	echo $(playerctl metadata --format '{{ title }}' | awk '{print $1, $2, $3}')... | awk '{print tolower($0)}'
 		fi

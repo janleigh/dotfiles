@@ -1,0 +1,10 @@
+#!/bin/bash
+
+appname=$(echo "$1" | sed  '/^$/d' | xargs)
+summary=$(echo "$2" | sed  '/^$/d' | xargs)
+body=$(echo "$3" | sed  '/^$/d' | xargs)
+timestamp=$(date +"%I:%M %p")
+
+rm $HOME/.cache/dunst.log 
+sleep 1
+echo -en "$timestamp\n$appname\n$body\n$summary" >> $HOME/.cache/dunst.log

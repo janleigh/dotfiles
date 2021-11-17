@@ -4,8 +4,12 @@ $bg: #1D2021;
 $bgSecondary: #282828;
 $bgSecondaryAlt: #32302f;
 $fg: #d5c4a1;
-$blue: #83a598;
 $watermelon: #ff4757;
+
+$red: #ea6962;
+$blue: #83a598;
+$magenta: #d3869b;
+$green: #a9b665;
 
 * {
     all: unset;
@@ -260,6 +264,79 @@ button:hover {
 
         .lock-hostname {
             font-size: 16px;
+        }
+    }
+}
+
+// Powermenu
+.powermenu {
+    button {
+        background-color: $bg;
+        border-radius: 10px;
+    
+        font-family: "Material Icons";
+        font-size: 30px;
+
+        margin: 16px 8px 0px 8px;
+        padding: 8px;
+        padding-top: 10px;
+
+        &:hover {
+            color: $accent;
+        }
+    }
+
+    .poweroff-btn {
+        color: $red;
+    }
+
+    .restart-btn {
+        color: $blue;
+    }
+
+    .lock-btn {
+        color: $magenta;
+
+        padding-right: 9px;
+        padding-top: 12px;
+    }
+
+    .logout-btn {
+        color: $green;
+    }
+}
+
+// Notification Center
+.notification-center {
+    background-color: $bgSecondary;
+    border-radius: 10px;
+
+    .notification-header {
+        background-color: $bgSecondaryAlt;
+        border-radius: 10px 10px 0px 0px;
+
+        color: $red;
+        font-size: 14px;
+        font-style: italic;
+    }
+
+    .notification {
+        background-color: $bgSecondaryAlt;
+        border-radius: 4px;
+        margin: 8px;
+
+        .notification-body {
+            color: $blue;
+            font-size: 16px;
+
+            margin-bottom: 4px;
+        }
+        .notification-info {
+            font-style: italic;
+
+            .notification-timestamp, .notification-appname {
+                margin-left: 60px;
+            }
         }
     }
 }

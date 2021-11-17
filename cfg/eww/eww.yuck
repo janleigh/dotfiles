@@ -59,14 +59,14 @@
              :orientation "h"
              :space-evenly "true"
             (button :onclick "bsp-layout once tiled" "")
-            (button :onclick "bsp-layout once even" "")
+            (button :onclick "bsp-layout once grid" "")
             (button :onclick "bsp-layout once tall" "")
     ))
 )
 (defwidget music-player [] 
     (box :class "music-player"
          :orientation "h"
-        (box :class "song-art" :style "background-image: url('${art}')" song_art)
+        (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art)
         (box :class "song-info" :orientation "v"
             (label :class "song-title" :text song_title)
             (box :class "song-artist" song_artist)
@@ -80,7 +80,7 @@
 )
 (defwidget lock-notice []
     (box :class "lock-notice" :orientation "h"
-        (box :class "lock-header-text" "Lock On!")
+        (box :class "lock-header-text" "Lock On")
     )
 )
 (defwidget lock-screen [] 
@@ -92,6 +92,26 @@
             (box :class "lock-text" :orientation "v"
                 (box :class "lock-username" username)
                 (box :class "lock-hostname" "@${hostname}")
+            )
+        )
+    )
+)
+(defwidget powermenu []
+    (box :class "powermenu" :orientation "h"
+        (button :class "poweroff-btn" :onclick "systemctl poweroff" "")
+        (button :class "restart-btn" :onclick "systemctl reboot" "")
+        (button :class "lock-btn" :onclick "doas -u $USER ./scripts/lockScreen" "")
+        (button :class "logout-btn" :onclick "bspc quit" "")
+    )
+)
+(defwidget notification-center []
+    (box :class "notifications" :orientation "v"
+        (box :class "notification-header" "Latest Notification")
+        (box :class "notification" :orientation "h"
+            (box :class "notification-body" :tooltip body body)
+            (box :class "notification-info" :orientation "v"
+                (box :class "notification-timestamp" "at ${timestamp}")
+                (box :class "notification-appname" appname)
             )
         )
     )
@@ -108,9 +128,9 @@
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "2s"
     "./scripts/getUsedRam")
-(defpoll volume :interval "1s"
+(defpoll volume :interval "1ms"
     "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll brightness :interval "1s"
+(defpoll brightness :interval "1ms"
     "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 
 ;; MUSIC PLAYER VARS
@@ -122,6 +142,8 @@
     "./scripts/getSongArtist")
 (defpoll song_title :interval "2s"
     "./scripts/getSongTitle")
+(defpoll song_title_full :interval "2s"
+    "./scripts/getSongTitle full")
 (defpoll player_status :interval "1s"
     "./scripts/getPlayerStatus")
 
@@ -131,57 +153,77 @@
 (defpoll hostname :interval "1s"
     "hostname")
 
+;; NOTIFICATIONS VARS
+(defpoll timestamp :interval "1s"
+    "./scripts/getLatestNotification timestamp")
+(defpoll appname :interval "1s"
+    "./scripts/getLatestNotification appname")
+(defpoll body :interval "1s"
+    "./scripts/getLatestNotification body")
+
 (defwindow outer-window 
-    :geometry (geometry :x "0px" 
-                        :y "60px" 
-                        :width "345px" 
+    :geometry (geometry :x "0%" 
+                        :y "7%" 
+                        :width "340px" 
                         :height "768px")
     (outer-window))
 (defwindow profile 
-    :geometry (geometry :x "17px" 
-                        :y "80px" 
+    :geometry (geometry :x "1%" 
+                        :y "9%" 
                         :width "310px" 
                         :height "120px")
     (profile))
 (defwindow date 
-    :geometry (geometry :x "17px"
-                        :y "220px"
+    :geometry (geometry :x "1%"
+                        :y "28%"
                         :width "310px" 
                         :height "100px")
     (date))
 (defwindow line 
-    :geometry (geometry :x "17px"
-                        :y "355px" 
+    :geometry (geometry :x "1%"
+                        :y "46%" 
                         :width "310px" 
                         :height "2px")
     (line))
 (defwindow layout-manager 
-    :geometry (geometry :x "17px"
-                        :y "670px" 
+    :geometry (geometry :x "1%"
+                        :y "88%" 
                         :width "310px" 
                         :height "20px")
     (layout-manager))
 (defwindow system-manager 
-    :geometry (geometry :x "17px"
-                        :y "515px" 
+    :geometry (geometry :x "1%"
+                        :y "67%" 
                         :width "310px" 
-                        :height "50px")
+                        :height "220px")
     (system-manager))
 (defwindow music-player
-    :geometry (geometry :x "17px"
-                        :y "370px" 
+    :geometry (geometry :x "1%"
+                        :y "48%" 
                         :width "310px" 
                         :height "130px")
     (music-player))
 (defwindow lock-notice
-    :geometry (geometry :x "517px"
-                        :y "260px" 
+    :geometry (geometry :x "38%"
+                        :y "34%"
                         :width "310px" 
                         :height "40px")
     (lock-notice))
 (defwindow lock-screen
-    :geometry (geometry :x "520px"
-                        :y "315px" 
+    :geometry (geometry :x "38%"
+                        :y "41%" 
                         :width "310px" 
                         :height "130px")
     (lock-screen))
+(defwindow powermenu
+    :geometry (geometry :x "76%"
+                        :y "4%" 
+                        :width "320px" 
+                        :height "80px")
+    (powermenu))
+(defwindow notification-center
+    :geometry (geometry :x "26%"
+                        :y "83%" 
+                        :width "320px" 
+                        :height "120px")
+    (notification-center))
