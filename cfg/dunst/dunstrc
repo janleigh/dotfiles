@@ -131,9 +131,6 @@
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 40
 
-    # Always run rule-defined scripts, even if the notification is suppressed
-    always_run_script = true
-
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space

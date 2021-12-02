@@ -13,6 +13,9 @@
         <img src="https://img.shields.io/github/forks/TheRealKizu/dotfiles?color=%237daea3&labelColor=%231d2021&style=flat-square">
     </a>
     <img src="https://img.shields.io/github/repo-size/TheRealKizu/dotfiles?color=%23ea6962&labelColor=%231d2021&style=flat-square">
+    <a href="https://discord.gg/2RfJb3CVfb">
+      <img src="https://img.shields.io/discord/853812920919261235?color=d3869b&labelColor=1d2021&style=flat-square"/>
+   </a>
 </div>
 
 <p/>
@@ -68,7 +71,7 @@
    | <kbd>Alt</kbd> + <kbd>F</kbd>                                        | Toggle polybar panel        |
    |                                                                      |                             | 
    | <kbd>Super</kbd> + <kbd>Enter</kbd>                                  | Open an terminal instance   |
-   | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>` | Restart bspwm               |
+   | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>  | Restart bspwm               |
 
 ### ❖ Dependencies
 

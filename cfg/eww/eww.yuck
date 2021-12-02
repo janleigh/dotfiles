@@ -97,23 +97,11 @@
     )
 )
 (defwidget powermenu []
-    (box :class "powermenu" :orientation "h"
+    (box :class "powermenu" :orientation ""
         (button :class "poweroff-btn" :onclick "systemctl poweroff" "")
         (button :class "restart-btn" :onclick "systemctl reboot" "")
         (button :class "lock-btn" :onclick "doas -u $USER ./scripts/lockScreen" "")
         (button :class "logout-btn" :onclick "bspc quit" "")
-    )
-)
-(defwidget notification-center []
-    (box :class "notifications" :orientation "v"
-        (box :class "notification-header" "Latest Notification")
-        (box :class "notification" :orientation "h"
-            (box :class "notification-body" :tooltip body body)
-            (box :class "notification-info" :orientation "v"
-                (box :class "notification-timestamp" "at ${timestamp}")
-                (box :class "notification-appname" appname)
-            )
-        )
     )
 )
 
@@ -152,14 +140,6 @@
     "whoami")
 (defpoll hostname :interval "1s"
     "hostname")
-
-;; NOTIFICATIONS VARS
-(defpoll timestamp :interval "1s"
-    "./scripts/getLatestNotification timestamp")
-(defpoll appname :interval "1s"
-    "./scripts/getLatestNotification appname")
-(defpoll body :interval "1s"
-    "./scripts/getLatestNotification body")
 
 (defwindow outer-window 
     :geometry (geometry :x "0%" 
@@ -221,9 +201,3 @@
                         :width "320px" 
                         :height "80px")
     (powermenu))
-(defwindow notification-center
-    :geometry (geometry :x "26%"
-                        :y "83%" 
-                        :width "320px" 
-                        :height "120px")
-    (notification-center))

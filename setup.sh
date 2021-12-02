@@ -166,7 +166,7 @@ copyFiles() {
     fi
 
     if [ -d $HOME/Pictures/Wallpapers ]; then
-        cp -r ./etc/walls/gruvbox_waterfall_ig.png $HOME/Pictures/Wallpapers 
+        cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/Wallpapers 
     else 
         mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/tiled.png $HOME/Pictures/Wallpapers
     fi

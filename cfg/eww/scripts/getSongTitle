@@ -10,7 +10,7 @@ else
         echo $title | awk '{print tolower($0)}'
 	else	
 		if [[ "$title" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
-			echo $(playerctl metadata --format '{{ title }}' | awk '{ print substr($0, 1, 15) }')... | awk '{print tolower($0)}'
+			echo $(playerctl metadata --format '{{ title }}' | awk '{ print substr($0, 1, 8) }')... | awk '{print tolower($0)}'
         elif [[ "$title" -le 15 ]]; then
             echo $(playerctl metadata --format '{{ title }}' | awk '{print $1, $2}') | awk '{print tolower($0)}'
 		elif [[ "$1" = "full" ]]; then

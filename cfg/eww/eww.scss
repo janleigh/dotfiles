@@ -27,8 +27,8 @@ button:hover {
 // Custom classes
 .outer-window {
     background-color: $bg;
-    border-radius: 10px;
-    border-top-left-radius: 0;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
 }
 
 
@@ -49,7 +49,7 @@ button:hover {
         background-image: url("./assets/avatar.png");
         background-size: 80px;
     
-        margin: 20px 40px 20px 35px;
+        margin: 20px 35px 20px 40px;
         border-radius: 40px;
     }
 
@@ -194,7 +194,7 @@ button:hover {
         .song-title {
             color: $watermelon;
             font-size: 14px;
-            font-family: "VictorMono Nerd Font", "Stick";
+            font-family: "VictorMono Nerd Font";
             font-style: italic;
         }
 
@@ -303,40 +303,5 @@ button:hover {
 
     .logout-btn {
         color: $green;
-    }
-}
-
-// Notification Center
-.notification-center {
-    background-color: $bgSecondary;
-    border-radius: 10px;
-
-    .notification-header {
-        background-color: $bgSecondaryAlt;
-        border-radius: 10px 10px 0px 0px;
-
-        color: $red;
-        font-size: 14px;
-        font-style: italic;
-    }
-
-    .notification {
-        background-color: $bgSecondaryAlt;
-        border-radius: 4px;
-        margin: 8px;
-
-        .notification-body {
-            color: $blue;
-            font-size: 16px;
-
-            margin-bottom: 4px;
-        }
-        .notification-info {
-            font-style: italic;
-
-            .notification-timestamp, .notification-appname {
-                margin-left: 60px;
-            }
-        }
     }
 }
