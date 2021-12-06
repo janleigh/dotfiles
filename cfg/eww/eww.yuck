@@ -17,51 +17,44 @@
         )
     )
 )
-(defwidget date [] 
-    (box :orientation "v" :space-evenly "true"
-        (box :orientation "h"
-            :class "time"
-
-            (box :class "hour" hour)
-            (box :class "semicolon" "⋮")
-            (box :class "minute" minute)
-        )
-        (box :orientation "v" :class "day"
-            (box :class "weekday" weekday)
-        )
-    )
-)
 (defwidget system-manager [] 
-    (box :orientation "v" 
+    (box :orientation "h" 
          :space-evenly "false" 
 
-        (box :class "ram-bar" 
-             :orientation "h" 
-            (box :class "label-ram-bar" ""
-                (scale :min 0 :max 101 :active "false" :value used_ram
-        )))
-        (box :class "vol-bar" :orientation "h" 
-            (box :class "label-vol-bar" ""
-                (scale :min 0 :max 101 :value volume :onchange "amixer -q set Master {}%"
-        )))
-
-        (box :class "brightness-bar" 
-             :orientation "h" 
-            (box :class "label-brightness-bar" ""
-                (scale :min 0 :max 101 :value brightness :onchange "brightnessctl set {}%"
-        )))
+        (box :class "system-info" :orientation "v"
+            (box :class "progress"
+                (box :class "progress-ram" 
+                    :orientation "h" 
+                    (circular-progress :value used_ram :thickness 23 :start-angle 0
+                ))
+                (box :class "progress-volume" 
+                    :orientation "h" 
+                    (circular-progress :value volume :thickness 23 :start-angle 0
+                ))
+                (box :class "progress-brightness" 
+                    :orientation "h" 
+                    (circular-progress :value brightness :thickness 23 :start-angle 0
+                ))
+            )
+            (box :class "labels" :orientation "h"
+                (box :class "label-ram" "RAM")
+                (box :class "label-volume" "VOL")
+                (box :class "label-brightness" "BRI")
+            )
+        )
     )
 )
 (defwidget layout-manager [] 
     (box :class "layouts" 
-         :orientation "h"
+         :orientation "v"
         (box :class "layout-btn"
              :orientation "h"
              :space-evenly "true"
             (button :onclick "bsp-layout once tiled" "")
             (button :onclick "bsp-layout once grid" "")
             (button :onclick "bsp-layout once tall" "")
-    ))
+        )
+    )
 )
 (defwidget music-player [] 
     (box :class "music-player"
@@ -98,10 +91,10 @@
 )
 (defwidget powermenu []
     (box :class "powermenu" :orientation ""
-        (button :class "poweroff-btn" :onclick "systemctl poweroff" "")
-        (button :class "restart-btn" :onclick "systemctl reboot" "")
-        (button :class "lock-btn" :onclick "doas -u $USER ./scripts/lockScreen" "")
-        (button :class "logout-btn" :onclick "bspc quit" "")
+        (button :onclick "systemctl poweroff" "")
+        (button :onclick "systemctl reboot" "")
+        (button :onclick "sh ./scripts/lockScreen" "")
+        (button :onclick "bspc quit" "")
     )
 )
 
@@ -143,43 +136,37 @@
 
 (defwindow outer-window 
     :geometry (geometry :x "0%" 
-                        :y "7%" 
-                        :width "340px" 
-                        :height "768px")
+                        :y "36px" 
+                        :width "337px" 
+                        :height "553px")
     (outer-window))
 (defwindow profile 
     :geometry (geometry :x "1%" 
-                        :y "9%" 
+                        :y "7%" 
                         :width "310px" 
                         :height "120px")
     (profile))
-(defwindow date 
-    :geometry (geometry :x "1%"
-                        :y "28%"
-                        :width "310px" 
-                        :height "100px")
-    (date))
 (defwindow line 
     :geometry (geometry :x "1%"
-                        :y "46%" 
+                        :y "33%" 
                         :width "310px" 
                         :height "2px")
     (line))
 (defwindow layout-manager 
     :geometry (geometry :x "1%"
-                        :y "88%" 
+                        :y "22%" 
                         :width "310px" 
-                        :height "20px")
+                        :height "90px")
     (layout-manager))
 (defwindow system-manager 
     :geometry (geometry :x "1%"
-                        :y "67%" 
+                        :y "54%" 
                         :width "310px" 
-                        :height "220px")
+                        :height "160px")
     (system-manager))
 (defwindow music-player
     :geometry (geometry :x "1%"
-                        :y "48%" 
+                        :y "35%" 
                         :width "310px" 
                         :height "130px")
     (music-player))
@@ -197,7 +184,7 @@
     (lock-screen))
 (defwindow powermenu
     :geometry (geometry :x "76%"
-                        :y "4%" 
-                        :width "320px" 
-                        :height "80px")
+                        :y "36px" 
+                        :width "330px" 
+                        :height "82px")
     (powermenu))

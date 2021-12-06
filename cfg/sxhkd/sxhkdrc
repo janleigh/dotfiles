@@ -58,7 +58,7 @@ super + l
 
 # Start alacritty
 super + Return
-    alacritty -t "term"
+    tabbed alacritty -t "term" --embed
 
 # Open Vivaldi
 super + b

@@ -23,7 +23,7 @@ config() { bspc config "$@" & }
 # Autostart Apps
 dunst --config $HOME/.config/dunst/dunstrc &
 $HOME/.local/bin/eww daemon &
-mpd $HOME/.config/mpd/mpd.conf
+# mpd $HOME/.config/mpd/mpd.conf
 # $HOME/.local/bin/mpd-discord-rpc &
 picom --config $HOME/.config/picom/picom.conf &
 
@@ -71,9 +71,9 @@ config borderless_monocle           true
 config gapless_monocle              true
 
 # Yes, this is stolen from gk.
-outer='0x1d2021'   # outer
-inner1='0x32302f'  # focused
-inner2='0x282828'  # normal
+outer='0x101415'   # outer
+inner1='0x151a1c'  # focused
+inner2='0x131718'  # normal
 
 targets() {
  	case $1 in

@@ -7,23 +7,22 @@
     <code>etc</code> for other stuff
     <p></p>
     <a href="https://github.com/TheRealKizu/dotfiles/stargazers">
-        <img src="https://img.shields.io/github/stars/TheRealKizu/dotfiles?color=%23a9b665&labelColor=%231d2021&style=flat-square">
+        <img src="https://img.shields.io/github/stars/TheRealKizu/dotfiles?color=%238dc776&labelColor=%23101415&style=flat-square">
     </a>
     <a href="https://github.com/TheRealKizu/dotfiles/network/members/">
-        <img src="https://img.shields.io/github/forks/TheRealKizu/dotfiles?color=%237daea3&labelColor=%231d2021&style=flat-square">
+        <img src="https://img.shields.io/github/forks/TheRealKizu/dotfiles?color=%2384a0c6&labelColor=%23101415&style=flat-square">
     </a>
-    <img src="https://img.shields.io/github/repo-size/TheRealKizu/dotfiles?color=%23ea6962&labelColor=%231d2021&style=flat-square">
+    <img src="https://img.shields.io/github/repo-size/TheRealKizu/dotfiles?color=%23e7ac7e&labelColor=%23101415&style=flat-square">
     <a href="https://discord.gg/2RfJb3CVfb">
-      <img src="https://img.shields.io/discord/853812920919261235?color=d3869b&labelColor=1d2021&style=flat-square"/>
+      <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=flat-square"/>
    </a>
 </div>
 
 <p/>
 
 <div align="center">
-   <img src="https://cdn.xndr.tech/u/aqpANVa.png">
-   <img src="https://cdn.xndr.tech/u/UXyusOO.png">
-   <img src="https://cdn.xndr.tech/u/rq79jTw.png">
+   <img src="https://cdn.xndr.tech/u/dfolQqt.png">
+   <img src="https://cdn.xndr.tech/u/UNfAjBB.png">
 </div>
 
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
@@ -93,11 +92,11 @@
    ~~If I forgot something, please let me know.~~ 
 
    * Run `:PackerSync` upon starting neovim.
-   * Install this [icon](https://github.com/zayronxio/Zafiro-icons/) and [gtk](https://github.com/elkowar/gtk) theme.
+   * Install this [icon](https://github.com/zayronxio/Zafiro-icons/) and [gtk](https://github.com/TheRealKizu/gtk3) theme.
    * Modify `eww.yuck` for your resolution (default one is for 1366x768)
 
 ### ❖ System Info
 
    Have fun reading this neofetch.
 
-   <img align="center" src="https://cdn.xndr.tech/u/Yz4EvzZ.png">
+   <img align="center" src="https://cdn.xndr.tech/u/DUiqR78.png">

@@ -1,15 +1,17 @@
 // Variables
-$accent: #689d6a;
-$bg: #1D2021;
-$bgSecondary: #282828;
-$bgSecondaryAlt: #32302f;
-$fg: #d5c4a1;
+$bg: #0E1112;
+$bgSecondary: #101415;
+$bgSecondaryAlt: #131718;
+$fg: #C5C8C9;
 $watermelon: #ff4757;
 
-$red: #ea6962;
-$blue: #83a598;
-$magenta: #d3869b;
-$green: #a9b665;
+$red: #f65b5b;
+$blue: #84a0c6;
+$blue-desaturated: rgb(117, 140, 176);
+$magenta: #bb8fe5;
+$green: #8dc776;
+$yellow: #e7ac7e;
+$accent: $blue;
 
 * {
     all: unset;
@@ -26,14 +28,14 @@ button:hover {
 
 // Custom classes
 .outer-window {
-    background-color: $bg;
-    border-radius: 8px;
+    background-color: $bgSecondary;
+    border-radius: 10px;
     border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
-
 .line {
-    background-color: $bgSecondary;
+    background-color: $bgSecondaryAlt;
     border-radius: 50px;
 }
 
@@ -43,18 +45,19 @@ button:hover {
 
 // Profile
 .profile {
-    background-color: $bgSecondaryAlt;
+    /* background-color: $bgSecondaryAlt; */
 
     .pfp {
         background-image: url("./assets/avatar.png");
-        background-size: 80px;
-    
-        margin: 20px 35px 20px 40px;
+        background-size: 100%;
         border-radius: 40px;
+
+        margin: 20px 35px 20px 40px;
     }
 
     .text {
-        margin: 20px -20px 20px -70px;
+        margin: 20px -20px;
+        margin-left: -65px;
 
         .welcome, .username {
             font-size: 20px;
@@ -63,126 +66,69 @@ button:hover {
         
         .username {
             font-size: 24px;
-            color: $watermelon;
+            color: $blue-desaturated;
         }    
-    }
-}
-
-// Date
-.date {
-    .time {
-        font-size: 50px;
-        font-family: "Iosevka Nerd Font", monospace;
-        color: $fg;
-    
-        margin: 10px 60px 0px 60px;
-
-        .semicolon {
-            padding: 0px;
-            margin-top: -3px;
-
-            color: $blue;
-        }
-    
-    }
-    
-    .day {
-        margin: 0px 60px 30px 60px;
-    
-        font-size: 20px;
-        font-style: italic;
-        color: $watermelon;
     }
 }
 
 // Layout Manager
 .layout-manager {
-    background-color: $bgSecondary;
-    border-top: 2px solid $bgSecondaryAlt;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-
     .layout-btn button {
-        background-color: $bgSecondaryAlt;
-        border-radius: 12px;
-    
+        border-radius: 10px;
+
         font-family: "Material Icons";
         font-size: 30px;
-
-        margin: 16px;
-        padding: 8px;
+        margin: 8px;
     }
 }
 
 // System Manager
 .system-manager {
-    background-color: $bgSecondary;
-    padding: 0px 5px 18px 5px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    background-color: $bgSecondaryAlt;
+    padding: 0px 12px;
 
-    .label-ram-bar, .label-vol-bar, .label-brightness-bar {
-        font-size: 23px;
-        font-family: "Material Icons";
-    
-        margin: 12px 0px 0px -54px;
+    .system-info {
+        .labels {
+            margin: 0px;
+
+            font-size: 18px;
+        }
+        .progress {
+            margin-bottom: -36px;
+
+            .progress-ram circular-progress {
+                background-color: $bgSecondary;
+                color: $yellow;
+            }
+
+            .progress-volume circular-progress {
+                background-color: $bgSecondary;
+                color: $green;
+            }
+
+            .progress-brightness circular-progress {
+                background-color: $bgSecondary;
+                color: $magenta;
+            }
+        }
     }
-    
-    .label-ram-bar {
-        margin-top: 25px;
-        margin-left: -52px;
-        font-size: 27px;
-        color: #EA6962;
+
+    circular-progress {
+        margin: 0px 24px 0px 24px;
     }
-    
-    .label-brightness-bar {
-        color: #A9B665;
-    }
-    
-    .label-vol-bar {
-        color: #E0B34C;
-    }
-    
-    .ram-bar scale trough highlight, .brightness-bar scale trough highlight, .vol-bar scale trough highlight {
-        all: unset;
-        border-radius: 10px;
-    }
-    
-    .ram-bar scale trough highlight {
-        background-image: linear-gradient(to right, #fb4939, #EA6962);
-    }
-    
-    .brightness-bar scale trough highlight {
-        background-image: linear-gradient(to right, #B8BB26, #A9B665);
-    
-    }
-    
-    .vol-bar scale trough highlight {
-        background-image: linear-gradient(to right, #FABD2F, #e0b34c);
-    }
-    
-    .ram-bar scale trough, .vol-bar scale trough, .brightness-bar scale trough {
-        all: unset;
-        background-color: $bgSecondaryAlt;
-        border-radius: 50px;
-    
-        min-height: 5px;
-        min-width: 150px;
-    
-        margin: 0px 30px 0px -55px;
-    }
+
 }
 
 // Music Player
 .music-player {
-    background-color: $bgSecondary;
+    background-color: $bgSecondaryAlt;
     padding: 10px 0px 20px 0px;
 
     .song-art {
         background-size: 85px;
+        border-radius: 6px;
     
         margin: 15px 40px 0px 30px;
-        border-radius: 6px;
     }
     
     .song-info {
@@ -192,18 +138,15 @@ button:hover {
         margin: 20px 20px 0px -35px;
     
         .song-title {
-            color: $watermelon;
+            color: $magenta;
             font-size: 14px;
-            font-family: "VictorMono Nerd Font";
-            font-style: italic;
         }
 
         .song-artist {
-            color: $blue;
-            font-size: 12px;
-            font-style: italic;
-
             margin-top: -20px;
+
+            color: $green;
+            font-size: 12px;
         }
         
         .song-controls button {
@@ -212,20 +155,12 @@ button:hover {
             margin-top: -10px;
             margin-left: -5px;
         }
-
-        .play-pause {
-            color: $watermelon;
-
-            &:hover {
-                color: $accent;
-            }
-        }
     }
 }
 
 // Lock Screen
 .lock-notice {
-    background-color: $bg;
+    background-color: $bgSecondaryAlt;
     border-radius: 10px;
     margin: 10px 60px 0px 60px;
 
@@ -242,7 +177,7 @@ button:hover {
 }
 
 .lock-screen {
-    background: $bg;
+    background: $bgSecondaryAlt;
     border-radius: 10px;
 
     .lock-pfp {
@@ -259,7 +194,7 @@ button:hover {
         .lock-username {
             font-size: 24px;
             font-style: italic;
-            color: $watermelon;
+            color: $blue-desaturated;
         }
 
         .lock-hostname {
@@ -270,38 +205,39 @@ button:hover {
 
 // Powermenu
 .powermenu {
+    background-color: $bgSecondary;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+
     button {
-        background-color: $bg;
+        background-color: $bgSecondaryAlt;
         border-radius: 10px;
     
         font-family: "Material Icons";
         font-size: 30px;
 
-        margin: 16px 8px 0px 8px;
+        margin: 10px;
         padding: 8px;
         padding-top: 10px;
 
-        &:hover {
-            color: $accent;
+        &:nth-child(1) {
+            color: $red;
         }
-    }
 
-    .poweroff-btn {
-        color: $red;
-    }
+        &:nth-child(2) {
+            color: $yellow;
+        }
 
-    .restart-btn {
-        color: $blue;
-    }
+        &:nth-child(3) {
+            color: $magenta;
+        }
 
-    .lock-btn {
-        color: $magenta;
+        &:nth-child(4) {
+            color: $green;
+        }
 
-        padding-right: 9px;
-        padding-top: 12px;
-    }
-
-    .logout-btn {
-        color: $green;
+        &:hover {
+            color: $blue;
+        }
     }
 }

@@ -22,7 +22,7 @@ configuration {
 window {    
 	width:							20%;
     border:                         4px;
-    border-color:                   #282828;
+    border-color:                   @background-alt;
     font:                           "Iosevka Nerd Font 8.2";
 }
 
@@ -33,7 +33,7 @@ prompt {
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
     border:                         0 0 4px 0;
-    border-color:                   #32302f;
+    border-color:                   #1c1f21;
     border-radius:                  10px;
 }
 
@@ -49,7 +49,7 @@ entry {
     margin:                         2px;
     blink:                          true;
     border:                         0 0 4px 0;
-    border-color:                   #32302f;
+    border-color:                   #1c1f21;
     border-radius:                  10px;
 }
 
@@ -115,6 +115,6 @@ element selected {
     background-color:               @background-alt;
     text-color:                     @foreground;
     border:                         0 0 4px 0;
-    border-color:                   #32302f;
+    border-color:                   #1c1f21;
     border-radius:                  10px;
 }
