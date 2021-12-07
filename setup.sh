@@ -165,10 +165,10 @@ copyFiles() {
         mkdir $HOME/.local/share/fonts && cp -r ./etc/fonts/* $HOME/.local/share/fonts
     fi
 
-    if [ -d $HOME/Pictures/Wallpapers ]; then
-        cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/Wallpapers 
+    if [ -d $HOME/Pictures/walls ]; then
+        cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/walls 
     else 
-        mkdir $HOME/Pictures/Wallpapers && cp -r ./etc/walls/tiled.png $HOME/Pictures/Wallpapers
+        mkdir $HOME/Pictures/walls && cp -r ./etc/walls/tiled.png $HOME/Pictures/walls
     fi
 
     echo "[*] Copied binaries, fonts and wallpapers successfully!"

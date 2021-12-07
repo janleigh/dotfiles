@@ -31,7 +31,7 @@ picom --config $HOME/.config/picom/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set wallpaper
-feh --no-fehbg --bg-tile "$HOME/Pictures/Wallpapers/tiled.png"
+feh --no-fehbg --bg-tile "$HOME/Pictures/walls/tiled.png"
 
 # Start polybar
 sh $HOME/.config/polybar/launch.sh
