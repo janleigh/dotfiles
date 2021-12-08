@@ -54,13 +54,13 @@ super + ctrl + space
 
 # Lock screen
 super + l
-    sh $HOME/.local/bin/lck -nf Iosevka-Medium-Nerd-Font-Complete
+    sh $HOME/.local/bin/lck
 
 # Start alacritty
 super + Return
     tabbed alacritty -t "term" --embed
 
-# Open Vivaldi
+# Open browser
 super + b
     firefox
 

@@ -68,7 +68,10 @@
    | <kbd>Super</kbd> + <kbd>D</kbd>                                      | Open dashboard              |
    | <kbd>Super</kbd> + <kbd>P</kbd>                                      | Open powermenu              |
    |                                                                      |                             |
-   | <kbd>Alt</kbd> + <kbd>F</kbd>                                        | Toggle polybar panel        |
+   | <kbd>Alt</kbd> + <kbd>F</kbd>                                        | Toggle polybar panel        
+   |
+   | <kbd>Super</kbd> + <kbd>L</kbd>                                      | Toggle screen lock  
+   |
    |                                                                      |                             | 
    | <kbd>Super</kbd> + <kbd>Enter</kbd>                                  | Open an terminal instance   |
    | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>  | Restart bspwm               |
