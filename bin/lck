@@ -46,3 +46,8 @@ fi
 
 # Haha, very funny lines :)
 $HOME/.local/bin/tglbar && $HOME/.local/bin/eww open-many lock-notice lock-screen && lock && $HOME/.local/bin/eww close-all && $HOME/.local/bin/tglbar
+
+status2=$(playerctl -p spotify status || true)
+if [ "$status2" == "Paused" ]; then
+    playerctl play
+fi

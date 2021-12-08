@@ -1,3 +1,6 @@
 [submodule "cfg/nvim"]
 	path = cfg/nvim
 	url = https://github.com/TheRealKizu/neodots/
+[submodule "etc/discord-css"]
+	path = etc/discord-css
+	url = https://github.com/TheRealKizu/discord-css/

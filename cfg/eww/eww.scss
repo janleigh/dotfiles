@@ -50,12 +50,12 @@ button:hover {
     .pfp {
         background-image: url("./assets/avatar.png");
         background-size: 100%;
-        border-radius: 40px;
+        border-radius: 100%;
 
-        margin: 20px 35px 20px 40px;
+        margin: 12px 105px;
     }
 
-    .text {
+    /* .text {
         margin: 20px -20px;
         margin-left: -65px;
 
@@ -68,7 +68,7 @@ button:hover {
             font-size: 24px;
             color: $blue-desaturated;
         }    
-    }
+    } */
 }
 
 // Layout Manager
@@ -78,7 +78,7 @@ button:hover {
 
         font-family: "Material Icons";
         font-size: 30px;
-        margin: 8px;
+        margin: 36px;
     }
 }
 

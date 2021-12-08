@@ -9,12 +9,12 @@
          :space-evenly "true"
 
         (box :class "pfp")
-        (box :class "text" :orientation "v"
-             :space-evenly "true"
+        ;; (box :class "text" :orientation "v"
+        ;;     :space-evenly "true"
 
-            (box :class "welcome" "welcome!")
-            (box :class "username" "TheRealKizu")
-        )
+        ;;    (box :class "welcome" "welcome!")
+        ;;    (box :class "username" "TheRealKizu")
+        ;; )
     )
 )
 (defwidget system-manager [] 
