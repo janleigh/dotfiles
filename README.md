@@ -21,7 +21,7 @@
 <p/>
 
 <div align="center">
-   <img src="https://cdn.xndr.tech/u/wvsKbbv.png">
+   <img src="https://cdn.xndr.tech/u/fTp7xuu.png">
    <img src="https://cdn.xndr.tech/u/Mvv46gp.png">
    <img src="https://cdn.xndr.tech/u/UNfAjBB.png">
 </div>
