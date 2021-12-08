@@ -55,7 +55,7 @@
 
    |                               Keybind                                |         Description         |
    | -------------------------------------------------------------------- | --------------------------- |
-   | <kbd>Super</kbd> + <kbd>C</kbd>                                      | Kill focused window         ||                                                                      |                             |
+   | <kbd>Super</kbd> + <kbd>C</kbd>                                      | Kill focused window         |                                                              |                                                                      |                             |
    | <kbd>Super</kbd> + <kbd>Space</kbd>                                  | Float the focused window    |
    | <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>                     | Tile the floating window    |
    |                                                                      |                             |
@@ -68,10 +68,8 @@
    | <kbd>Super</kbd> + <kbd>D</kbd>                                      | Open dashboard              |
    | <kbd>Super</kbd> + <kbd>P</kbd>                                      | Open powermenu              |
    |                                                                      |                             |
-   | <kbd>Alt</kbd> + <kbd>F</kbd>                                        | Toggle polybar panel        
-   |
-   | <kbd>Super</kbd> + <kbd>L</kbd>                                      | Toggle screen lock  
-   |
+   | <kbd>Alt</kbd> + <kbd>F</kbd>                                        | Toggle polybar panel        |
+   | <kbd>Super</kbd> + <kbd>L</kbd>                                      | Toggle screen lock          |
    |                                                                      |                             | 
    | <kbd>Super</kbd> + <kbd>Enter</kbd>                                  | Open an terminal instance   |
    | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>  | Restart bspwm               |
