@@ -28,7 +28,7 @@
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
-   The [setup section](#-setup) will guide you through the installation process.
+   The [setup section](#-setup) will guide you through a step-by-step installation process.
 
    Here are more information about my setup:
 
@@ -40,7 +40,6 @@
    - **Compositor:** picom
    - **Editor:** neovim
    - **Browser:** firefox
-   - **Music Player:** spotify
    - **File Manager:** thunar
    - **Application Launcher:** rofi
 
