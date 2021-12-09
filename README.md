@@ -105,8 +105,7 @@
       - [JavaCafe01](https://github.com/JavaCafe01)
       - [elenapan](https://github.com/elenapan)
       - [owl4ce](https://github.com/owl4ce)
-
-   <br>
+      - [Mangeshrex](https://github.com/Mangeshrex)
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the 1920x1080 eww config. <kbd>Deprecated</kbd>
