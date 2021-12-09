@@ -30,16 +30,16 @@
 
    Here are more information about my setup:
 
-   - **WM:** bspwm
-   - **OS:** EndeavourOS
-   - **Terminal:** alacritty
-   - **Shell:** zsh with oh-my-zsh framework
-   - **Panel:** polybar
-   - **Compositor:** picom
-   - **Editor:** neovim
-   - **Browser:** firefox
-   - **File Manager:** thunar
-   - **Application Launcher:** rofi
+   - **WM:** [bspwm](https://github.com/baskerville/bspwm)
+   - **OS:** [EndeavourOS](https://endeavouros.com/)
+   - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
+   - **Shell:** [zsh](https://www.zsh.org/)
+   - **Panel:** [polybar](https://github.com/polybar/polybar/)
+   - **Compositor:** [picom](https://github.com/yshui/picom)
+   - **Editor:** [neovim](https://github.com/neovim/neovim/)
+   - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox/new/)
+   - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
+   - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
 ---
 
@@ -48,7 +48,7 @@
 
    > This is step-by-step how to install these dotfiles. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
 
-   > First of all, this repository contains submodules, ensure they are updated before installing.
+   > First of all, this repository contains submodules. Ensure they are updated before installing.
    ```sh
     $ git clone --recurse-submodules https://github.com/TheRealKizu/dotfiles.git
     $ cd dotfiles && git submodule update --remote --merge
@@ -56,10 +56,10 @@
 
 ### ❖ Installation (Manual)
 
-   > Customize the dependencies you want to install down below. This is all from the current setup I'm using.
+   > After cloning the repository, install the necessary dependencies to replicate by setup
 
    <details open>
-   <summary><strong>Arch Linux (and all based distributions)</strong></summary>
+   <summary><strong>Arch Linux (and Arch-based distributions)</strong></summary>
 
    > Ensure your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
@@ -73,14 +73,36 @@
 
    <br>
 
-   > Once the dependencies are installed, copy the files to it's respective folders.
+   > Then after the dependencies are installed, copy the files to it's respective folders.
+
+   <details open>
+   <summary><strong>Config and Binaries</strong></summary>
 
    ```sh
-    $ cp -r ./cfg/* $HOME/.config/
-    $ cp -r ./bin/* $HOME/.local/bin/
-    $ cp -r ./etc/fonts/* $HOME/.local/share/fonts
-    $ cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/walls
+    $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
+    $ mkdir -p $HOME/.local/bin/ cp -r ./bin/* $HOME/.local/bin/
    ```
+
+   </details>
+
+   <details open>
+   <summary><strong>Fonts</strong></summary>
+
+   ```sh
+    $ cp -r ./etc/fonts/* $HOME/.local/share/fonts
+   ```
+
+   </details>
+
+   <details>
+   <summary><strong>Others</strong></summary>
+
+   ```sh
+    # Copy tiled wallpaper.
+    $ mkdir -p $HOME/Pictures/walls && cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/walls
+   ```
+
+   </details>
 
    <br>
 
@@ -91,10 +113,14 @@
     $ fc-cache -v
    ```
 
+   <br>
+
+   > Lastly, log out from your current desktop session and log in into bspwm.
+
 ### ❖ Installation (Custom Installer)
 
    > The repository contains an experimental installer. You can use it by doing:
-   ```bash
+   ```sh
     $ ./setup.sh
    ```
 
@@ -103,7 +129,7 @@
 ### ❖ Miscellaneous
 
    - **Elkowar's Wacky Widgets <kbd>Suggested</kbd>**   
-      > If you're **NOT** on a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
+      > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
 
    - **GTK Theme <kbd>Suggested</kbd>**
       > You can find the custom GTK theme [here](https://github.com/TheRealKizu/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config.
