@@ -20,33 +20,41 @@
 
 <p/>
 
-<div align="center">
-   <img src="https://cdn.xndr.tech/u/Fo2q7GR.png">
-</div>
-
 ---
 
-### ❖ Setup
+### ❖ Information
 
-   - **Window Manager:** bspwm
+   <img src="https://cdn.xndr.tech/u/XDOyrKx.png" alt="minimal" align="right" width="400px">
+
+   Thanks for dropping by! This is my personal repository of my **.files**
+
+   The [setup section](#-setup) will guide you through the installation process.
+
+   Here are more information about my setup:
+
+   - **WM:** bspwm
+   - **OS:** EndeavourOS
    - **Terminal:** alacritty
    - **Shell:** zsh with oh-my-zsh framework
    - **Panel:** polybar
    - **Compositor:** picom
+   - **Editor:** neovim
+   - **Browser:** firefox
+   - **Music Player:** spotify
    - **File Manager:** thunar
    - **Application Launcher:** rofi
 
 ---
 
-### ❖ Cloning
+### ❖ Setup
 
-   > This repository contains submodules, ensure they are updated before installing.
+   > This is step-by-step how to install these **.files**. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
+
+   > First of all, this repository contains submodules, ensure they are updated before installing.
    ```sh
     $ git clone --recurse-submodules https://github.com/TheRealKizu/dotfiles.git
     $ cd dotfiles && git submodule update --remote --merge
    ```
-
----
 
 ### ❖ Installation (Manual)
 
@@ -102,9 +110,9 @@
 ### ❖ Acknowledgements
 
    - **Inspiration**
-      - [JavaCafe01](https://github.com/JavaCafe01)
-      - [elenapan](https://github.com/elenapan)
       - [owl4ce](https://github.com/owl4ce)
+      - [elenapan](https://github.com/elenapan)
+      - [JavaCafe01](https://github.com/JavaCafe01)
       - [Mangeshrex](https://github.com/Mangeshrex)
 
    - **Contributors**
