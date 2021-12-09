@@ -1,10 +1,7 @@
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
 
-<!-- INFO -->
+<!-- BADGES -->
 <div align="center">
-    <code>bin</code> for scripts,
-    <code>cfg</code> for configs,
-    <code>etc</code> for other stuff
     <p></p>
     <a href="https://github.com/TheRealKizu/dotfiles/stargazers">
         <img src="https://img.shields.io/github/stars/TheRealKizu/dotfiles?color=%238dc776&labelColor=%23101415&style=for-the-badge">
@@ -22,6 +19,7 @@
 
 ---
 
+<!-- INFORMATION -->
 ### ❖ Information
 
    <img src="https://cdn.xndr.tech/u/XDOyrKx.png" alt="minimal" align="right" width="400px">
@@ -45,6 +43,7 @@
 
 ---
 
+<!-- SETUP -->
 ### ❖ Setup
 
    > This is step-by-step how to install these dotfiles. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
@@ -59,18 +58,15 @@
 
    > Customize the dependencies you want to install down below. This is all from the current setup I'm using.
 
-   > **Attention!**
-   > * Rofi version must be above **1.7.x**
-
    <details open>
-   <summary><strong>Arch Linux or other deriatives</strong></summary>
+   <summary><strong>Arch Linux (and all based distributions)</strong></summary>
 
-   > Ensure your **AUR Helper** is [paru](https://github.com/Morganamilo/paru) or [yay](https://github.com/Jguer/yay).
+   > Ensure your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
-    $ paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty \
-    dunst picom brightnessctl playerctl dunst hsetroot maim viewnior \
-    jq xclip imagemagick bsp-layout i3lock-color
+    $ paru -S bspwm sxhkd rofi polybar neovim alacritty \
+    dunst picom brightnessctl playerctl dunst feh maim viewnior \
+    jq xclip imagemagick bsp-layout i3lock-color spotify
    ```
 
    </details>
@@ -83,7 +79,16 @@
     $ cp -r ./cfg/* $HOME/.config/
     $ cp -r ./bin/* $HOME/.local/bin/
     $ cp -r ./etc/fonts/* $HOME/.local/share/fonts
-    $ cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/walls # Copies the current featured wallpaper
+    $ cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/walls
+   ```
+
+   <br>
+
+   > Once finished copying the files, you might want to finalize the changes to your system.
+
+   ```sh
+    # Rebuilds the font cache
+    $ fc-cache -v
    ```
 
 ### ❖ Installation (Custom Installer)
@@ -97,11 +102,11 @@
 
 ### ❖ Miscellaneous
 
-   - **Elkowar's Wacky Widgets <kbd>Suggested if resolution is not 1366x768</kbd>**   
-      > Since the configuration was made using a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
+   - **Elkowar's Wacky Widgets <kbd>Suggested</kbd>**   
+      > If you're **NOT** on a monitor with a 1366x768, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
 
    - **GTK Theme <kbd>Suggested</kbd>**
-      > You can find the custom GTK theme [here](https://github.com/TheRealKizu/gtk3). You can then apply it by changing the `gtk-theme-name` on your GTK3 config.
+      > You can find the custom GTK theme [here](https://github.com/TheRealKizu/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config.
 
    - **Icon Theme <kbd>Suggested</kbd>**
       > You can install [this](https://github.com/zayronxio/Zafiro-icons/) icon theme that suits the GTK theme.
@@ -116,7 +121,7 @@
       - [Mangeshrex](https://github.com/Mangeshrex)
 
    - **Contributors**
-      - [flyingcakes85](https://github.com/flyingcakes85) for the 1920x1080 eww config. <kbd>Deprecated</kbd>
+      - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
 
          <a href="https://github.com/TheRealKizu/dotfiles/graphs/contributors">
             <img src="https://contrib.rocks/image?repo=TheRealKizu/dotfiles" />

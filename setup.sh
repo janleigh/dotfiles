@@ -15,10 +15,10 @@ downloadDependencies() {
 
         if [[ -e /usr/bin/paru ]]; then
             echo -e "$prefix paru detected. Installing dependencies..."
-            paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip imagemagick bsp-layout i3lock-color
+            paru -S bspwm sxhkd rofi polybar neovim alacritty dunst picom brightnessctl playerctl dunst feh maim viewnior jq xclip imagemagick bsp-layout i3lock-color
         elif [[ -e /usr/bin/yay ]]; then
             echo -e "$prefix yay detected. Installing dependencies..."
-            yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip imagemagick bsp-layout i3lock-color
+            yay -S bspwm sxhkd rofi polybar neovim alacritty dunst picom brightnessctl playerctl dunst feh maim viewnior jq xclip imagemagick bsp-layout i3lock-color
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
             read -r -p "Would you like to install yay? [Y/n]: " yay
@@ -30,7 +30,7 @@ downloadDependencies() {
                     (cd $HOME/.setup-scripto && makepkg -si)
 
                     echo -e "$prefix yay installed. Installing dependencies..."
-                    yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip imagemagick bsp-layout i3lock-color
+                    yay -S bspwm sxhkd rofi polybar neovim alacritty picom brightnessctl playerctl dunst feh maim viewnior jq xclip imagemagick bsp-layout i3lock-color
                     ;;
                 [nN])
                     echo -e "$prefix Okay. Will not install yay."
