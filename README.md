@@ -26,7 +26,7 @@
 
    <img src="https://cdn.xndr.tech/u/XDOyrKx.png" alt="minimal" align="right" width="400px">
 
-   Thanks for dropping by! This is my personal repository of my **.files**
+   Thanks for dropping by! This is my personal repository of my dotfiles.
 
    The [setup section](#-setup) will guide you through the installation process.
 
@@ -48,7 +48,7 @@
 
 ### ❖ Setup
 
-   > This is step-by-step how to install these **.files**. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
+   > This is step-by-step how to install these dotfiles. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
 
    > First of all, this repository contains submodules, ensure they are updated before installing.
    ```sh
