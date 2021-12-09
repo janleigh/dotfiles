@@ -7,98 +7,112 @@
     <code>etc</code> for other stuff
     <p></p>
     <a href="https://github.com/TheRealKizu/dotfiles/stargazers">
-        <img src="https://img.shields.io/github/stars/TheRealKizu/dotfiles?color=%238dc776&labelColor=%23101415&style=flat-square">
+        <img src="https://img.shields.io/github/stars/TheRealKizu/dotfiles?color=%238dc776&labelColor=%23101415&style=for-the-badge">
     </a>
     <a href="https://github.com/TheRealKizu/dotfiles/network/members/">
-        <img src="https://img.shields.io/github/forks/TheRealKizu/dotfiles?color=%2384a0c6&labelColor=%23101415&style=flat-square">
+        <img src="https://img.shields.io/github/forks/TheRealKizu/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
     </a>
-    <img src="https://img.shields.io/github/repo-size/TheRealKizu/dotfiles?color=%23e7ac7e&labelColor=%23101415&style=flat-square">
+    <img src="https://img.shields.io/github/repo-size/TheRealKizu/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
     <a href="https://discord.gg/2RfJb3CVfb">
-      <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=flat-square"/>
+      <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=for-the-badge"/>
    </a>
 </div>
 
 <p/>
 
 <div align="center">
-   <img src="https://cdn.xndr.tech/u/fTp7xuu.png">
-   <img src="https://cdn.xndr.tech/u/Mvv46gp.png">
-   <img src="https://cdn.xndr.tech/u/UNfAjBB.png">
+   <img src="https://cdn.xndr.tech/u/Fo2q7GR.png">
 </div>
 
-<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
+---
 
-<!--
-    Got lazy using tags lol.
- -->
+### ❖ Setup
 
-### ❖ Installation
+   - **Window Manager:** bspwm
+   - **Terminal:** alacritty
+   - **Shell:** zsh with oh-my-zsh framework
+   - **Panel:** polybar
+   - **Compositor:** picom
+   - **File Manager:** thunar
+   - **Application Launcher:** rofi
 
-   First, clone the repo.
-   ```bash
+---
+
+### ❖ Cloning
+
+   > This repository contains submodules, ensure they are updated before installing.
+   ```sh
     $ git clone --recurse-submodules https://github.com/TheRealKizu/dotfiles.git
-   ```
-
-   Then, update the submodules.
-   ```bash
     $ cd dotfiles && git submodule update --remote --merge
    ```
 
-   Finally, run the setup script.
+---
+
+### ❖ Installation (Manual)
+
+   > Customize the dependencies you want to install down below. This is all from the current setup I'm using.
+
+   > **Attention!**
+   > * Rofi version must be above **1.7.x**
+
+   <details open>
+   <summary><strong>Arch Linux or other deriatives</strong></summary>
+
+   > Ensure your **AUR Helper** is [paru](https://github.com/Morganamilo/paru) or [yay](https://github.com/Jguer/yay).
+
+   ```sh
+    $ paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty \
+    dunst picom brightnessctl playerctl dunst hsetroot maim viewnior \
+    jq xclip imagemagick bsp-layout i3lock-color
+   ```
+
+   </details>
+
+   <br>
+
+   > Once the dependencies are installed, copy the files to it's respective folders.
+
+   ```sh
+    $ cp -r ./cfg/* $HOME/.config/
+    $ cp -r ./bin/* $HOME/.local/bin/
+    $ cp -r ./etc/fonts/* $HOME/.local/share/fonts
+    $ cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/walls # Copies the current featured wallpaper
+   ```
+
+### ❖ Installation (Custom Installer)
+
+   > The repository contains an experimental installer. You can use it by doing:
    ```bash
     $ ./setup.sh
    ```
 
-### ❖ Keybinds
+---
 
-   I only listed the important shortcuts. There's still more but have fun discovering it.
+### ❖ Miscellaneous
 
-   |                               Keybind                                |         Description         |
-   | -------------------------------------------------------------------- | --------------------------- |
-   | <kbd>Super</kbd> + <kbd>C</kbd>                                      | Kill focused window         |                                                              |                                                                      |                             |
-   | <kbd>Super</kbd> + <kbd>Space</kbd>                                  | Float the focused window    |
-   | <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>                     | Tile the floating window    |
-   |                                                                      |                             |
-   | <kbd>Super</kbd> + <kbd>F</kbd>                                      | Focus next window           |
-   | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>                   | Focus previous window       |
-   | <kbd>Super</kbd> + <kbd>1-6</kbd>                                    | Move to workspace #         |
-   | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>1-6</kbd>                 | Move window to workspace #  |
-   |                                                                      |                             |
-   | <kbd>Super</kbd> + <kbd>A</kbd>                                      | Open application menu       |
-   | <kbd>Super</kbd> + <kbd>D</kbd>                                      | Open dashboard              |
-   | <kbd>Super</kbd> + <kbd>P</kbd>                                      | Open powermenu              |
-   |                                                                      |                             |
-   | <kbd>Alt</kbd> + <kbd>F</kbd>                                        | Toggle polybar panel        |
-   | <kbd>Super</kbd> + <kbd>L</kbd>                                      | Toggle screen lock          |
-   |                                                                      |                             | 
-   | <kbd>Super</kbd> + <kbd>Enter</kbd>                                  | Open an terminal instance   |
-   | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>  | Restart bspwm               |
+   - **Elkowar's Wacky Widgets <kbd>Suggested if resolution is not 1366x768</kbd>**   
+      > Since the configuration was made using a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
 
-### ❖ Dependencies
+   - **GTK Theme <kbd>Suggested</kbd>**
+      > You can find the custom GTK theme [here](https://github.com/TheRealKizu/gtk3). You can then apply it by changing the `gtk-theme-name` on your GTK3 config.
 
-   This are all optional but you can install if you want to replicate my desktop or something.
+   - **Icon Theme <kbd>Suggested</kbd>**
+      > You can install [this](https://github.com/zayronxio/Zafiro-icons/) icon theme that suits the GTK theme.
 
-   * bspwm, sxhkd and bsp-layout
-   * rofi
-   * polybar
-   * neovim-nightly
-   * alacritty
-   * dunst
-   * picom
-   * brightnessctl and playerctl
-   * maim, jq, xclip, imagemagick and viewnior
-   * i3lock-color
+### ❖ Acknowledgements
 
-### ❖ Notes
+   - **Inspiration**
+      - [JavaCafe01](https://github.com/JavaCafe01)
+      - [elenapan](https://github.com/elenapan)
+      - [owl4ce](https://github.com/owl4ce)
 
-   ~~If I forgot something, please let me know.~~ 
+   <br>
 
-   * Run `:PackerSync` upon starting neovim.
-   * Install this [icon](https://github.com/zayronxio/Zafiro-icons/) and [gtk](https://github.com/TheRealKizu/gtk3) theme.
-   * Modify `eww.yuck` for your resolution (default one is for 1366x768)
+   - **Contributors**
+      - [flyingcakes85](https://github.com/flyingcakes85) for the 1920x1080 eww config. <kbd>Deprecated</kbd>
 
-### ❖ System Info
+         <a href="https://github.com/TheRealKizu/dotfiles/graphs/contributors">
+            <img src="https://contrib.rocks/image?repo=TheRealKizu/dotfiles" />
+         </a>
 
-   Have fun reading this neofetch.
-
-   <img align="center" src="https://cdn.xndr.tech/u/DUiqR78.png">
+         Made with [contributors-img](https://contrib.rocks).
