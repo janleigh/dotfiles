@@ -1,11 +1,12 @@
 #!/bin/bash
 
 title="kizu's rice setup script"
+prefix="[\033[;32m*\033[0m]"
 
 downloadDependencies() {
     if grep "Arch\|Artix\|EndeavourOS\|Manjaro" /etc/*-release; then
         clear 
-        echo "[*] Running an system update..."
+        echo -e "$prefix Running an system update..."
         sudo pacman --noconfirm -Syu
 
         mkdir -p $HOME/.setup-scripto
@@ -13,10 +14,10 @@ downloadDependencies() {
         clear
 
         if [[ -e /usr/bin/paru ]]; then
-            echo -e "[*] paru detected. Installing dependencies..."
+            echo -e "$prefix paru detected. Installing dependencies..."
             paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip imagemagick bsp-layout i3lock-color
         elif [[ -e /usr/bin/yay ]]; then
-            echo -e "[*] yay detected. Installing dependencies..."
+            echo -e "$prefix yay detected. Installing dependencies..."
             yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip imagemagick bsp-layout i3lock-color
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
@@ -28,11 +29,11 @@ downloadDependencies() {
                     git clone https://aur.archlinux.org/yay.git $HOME/.setup-scripto
                     (cd $HOME/.setup-scripto && makepkg -si)
 
-                    echo "[*] yay installed. Installing dependencies..."
+                    echo -e "$prefix yay installed. Installing dependencies..."
                     yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip imagemagick bsp-layout i3lock-color
                     ;;
                 [nN])
-                    echo "[*] Okay. Will not install yay."
+                    echo -e "$prefix Okay. Will not install yay."
                     ;;
             esac 
         fi
@@ -40,7 +41,7 @@ downloadDependencies() {
         sleep 1
     else
         clear
-        echo "[*] Not on a Arch based system. Failed to download dependencies. Please manually install it."
+        echo -e "$prefix Not on a Arch based system. Failed to download dependencies. Please manually install it."
 
         sleep 1
     fi
@@ -50,8 +51,8 @@ copyFiles() {
     clear
     
     sleep 1
-    echo "[*] Copying files..."
-    echo "[*] Will make backups if there are configurations found."
+    echo -e "$prefix Copying files..."
+    echo -e "$prefix Will make backups if there are configurations found."
 
     if [[ -d $HOME/.config/alacritty ]]; then
         mkdir $HOME/.config/alacritty.bak && mv $HOME/.config/alacritty/* $HOME/.config/alacritty.bak
@@ -60,7 +61,7 @@ copyFiles() {
         mkdir $HOME/.config/alacritty && cp -r ./cfg/alacritty/* $HOME/.config/alacritty
     fi
 
-    echo "[*] Copied alacritty configuration!"
+    echo -e "$prefix Copied alacritty configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/bspwm ]]; then
@@ -70,7 +71,7 @@ copyFiles() {
         mkdir $HOME/.config/bspwm && cp -r ./cfg/bspwm/* $HOME/.config/bspwm
     fi
 
-    echo "[*] Copied bspwm configuration!"
+    echo -e "$prefix Copied bspwm configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/dunst ]]; then
@@ -80,7 +81,7 @@ copyFiles() {
         mkdir $HOME/.config/dunst && cp -r ./cfg/dunst/* $HOME/.config/dunst
     fi
 
-    echo "[*] Copied dunst configuration!"
+    echo -e "$prefix Copied dunst configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/eww ]]; then
@@ -90,7 +91,7 @@ copyFiles() {
         mkdir $HOME/.config/eww && cp -r ./cfg/eww/* $HOME/.config/eww
     fi
 
-    echo "[*] Copied eww configuration!"
+    echo -e "$prefix Copied eww configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/nvim ]]; then
@@ -100,7 +101,7 @@ copyFiles() {
         mkdir $HOME/.config/nvim && cp -r ./cfg/nvim/* $HOME/.config/nvim
     fi
 
-    echo "[*] Copied nvim configuration!"
+    echo -e "$prefix Copied nvim configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/picom ]]; then
@@ -110,7 +111,7 @@ copyFiles() {
         mkdir $HOME/.config/picom && cp -r ./cfg/picom/* $HOME/.config/picom
     fi
 
-    echo "[*] Copied picom configuration!"
+    echo -e "$prefix Copied picom configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/polybar ]]; then
@@ -120,7 +121,7 @@ copyFiles() {
         mkdir $HOME/.config/polybar && cp -r ./cfg/polybar/* $HOME/.config/polybar
     fi
 
-    echo "[*] Copied polybar configuration!"
+    echo -e "$prefix Copied polybar configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/starship ]]; then
@@ -130,7 +131,7 @@ copyFiles() {
         mkdir $HOME/.config/starship && cp -r ./cfg/starship/* $HOME/.config/starship
     fi
 
-    echo "[*] Copied starship configuration!"
+    echo -e "$prefix Copied starship configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/sxhkd ]]; then
@@ -140,7 +141,7 @@ copyFiles() {
         mkdir $HOME/.config/sxhkd && cp -r ./cfg/sxhkd/* $HOME/.config/sxhkd
     fi
 
-    echo "[*] Copied sxhkd configuration!"
+    echo -e "$prefix Copied sxhkd configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.config/rofi ]]; then
@@ -150,7 +151,7 @@ copyFiles() {
         mkdir $HOME/.config/rofi && cp -r ./cfg/rofi/* $HOME/.config/rofi
     fi
 
-    echo "[*] Copied rofi configuration!"
+    echo -e "$prefix Copied rofi configuration!"
     sleep 0.7
 
     if [[ -d $HOME/.local/bin ]]; then
@@ -171,30 +172,44 @@ copyFiles() {
         mkdir $HOME/Pictures/walls && cp -r ./etc/walls/tiled.png $HOME/Pictures/walls
     fi
 
-    echo "[*] Copied binaries, fonts and wallpapers successfully!"
+    echo -e "$prefix Copied binaries, fonts and wallpapers successfully!"
 
     sleep 0.7
-    echo "[*] Copied files successfully."
+    echo -e "$prefix Copied files successfully."
     sleep 1.3
+}
+
+preFlight() {
+    if grep "Arch\|Artix\|EndeavourOS\|Manjaro" /etc/*-release; then
+        if [[ -e "/usr/bin/whiptail" ]]; then
+            echo -e "$prefix whiptail detected. Continuing..."
+        else
+            echo -e "$prefix whiptail not detected. Installing..."
+            sudo pacman -S --noconfirm libnewt
+        fi
+    else
+        clear
+        echo -e "$prefix Not on a Arch based system. Please install whiptail/libnewt manually."
+    fi
 }
 
 finalizeChanges() {
     clear
-    echo "[*] Refreshing font cache..."
+    echo -e "$prefix Refreshing font cache..."
     fc-cache -v
 
     clear
     sleep 1.3
 
     clear
-    echo "[*] Finalizing changes..."
+    echo -e "$prefix Finalizing changes..."
     sleep 3
     clear
 }
 
 fuckUser() {
     clear
-    echo "[*] An error occured. Exiting."
+    echo -e "$prefix An error occured. Exiting."
     exit
 }
 
@@ -218,8 +233,12 @@ success() {
         --msgbox "Setup success. Please restart BSPWM if you are on an active session." 10 60
 }
 
-echo "[*] Starting setup script..."
+echo -e "$prefix Starting setup script..."
 sleep 0.5
+
+# Check if whiptail is installed
+preFlight
+sleep 1
 
 # Prompt notice
 notice || fuckUser
