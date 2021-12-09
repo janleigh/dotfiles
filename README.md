@@ -103,7 +103,7 @@
 ### ❖ Miscellaneous
 
    - **Elkowar's Wacky Widgets <kbd>Suggested</kbd>**   
-      > If you're **NOT** on a monitor with a 1366x768, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
+      > If you're **NOT** on a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
 
    - **GTK Theme <kbd>Suggested</kbd>**
       > You can find the custom GTK theme [here](https://github.com/TheRealKizu/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config.
