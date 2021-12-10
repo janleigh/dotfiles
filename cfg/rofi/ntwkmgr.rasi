@@ -1,28 +1,17 @@
-/*
- *
- * Author  : Aditya Shakya
- * Mail    : adi1090x@gmail.com
- * Github  : @adi1090x
- * Twitter : @adi1090x
- * 
- * MODIFIED BY @TheRealKizu 
- */
+@import "colors/colors.rasi"
 
 configuration {
-    show-icons:                     true;
-    display-drun: 					"Applications";
+    show-icons:                     false;
     drun-display-format:            "{name}";
-    disable-history:                false;
+    disable-history:                true;
 	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
 }
 
-@import "colors.rasi"
-
 window {    
-	width:							20%;
-    border:                         4px;
-    border-color:                   @background-alt;
+	width:							19%;
+    background-color:               transparent;
+    border:                         0px;
+    border-radius:                  0px 0px 0px 10px;
     font:                           "Iosevka Nerd Font 8.2";
 }
 
@@ -33,7 +22,7 @@ prompt {
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
     border:                         0 0 4px 0;
-    border-color:                   #1c1f21;
+    border-color:                   @border-color;
     border-radius:                  10px;
 }
 
@@ -45,11 +34,11 @@ entry {
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Type to search...";
-    padding:                        8px;
+    padding:                        4px;
     margin:                         2px;
     blink:                          true;
     border:                         0 0 4px 0;
-    border-color:                   #1c1f21;
+    border-color:                   @border-color;
     border-radius:                  10px;
 }
 
@@ -102,19 +91,20 @@ element-icon {
     vertical-align:                 0.5;
     size:                           0px;
     border:                         8px;
+    border-color:                   transparent;
 }
 
 element-text {
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         8px 0px 8px 0px;
+    margin:                         8px;
 }
 
 element selected {
     background-color:               @background-alt;
     text-color:                     @foreground;
     border:                         0 0 4px 0;
-    border-color:                   #1c1f21;
+    border-color:                   @border-color;
     border-radius:                  10px;
 }
