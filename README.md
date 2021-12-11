@@ -56,7 +56,7 @@
 
 ### ❖ Installation (Manual)
 
-   > After cloning the repository, install the necessary dependencies to replicate by setup
+   > After cloning the repository, install the necessary dependencies to replicate by setup.
 
    <details open>
    <summary><strong>Arch Linux (and Arch-based distributions)</strong></summary>
@@ -80,7 +80,7 @@
 
    ```sh
     $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
-    $ mkdir -p $HOME/.local/bin/ cp -r ./bin/* $HOME/.local/bin/
+    $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
    ```
 
    </details>
