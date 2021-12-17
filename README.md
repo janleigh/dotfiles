@@ -3,13 +3,13 @@
 <!-- BADGES -->
 <div align="center">
     <p></p>
-    <a href="https://github.com/TheRealKizu/dotfiles/stargazers">
-        <img src="https://img.shields.io/github/stars/TheRealKizu/dotfiles?color=%238dc776&labelColor=%23101415&style=for-the-badge">
+    <a href="https://github.com/janleigh/dotfiles/stargazers">
+        <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%238dc776&labelColor=%23101415&style=for-the-badge">
     </a>
-    <a href="https://github.com/TheRealKizu/dotfiles/network/members/">
-        <img src="https://img.shields.io/github/forks/TheRealKizu/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
+    <a href="https://github.com/janleigh/dotfiles/network/members/">
+        <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
     </a>
-    <img src="https://img.shields.io/github/repo-size/TheRealKizu/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
+    <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
     <a href="https://discord.gg/2RfJb3CVfb">
       <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=for-the-badge"/>
    </a>
@@ -50,7 +50,7 @@
 
    > First of all, this repository contains submodules. Ensure they are updated before installing.
    ```sh
-    $ git clone --recurse-submodules https://github.com/TheRealKizu/dotfiles.git
+    $ git clone --recurse-submodules https://github.com/janleigh/dotfiles.git
     $ cd dotfiles && git submodule update --remote --merge
    ```
 
@@ -132,7 +132,7 @@
       > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
 
    - **GTK Theme <kbd>Suggested</kbd>**
-      > You can find the custom GTK theme [here](https://github.com/TheRealKizu/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config.
+      > You can find the custom GTK theme [here](https://github.com/janleigh/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config.
 
    - **Icon Theme <kbd>Suggested</kbd>**
       > You can install [this](https://github.com/zayronxio/Zafiro-icons/) icon theme that suits the GTK theme.
@@ -149,8 +149,6 @@
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
 
-         <a href="https://github.com/TheRealKizu/dotfiles/graphs/contributors">
-            <img src="https://contrib.rocks/image?repo=TheRealKizu/dotfiles" />
+         <a href="https://github.com/TheRealKizu/janleigh/graphs/contributors">
+            <img src="https://contrib.rocks/image?repo=janleigh/dotfiles" />
          </a>
-
-         Made with [contributors-img](https://contrib.rocks).
