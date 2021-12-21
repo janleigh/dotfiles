@@ -66,7 +66,7 @@
    ```sh
     $ paru -S bspwm sxhkd rofi polybar neovim alacritty \
     dunst picom brightnessctl playerctl dunst feh maim viewnior \
-    jq xclip imagemagick bsp-layout i3lock-color spotify
+    jq xclip imagemagick bsp-layout i3lock-color
    ```
 
    </details>
@@ -141,14 +141,11 @@
 
    - **Inspiration**
       - [owl4ce](https://github.com/owl4ce)
-      - [Axarva](https://github.com/Axarva)
-      - [elenapan](https://github.com/elenapan)
-      - [JavaCafe01](https://github.com/JavaCafe01)
       - [Mangeshrex](https://github.com/Mangeshrex)
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
 
-         <a href="https://github.com/TheRealKizu/janleigh/graphs/contributors">
+         <a href="https://github.com/janleigh/dotfiles/graphs/contributors">
             <img src="https://contrib.rocks/image?repo=janleigh/dotfiles" />
          </a>
