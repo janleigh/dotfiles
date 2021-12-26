@@ -173,13 +173,13 @@
 (defwindow lock-notice
     :geometry (geometry :x "38%"
                         :y "34%"
-                        :width "310px" 
+                        :width "330px" 
                         :height "40px")
     (lock-notice))
 (defwindow lock-screen
     :geometry (geometry :x "38%"
                         :y "41%" 
-                        :width "310px" 
+                        :width "325px" 
                         :height "130px")
     (lock-screen))
 (defwindow powermenu
