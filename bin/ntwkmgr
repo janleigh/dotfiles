@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme ~/.config/rofi/ntwkmgr.rasi -location 3 -xoffset -15 -yoffset +50"
+rofi_command="rofi -theme ~/.config/rofi/ntwkmgr.rasi -location 3 -yoffset +38"
 
 ## Get info
 IFACE="$(nmcli | grep -i interface | awk '/interface/ {print $2}')"
@@ -32,7 +32,7 @@ launch="Open Connection Editor"
 options="$connected\n$launch_cli\n$launch"
 
 ## Main
-chosen="$(echo -e "$options" | $rofi_command -p " Interface: $INTERFACE | Status: $amogus" -dmenu -selected-row 1)"
+chosen="$(echo -e "$options" | $rofi_command -p " Interface: $INTERFACE ~ Status: $amogus" -dmenu -selected-row 1)"
 case $chosen in
     $connected)
 		if [[ $STATUS == *"enable"* ]]; then
