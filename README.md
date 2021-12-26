@@ -22,7 +22,7 @@
 <!-- INFORMATION -->
 ### ❖ Information
 
-   <img src="https://cdn.xndr.tech/u/XDOyrKx.png" alt="minimal" align="right" width="400px">
+   <img src="https://cdn.xndr.tech/u/eSoIJlD.png" alt="rice" align="right" width="400px">
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
