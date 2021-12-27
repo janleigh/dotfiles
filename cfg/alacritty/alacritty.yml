@@ -105,4 +105,4 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: 'Beam'
+  style: 'Underline'
