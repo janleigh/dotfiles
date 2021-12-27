@@ -58,12 +58,12 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "250x200-15+50"
+    geometry = "250x200-15+55"
 
     # Frame
     frame_width = 3
     frame_color = "#151a1c"
-    outer_frame_width = 5
+    outer_frame_width = 10
     outer_frame_color = "#101415"
 
     # The transparency of the window. range: [0; 100]
