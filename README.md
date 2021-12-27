@@ -61,7 +61,7 @@
    <details open>
    <summary><strong>Arch Linux (and Arch-based distributions)</strong></summary>
 
-   > Ensure your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
+   > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
     $ paru -S bspwm sxhkd rofi polybar neovim alacritty viewnior \
