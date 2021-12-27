@@ -20,7 +20,7 @@
 ---
 
 <!-- INFORMATION -->
-### ❖ Information
+### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
 
    <img src="https://cdn.xndr.tech/u/eSoIJlD.png" alt="rice" align="right" width="400px">
 
@@ -64,9 +64,9 @@
    > Ensure your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
-    $ paru -S bspwm sxhkd rofi polybar neovim alacritty \
-    dunst picom brightnessctl playerctl dunst feh maim viewnior \
-    jq xclip imagemagick bsp-layout i3lock-color
+    $ paru -S bspwm sxhkd rofi polybar neovim alacritty viewnior \
+    dunst picom brightnessctl playerctl dunst feh maim jq xclip  \
+    imagemagick bsp-layout i3lock-color
    ```
 
    </details>
@@ -131,17 +131,29 @@
    - **Elkowar's Wacky Widgets <kbd>Suggested</kbd>**   
       > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
 
+   - **Firefox Custom CSS <kbd>Suggested</kbd>**
+      > You can install the custom Firefox CSS by moving the contents of [`etc/firefox-css`](etc/firefox-css) to `$HOME/.mozilla/firefox/*.default-release/chrome`.
+
    - **GTK Theme <kbd>Suggested</kbd>**
       > You can find the custom GTK theme [here](https://github.com/janleigh/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config.
 
    - **Icon Theme <kbd>Suggested</kbd>**
       > You can install [this](https://github.com/zayronxio/Zafiro-icons/) icon theme that suits the GTK theme.
 
+   - **Replacement Commands <kbd>Suggested</kbd>**
+      > Assuming you're also using my [zsh](https://www.zsh.org/), you might also want to install some additional dependencies to make some commands work.
+
+      - `ls` ➜ [`exa`](https://github.com/ogham/exa)
+
+      - `cat` ➜ [`bat`](https://github.com/sharkdp/bat)
+
+      - `df` ➜ [`duf`](https://github.com/muesli/duf)
+
 ### ❖ Acknowledgements
 
    - **Inspiration**
-      - [owl4ce](https://github.com/owl4ce)
-      - [Mangeshrex](https://github.com/Mangeshrex)
+      - [owl4ce](https://github.com/owl4ce) for the README style.
+      - [Mangeshrex](https://github.com/Mangeshrex) for the colors of the colorscheme.
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
