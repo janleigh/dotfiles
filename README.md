@@ -65,8 +65,8 @@
 
    ```sh
     $ paru -S bspwm sxhkd rofi polybar neovim alacritty viewnior \
-    dunst picom brightnessctl playerctl dunst feh maim jq xclip  \
-    imagemagick bsp-layout i3lock-color
+    picom brightnessctl playerctl feh maim jq xclip imagemagick  \
+    dunst bsp-layout i3lock-color
    ```
 
    </details>
