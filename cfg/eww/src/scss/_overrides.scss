@@ -1,0 +1,12 @@
+* {
+    all: unset;
+}
+
+window {
+    color: $fg;
+    font-family: "VictorMono Nerd Font";
+}
+
+button:hover {
+    color: $accent;
+}

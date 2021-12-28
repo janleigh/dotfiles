@@ -1,0 +1,35 @@
+.system-manager {
+    background-color: $bgSecondaryAlt;
+    padding: 0px 12px;
+
+    .system-info {
+        .labels {
+            margin: 0px;
+
+            font-size: 18px;
+        }
+        .progress {
+            margin-bottom: -36px;
+
+            .progress-ram circular-progress {
+                background-color: $bgSecondary;
+                color: $yellow;
+            }
+
+            .progress-volume circular-progress {
+                background-color: $bgSecondary;
+                color: $green;
+            }
+
+            .progress-brightness circular-progress {
+                background-color: $bgSecondary;
+                color: $magenta;
+            }
+        }
+    }
+
+    circular-progress {
+        margin: 0px 24px 0px 24px;
+    }
+
+}

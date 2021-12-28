@@ -1,0 +1,43 @@
+.lock-notice {
+    background-color: $bgSecondaryAlt;
+    border-radius: 10px;
+    margin: 10px 60px 0px 60px;
+
+    .lock-header-text {
+        font-size: 16px;
+        font-style: italic;
+        color: $watermelon;    
+    }
+
+    .lock-body-text {
+        font-size: 14px;
+        color: $fg;
+    }
+}
+
+.lock-screen {
+    background: $bgSecondaryAlt;
+    border-radius: 10px;
+
+    .lock-pfp {
+        background-image: url("./assets/avatar.png");
+        background-size: 80px;
+
+        margin: 25px 30px 25px 53px;
+        border-radius: 40px;
+    }
+
+    .lock-text {
+        margin: 40px -20px 30px -70px;
+        
+        .lock-username {
+            font-size: 24px;
+            font-style: italic;
+            color: $blue-desaturated;
+        }
+
+        .lock-hostname {
+            font-size: 16px;
+        }
+    }
+}

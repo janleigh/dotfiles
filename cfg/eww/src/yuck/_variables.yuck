@@ -1,0 +1,35 @@
+;;  DATE VARS 
+(defpoll minute :interval "10s"
+    "date '+%M'")
+(defpoll hour :interval "5m"
+    "date '+%H'")
+(defpoll weekday :interval "5s"
+    "date '+%A'")
+
+;;  SYSTEM INFO VARS
+(defpoll used_ram :interval "2s"
+    "./scripts/getUsedRam")
+(defpoll volume :interval "1ms"
+    "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll brightness :interval "1ms"
+    "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+
+;; MUSIC PLAYER VARS
+(defpoll art :interval "5s"
+    "./scripts/echoSongArt")
+(defpoll song_art :interval "5s"
+    "./scripts/getSongArt")
+(defpoll song_artist :interval "2s"
+    "./scripts/getSongArtist")
+(defpoll song_title :interval "2s"
+    "./scripts/getSongTitle")
+(defpoll song_title_full :interval "2s"
+    "./scripts/getSongTitle full")
+(defpoll player_status :interval "1s"
+    "./scripts/getPlayerStatus")
+
+;; LOCK SCREEN VARS
+(defpoll username :interval "1s"
+    "whoami")
+(defpoll hostname :interval "1s"
+    "hostname")

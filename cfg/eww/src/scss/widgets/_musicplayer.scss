@@ -1,0 +1,37 @@
+.music-player {
+    background-color: $bgSecondaryAlt;
+    padding: 10px 0px 20px 0px;
+
+    .song-art {
+        background-size: 85px;
+        border-radius: 6px;
+    
+        margin: 15px 40px 0px 30px;
+    }
+    
+    .song-info {
+        font-size: 16px;
+        font-weight: bold;
+
+        margin: 20px 20px 0px -35px;
+    
+        .song-title {
+            color: $magenta;
+            font-size: 14px;
+        }
+
+        .song-artist {
+            margin-top: -20px;
+
+            color: $green;
+            font-size: 12px;
+        }
+        
+        .song-controls button {
+            font-family: "Material Icons";    
+            font-size: 18px;    
+            margin-top: -10px;
+            margin-left: -2px;
+        }
+    }
+}
