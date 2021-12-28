@@ -65,7 +65,7 @@ bspc config external_rules_command  "$HOME/.config/bspwm/scripts/spotify_wmclass
 config pointer_modifier             Mod4
 
 config border_width                 20
-config window_gap                   15
+config window_gap                   16
 
 config top_padding                  40
 config bottom_padding               0

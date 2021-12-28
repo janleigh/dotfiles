@@ -129,7 +129,7 @@
 ### ❖ Miscellaneous
 
    - **Elkowar's Wacky Widgets <kbd>Suggested</kbd>**   
-      > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the [config](cfg/eww/eww.yuck).
+      > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the config.
 
    - **Firefox Custom CSS <kbd>Suggested</kbd>**
       > You can install the custom Firefox CSS by moving the contents of [`etc/firefox-css`](etc/firefox-css) to `$HOME/.mozilla/firefox/*.default-release/chrome`.

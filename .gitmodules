@@ -4,3 +4,6 @@
 [submodule "etc/discord-css"]
 	path = etc/discord-css
 	url = https://github.com/TheRealKizu/discord-css/
+[submodule "etc/gtk3"]
+	path = etc/gtk3
+	url = https://github.com/janleigh/gtk3
