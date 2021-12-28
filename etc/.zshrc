@@ -1,11 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/kizu/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=7
+export UPDATE_ZSH_DAYS=14
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -21,6 +21,7 @@ ENABLE_CORRECTION="true"
 plugins=(
     git
     zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 # Custom Highlight syntax
@@ -42,14 +43,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Add bin path
-if [ -d "$HOME/.local/bin" ]; then
-    export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -59,15 +52,20 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dl="curl -C - -L -O"
-alias mtrx="cmatrix -u 7"
 
-alias clr="clear"
+alias c="clear"
+alias cat="bat"
+alias du="duf"
+alias ls="exa"
+alias find="fd"
 alias nf="neofetch"
-alias php="~/.local/share/php/bin/php"
-alias vim="nvim"
+alias vi="nvim"
 
 # Init Starship
 eval "$(starship init zsh)"
 
 # Setup Starship custom prompt
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+
+# Change history file
+export HISTFILE=$HOME/.cache/.zsh_history
