@@ -58,7 +58,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "250x200-15+55"
+    geometry = "270x220-15+55"
 
     # Frame
     frame_width = 3
@@ -129,7 +129,7 @@
     icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 40
+    max_icon_size = 64
 
 [shortcuts]
     close = ctrl+space
