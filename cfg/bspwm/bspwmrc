@@ -5,6 +5,8 @@
 # ##############################################################################
 
 export BROWSER=firefox
+export EDITOR=nvim
+export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for JetBrains IDEs
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -37,33 +39,35 @@ feh --no-fehbg --bg-tile "$HOME/Pictures/walls/tiled.png"
 sh $HOME/.config/polybar/launch.sh
 
 # I hate mouse drift.
-xset mouse 2.5 0
+xset m 0 0
 
 # ##############################################################################
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-rule Vivaldi-stable                 desktop=^1
-rule firefox                        desktop=^1
-rule discord                        desktop=^2
-rule Code                           desktop=^3
-rule Spotify                        desktop=^5
-rule Lutris                         desktop=^5 state=floating
-rule Steam                          desktop=^5 state=floating
+bspc monitor -d I II III IV V VI
+
+rule Vivaldi-stable                 desktop=I
+rule firefox                        desktop=I
+rule discord                        desktop=II
+rule Code                           desktop=III
+rule Lutris                         desktop=V state=floating
+rule Steam                          desktop=V
+rule mpv                            state=floating
 rule Viewnior                       state=floating
+
+bspc config external_rules_command  "$HOME/.config/bspwm/scripts/spotify_wmclass.sh"
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
 # ##############################################################################
 
-bspc monitor -d I II III IV V VI
-
 config pointer_modifier             Mod4
 
 config border_width                 20
-config window_gap                   25
+config window_gap                   15
 
-config top_padding                  35
+config top_padding                  40
 config bottom_padding               0
 
 config split_ratio                  0.62
