@@ -56,7 +56,7 @@ rule Steam                          desktop=V
 rule mpv                            state=floating
 rule Viewnior                       state=floating
 
-bspc config external_rules_command  "$HOME/.config/bspwm/scripts/spotify_wmclass.sh"
+# bspc config external_rules_command  "$HOME/.config/bspwm/scripts/spotify_wmclass.sh"
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
