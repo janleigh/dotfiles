@@ -19,10 +19,10 @@
          :space-evenly "false" 
 
         (box :class "ram-bar"
-            (scale :min 0 :max 101 :value used_ram :orientation "v" :flipped "true"
+            (scale :min 0 :max 101 :active "false" :value used_ram :orientation "v" :flipped "true"
         ))
         (box :class "disk-bar"
-            (scale :min 0 :max 101 :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)} :orientation "v" :flipped "true"
+            (scale :min 0 :max 101 :active "false" :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)} :orientation "v" :flipped "true"
         ))
         (box :class "vol-bar"
             (scale :min 0 :max 101 :value volume :orientation "v" :flipped "true" :onchange "amixer -q set Master {}%"
