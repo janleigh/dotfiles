@@ -1,7 +1,9 @@
 .powermenu {
-    // background-color: $bgSecondary;
+    padding: 8px;
+    background-color: $bgSecondary;
     border-radius: 10px;
-    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 
     button {
         background-color: $bgSecondaryAlt;
@@ -10,7 +12,7 @@
         font-family: "Material Icons";
         font-size: 36px;
 
-        margin: 8px;
+        margin: 10px 8px;
         padding: 8px;
 
         &:nth-child(1) {
@@ -34,11 +36,12 @@
             color: $green;
         }
 
-        &:nth-child(5), &:hover {
-            color: $blue;
+        &:nth-child(5) {
+            color: $blue-desaturated;
         }
 
         &:hover {
+            color: $blue;
             background-color: $bgSecondaryAlt;
         }
     }
