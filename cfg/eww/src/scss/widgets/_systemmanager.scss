@@ -1,0 +1,45 @@
+.system-manager {
+    background-color: $bgSecondaryAlt;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+
+    scale trough {
+        background-color: $bgSecondary;
+        border-radius: 50px;
+    
+        min-height: 10rem;
+        min-width: 5px;
+    }
+
+    scale trough highlight {
+        border-radius: 50px;
+    }
+
+    .ram-bar, .disk-bar, .vol-bar, .bri-bar {
+        margin: 12px;
+    }
+
+    .ram-bar {
+        scale trough highlight {
+            background-color: $red;
+        }
+    }
+
+    .disk-bar {
+        scale trough highlight {
+            background-color: $yellow;
+        }
+    }
+
+    .vol-bar {
+        scale trough highlight {
+            background-color: $blue;
+        }
+    }
+
+    .bri-bar {
+        scale trough highlight {
+            background-color: $magenta;
+        }
+    }
+}

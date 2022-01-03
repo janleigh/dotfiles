@@ -23,10 +23,8 @@ config() { bspc config "$@" & }
 # ##############################################################################
 
 # Autostart Apps
-dunst --config $HOME/.config/dunst/dunstrc &
 $HOME/.local/bin/eww daemon &
-# mpd $HOME/.config/mpd/mpd.conf
-# $HOME/.local/bin/mpd-discord-rpc &
+dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
 
 # Start polkit agent

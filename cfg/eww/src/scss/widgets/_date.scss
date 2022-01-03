@@ -1,0 +1,17 @@
+.date {
+    background-color: $bgSecondaryAlt;
+    border-radius: 6px;
+
+    .weekday {
+        color: $fgDim;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    .monthday {
+        margin-top: 0.3em;
+        margin-left: -2.1rem;
+        font-size: 24px;
+        font-weight: bold;
+    }
+}

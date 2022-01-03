@@ -13,3 +13,6 @@ if [ $(playerctl metadata mpris:artUrl) ]; then
 else
 	cp $HOME/.config/eww/assets/fallback.png $tmp_cover_path
 fi
+
+# Dim image
+convert $tmp_cover_path -alpha set -channel A -evaluate multiply 0.3 $tmp_cover_path

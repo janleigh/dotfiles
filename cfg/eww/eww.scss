@@ -1,9 +1,13 @@
 @import "src/scss/variables";
 @import "src/scss/overrides";
 
-@import "src/scss/main.scss";
+@import "src/scss/index";
 @import "src/scss/widgets/profile";
-@import "src/scss/widgets/layout";
+@import "src/scss/widgets/layoutmanager";
 @import "src/scss/widgets/musicplayer";
-@import "src/scss/widgets/system";
+@import "src/scss/widgets/systemmanager";
 @import "src/scss/widgets/powermenu";
+@import "src/scss/widgets/lockscreen";
+@import "src/scss/widgets/weather";
+@import "src/scss/widgets/date";
+@import "src/scss/widgets/quote";

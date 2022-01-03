@@ -1,5 +1,7 @@
 #!/bin/bash
 
+LOCK_FILE="$HOME/.cache/eww-lock.lock"
+
 lock() {
     # Wait for eww to finish load widget
     sleep 0.5
@@ -22,6 +24,12 @@ lock() {
         --wrong-size=10 \
         --wrong-font="Iosevka Nerd Font" \
         \
+        --greeter-text=" " \
+        --greeter-color=ff4757 \
+        --greeter-size=60 \
+        --greeter-font="Iosevka Nerd Font" \
+        --greeter-pos="w/2+6:h/2+285" \
+        \
         --ring-color=fbf1c7 \
         --ringver-color=7daea3 \
         --ringwrong-color=ea6962 \
@@ -30,9 +38,16 @@ lock() {
         --insidever-color=32302fA8 \
         --insidewrong-color=32302fA8 \
         --inside-color=32302f00 \
-        --ind-pos="w/2-70:h/2-5" \
+        --ind-pos="w/2-78:h/2-5" \
         \
-        --line-uses-inside --keyhl-color=ff4757 --bshl-color=ea6962 --separator-color=89b482
+        --line-uses-inside --keyhl-color=ff4757 --bshl-color=ea6962 --separator-color=89b482 \
+        --pointer=default
+}
+
+run() {
+    $HOME/.local/bin/tglbar
+    $HOME/.local/bin/eww open-many lock-screen
+    lock
 }
 
 status=$(playerctl -p spotify status || true)
@@ -40,12 +55,18 @@ if [ "$status" == "Playing" ]; then
 	playerctl pause
 fi
 
-if pgrep -x rofi; then
-	killall rofi
+if [[ ! -f "$LOCK_FILE" ]]; then
+    if pgrep -x rofi; then
+        killall rofi
+    fi
+
+    touch "$LOCK_FILE"
+    run
 fi
 
-# Haha, very funny lines :)
-$HOME/.local/bin/tglbar && $HOME/.local/bin/eww open-many lock-notice lock-screen && lock && $HOME/.local/bin/eww close-all && $HOME/.local/bin/tglbar
+rm "$LOCK_FILE"
+$HOME/.local/bin/eww close-all
+$HOME/.local/bin/tglbar
 
 status2=$(playerctl -p spotify status || true)
 if [ "$status2" == "Paused" ]; then

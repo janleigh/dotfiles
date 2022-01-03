@@ -8,7 +8,7 @@
         border-radius: 10px;
     
         font-family: "Material Icons";
-        font-size: 30px;
+        font-size: 32px;
 
         margin: 10px;
         padding: 8px;
@@ -30,8 +30,12 @@
             color: $green;
         }
 
-        &:hover {
+        &:nth-child(5), &:hover {
             color: $blue;
+        }
+
+        &:hover {
+            background-color: $bgSecondaryAlt;
         }
     }
 }

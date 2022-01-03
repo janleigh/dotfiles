@@ -3,43 +3,33 @@
 (defwidget line [] 
     (box))
 (defwidget profile [] 
-    (box :orientation "h"
+    (box :orientation "v"
          :space-evenly "true"
 
         (box :class "pfp")
-        ;; (box :class "text" :orientation "v"
-        ;;     :space-evenly "true"
+        (box :class "text" 
+            :space-evenly "true"
 
-        ;;    (box :class "welcome" "welcome!")
-        ;;    (box :class "username" "TheRealKizu")
-        ;; )
+           (label :class "username" :text "@${username}")
+        )
     )
 )
 (defwidget system-manager [] 
     (box :orientation "h" 
          :space-evenly "false" 
 
-        (box :class "system-info" :orientation "v"
-            (box :class "progress"
-                (box :class "progress-ram" 
-                    :orientation "h" 
-                    (circular-progress :value used_ram :thickness 23 :start-angle 0
-                ))
-                (box :class "progress-volume" 
-                    :orientation "h" 
-                    (circular-progress :value volume :thickness 23 :start-angle 0
-                ))
-                (box :class "progress-brightness" 
-                    :orientation "h" 
-                    (circular-progress :value brightness :thickness 23 :start-angle 0
-                ))
-            )
-            (box :class "labels" :orientation "h"
-                (box :class "label-ram" "RAM")
-                (box :class "label-volume" "VOL")
-                (box :class "label-brightness" "BRI")
-            )
-        )
+        (box :class "ram-bar"
+            (scale :min 0 :max 101 :value used_ram :orientation "v" :flipped "true"
+        ))
+        (box :class "disk-bar"
+            (scale :min 0 :max 101 :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)} :orientation "v" :flipped "true"
+        ))
+        (box :class "vol-bar"
+            (scale :min 0 :max 101 :value volume :orientation "v" :flipped "true" :onchange "amixer -q set Master {}%"
+        ))
+        (box :class "bri-bar"
+            (scale :min 0 :max 101 :value brightness :orientation "v" :flipped "true" :onchange "brightnessctl set {}%"
+        ))
     )
 )
 (defwidget layout-manager [] 
@@ -48,8 +38,8 @@
         (box :class "layout-btn"
              :orientation "h"
              :space-evenly "true"
-            (button :onclick "bsp-layout once tiled" "")
             (button :onclick "bsp-layout once grid" "")
+            (button :onclick "bsp-layout once even" "")
             (button :onclick "bsp-layout once tall" "")
         )
     )
@@ -59,9 +49,7 @@
          :orientation "h"
         (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art)
         (box :class "song-info" :orientation "v"
-            (label :class "song-title" :text song_title)
-            (box :class "song-artist" song_artist)
-            (box :class "song-controls" :orientation "h"
+            (box :class "song-controls" :orientation "v"
                 (button :onclick "playerctl previous" "")
                 (button :class "play-pause" :onclick "playerctl play-pause" player_status)
                 (button :onclick "playerctl next" "")
@@ -69,9 +57,14 @@
         )
     )
 )
-(defwidget lock-notice []
-    (box :class "lock-notice" :orientation "h"
-        (box :class "lock-header-text" "Lock On")
+(defwidget music-info []
+    (box :class "music-info" :orientation "v"
+        (box :class "b" :orientation "h" :space-evenly "false"
+            (label :class "song-title" :text song_title)
+        )
+        (box :class "c" :orientation "h" :space-evenly "false"
+            (label :class "song-artist" :text "by ${song_artist}")
+        )
     )
 )
 (defwidget lock-screen [] 
@@ -88,66 +81,39 @@
     )
 )
 (defwidget powermenu []
-    (box :class "powermenu" :orientation ""
+    (box :class "powermenu" :orientation "h"
         (button :onclick "systemctl poweroff" "")
         (button :onclick "systemctl reboot" "")
         (button :onclick "sh ./scripts/lockScreen" "")
         (button :onclick "bspc quit" "")
+        ; (button :onclick "systemctl hybrid-sleep" "")
     )
 )
-
-;; WINDOW DEFINITIONS
-(defwindow outer-window 
-    :geometry (geometry :x "0%" 
-                        :y "38px" 
-                        :width "337px" 
-                        :height "558px")
-    (outer-window))
-(defwindow profile 
-    :geometry (geometry :x "1%" 
-                        :y "8%" 
-                        :width "310px" 
-                        :height "120px")
-    (profile))
-(defwindow line 
-    :geometry (geometry :x "1%"
-                        :y "34%" 
-                        :width "310px" 
-                        :height "2px")
-    (line))
-(defwindow layout-manager 
-    :geometry (geometry :x "1%"
-                        :y "23%" 
-                        :width "310px" 
-                        :height "90px")
-    (layout-manager))
-(defwindow system-manager 
-    :geometry (geometry :x "1%"
-                        :y "55%" 
-                        :width "310px" 
-                        :height "160px")
-    (system-manager))
-(defwindow music-player
-    :geometry (geometry :x "1%"
-                        :y "36%" 
-                        :width "310px" 
-                        :height "130px")
-    (music-player))
-(defwindow lock-notice
-    :geometry (geometry :x "38%"
-                        :y "34%"
-                        :width "330px" 
-                        :height "40px")
-    (lock-notice))
-(defwindow lock-screen
-    :geometry (geometry :x "38%"
-                        :y "41%" 
-                        :width "325px" 
-                        :height "130px")
-    (lock-screen))
-(defwindow powermenu
-    :geometry (geometry :x "76%"
-                        :y "38px" 
-                        :width "330px" 
-                        :height "82px")
-    (powermenu))
+(defwidget launcher []
+    (box :class "launcher" :orientation "h"
+        (button :class "search" :onclick "~/.local/bin/appmnu" "  Click to search")
+    )
+)
+(defwidget weather []
+    (box :class "weather" :orientation "v" :space-evenly "false"
+        (box :orientation "h" :space-evenly "false"
+            (label :class "weather-desc" :text "${weather_desc}")
+        )
+        (label :class "weather-temp" :text "${weather_temp}°C")
+        (label :class "weather-feels" :text "Feels like ${weather_feels}°C")
+    )
+)
+(defwidget date []
+    (box :class "date" :orientation "v" :space-evenly "false"
+        (box :orientation "h" :space-evenly "false"
+            (label :class "weekday" :text "${weekday}")
+        )
+        (label :class "monthday" :text "${monthday}")
+    )
+)
+(defwidget quote []
+    (box :class "quote" :orientation "v"
+        (label :class "text" :text '"${quote}"')
+        (label :class "author" :text "━ ${quote_author}")
+    )
+)

@@ -6,6 +6,17 @@
         background-size: 100%;
         border-radius: 100%;
 
-        margin: 12px 107px;
+        margin: 10px 84px;
+    }
+
+    .text {
+        .username {
+            color: $watermelon;
+            font-family: "VictorMono Nerd Font";
+            font-style: italic;
+            font-size: 18px;
+
+            margin-top: -69px; // Haha funny number
+        }
     }
 }

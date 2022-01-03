@@ -5,7 +5,7 @@ LOCK_FILE="$HOME/.cache/eww.lock"
 EWW_BIN="$HOME/.local/bin/eww"
 
 run() {
-    # bspc config left_padding 335
+    # bspc config left_padding 300
 
     ${EWW_BIN} open-many \
         outer-window \
@@ -13,7 +13,11 @@ run() {
         line \
         system-manager \
         layout-manager \
-        music-player
+        music-player \
+        weather \
+        date \
+        quote \
+        music-info
 }
 
 # Run eww daemon if not running

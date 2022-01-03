@@ -7,14 +7,14 @@ if [ -z "$artist" ]; then
 	echo "Unknown Artist";
 else
 	if [ "$count" -le 18 ]; then
-        echo $artist | awk '{print tolower($0)}'
+        echo $artist
 	else	
 		if [[ "$artist" =~ [^\x00-\x7F] ]]; then
-			echo $(playerctl metadata --format '{{ artist }}' | awk '{ print substr($0, 1, 15) }')... | awk '{print tolower($0)}'
+			echo $(playerctl metadata --format '{{ artist }}' | awk '{ print substr($0, 1, 15) }')...
         elif [[ "$artist" -le 15 ]]; then
-            echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2}') | awk '{print tolower($0)}'
+            echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2}')
         else
-	    	echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2, $3}')... | awk '{print tolower($0)}'
+	    	echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2, $3}')...
 		fi
 	fi
 fi

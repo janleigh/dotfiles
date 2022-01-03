@@ -5,10 +5,14 @@
     "date '+%H'")
 (defpoll weekday :interval "5s"
     "date '+%A'")
+(defpoll monthday :interval "5s"
+    "date '+%d %b'")
 
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "2s"
     "./scripts/getUsedRam")
+(defpoll used_cpu :interval "2s"
+    "sh echo `top -b -n1 | grep 'Cpu(s)' | awk '{print $2 + $4}'`")
 (defpoll volume :interval "1ms"
     "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll brightness :interval "1ms"
@@ -19,13 +23,13 @@
     "./scripts/echoSongArt")
 (defpoll song_art :interval "5s"
     "./scripts/getSongArt")
-(defpoll song_artist :interval "2s"
+(defpoll song_artist :interval "5s"
     "./scripts/getSongArtist")
-(defpoll song_title :interval "2s"
+(defpoll song_title :interval "5s"
     "./scripts/getSongTitle")
-(defpoll song_title_full :interval "2s"
+(defpoll song_title_full :interval "5s"
     "./scripts/getSongTitle full")
-(defpoll player_status :interval "1s"
+(defpoll player_status :interval "2s"
     "./scripts/getPlayerStatus")
 
 ;; LOCK SCREEN VARS
@@ -33,3 +37,17 @@
     "whoami")
 (defpoll hostname :interval "1s"
     "hostname")
+
+;; WEATHER VARS
+(defpoll weather_temp :interval "5m"
+    "./scripts/getWeather current_temp")
+(defpoll weather_desc :interval "5m"
+    "./scripts/getWeather weather_desc")
+(defpoll weather_feels :interval "5m"
+    "./scripts/getWeather feels_like")
+
+;; STUFF
+(defpoll quote :interval "10h"
+    "./scripts/getQuote quote")
+(defpoll quote_author :interval "10h"
+    "./scripts/getQuote author")

@@ -22,7 +22,7 @@
 <!-- INFORMATION -->
 ### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
 
-   <img src="https://cdn.xndr.tech/u/eSoIJlD.png" alt="rice" align="right" width="400px">
+   <img src="https://cdn.xndr.tech/u/wS6ha4L.png" alt="rice" align="right" width="400px">
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
@@ -131,29 +131,38 @@
    - **Elkowar's Wacky Widgets <kbd>Suggested</kbd>**   
       > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the config.
 
-   - **Firefox Custom CSS <kbd>Suggested</kbd>**
-      > You can install the custom Firefox CSS by first enabling `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config` and move the contents of [`etc/firefox-css`](etc/firefox-css) to `$HOME/.mozilla/firefox/*.default-release/chrome`.
-
    - **GTK Theme <kbd>Suggested</kbd>**
       > You can find the custom GTK theme [here](https://github.com/janleigh/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config.
 
    - **Icon Theme <kbd>Suggested</kbd>**
       > You can install [this](https://github.com/zayronxio/Zafiro-icons/) icon theme that suits the GTK theme.
 
+   - **Firefox Custom CSS <kbd>Suggested</kbd>**
+      <details>
+      <summary><strong>See</strong></summary>
+
+      > You can install the custom Firefox CSS by first enabling `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config` and move the contents of [`etc/firefox-css`](etc/firefox-css) to `$HOME/.mozilla/firefox/*.default-release/chrome`.
+
+      </details>
+
    - **Replacement Commands <kbd>Suggested</kbd>**
+      <details>
+      <summary><strong>See</strong></summary>
+
       > Assuming you're also using my [zsh](https://www.zsh.org/), you might also want to install some additional dependencies to make some commands work.
 
       - `ls` ➜ [`exa`](https://github.com/ogham/exa)
-
       - `cat` ➜ [`bat`](https://github.com/sharkdp/bat)
-
       - `df` ➜ [`duf`](https://github.com/muesli/duf)
+
+      </details>
 
 ### ❖ Acknowledgements
 
    - **Inspiration**
       - [owl4ce](https://github.com/owl4ce) for the README style.
       - [Mangeshrex](https://github.com/Mangeshrex) for the colors of the colorscheme.
+      - [ner0z](https://github.com/ner0z) for the dashboard inspiration.
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 

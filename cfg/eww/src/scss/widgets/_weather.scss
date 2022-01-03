@@ -1,0 +1,23 @@
+.weather {
+    background-color: $bgSecondaryAlt;
+    border-radius: 6px;
+
+    .weather-desc {
+        color: $fgDim;
+        margin-left: 1em;
+        margin-top: 1em;
+    }
+
+    .weather-temp {
+        margin-top: 0.3em;
+        margin-left: -50px;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .weather-feels {
+        margin-top: 0.2em;
+        margin-left: -8px;
+        margin-bottom: 0.5em;
+    }
+}
