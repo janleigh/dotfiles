@@ -1,5 +1,4 @@
 #!/bin/bash
-pattern='/\G[^\x00-\x7F]/gm'
 artist=$(playerctl -p spotify metadata --format '{{ artist }}')
 count=$(echo -n "$artist" | wc -c)
 
