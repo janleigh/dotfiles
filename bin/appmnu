@@ -3,8 +3,7 @@
 rofi -no-lazy-grab \
 -disable-history \
 -modi "drun" -show drun \
--padding 20 \
--location 1 \
+-location 2 \
 -font "Iosevka Nerd Font 8.2" \
 -theme ~/.config/rofi/appmnu.rasi \
--xoffset 15 -yoffset +55 \
+-yoffset +55 \

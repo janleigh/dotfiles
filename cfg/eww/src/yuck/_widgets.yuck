@@ -81,12 +81,12 @@
     )
 )
 (defwidget powermenu []
-    (box :class "powermenu" :orientation "h"
+    (box :class "powermenu" :orientation "v"
         (button :onclick "systemctl poweroff" "")
         (button :onclick "systemctl reboot" "")
         (button :onclick "sh ./scripts/lockScreen" "")
         (button :onclick "bspc quit" "")
-        ; (button :onclick "systemctl hybrid-sleep" "")
+        (button :onclick "systemctl hybrid-sleep" "")
     )
 )
 (defwidget launcher []

@@ -47,10 +47,10 @@
                         :height "130px")
     (lock-screen))
 (defwindow powermenu
-    :geometry (geometry :x "76%"
-                        :y "5%" 
-                        :width "330px"
-                        :height "82px")
+    :geometry (geometry :x "94%"
+                        :y "187px" ; 25%
+                        :width "80px"
+                        :height "100px")
     (powermenu))
 (defwindow weather
     :geometry (geometry :x "12%"

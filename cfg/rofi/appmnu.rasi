@@ -10,39 +10,29 @@ configuration {
 }
 
 window {    
-	width:							40%;
+	width:						    36%;
     border:                         4px;
-    border-color:                   @background-alt;
-}
-
-prompt {
-    enabled: 						true;
-	padding: 						8px;
-    margin:                         2px;
-	background-color: 				@background-alt;
-	text-color: 					@foreground;
-    border:                         0 0 4px 0;
-    border-color:                   @border-color;
     border-radius:                  10px;
+    border-color:                   @background;
 }
 
 entry {
-    background-color:               @background-alt;
+    background-color:               #0E1112;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Type to search...";
-    padding:                        8px;
-    margin:                         2px;
+    padding:                        10px;
+    margin:                         0px;
     blink:                          true;
-    border:                         0 0 4px 0;
+    border:                         0 0 3px 0;
     border-color:                   @border-color;
     border-radius:                  10px;
 }
 
 inputbar {
-	children: 						[ prompt, entry ];
+	children: 						[ entry ];
     background-color:               @background;
     text-color:                     @background;
     expand:                         false;
@@ -56,7 +46,8 @@ inputbar {
 listview {
     background-color:               @background;
     padding:                        10px;
-    lines:                          7;
+    columns:                        4;
+    lines:                          3;
     spacing:                        0%;
     cycle:                          false;
     dynamic:                        true;
@@ -74,6 +65,7 @@ mainbox {
 }
 
 element {
+    orientation:                    vertical;
     background-color:               @background;
     text-color:                     @foreground;
     border-radius:                  0%;
@@ -88,22 +80,22 @@ element-icon, element-text {
 element-icon {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    size:                           32px;
-    border:                         8px;
+    size:                           42px;
+    border:                         16px;
     border-color:                   transparent;
 }
 
 element-text {
     expand:                         true;
-    horizontal-align:               0;
+    horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         2px 0px 2px 0px;
+    margin:                         -8px 0px 0px 0px;
 }
 
 element selected {
     background-color:               @background-alt;
     text-color:                     @foreground;
-    border:                         0 0 4px 0;
+    border:                         0 0 2px 0;
     border-color:                   @border-color;
     border-radius:                  10px;
 }

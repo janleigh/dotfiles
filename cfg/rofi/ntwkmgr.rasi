@@ -9,21 +9,10 @@ configuration {
 
 window {    
 	width:							19%;
-    background-color:               transparent;
-    border:                         0px;
-    border-radius:                  0px 0px 0px 10px;
-    font:                           "Iosevka Nerd Font 8.2";
-}
-
-prompt {
-    enabled: 						true;
-	padding: 						8px 16px 8px 8px;
-    margin:                         2px;
-	background-color: 				@background-alt;
-	text-color: 					@foreground;
-    border:                         0 0 4px 0;
-    border-color:                   @border-color;
+    border:                         4px;
     border-radius:                  10px;
+    border-color:                   @background;
+    font:                           "Iosevka Nerd Font 8.2";
 }
 
 entry {
@@ -43,7 +32,7 @@ entry {
 }
 
 inputbar {
-	children: 						[ prompt, entry ];
+	children: 						[ ];
     background-color:               @background;
     text-color:                     @background;
     expand:                         false;
@@ -51,7 +40,7 @@ inputbar {
     border-radius:                  10px;
 	border-color:					@accent;
     margin:                         0% 0% 0% 0%;
-    padding:                        1%;
+    padding:                        0%;
 }
 
 listview {
@@ -104,7 +93,7 @@ element-text {
 element selected {
     background-color:               @background-alt;
     text-color:                     @foreground;
-    border:                         0 0 4px 0;
+    border:                         0 0 2px 0;
     border-color:                   @border-color;
     border-radius:                  10px;
 }
