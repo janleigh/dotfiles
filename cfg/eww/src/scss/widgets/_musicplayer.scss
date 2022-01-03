@@ -7,7 +7,7 @@
         // border-top-right-radius: 0;
         // border-bottom-right-radius: 0;
         
-        margin: 5px -80px 0 0;
+        margin: 2px -80px 0 0;
     }
     
     .song-info {
@@ -19,7 +19,7 @@
         font-size: 16px;
         font-weight: bold;
 
-        margin: 5px 0px -1px 90px;
+        margin: 2px 0px -1px 90px;
 
         .song-controls {
             button {
@@ -33,6 +33,7 @@
 
             .play-pause {
                 color: $blue-desaturated;
+                font-size: 24px;
             }
         }
     }
