@@ -83,9 +83,9 @@
 (defwidget powermenu []
     (box :class "powermenu" :orientation "v"
         (button :onclick "systemctl poweroff" "")
-        (button :onclick "systemctl reboot" "")
-        (button :onclick "sh ./scripts/lockScreen" "")
+        (button :onclick "systemctl reboot" "")
         (button :onclick "bspc quit" "")
+        (button :onclick "sh ./scripts/lockScreen" "")
         (button :onclick "systemctl hybrid-sleep" "")
     )
 )
