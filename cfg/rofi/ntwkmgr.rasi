@@ -8,10 +8,10 @@ configuration {
 }
 
 window {    
+    transparency:                   "real";
 	width:							19%;
-    border:                         4px;
-    border-radius:                  10px;
-    border-color:                   @background;
+    border:                         16px;
+    border-color:                   @border;
     font:                           "Iosevka Nerd Font 8.2";
 }
 
@@ -27,7 +27,7 @@ entry {
     margin:                         2px;
     blink:                          true;
     border:                         0 0 4px 0;
-    border-color:                   @border-color;
+    border-color:                   @border;
     border-radius:                  10px;
 }
 
@@ -36,10 +36,7 @@ inputbar {
     background-color:               @background;
     text-color:                     @background;
     expand:                         false;
-	border:							0% 0% 0% 0%;
-    border-radius:                  10px;
-	border-color:					@accent;
-    margin:                         0% 0% 0% 0%;
+    margin:                         0px 0px 0px 0px;
     padding:                        0%;
 }
 
@@ -55,9 +52,8 @@ listview {
 
 mainbox {
     background-color:               @background;
-	border:							0% 0% 0% 0%;
-    border-radius:                  0% 0% 0% 0%;
-	border-color:					@background;
+	border:							4px;
+	border-color:					#192022;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
     padding:                        10px;
@@ -70,17 +66,9 @@ element {
     padding:                        2px; 
 }
 
-element-icon, element-text {
+element-text {
     background-color:               inherit;
     text-color:                     inherit;
-}
-
-element-icon {
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    size:                           0px;
-    border:                         8px;
-    border-color:                   transparent;
 }
 
 element-text {
@@ -94,6 +82,6 @@ element selected {
     background-color:               @background-alt;
     text-color:                     @foreground;
     border:                         0 0 2px 0;
-    border-color:                   @border-color;
+    border-color:                   @border;
     border-radius:                  10px;
 }
