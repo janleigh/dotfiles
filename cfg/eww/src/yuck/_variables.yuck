@@ -25,7 +25,7 @@
     "./scripts/getSongArt")
 (defpoll song_artist :interval "5s"
     "./scripts/getSongArtist")
-(defpoll song_title :interval "2s" ; Made it 2s cause the fucking regex check is slow.
+(defpoll song_title :interval "1s" ; Made it 1s cause the fucking regex check is slow.
     "./scripts/getSongTitle")
 (defpoll song_title_full :interval "5s"
     "./scripts/getSongTitle full")

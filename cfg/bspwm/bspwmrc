@@ -32,6 +32,8 @@ picom --config $HOME/.config/picom/picom.conf &
 
 # Set wallpaper
 feh --no-fehbg --bg-tile "$HOME/Pictures/walls/tiled.png"
+# Hex Gang
+# hsetroot -solid "#192022"
 
 # Start polybar
 sh $HOME/.config/polybar/launch.sh
@@ -49,6 +51,7 @@ rule Vivaldi-stable                 desktop=I
 rule firefox                        desktop=I
 rule discord                        desktop=II
 rule Code                           desktop=III
+rule lunarclient                    desktop=IV state=tiled
 rule Lutris                         desktop=V state=floating
 rule Steam                          desktop=V
 rule mpv                            state=floating

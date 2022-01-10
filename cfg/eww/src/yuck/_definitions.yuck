@@ -36,7 +36,7 @@
     (music-player))
 (defwindow music-info
     :geometry (geometry :x "0%"
-                        :y "81%" 
+                        :y "81%"
                         :width "133px" 
                         :height "40px")
     (music-info))
@@ -48,7 +48,7 @@
     (lock-screen))
 (defwindow powermenu
     :geometry (geometry :x "93%"
-                        :y "178px" ; 25%
+                        :y "173px" ; 25%
                         :width "98px"
                         :height "100px")
     (powermenu))

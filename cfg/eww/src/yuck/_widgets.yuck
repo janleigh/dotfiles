@@ -15,21 +15,27 @@
     )
 )
 (defwidget system-manager [] 
-    (box :orientation "h" 
+    (box :orientation "v" 
          :space-evenly "false" 
 
-        (box :class "ram-bar"
-            (scale :min 0 :max 101 :active "false" :value used_ram :orientation "v" :flipped "true"
-        ))
-        (box :class "disk-bar"
-            (scale :min 0 :max 101 :active "false" :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)} :orientation "v" :flipped "true"
-        ))
-        (box :class "vol-bar"
-            (scale :min 0 :max 101 :value volume :orientation "v" :flipped "true" :onchange "amixer -q set Master {}%"
-        ))
-        (box :class "bri-bar"
-            (scale :min 0 :max 101 :value brightness :orientation "v" :flipped "true" :onchange "brightnessctl set {}%"
-        ))
+        (box :class "a" :orientation "h" :space-evenly "false"
+            (label :class "title" :text "Stats")
+        )
+
+        (box :class "bars" :orientation "h" :space-evenly "false"
+            (box :class "ram-bar" :tooltip "Used RAM"
+                (scale :min 0 :max 101 :active "false" :value used_ram :orientation "v" :flipped "true"
+            ))
+            (box :class "disk-bar" :tooltip "Used Disk Space"
+                (scale :min 0 :max 101 :active "false" :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)} :orientation "v" :flipped "true"
+            ))
+            (box :class "vol-bar" :tooltip "Volume"
+                (scale :min 0 :max 101 :value volume :orientation "v" :flipped "true" :onchange "amixer -q set Master {}%"
+            ))
+            (box :class "bri-bar" :tooltip "Brightness"
+                (scale :min 0 :max 101 :value brightness :orientation "v" :flipped "true" :onchange "brightnessctl set {}%"
+            ))
+        )
     )
 )
 (defwidget layout-manager [] 

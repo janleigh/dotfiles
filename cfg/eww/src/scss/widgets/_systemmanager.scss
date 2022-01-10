@@ -1,10 +1,16 @@
 .system-manager {
     background-color: $bgSecondaryAlt;
     padding: 1rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0rem;
+
+    .a {
+        .title {
+            color: $fgDim;
+        }
+    }
 
     scale trough {
-        background-color: $bgSecondary;
+        background-color: #0E1112;
         border-radius: 50px;
     
         min-height: 10rem;

@@ -1,5 +1,5 @@
 .powermenu {
-    padding: 10px 8px;
+    padding: 8px;
     background-color: $bgSecondary;
     border-radius: 10px;
     border-top-right-radius: 0px;
@@ -12,16 +12,14 @@
         font-family: "Material Icons";
         font-size: 36px;
 
-        margin: 8px 6px;
-        padding: 12px;
+        margin: 6px;
+        padding: 16px;
 
         &:nth-child(1) {
-            padding-top: 10px;
             color: $red;
         }
 
         &:nth-child(2) {
-            padding-top: 10px;
             color: $yellow;
         }
 
@@ -30,7 +28,6 @@
         }
 
         &:nth-child(4) {
-            padding-top: 14px;
             color: $magenta;
         }
 
