@@ -13,7 +13,7 @@ window {
     transparency:                   "real";
 	width:						    36%;
     border:                         16px;
-    border-color:                   @border;
+    border-color:                   @background;
 }
 
 entry {
@@ -54,7 +54,7 @@ listview {
 mainbox {
     background-color:               @background;
 	border:							4px;
-	border-color:					#192022;
+	border-color:					@border;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
     padding:                        10px;

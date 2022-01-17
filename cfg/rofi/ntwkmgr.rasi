@@ -11,7 +11,7 @@ window {
     transparency:                   "real";
 	width:							19%;
     border:                         16px;
-    border-color:                   @border;
+    border-color:                   @background;
     font:                           "Sarasa Mono CL Nerd Font 8.2";
 }
 
@@ -53,7 +53,7 @@ listview {
 mainbox {
     background-color:               @background;
 	border:							4px;
-	border-color:					#192022;
+	border-color:					@border;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
     padding:                        10px;
