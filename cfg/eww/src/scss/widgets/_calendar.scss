@@ -1,0 +1,40 @@
+.cal-box {
+    background-color: $bg;
+    border: 16px $bgSecondary solid;
+
+    .cal-inner-box {
+        padding: 1rem 1rem .2rem;
+        border: 4px $bgSecondaryAlt solid;
+
+        .cal {
+            &.highlight {
+                padding: 10rem;
+            }
+
+            padding: .8rem .25rem 0rem;
+            margin-left: 10px;
+        }
+    }
+}
+
+calendar:selected {
+    color: $yellow;
+}
+
+calendar.header {
+	color: $javacafeMagenta;
+	font-weight: bold;
+}
+
+calendar.button {
+	color: $red;
+}
+
+calendar.highlight {
+	color: $javacafeBlue;
+	font-weight: bold;
+}
+
+calendar:indeterminate {
+	color: rgba(205, 219, 249, 0.3);
+}

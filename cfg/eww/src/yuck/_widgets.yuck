@@ -86,15 +86,6 @@
         )
     )
 )
-(defwidget powermenu []
-    (box :class "powermenu" :orientation "v"
-        (button :onclick "systemctl poweroff" "")
-        (button :onclick "systemctl reboot" "")
-        (button :onclick "bspc quit" "")
-        (button :onclick "sh ./scripts/lockScreen" "")
-        (button :onclick "systemctl hybrid-sleep" "")
-    )
-)
 (defwidget launcher []
     (box :class "launcher" :orientation "h"
         (button :class "search" :onclick "~/.local/bin/appmnu" "  Click to search")
@@ -121,5 +112,21 @@
     (box :class "quote" :orientation "v"
         (label :class "text" :text '"${quote}"')
         (label :class "author" :text "━ ${quote_author}")
+    )
+)
+(defwidget cal []
+    (box :class "cal-box" :orientation "v"
+        (box :class "cal-inner-box"
+            (calendar :class "cal" :day calendar_day :month calendar_month :year calendar_year)
+        )
+    )
+)
+(defwidget powermenu []
+    (box :class "powermenu" :orientation "v"
+        (button :onclick "systemctl poweroff" "")
+        (button :onclick "systemctl reboot" "")
+        (button :onclick "bspc quit" "")
+        (button :onclick "sh ./scripts/lockScreen" "")
+        (button :onclick "systemctl hybrid-sleep" "")
     )
 )

@@ -14,17 +14,17 @@ t=$'\e[0m'
 v=$'\e[7m'
 
 # Items
-sep=
-s=$d$f0$sep$t
-
-h=
+h=wm
 wmname="$(xprop -id $(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}') -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")"
 
-k=
+k=kr
 kernel="$(uname -r | cut -d '-' -f1)"
 
-sh=
+sh=sh
 shell=$(basename $SHELL)
+
+o=os
+os="$(uname -s)"
 
 # (\ /)
 # ( · ·)
@@ -36,9 +36,10 @@ shell=$(basename $SHELL)
 
 tput clear
 cat << EOF
+ 
+  (\ /)     $f6$k $t~ $kernel
+  ( $d· ·$t)    $f6$h $t~ $wmname
+  c($f1"$t)($f1"$t)   $f6$sh $t~ $shell
 
-   (\ /)     $f3$k  $t$kernel
-   ( $d. .$t)    $f1$h  $t$wmname
-   c($f1"$t)($f1"$t)   $f2$sh  $t$shell
-
+ 
 EOF

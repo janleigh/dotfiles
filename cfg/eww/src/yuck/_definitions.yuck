@@ -1,6 +1,6 @@
 (defwindow outer-window 
     :geometry (geometry :x "0%"
-                        :y "7%"
+                        :y "6%"
                         :width "297px"
                         :height "100%")
     (outer-window))
@@ -46,12 +46,6 @@
                         :width "325px" 
                         :height "130px")
     (lock-screen))
-(defwindow powermenu
-    :geometry (geometry :x "93%"
-                        :y "173px" ; 25%
-                        :width "98px"
-                        :height "100px")
-    (powermenu))
 (defwindow weather
     :geometry (geometry :x "12%"
                         :y "45%" 
@@ -70,3 +64,15 @@
                         :width "270px" 
                         :height "60px")
     (quote))
+(defwindow calendar
+    :geometry (geometry :x "73%"
+                        :y "55px" 
+                        :width "270px" 
+                        :height "60px")
+    (cal))
+(defwindow powermenu
+    :geometry (geometry :x "93%"
+                        :y "173px" ; 25%
+                        :width "98px"
+                        :height "100px")
+    (powermenu))

@@ -2,15 +2,15 @@
 
 <!-- BADGES -->
 <div align="center">
-    <p></p>
-    <a href="https://github.com/janleigh/dotfiles/stargazers">
-        <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%238dc776&labelColor=%23101415&style=for-the-badge">
-    </a>
-    <a href="https://github.com/janleigh/dotfiles/network/members/">
-        <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
-    </a>
-    <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
-    <a href="https://discord.gg/2RfJb3CVfb">
+   <p></p>
+   <a href="https://github.com/janleigh/dotfiles/stargazers">
+      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%238dc776&labelColor=%23101415&style=for-the-badge">
+   </a>
+   <a href="https://github.com/janleigh/dotfiles/network/members/">
+      <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
+   </a>
+   <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
+   <a href="https://discord.gg/2RfJb3CVfb">
       <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=for-the-badge"/>
    </a>
 </div>
@@ -22,7 +22,7 @@
 <!-- INFORMATION -->
 ### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
 
-   <img src="https://cdn.xndr.tech/u/wS6ha4L.png" alt="rice" align="right" width="400px">
+   <img src=".github/assets/rice.png" alt="Repo Preview" align="right" width="400px">
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
@@ -37,7 +37,7 @@
    - **Panel:** [polybar](https://github.com/polybar/polybar/)
    - **Compositor:** [picom](https://github.com/yshui/picom)
    - **Editor:** [neovim](https://github.com/neovim/neovim/)
-   - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox/new/)
+   - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox/)
    - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
@@ -98,8 +98,8 @@
    <summary><strong>Others</strong></summary>
 
    ```sh
-    # Copy tiled wallpaper.
-    $ mkdir -p $HOME/Pictures/walls && cp -r ./etc/wallpapers/tiled.png $HOME/Pictures/walls
+    # Copy wallpaper.
+    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-5.jpg $HOME/Pictures/walls/personal
    ```
 
    </details>
@@ -162,6 +162,7 @@
    - **Inspiration**
       - [owl4ce](https://github.com/owl4ce) for the README style.
       - [Mangeshrex](https://github.com/Mangeshrex) for the colors of the colorscheme.
+      - [JavaCafe01](https://github.com/JavaCafe01) for some colors used in the bar.
       - [ner0z](https://github.com/ner0z) for the dashboard inspiration.
 
    - **Contributors**

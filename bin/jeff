@@ -1,0 +1,21 @@
+#!/bin/sh
+# Wrapper for amazing software giph by phisch
+# Originally made by JavaCafe01
+
+file="$HOME/Pictures/Screenshots/gif_$(date '+%Y-%m-%d%H:%M:%S').gif"
+file2="$HOME/Videos/vid_$(date '+%Y-%m-%d%H:%M:%S').mp4"
+
+case $1 in
+    "sel")
+        giph -y -s -c '0.61,0.9,0.75,1' $file
+        ;;
+    "selmp4")
+        giph -y -s -f 60 -c '0.61,0.9,0.75,1' $file2
+        ;;
+    "mp4")
+        giph -y -g "1366x768+0+0" -f 60 $file2
+        ;;
+    *)
+        giph -y -g "1366x768+0+0" $file
+        ;;
+esac

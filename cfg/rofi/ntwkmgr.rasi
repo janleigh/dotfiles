@@ -12,12 +12,12 @@ window {
 	width:							19%;
     border:                         16px;
     border-color:                   @border;
-    font:                           "Iosevka Nerd Font 8.2";
+    font:                           "Sarasa Mono CL Nerd Font 8.2";
 }
 
 entry {
     enabled:                        false;
-    background-color:               @background-alt;
+    background-color:               #0E1112;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;

@@ -2,7 +2,7 @@
     padding: 0 0 10px 0;
 
     .song-art {
-        background-color: $bgSecondaryAlt;
+        background-color: $bgSecondary;
         background-size: 100%;
         background-repeat: no-repeat;
         border-radius: 6px;
@@ -11,7 +11,7 @@
     }
     
     .song-info {
-        background-color: $bgSecondaryAlt;
+        background-color: $bgSecondary;
         border-radius: 6px;
 
         margin: 2px 0px -1px 90px;
@@ -22,7 +22,7 @@
                 font-size: 20px;
 
                 &:hover {
-                    color: $accent;
+                    color: $javacafeBlue;
                 }
             }
         }

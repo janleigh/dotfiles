@@ -11,7 +11,7 @@ inactive_text_color="#1c1f21"
 inactive_bg=""
 inactive_underline=""
 
-separator=""
+separator="•"
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"
 empty_desktop_message="Desktop"

@@ -35,15 +35,6 @@ super + alt + {h,j,k,l}
 super + {alt + t,shift + t,space,alt + f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# Add focused window to a tabbed instance
-super + t; {h,j,k,l}
-    tabc $(bspc query -N -n {west,south,north,east}) add $(bspc query -N -n focused)
-# Remove the focused window from a tabbed instance
-super + t; r
-    tabbed=$(bspc query -N -n focused); \
-    child=$(tabc list $tabbed | head -n1); \
-    tabc $tabbed remove $child
-
 # Set new window orientation
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
@@ -58,7 +49,7 @@ super + l
 
 # Start alacritty
 super + Return
-    tabbed alacritty -t "term" --embed
+    tabbed -n "term" alacritty -t "term" --embed
 
 # Open browser
 super + b
@@ -103,7 +94,11 @@ XF86AudioMute
 # Manage brightness
 XF86MonBrightness{Up,Down}
     brightnessctl set 5%{+,-}
-   
+
+# Restart sxhkd
+super + shift + r
+    pkill -USR1 -x sxhkd
+
 # Quit and restart bspwm
 super + alt + {q,shift + }r
     bspc {quit,wm -r}

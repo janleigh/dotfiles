@@ -31,7 +31,8 @@ picom --config $HOME/.config/picom/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set wallpaper
-feh --no-fehbg --bg-tile "$HOME/Pictures/walls/tiled.png"
+# feh --no-fehbg --bg-tile "$HOME/Pictures/walls/tiled.png"
+hsetroot -fill "$HOME/Pictures/walls/personal/personal-5.jpg"
 # Hex Gang
 # hsetroot -solid "#192022"
 
