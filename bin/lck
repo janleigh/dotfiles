@@ -9,7 +9,7 @@ lock() {
     i3lock -n -c 00000000 -t -e --pass-media-keys --pass-power-keys --pass-volume-keys --indicator \
         --radius 40 --modif-size=9 --modif-pos="w/2:h/2-15" \
         \
-        --time-str="" \ #--time-str="%I:%M %p" \
+        --time-str="" \
         --time-pos="w/2:h/2+35" \
         --time-color=fbf1c7 \
         --time-size=14 \
@@ -25,7 +25,7 @@ lock() {
         --wrong-font="Iosevka Nerd Font" \
         \
         --greeter-text=" " \
-        --greeter-color=ff4757 \
+        --greeter-color=84a0c6 \
         --greeter-size=60 \
         --greeter-font="Iosevka Nerd Font" \
         --greeter-pos="w/2+6:h/2+285" \
@@ -40,7 +40,7 @@ lock() {
         --inside-color=32302f00 \
         --ind-pos="w/2-78:h/2-5" \
         \
-        --line-uses-inside --keyhl-color=ff4757 --bshl-color=ea6962 --separator-color=89b482 \
+        --line-uses-inside --keyhl-color=84a0c6 --bshl-color=ea6962 --separator-color=89b482 \
         --pointer=default
 }
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme ~/.config/rofi/ntwkmgr.rasi -location 3 -yoffset +55 -xoffset -140" 
+rofi_command="rofi -theme ~/.config/rofi/ntwkmgr.rasi -location 3 -yoffset +55 -xoffset -15" 
 
 ## Get info
 IFACE="$(nmcli | grep -i interface | awk '/interface/ {print $2}')"

@@ -13,6 +13,7 @@
    <a href="https://discord.gg/2RfJb3CVfb">
       <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=for-the-badge"/>
    </a>
+   <br>
 </div>
 
 <p/>
