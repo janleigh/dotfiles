@@ -32,7 +32,7 @@
    Here are more information about my setup:
 
    - **WM:** [bspwm](https://github.com/baskerville/bspwm)
-   - **OS:** [EndeavourOS](https://endeavouros.com/)
+   - **OS:** [Arch Linux](https://archlinux.org/)
    - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
    - **Shell:** [zsh](https://www.zsh.org/)
    - **Panel:** [polybar](https://github.com/polybar/polybar/)

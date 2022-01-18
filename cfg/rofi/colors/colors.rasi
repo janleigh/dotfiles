@@ -6,4 +6,5 @@
     accent:                     #84a0c6;
 
     text-color:                 @fg;
+    javacafe-blue:              #bac8ef;
 }

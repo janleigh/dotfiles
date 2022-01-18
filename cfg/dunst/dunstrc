@@ -134,6 +134,9 @@
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 64
 
+[log_notifs]
+    script = ~/.config/dunst/scripts/lognotifs.sh
+
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
