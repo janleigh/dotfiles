@@ -7,10 +7,8 @@
          :space-evenly "true"
 
         (box :class "pfp")
-        (box :class "text" 
-            :space-evenly "true"
-
-           (label :class "username" :text "@${username}")
+        (box :class "text" :space-evenly "true" :orientation "v"
+            (label :class "username" :text "@${username}")
         )
     )
 )
@@ -44,10 +42,18 @@
         (box :class "layout-btn"
              :orientation "h"
              :space-evenly "true"
-            (button :onclick "bsp-layout once grid" "")
+            (button :onclick "bsp-layout once rtall" "")
             (button :onclick "bsp-layout once even" "")
-            (button :onclick "bsp-layout once tall" "")
+            (button :onclick "bsp-layout once grid" "")
         )
+        ; (box :class "layout-btn"
+        ;      :orientation "h"
+        ;     (button "")
+        ;     (button :onclick "bsp-layout once tiled" "")
+        ;     (button "")
+        ;     (button :onclick "bsp-layout once rwide" "")
+        ;     (button "")
+        ; )
     )
 )
 (defwidget music-player [] 
@@ -74,13 +80,13 @@
     )
 )
 (defwidget lock-screen [] 
-    (box :orientation "v" :space-evenly "true"
-        (box :class "lock-screen"
-             :orientation "h"
+    (box :class "lock-screen"
+            :orientation "h" :space-evenly "true"
 
+        (box :class "lock-inner" :orientation "v" :space-evenly "true"
             (box :class "lock-pfp")
             (box :class "lock-text" :orientation "v"
-                (box :class "lock-username" username)
+                (box :class "lock-username" "Jan Leigh")
                 (box :class "lock-hostname" "@${hostname}")
             )
         )
@@ -122,11 +128,13 @@
     )
 )
 (defwidget powermenu []
-    (box :class "powermenu" :orientation "v"
-        (button :onclick "systemctl poweroff" "")
-        (button :onclick "systemctl reboot" "")
-        (button :onclick "bspc quit" "")
-        (button :onclick "sh ./scripts/lockScreen" "")
-        (button :onclick "systemctl hybrid-sleep" "")
+    (box :class "powermenu" :orientation "h"
+        (box :class "powermenu-inner-box"
+            (button :onclick "systemctl poweroff" "")
+            (button :onclick "systemctl reboot" "")
+            (button :onclick "bspc quit" "")
+            (button :onclick "sh ./scripts/lockScreen" "")
+            (button :onclick "systemctl hybrid-sleep" "")
+        )
     )
 )

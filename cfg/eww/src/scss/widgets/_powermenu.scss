@@ -1,43 +1,44 @@
 .powermenu {
-    padding: 8px;
     background-color: $bgSecondary;
-    border-radius: 10px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border: 16px $bgSecondary solid;
 
-    button {
-        background-color: $bgSecondaryAlt;
-        border-radius: 10px;
+    .powermenu-inner-box {
+        padding: .25rem;
+        border: 4px $bgSecondaryAlt solid;
+
+        button {
+            color: $fgDim;
+        
+            font-family: "Material Icons";
+            font-size: 30px;
     
-        font-family: "Material Icons";
-        font-size: 36px;
+            margin: 6px;
+            padding: 12px;
 
-        margin: 6px;
-        padding: 16px;
-
-        &:nth-child(1) {
-            color: $red;
-        }
-
-        &:nth-child(2) {
-            color: $yellow;
-        }
-
-        &:nth-child(3) {
-            color: $green;
-        }
-
-        &:nth-child(4) {
-            color: $magenta;
-        }
-
-        &:nth-child(5) {
-            color: $blue-desaturated;
-        }
-
-        &:hover {
-            color: $blue;
-            background-color: $bgSecondaryAlt;
+            &:nth-child(1) {
+                color: $red;
+            }
+    
+            &:nth-child(2) {
+                color: $yellow;
+            }
+    
+            &:nth-child(3) {
+                color: $green;
+            }
+    
+            &:nth-child(4) {
+                color: $magenta;
+            }
+    
+            &:nth-child(5) {
+                color: $blue-desaturated;
+            }
+    
+            &:hover {
+                color: $blue;
+                background-color: $bgSecondaryAlt;
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ config() { bspc config "$@" & }
 # Autostart Apps
 $HOME/.local/bin/eww daemon &
 dunst --config $HOME/.config/dunst/dunstrc &
-picom --config $HOME/.config/picom/picom.conf &
+picom --experimental-backends --config $HOME/.config/picom/picom.conf &
 
 # Start polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

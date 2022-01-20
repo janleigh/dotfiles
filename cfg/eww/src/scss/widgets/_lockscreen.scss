@@ -1,27 +1,32 @@
 .lock-screen {
-    background: $bgSecondaryAlt;
-    border-radius: 10px;
+    background-color: $bg;
+    border-radius: 12px;
+    border: $bgSecondaryAlt solid 3px;
 
     .lock-pfp {
         background-image: url("./assets/avatar.png");
         background-size: 100%;
-        border-radius: 40px;
+        border-radius: 100%;
 
-        margin: 25px 35px 25px 45px;
+        margin: 3.5rem 6.8rem 0rem;
     }
 
     .lock-text {
-        margin: 40px -20px 30px -70px;
-        
+        margin: 2.5rem 1rem;
+        padding: 1rem;
+        font-family: "VictorMono Nerd Font";
+        font-style: italic;
+
         .lock-username {
-            font-family: "VictorMono Nerd Font", monospace;
-            font-size: 24px;
-            font-style: italic;
-            color: $watermelon;
+            color: $javacafeBlue;
+            font-size: 20px;
         }
 
         .lock-hostname {
+            color: $fgDim;
             font-size: 16px;
+            font-style: normal;
+            // margin-bottom: -6rem;
         }
     }
 }

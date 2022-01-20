@@ -1,12 +1,12 @@
 (defwindow outer-window 
     :geometry (geometry :x "0%"
-                        :y "6%"
-                        :width "297px"
+                        :y "38px"
+                        :width "300px"
                         :height "100%")
     (outer-window))
 (defwindow profile 
     :geometry (geometry :x "1%" 
-                        :y "11%"
+                        :y "10%"
                         :width "270px" 
                         :height "240px")
     (profile))
@@ -25,7 +25,7 @@
 (defwindow system-manager 
     :geometry (geometry :x "1%"
                         :y "45%"
-                        :width "120px"
+                        :width "127px"
                         :height "173px")
     (system-manager))
 (defwindow music-player
@@ -41,10 +41,10 @@
                         :height "40px")
     (music-info))
 (defwindow lock-screen
-    :geometry (geometry :x "38%"
-                        :y "41%" 
-                        :width "325px" 
-                        :height "130px")
+    :geometry (geometry :x "553px"
+                        :y "31%" 
+                        :width "260px" 
+                        :height "220px")
     (lock-screen))
 (defwindow weather
     :geometry (geometry :x "12%"
@@ -71,8 +71,8 @@
                         :height "60px")
     (cal))
 (defwindow powermenu
-    :geometry (geometry :x "93%"
-                        :y "173px" ; 25%
+    :geometry (geometry :x "975px" ; CHANGE THIS
+                        :y "55px" ; 25%
                         :width "98px"
                         :height "100px")
     (powermenu))
