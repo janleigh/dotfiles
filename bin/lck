@@ -7,7 +7,7 @@ lock() {
     sleep 0.5
 
     i3lock -n -c 00000000 -t -e --pass-media-keys --pass-power-keys --pass-volume-keys --indicator \
-        --radius 40 --modif-size=9 --modif-pos="w/2:h/2-15" \
+        --radius 45 --modif-size=9 --modif-pos="w/2:h/2-15" \
         \
         --time-str="" \
         --time-pos="w/2:h/2+35" \
@@ -28,7 +28,7 @@ lock() {
         --greeter-color=84a0c6 \
         --greeter-size=60 \
         --greeter-font="Iosevka Nerd Font" \
-        --greeter-pos="w/2+6:h/2+285" \
+        --greeter-pos="w/2+14:h/2+285" \
         \
         --ring-color=fbf1c7 \
         --ringver-color=7daea3 \
@@ -38,7 +38,7 @@ lock() {
         --insidever-color=32302fA8 \
         --insidewrong-color=32302fA8 \
         --inside-color=32302f00 \
-        --ind-pos="w/2-78:h/2-5" \
+        --ind-pos="w/2:h/2-55" \
         \
         --line-uses-inside --keyhl-color=84a0c6 --bshl-color=ea6962 --separator-color=89b482 \
         --pointer=default
