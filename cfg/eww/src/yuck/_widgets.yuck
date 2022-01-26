@@ -16,7 +16,7 @@
     (box :orientation "v" 
          :space-evenly "false" 
 
-        (box :class "a" :orientation "h" :space-evenly "false"
+        (box :class "title" :orientation "h" :space-evenly "false"
             (label :class "title" :text "Stats")
         )
 
@@ -46,14 +46,6 @@
             (button :onclick "bsp-layout once even" "")
             (button :onclick "bsp-layout once grid" "")
         )
-        ; (box :class "layout-btn"
-        ;      :orientation "h"
-        ;     (button "")
-        ;     (button :onclick "bsp-layout once tiled" "")
-        ;     (button "")
-        ;     (button :onclick "bsp-layout once rwide" "")
-        ;     (button "")
-        ; )
     )
 )
 (defwidget music-player [] 
@@ -80,14 +72,12 @@
     )
 )
 (defwidget lock-screen [] 
-    (box :class "lock-screen"
-            :orientation "h" :space-evenly "true"
-
+    (box :class "lock-screen" :orientation "h" :space-evenly "true"
         (box :class "lock-inner" :orientation "v" :space-evenly "true"
             (box :class "lock-pfp")
             (box :class "lock-text" :orientation "v"
-                (box :class "lock-username" "Jan Leigh")
-                (box :class "lock-hostname" "@${hostname}")
+                (box :class "lock-username" "Jan Leigh Muñoz")
+                (box :class "lock-hostname" "@${username}")
             )
         )
     )
@@ -99,7 +89,7 @@
 )
 (defwidget weather []
     (box :class "weather" :orientation "v" :space-evenly "false"
-        (box :orientation "h" :space-evenly "false"
+        (box :orientation "h" :space-evenly "false" 
             (label :class "weather-desc" :text "${weather_desc}")
         )
         (label :class "weather-temp" :text "${weather_temp}°C")

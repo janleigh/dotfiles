@@ -65,10 +65,10 @@ font:
   size: 9
 
   offset:
-    y: -1
+    y: 0
 
   glyph_offset:
-    y: -1
+    y: 0
 
 colors:
   # Default colors
@@ -106,3 +106,5 @@ cursor:
   #   - _ Underline
   #   - | Beam
   style: 'Underline'
+
+  vi_mode_style: 'Underline'
