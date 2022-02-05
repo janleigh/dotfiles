@@ -18,7 +18,7 @@ window {
     line-padding:                   1;
 	width:						    30%;
     height:							80%;
-    border:                         16px;
+    border:                         14px;
     border-color:                   @background;
 }
 

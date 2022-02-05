@@ -1,7 +1,7 @@
 (defwindow outer-window 
     :geometry (geometry :x "0%"
                         :y "0%"
-                        :width "300px"
+                        :width "297px"
                         :height "100%")
     (outer-window))
 (defwindow profile 
@@ -65,13 +65,13 @@
                         :height "60px")
     (quote))
 (defwindow calendar
-    :geometry (geometry :x "79%"
+    :geometry (geometry :x "1080px"
                         :y "55px" 
                         :width "270px" 
                         :height "60px")
     (cal))
 (defwindow powermenu
-    :geometry (geometry :x "975px" ; CHANGE THIS
+    :geometry (geometry :x "978px" ; CHANGE THIS
                         :y "55px" ; 25%
                         :width "98px"
                         :height "100px")

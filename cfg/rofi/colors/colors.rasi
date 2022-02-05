@@ -3,7 +3,7 @@
     background-alt:             #131718;
     border:                     #151a1c;
     foreground:                 #c5c8c9;
-    accent:                     #84a0c6;
+    accent:                     #7ba5dd;
 
     text-color:                 @fg;
     javacafe-blue:              #bac8ef;

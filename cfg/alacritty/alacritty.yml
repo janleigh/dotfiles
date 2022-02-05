@@ -78,24 +78,24 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x101415'
-    red:     '0xc26f6f'
-    green:   '0x6bb05d'
-    yellow:  '0xe59e67'
-    blue:    '0x667b99'
-    magenta: '0xb185db'
-    cyan:    '0x779fa8'
+    black:   '0x131718'
+    red:     '0xdf5b61'
+    green:   '0x87c7a1'
+    yellow:  '0xde8f78'
+    blue:    '0x6791c9'
+    magenta: '0xbc83e3'
+    cyan:    '0x70b9cc'
     white:   '0xc4c4c4'
 
   # Bright colors
   bright:
-    black:   '0x131718'
-    red:     '0xf65b5b'
-    green:   '0x8dc776'
-    yellow:  '0xe7ac7e'
-    blue:    '0x84a0c6'
-    magenta: '0xbb8fe5'
-    cyan:    '0x89b8c2'
+    black:   '0x151a1c'
+    red:     '0xee6a70'
+    green:   '0x96d6b0'
+    yellow:  '0xffb29b'
+    blue:    '0x7ba5dd'
+    magenta: '0xcb92f2'
+    cyan:    '0x7fc8db'
     white:   '0xcccccc'
 
 cursor:

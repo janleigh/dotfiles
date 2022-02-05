@@ -27,25 +27,25 @@
 
     .ram-bar {
         scale trough highlight {
-            background-color: $red;
+            background-image: linear-gradient(to bottom, $red, #df5b61);
         }
     }
 
     .disk-bar {
         scale trough highlight {
-            background-color: $yellow;
+            background-image: linear-gradient(to bottom, $yellow, #de8f78);
         }
     }
 
     .vol-bar {
         scale trough highlight {
-            background-color: $blue;
+            background-image: linear-gradient(to bottom, $blue, #6791c9);
         }
     }
 
     .bri-bar {
         scale trough highlight {
-            background-color: $magenta;
+            background-image: linear-gradient(to bottom, $magenta, #bc83e3);
         }
     }
 }

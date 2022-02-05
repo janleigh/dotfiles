@@ -1,6 +1,6 @@
 .powermenu {
-    background-color: $bgSecondary;
-    border: 16px $bgSecondary solid;
+    background-color: $bg;
+    border: 14px $bg solid;
 
     .powermenu-inner-box {
         padding: .25rem;
@@ -37,7 +37,7 @@
     
             &:hover {
                 color: $blue;
-                background-color: $bgSecondaryAlt;
+                background-color: $bgSecondary
             }
         }
     }

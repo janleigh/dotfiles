@@ -10,7 +10,7 @@ configuration {
 window {    
     transparency:                   "real";
 	width:							19%;
-    border:                         16px;
+    border:                         14px;
     border-color:                   @background;
     font:                           "Sarasa Mono CL Nerd Font 8.2";
 }
@@ -31,8 +31,17 @@ entry {
     border-radius:                  10px;
 }
 
+prompt {
+    enabled: 						true;
+	padding: 						4px;
+    margin:                         2px;
+	background-color: 				@background;
+	text-color: 					@foreground;
+    font:                           "Iosevka Nerd Font 8.2";
+}
+
 inputbar {
-	children: 						[ ];
+	children: 						[ prompt ];
     background-color:               @background;
     text-color:                     @background;
     expand:                         false;

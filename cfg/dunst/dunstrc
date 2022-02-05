@@ -1,5 +1,5 @@
 [global]
-    font = Iosevka Nerd Font 9 
+    font = Iosevka Nerd Font 9
 
     # Allow a small subset of html markup:
     # <b>bold</b>
@@ -58,12 +58,12 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "270x220-15+55"
+    geometry = "275x5-15+55"
 
     # Frame
     frame_width = 3
     frame_color = "#151a1c"
-    outer_frame_width = 10
+    outer_frame_width = 7
     outer_frame_color = "#101415"
 
     # The transparency of the window. range: [0; 100]
@@ -134,6 +134,13 @@
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 64
 
+    # Define the corner radius of the notification window
+    # in pixel size. If the radius is 0, you have no rounded
+    # corners.
+    # The radius will be automatically lowered if it exceeds half of the
+    # notification height to avoid clipping text and/or icons.
+    corner_radius = 0
+
 [log_notifs]
     script = ~/.config/dunst/scripts/lognotifs.sh
 
@@ -145,15 +152,15 @@
 
 [urgency_low]
     background = "#101415"
-    foreground = "#c5c8c9"
+    foreground = "#898c8d"
     timeout = 5
 
 [urgency_normal]
     background = "#101415"
-    foreground = "#c5c8c9"
-    timeout = 5
+    foreground = "#a7aaab"
+    timeout = 7
 
 [urgency_critical]
     background = "#101415"
     foreground = "#c5c8c9"
-    timeout = 9
+    timeout = 10

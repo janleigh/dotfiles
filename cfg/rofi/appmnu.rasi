@@ -12,23 +12,24 @@ configuration {
 window {    
     transparency:                   "real";
 	width:						    36%;
-    border:                         16px;
+    border:                         14px;
+    border-radius:                  0px;
     border-color:                   @background;
 }
 
 entry {
-    background-color:               #0E1112;
+    background-color:               @background-alt;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "Type here to search...";
+    placeholder:                    "   Type here to search...";
     padding:                        10px;
     margin:                         0 1%;
     blink:                          true;
-    border:                         0px 0px 3px 0px;
+    border:                         0px 0px 2px 0px;
     border-radius:                  6px;
-    border-color:                   @border;
+    border-color:                   #7ba5dd;
 }
 
 inputbar {
