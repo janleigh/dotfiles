@@ -84,7 +84,6 @@
     $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
 
     # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
-    $ rm -f $HOME/.local/bin/tabbed $HOME/.local/bin/chwb2
     $ mv $HOME/.local/bin/tabbed /usr/local/bin && mv $HOME/.local/bin/chwb2 /usr/local/bin
    ```
 
