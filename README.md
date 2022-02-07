@@ -23,7 +23,7 @@
 <!-- INFORMATION -->
 ### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
 
-   <img src=".github/assets/rice.png" alt="Repo Preview" align="right" width="400px">
+   <img src=".github/assets/rice.png" alt="Rice Preview" align="right" width="400px">
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
@@ -82,6 +82,10 @@
    ```sh
     $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
     $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
+
+    # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
+    $ rm -f $HOME/.local/bin/tabbed $HOME/.local/bin/chwb2
+    $ mv $HOME/.local/bin/tabbed /usr/local/bin && mv $HOME/.local/bin/chwb2 /usr/local/bin
    ```
 
    </details>
@@ -162,8 +166,6 @@
 
    - **Inspiration**
       - [owl4ce](https://github.com/owl4ce) for the README style.
-      - [Mangeshrex](https://github.com/Mangeshrex) for the colors of the colorscheme.
-      - [JavaCafe01](https://github.com/JavaCafe01) for some colors used in the bar.
       - [ner0z](https://github.com/ner0z) for the dashboard inspiration.
 
    - **Contributors**
