@@ -3,11 +3,12 @@
 LOCK_FILE="$HOME/.cache/eww-lock.lock"
 
 lock() {
+    # hsetroot -fill "$HOME/Pictures/walls/personal/lockscreen-1.png"
     # Wait for eww to finish load widget
     sleep 0.5
 
     i3lock -n -c 00000000 -t -e --pass-media-keys --pass-power-keys --pass-volume-keys --indicator \
-        --radius 45 --modif-size=9 --modif-pos="w/2:h/2-15" \
+        --radius 46 --modif-size=9 --modif-pos="w/2:h/2-15" \
         \
         --time-str="" \
         --time-pos="w/2:h/2+35" \
@@ -24,7 +25,7 @@ lock() {
         --wrong-size=10 \
         --wrong-font="Iosevka Nerd Font" \
         \
-        --greeter-text=" " \
+        --greeter-text="" \
         --greeter-color=84a0c6 \
         --greeter-size=60 \
         --greeter-font="Iosevka Nerd Font" \
@@ -38,7 +39,7 @@ lock() {
         --insidever-color=32302fA8 \
         --insidewrong-color=32302fA8 \
         --inside-color=32302f00 \
-        --ind-pos="w/2:h/2-55" \
+        --ind-pos="w/2:h/2-54" \
         \
         --line-uses-inside --keyhl-color=84a0c6 --bshl-color=ea6962 --separator-color=89b482 \
         --pointer=default
@@ -65,6 +66,7 @@ if [[ ! -f "$LOCK_FILE" ]]; then
 fi
 
 rm "$LOCK_FILE"
+# hsetroot -fill "$HOME/Pictures/walls/personal/personal-5.jpg"
 $HOME/.local/bin/eww close-all
 $HOME/.local/bin/tglbar
 
