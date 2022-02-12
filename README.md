@@ -67,7 +67,7 @@
    ```sh
     $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom \
     brightnessctl playerctl feh maim jq xclip imagemagick  \
-    dunst bsp-layout i3lock-color
+    dunst bsp-layout i3lock-color xdo giph rsync
    ```
 
    </details>
@@ -125,13 +125,13 @@
 
 ### ❖ Miscellaneous
 
-   - **Elkowar's Wacky Widgets <kbd>Suggested</kbd>**   
+   - **Elkowar's Wacky Widgets** 
       > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values of the widgets on the config.
 
-   - **GTK Theme <kbd>Suggested</kbd>**
+   - **GTK Theme**
       > You can find the custom GTK theme [here](https://github.com/janleigh/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config.
 
-   - **Icon Theme <kbd>Suggested</kbd>**
+   - **Icon Theme**
       > You can install [this](https://github.com/zayronxio/Zafiro-icons/) icon theme that suits the GTK theme.
 
    - **Firefox Custom CSS <kbd>Suggested</kbd>**
