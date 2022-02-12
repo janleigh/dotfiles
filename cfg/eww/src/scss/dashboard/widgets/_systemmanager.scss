@@ -1,5 +1,5 @@
 .system-manager {
-    background-color: $bgSecondary;
+    background-color: $bg;
     padding: 1rem;
     padding-bottom: 0rem;
 
@@ -33,19 +33,19 @@
 
     .disk-bar {
         scale trough highlight {
-            background-image: linear-gradient(to bottom, $yellow, #de8f78);
+            background-image: linear-gradient(to bottom, $magenta, #bc83e3);
         }
     }
 
     .vol-bar {
         scale trough highlight {
-            background-image: linear-gradient(to bottom, $blue, #6791c9);
+            background-image: linear-gradient(to bottom, $green, #87c7a1);
         }
     }
 
     .bri-bar {
         scale trough highlight {
-            background-image: linear-gradient(to bottom, $magenta, #bc83e3);
+            background-image: linear-gradient(to bottom, $yellow, #de8f78);
         }
     }
 }

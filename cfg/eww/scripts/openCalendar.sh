@@ -19,6 +19,6 @@ if [[ ! -f "$LOCK_FILE" ]]; then
     touch "$LOCK_FILE"
     run
 else
-    ${EWW_BIN} close-all
+    ${EWW_BIN} close calendar
     rm "$LOCK_FILE"
 fi

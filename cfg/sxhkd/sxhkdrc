@@ -63,12 +63,12 @@ super + a
 super + d
     sh $HOME/.local/bin/dshbrd
 
-# Toggle powermenu
-super + p
-    sh $HOME/.local/bin/powermenu
+# Toggle notif center
+super + n
+    sh $HOME/.local/bin/notifcntr
 
 # Toggle network menu
-super + n
+super + alt + n
     sh $HOME/.local/bin/ntwkmgr
 
 # Screenshot

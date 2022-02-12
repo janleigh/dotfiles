@@ -24,7 +24,8 @@ start() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # ##############################################################################
 
 # Autostart Apps
-$HOME/.local/bin/eww daemon &
+# $HOME/.local/bin/eww daemon &
+$HOME/.local/bin/eww open bar &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
 
@@ -33,12 +34,12 @@ picom --config $HOME/.config/picom/picom.conf &
 
 # Set wallpaper
 # feh --no-fehbg --bg-tile "$HOME/Pictures/walls/tiled.png"
-hsetroot -fill "$HOME/Pictures/walls/personal/personal-5.jpg"
+hsetroot -fill "$HOME/Pictures/walls/personal/personal-4.jpg"
 # Hex Gang
 # hsetroot -solid "#192022"
 
 # Start polybar
-sh $HOME/.config/polybar/launch.sh
+# sh $HOME/.config/polybar/launch.sh
 
 # I hate mouse drift.
 xset m 0 0
@@ -47,16 +48,16 @@ xset m 0 0
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-bspc monitor -d I II III IV V VI
+bspc monitor -d 1 2 3 4 5 6
 
-rule Vivaldi-stable                 desktop=I
-rule firefox                        desktop=I
-rule discord                        desktop=II
-rule Code                           desktop=III
-rule Client                         desktop=III state=floating
-rule lunarclient                    desktop=III state=tiled
-rule Lutris                         desktop=V state=floating
-rule Steam                          desktop=V
+rule Vivaldi-stable                 desktop=1
+rule firefox                        desktop=1
+rule discord                        desktop=2
+rule Code                           desktop=3
+rule Client                         desktop=3 state=floating
+rule lunarclient                    desktop=3 state=tiled
+rule Lutris                         desktop=5 state=floating
+rule Steam                          desktop=5
 rule mpv                            state=floating
 rule Viewnior                       state=floating
 
@@ -71,8 +72,7 @@ config pointer_modifier             Mod4
 # config border_width                 20
 config window_gap                   16
 
-config top_padding                  40
-config bottom_padding               0
+config left_padding                 45
 
 config split_ratio                  0.62
 config borderless_monocle           true

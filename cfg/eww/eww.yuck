@@ -1,5 +1,10 @@
 ;; NOTE: This is only for 1366x768 resolution! Use at your own risk.
 
-(include "./src/yuck/_definitions.yuck")
-(include "./src/yuck/_widgets.yuck")
 (include "./src/yuck/_variables.yuck")
+
+(include "./src/yuck/bar/_definitions.yuck")
+(include "./src/yuck/bar/_widgets.yuck")
+(include "./src/yuck/dashboard/_definitions.yuck")
+(include "./src/yuck/dashboard/_widgets.yuck")
+(include "./src/yuck/lock/_definitions.yuck")
+(include "./src/yuck/lock/_widgets.yuck")

@@ -1,0 +1,45 @@
+.music-player {
+    padding: 0 0 10px 0;
+
+    .song-art {
+        background-color: $bg;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 6px;
+    
+        margin: 2px -80px 0 0;
+
+        .music-info {
+            all: unset;
+            background-color: transparent;
+            border-radius: 6px;
+
+            margin-top: 10px;
+            margin-left: -100px;
+        
+            .title {
+                font-size: 16px;
+                font-weight: bolder;
+            }
+            .artist {
+                color: $fgDim;
+            }
+        }
+    }
+    
+    .song-controls {
+        background-color: $bg;
+        border-radius: 6px;
+
+        margin: 2px 0px -1px 90px;
+
+        button {
+            font-family: "Material Icons";
+            font-size: 20px;
+
+            &:hover {
+                color: $accent;
+            }
+        }
+    }
+}

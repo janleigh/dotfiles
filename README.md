@@ -4,14 +4,14 @@
 <div align="center">
    <p></p>
    <a href="https://github.com/janleigh/dotfiles/stargazers">
-      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%238dc776&labelColor=%23101415&style=for-the-badge">
+      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%2396d6b0&labelColor=%23101415&style=for-the-badge">
    </a>
    <a href="https://github.com/janleigh/dotfiles/network/members/">
-      <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%2384a0c6&labelColor=%23101415&style=for-the-badge">
+      <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%237ba5dd&labelColor=%23101415&style=for-the-badge">
    </a>
-   <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23f65b5b&labelColor=%23101415&style=for-the-badge">
+   <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23ee6a70&labelColor=%23101415&style=for-the-badge">
    <a href="https://discord.gg/2RfJb3CVfb">
-      <img src="https://img.shields.io/discord/853812920919261235?color=bb8fe5&labelColor=101415&style=for-the-badge"/>
+      <img src="https://img.shields.io/discord/853812920919261235?color=cb92f2&labelColor=101415&style=for-the-badge"/>
    </a>
    <br>
 </div>
@@ -23,7 +23,7 @@
 <!-- INFORMATION -->
 ### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
 
-   <img src=".github/assets/rice.png" alt="Rice Preview" align="right" width="400px">
+   <img src=".github/rice.png" alt="Rice Preview" align="right" width="400px">
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
@@ -37,7 +37,7 @@
    - **Shell:** [zsh](https://www.zsh.org/)
    - **Panel:** [polybar](https://github.com/polybar/polybar/)
    - **Compositor:** [picom](https://github.com/yshui/picom)
-   - **Editor:** [neovim](https://github.com/neovim/neovim/)
+   - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
    - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox/)
    - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
@@ -55,12 +55,12 @@
     $ cd dotfiles && git submodule update --remote --merge
    ```
 
-### ❖ Installation (Manual)
+### ❖ Installation
 
    > After cloning the repository, install the necessary dependencies to replicate by setup.
 
    <details open>
-   <summary><strong>Arch Linux (and Arch-based distributions)</strong></summary>
+   <summary><strong>Arch Linux (and other Arch-based distributions)</strong></summary>
 
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
@@ -103,7 +103,7 @@
 
    ```sh
     # Copy wallpaper.
-    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-5.jpg $HOME/Pictures/walls/personal
+    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-4.jpg $HOME/Pictures/walls/personal
    ```
 
    </details>
@@ -120,13 +120,6 @@
    <br>
 
    > Lastly, log out from your current desktop session and log in into bspwm.
-
-### ❖ Installation (Custom Installer)
-
-   > The repository contains an experimental installer. You can use it by doing:
-   ```sh
-    $ ./setup.sh
-   ```
 
 ---
 
@@ -165,7 +158,7 @@
 
    - **Inspiration**
       - [owl4ce](https://github.com/owl4ce) for the README style.
-      - [ner0z](https://github.com/ner0z) for the dashboard inspiration.
+      - [rxyhn](https://github.com/rxyhn) for the bar inspiration.
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 

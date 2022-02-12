@@ -1,0 +1,106 @@
+(defwidget outer-window [] 
+    (box))
+
+(defwidget profile [] 
+    (box :orientation "v"
+            :space-evenly "true"
+
+        (box :class "pfp")
+        (box :class "text" :space-evenly "true" :orientation "v"
+            (label :class "username" :text "@${username}")
+        )
+    )
+)
+
+(defwidget layout-manager [] 
+    (box :class "layouts" 
+         :orientation "v"
+        (box :class "layout-btn"
+             :orientation "h"
+             :space-evenly "true"
+            (button :onclick "bsp-layout once rtall" "")
+            (button :onclick "bsp-layout once even" "")
+            (button :onclick "bsp-layout once grid" "")
+        )
+        (box :class "layout-btn"
+             :orientation "h"
+             :space-evenly "true"
+            (button "")
+            (button :onclick "bsp-layout once wide" "")
+            (button "")
+            (button :onclick "bsp-layout once tiled" "")
+            (button "")
+        )
+    )
+)
+
+(defwidget system-manager [] 
+    (box :orientation "v" 
+            :space-evenly "false" 
+
+        (box :class "title" :orientation "h" :space-evenly "false"
+            (label :class "title" :text "Stats")
+        )
+
+        (box :class "bars" :orientation "h" :space-evenly "false"
+            (box :class "ram-bar" :tooltip "Used RAM: ${used_ram}%"
+                (scale :min 0 :max 101 :active "false" :value used_ram :orientation "v" :flipped "true"
+            ))
+            (box :class "disk-bar" :tooltip "Used Disk Space"
+                (scale :min 0 :max 101 :active "false" :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)} :orientation "v" :flipped "true"
+            ))
+            (box :class "vol-bar" :tooltip "Volume: ${volume}%"
+                (scale :min 0 :max 101 :value volume :orientation "v" :flipped "true" :onchange "amixer -q set Master {}%"
+            ))
+            (box :class "bri-bar" :tooltip "Brightness: ${brightness}%"
+                (scale :min 0 :max 101 :value brightness :orientation "v" :flipped "true" :onchange "brightnessctl set {}%"
+            ))
+        )
+    )
+)
+
+(defwidget weather []
+    (box :class "weather" :orientation "v" :space-evenly "false"
+        (box :orientation "h" :space-evenly "false" 
+            (label :class "weather-desc" :text "${weather_desc}")
+        )
+        (label :class "weather-temp" :text "${weather_temp}°C")
+        (label :class "weather-feels" :text "Feels like ${weather_feels}°C")
+    )
+)
+
+(defwidget date []
+    (box :class "date" :orientation "v" :space-evenly "false"
+        (box :orientation "h" :space-evenly "false"
+            (label :class "weekday" :text "${weekday}")
+        )
+        (label :class "monthday" :text "${monthday}")
+    )
+)
+
+(defwidget music-player [] 
+    (box :class "music-player" :orientation "h"
+        (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
+            (box :class "music-info" :orientation "v" :space-evenly "false"
+                (box :class "title" :orientation "h" :space-evenly "false"
+                    (label :class "song-title" :text song_title)
+                )
+                (box :class "artist" :orientation "h" :space-evenly "false"
+                    (label :class "song-artist" :text "by ${song_artist}")
+                )
+            )
+        )
+        (box :class "song-controls" :orientation "v"
+            (button :onclick "playerctl previous" "")
+            (button :class "play-pause" :onclick "playerctl play-pause" player_status)
+            (button :onclick "playerctl next" "")
+        )
+    )
+)
+
+(defwidget quote []
+    (box :class "quote" :orientation "v"
+        (label :class "text" :text '"${quote}"')
+        (label :class "author" :text "━ ${quote_author}")
+    )
+)

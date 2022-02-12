@@ -1,14 +1,25 @@
 @import "src/scss/variables";
 @import "src/scss/overrides";
 
-@import "src/scss/index";
-@import "src/scss/widgets/profile";
-@import "src/scss/widgets/layoutmanager";
-@import "src/scss/widgets/musicplayer";
-@import "src/scss/widgets/systemmanager";
-@import "src/scss/widgets/powermenu";
-@import "src/scss/widgets/lockscreen";
-@import "src/scss/widgets/weather";
-@import "src/scss/widgets/date";
-@import "src/scss/widgets/quote";
-@import "src/scss/widgets/calendar";
+@import "src/scss/bar/index.scss";
+@import "src/scss/bar/widgets/brightness";
+@import "src/scss/bar/widgets/calendar";
+@import "src/scss/bar/widgets/controlpanel";
+@import "src/scss/bar/widgets/launcher";
+@import "src/scss/bar/widgets/network";
+@import "src/scss/bar/widgets/powermenu";
+@import "src/scss/bar/widgets/time";
+@import "src/scss/bar/widgets/volume";
+@import "src/scss/bar/widgets/workspaces";
+
+@import "src/scss/dashboard/index.scss";
+@import "src/scss/dashboard/widgets/profile";
+@import "src/scss/dashboard/widgets/layoutmanager";
+@import "src/scss/dashboard/widgets/systemmanager";
+@import "src/scss/dashboard/widgets/weather";
+@import "src/scss/dashboard/widgets/date";
+@import "src/scss/dashboard/widgets/musicplayer";
+@import "src/scss/dashboard/widgets/quote";
+@import "src/scss/dashboard/widgets/lockscreen";
+
+@import "src/scss/lock/index.scss";

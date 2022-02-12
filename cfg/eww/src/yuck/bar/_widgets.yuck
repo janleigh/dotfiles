@@ -1,0 +1,117 @@
+(defwidget launcher []
+    (box :class "launcher" :orientation "h" :space-evenly "false"
+        (button :class "launcher-btn" :onclick "$HOME/.local/bin/appmnu" "")
+    )
+)
+
+(defwidget workspaces []
+    (literal :content workspace))
+
+(deflisten workspace "scripts/getWorkspaces")
+
+(defwidget network []
+	(box :class "network" :orientation "v"
+        :tooltip network-name
+	    (button :class "wifi-icon" network-icon)))
+
+(defwidget volume []
+    (eventbox :class "volume"
+            :onhover "${eww} update volum=true" 		
+            :onhoverlost "${eww} update volum=false"
+	    (box :orientation "v" 	  
+            :space-evenly "false" 
+            :spacing "2"
+	        (revealer :transition "slideup" 
+                :reveal volum
+                :duration "600ms"
+                (scale :class "volbar" 	  
+                    :value volume
+                    :orientation "v"      
+                    :flipped true 
+                    :tooltip "Volume: ${volume}%" 
+                    :max 101 
+                    :min 0 
+                    :onchange "amixer -D pulse sset Master {}%" ))
+            (button :class "volume-icon" ""))))
+(defvar volum false)
+
+(defwidget brightness []
+    (eventbox :class "brightness"
+            :onhover "${eww} update bri=true" 		
+            :onhoverlost "${eww} update bri=false"
+        (box :orientation "v" 	  
+            :space-evenly "false" 
+            :spacing "2"
+            (revealer :transition "slideup" 
+                :reveal bri
+                :duration "600ms"
+                (scale :class "bribar" 	  
+                    :value brightness
+                    :orientation "v"      
+                    :flipped true 
+                    :tooltip "Brightness: ${brightness}%" 
+                    :max 101 
+                    :min 0 
+                    :onchange "brightnessctl set {}%" ))
+            (button :class "brightness-icon" ""))))
+(defvar bri false)
+
+(defwidget power []
+    (eventbox :onhover "${eww} update power=true" :onhoverlost "${eww} update power=false" 
+        (box :orientation "v" :space-evenly "false" :vexpand "false" :class "powermenu"
+            (revealer :transition "slideup"
+                :reveal power
+                :duration "600ms"
+	            (box :orientation "v" :space-evenly "false"
+                    (button :class "reboot-btn" :tooltip "Reboot" :onclick "systemctl reboot" "")
+                    (button :class "logout-btn" :tooltip "Logout" :onclick "bspc quit" "")
+                    (button :class "lock-btn" :tooltip "Lock Screen":onclick "sh ./scripts/lockScreen" "")))
+            (button	:class "shutdown-btn" :tooltip "Shutdown" :onclick "systemctl poweroff" ""))))
+(defvar power false)
+
+(defwidget control []
+    (box :orientation "v" :space-evenly "false" :class "control-panel"
+(network)
+(brightness)
+(volume)))
+
+(defwidget time []
+    (box :orientation "v"
+        :class "time" 
+        :valign "end"
+        (button	:onclick "sh scripts/openCalendar.sh"	
+            :class "time-hour" hour)
+        (button	:onclick "sh scripts/openCalendar.sh"	
+            :class "time-min"  minute)
+    )
+)
+
+(defwidget cal []
+    (box :class "cal-box" :orientation "v"
+        (calendar :class "cal" :day calendar_day :month calendar_month :year calendar_year)
+    )
+)
+
+;; BAR IS SEPARATED INTO THREE PARTS: TOP, CENTER AND BOTTOM
+;; TOP WIDGETS
+(defwidget top []
+    (box :orientation "v" :space-evenly "false" :valign "start"
+(launcher)
+(workspaces)))
+
+; (defwidget center []
+;     (box :orientation "v" :space-evenly "false" :valign "start"
+; (workspaces)))
+
+;; BOTTOM WIDGETS
+(defwidget bottom []
+    (box :orientation "v" :space-evenly "false" :valign "end"
+(control)
+(time)
+(power)))
+
+(defwidget bar []
+    (box :class "eww-bar" :orientation "v" :valign "false" :halign "false"
+(top)
+; (center)
+(bottom)))

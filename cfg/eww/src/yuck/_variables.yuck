@@ -1,11 +1,13 @@
+(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/")
+
 ;;  DATE VARS 
-(defpoll minute :interval "10s"
+(defpoll minute :interval "1m"
     "date '+%M'")
-(defpoll hour :interval "5m"
+(defpoll hour :interval "1h"
     "date '+%H'")
-(defpoll weekday :interval "5s"
+(defpoll weekday :interval "24h"
     "date '+%A'")
-(defpoll monthday :interval "5s"
+(defpoll monthday :interval "24h"
     "date '+%d %b'")
 
 ;;  SYSTEM INFO VARS
@@ -13,9 +15,9 @@
     "./scripts/getUsedRam")
 (defpoll used_cpu :interval "2s"
     "sh echo `top -b -n1 | grep 'Cpu(s)' | awk '{print $2 + $4}'`")
-(defpoll volume :interval "1ms"
+(defpoll volume :interval "2s"
     "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll brightness :interval "1ms"
+(defpoll brightness :interval "2s"
     "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 
 ;; MUSIC PLAYER VARS
@@ -25,7 +27,7 @@
     "./scripts/getSongArt")
 (defpoll song_artist :interval "5s"
     "./scripts/getSongArtist")
-(defpoll song_title :interval "1s" ; Made it 1s cause the fucking regex check is slow.
+(defpoll song_title :interval "2s"
     "./scripts/getSongTitle")
 (defpoll song_title_full :interval "5s"
     "./scripts/getSongTitle full")
@@ -33,9 +35,9 @@
     "./scripts/getPlayerStatus")
 
 ;; LOCK SCREEN VARS
-(defpoll username :interval "1s"
+(defpoll username :interval "12h"
     "whoami")
-(defpoll hostname :interval "1s"
+(defpoll hostname :interval "12h"
     "hostname")
 
 ;; WEATHER VARS
@@ -59,3 +61,7 @@
     "./scripts/getCalendarMonth")
 (defpoll calendar_year :interval "10h"
     "date '+%Y'")
+
+;; NETWORK VARS
+(defpoll network-icon :interval "5s" "scripts/getNetwork icon")
+(defpoll network-name :interval "5s" "scripts/getNetwork name")

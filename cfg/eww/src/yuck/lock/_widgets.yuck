@@ -1,0 +1,11 @@
+(defwidget lock-screen [] 
+    (box :class "lock-screen" :orientation "h" :space-evenly "true"
+        (box :class "lock-inner" :orientation "v" :space-evenly "true"
+            (box :class "lock-pfp")
+            (box :class "lock-text" :orientation "v"
+                (box :class "lock-username" "Jan Leigh Muñoz")
+                (box :class "lock-hostname" "@${username}")
+            )
+        )
+    )
+)

@@ -1,0 +1,25 @@
+.powermenu {
+    font-family: "Material Icons";
+    font-size: 1.4em;
+    font-weight: bold;
+
+    button {
+        padding: .55em .3em .75em .25em;
+        &:hover {
+            color: $accent;
+        }
+    }
+
+    .reboot-btn {
+        color: $blue;
+    }
+    .logout-btn {
+        color: $green;
+    }
+    .lock-btn {
+        color: $magenta
+    }
+    .shutdown-btn {
+        color: $red;
+    }
+}

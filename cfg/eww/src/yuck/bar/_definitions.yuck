@@ -1,0 +1,19 @@
+(defwindow bar
+    :geometry (geometry :x "0%"
+                        :y "0%" 
+                        :height "100%" 
+                        :width "45px")
+    ; :reserve (struts :distance "43px" 
+    ;                 :side "left")
+    :stacking "bg"
+    :wm-ignore false
+    :hexpand "false"
+    :vexpand "false"
+(bar))
+
+(defwindow calendar
+    :geometry (geometry :x "57px"
+                        :y "67%" 
+                        :width "270px" 
+                        :height "60px")
+    (cal))
