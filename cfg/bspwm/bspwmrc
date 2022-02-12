@@ -38,11 +38,11 @@ hsetroot -fill "$HOME/Pictures/walls/personal/personal-4.jpg"
 # Hex Gang
 # hsetroot -solid "#192022"
 
-# Start polybar
-# sh $HOME/.config/polybar/launch.sh
-
 # I hate mouse drift.
 xset m 0 0
+
+# Fix for eww bar not hiding on a fullscreen window.
+$HOME/.config/bspwm/bin/ewwFlScr &
 
 # ##############################################################################
 # #                                 WINDOW RULES                               #

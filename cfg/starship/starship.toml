@@ -4,7 +4,7 @@ add_newline = false
 # Prompt
 format = """
 $directory$git_branch$node$rust
-[](bold green) """
+[](bold green) [|](dimmed white) """
 
 # Custom character prompt
 # [character]                           
@@ -16,6 +16,7 @@ $directory$git_branch$node$rust
 disabled = true
 
 [directory]
+home_symbol = ""
 format = "[$path]($style) "
 
 [time]
