@@ -35,7 +35,7 @@
    - **OS:** [Arch Linux](https://archlinux.org/)
    - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
    - **Shell:** [zsh](https://www.zsh.org/)
-   - **Panel:** [polybar](https://github.com/polybar/polybar/)
+   - **Panel:** [eww](https://github.com/elkowar/eww)
    - **Compositor:** [picom](https://github.com/yshui/picom)
    - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
    - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox/)
@@ -65,8 +65,8 @@
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
-    $ paru -S bspwm sxhkd rofi polybar neovim alacritty viewnior \
-    picom brightnessctl playerctl feh maim jq xclip imagemagick  \
+    $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom \
+    brightnessctl playerctl feh maim jq xclip imagemagick  \
     dunst bsp-layout i3lock-color
    ```
 
