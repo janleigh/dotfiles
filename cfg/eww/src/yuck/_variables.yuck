@@ -1,9 +1,9 @@
 (defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/")
 
 ;;  DATE VARS 
-(defpoll minute :interval "1m"
+(defpoll minute :interval "1s"
     "date '+%M'")
-(defpoll hour :interval "1h"
+(defpoll hour :interval "1s"
     "date '+%H'")
 (defpoll weekday :interval "24h"
     "date '+%A'")

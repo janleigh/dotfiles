@@ -3,12 +3,10 @@
                         :y "0%" 
                         :height "100%" 
                         :width "45px")
-    ; :reserve (struts :distance "43px" 
-    ;                 :side "left")
+    :monitor 0
     :stacking "bg"
+    :windowtype "dock"
     :wm-ignore false
-    :hexpand "false"
-    :vexpand "false"
 (bar))
 
 (defwindow calendar
