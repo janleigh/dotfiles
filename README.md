@@ -4,7 +4,7 @@
 <div align="center">
    <p></p>
    <a href="https://github.com/janleigh/dotfiles/stargazers">
-      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%2396d6b0&labelColor=%23101415&style=for-the-badge">
+      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%23ffb29b&labelColor=%23101415&style=for-the-badge">
    </a>
    <a href="https://github.com/janleigh/dotfiles/network/members/">
       <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%237ba5dd&labelColor=%23101415&style=for-the-badge">
@@ -37,7 +37,7 @@
    - **Shell:** [zsh](https://www.zsh.org/)
    - **Panel:** [eww](https://github.com/elkowar/eww)
    - **Compositor:** [picom](https://github.com/yshui/picom)
-   - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
+   - **Editor:** [neovim](https://github.com/neovim/neovim)
    - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox/)
    - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
@@ -67,7 +67,7 @@
    ```sh
     $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom \
     brightnessctl playerctl feh maim jq xclip imagemagick  \
-    dunst bsp-layout i3lock-color xdo giph rsync
+    dunst bsp-layout i3lock-color xdo giph
    ```
 
    </details>
@@ -84,7 +84,7 @@
     $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
 
     # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
-    $ mv $HOME/.local/bin/tabbed /usr/local/bin && mv $HOME/.local/bin/chwb2 /usr/local/bin
+    $ mv $HOME/.local/bin/usr/* /usr/local/bin
    ```
 
    </details>
