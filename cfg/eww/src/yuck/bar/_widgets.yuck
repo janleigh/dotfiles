@@ -12,7 +12,7 @@
 (defwidget network []
 	(box :class "network" :orientation "v"
         :tooltip network-name
-	    (button :class "wifi-icon" network-icon)))
+	    (button :onclick "$HOME/.local/bin/ntwkmgr" :class "wifi-icon" network-icon)))
 
 (defwidget volume []
     (eventbox :class "volume"
