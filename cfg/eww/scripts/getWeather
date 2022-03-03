@@ -1,6 +1,6 @@
 #!/bin/sh
 
-KEY="" # Change Me!
+KEY=""
 CITY="Iloilo"
 
 weather=$(curl -sf "api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$KEY&units=metric")

@@ -13,16 +13,16 @@ if ps -C spotify > /dev/null; then
 fi
 
 if [ -z "$PLAYER" ]; then
-    printf ""
+    printf ""
 fi
 
 if [ "$PLAYER" = "spotify" ]; then
     STATUS=$(playerctl -p spotify status)
 
     if [ "$STATUS" = "Playing" ]; then
-        STATUS=""
+        STATUS=""
     else
-        STATUS=""
+        STATUS=""
     fi
     
     if [ "$PLAYER" = "spotify" ]; then

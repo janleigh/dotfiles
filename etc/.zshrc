@@ -61,7 +61,7 @@ alias find="fd"
 alias nf="neofetch"
 alias vi="nvim"
 
-# Init Starship
+# Init starship
 eval "$(starship init zsh)"
 
 # Setup Starship custom prompt

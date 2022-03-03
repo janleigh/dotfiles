@@ -4,7 +4,5 @@
 
 (include "./src/yuck/bar/_definitions.yuck")
 (include "./src/yuck/bar/_widgets.yuck")
-(include "./src/yuck/dashboard/_definitions.yuck")
-(include "./src/yuck/dashboard/_widgets.yuck")
 (include "./src/yuck/lock/_definitions.yuck")
 (include "./src/yuck/lock/_widgets.yuck")

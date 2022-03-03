@@ -59,10 +59,6 @@ super + b
 super + a
     sh $HOME/.local/bin/appmnu
 
-# Toggle eww dashboard
-super + d
-    sh $HOME/.local/bin/dshbrd
-
 # Toggle notif center
 super + n
     sh $HOME/.local/bin/notifcntr
@@ -71,12 +67,16 @@ super + n
 super + alt + n
     sh $HOME/.local/bin/ntwkmgr
 
+# Toggle color picker
+super + p
+  sh $HOME/.local/bin/xcolor-pick
+
 # Screenshot
 # Save to local storage
 Print
     DATE=$(date '+%b%d-%H-%M.png'); \
     maim -us "$HOME/Pictures/Screenshots/$DATE"; \
-    sh ~/.local/bin/viewscr ~/Pictures/Screenshots/$DATE | xclip -selection clipboard -t image/png
+    sh ~/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE | xclip -selection clipboard -t image/png
 
 # Upload to CDN
 super + Print

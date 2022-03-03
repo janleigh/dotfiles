@@ -3,11 +3,11 @@
 
     .song-art {
         background-color: $bg;
-        background-size: 100%;
-        background-repeat: no-repeat;
+        background-size: auto 100%;
+        // background-repeat: no-repeat;
         border-radius: 6px;
     
-        margin: 2px -80px 0 0;
+        margin: 1px -6px 1px 0;
 
         .music-info {
             all: unset;
@@ -15,7 +15,7 @@
             border-radius: 6px;
 
             margin-top: 10px;
-            margin-left: -100px;
+            margin-left: -5.4rem;
         
             .title {
                 font-size: 16px;
@@ -28,14 +28,14 @@
     }
     
     .song-controls {
-        background-color: $bg;
         border-radius: 6px;
 
-        margin: 2px 0px -1px 90px;
+        margin: 1px 90px -1px -90px;
 
         button {
             font-family: "Material Icons";
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: bold;
 
             &:hover {
                 color: $accent;

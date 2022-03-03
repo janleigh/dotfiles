@@ -2,26 +2,26 @@
 	font-family: "Iosevka", sans-serif !important;
 	font-weight: 500 !important;
 	font-size: 12px !important;
-	--arrowpanel-background: #101415 !important;
-	--arrowpanel-border-color: #131718 !important;
-	--autocomplete-popup-highlight-background: #151a1c !important;
+	--arrowpanel-background: #0B0F10 !important;
+	--arrowpanel-border-color: #101415 !important;
+	--autocomplete-popup-highlight-background: #101415 !important;
 
-	--button-hover-bgcolor: #151a1c !important;
-	--button-primary-hover-bgcolor: #151a1c !important;
+	--button-hover-bgcolor: #131718 !important;
+	--button-primary-hover-bgcolor: #131718 !important;
 
-	--in-content-border-hover: #151a1c !important;
-	--in-content-button-background-hover: #151a1c !important;
-	--in-content-item-hover: #151a1c !important;
+	--in-content-border-hover: #131718 !important;
+	--in-content-button-background-hover: #131718 !important;
+	--in-content-item-hover: #131718 !important;
 
-	--toolbarbutton-active-background: #101415 !important;
+	--toolbarbutton-active-background: #0B0F10 !important;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #151a1c !important;
+	background-color: #131718 !important;
 }
 
 .toolbar {
-	background-color: #101415 !important;
+	background-color: #0B0F10 !important;
 }
 
 window,
@@ -31,27 +31,27 @@ window,
 #PersonalToolbar,
 #navigator-toolbox,
 #sidebar-box {
-	background-color: #131718 !important;
-	-moz-appearance: none !important;
-	background-image: none !important;
-	border: none !important;
-}
-
-.tab-background {
-	background-color: #131718 !important;
-	border-color: none !important;
-	margin-block: 0px !important;
-}
-
-.tab-background[selected="true"] {
 	background-color: #101415 !important;
 	-moz-appearance: none !important;
 	background-image: none !important;
 	border: none !important;
 }
 
+.tab-background {
+	background-color: #101415 !important;
+	border-color: none !important;
+	margin-block: 0px !important;
+}
+
+.tab-background[selected="true"] {
+	background-color: #0B0F10 !important;
+	-moz-appearance: none !important;
+	background-image: none !important;
+	border: none !important;
+}
+
 .tabbrowser-tab:hover .tab-background {
-	background-color: #151a1c !important;
+	background-color: #131718 !important;
 }
 
 .tabbrowser-tab[fadein] {
@@ -59,11 +59,11 @@ window,
 }
 
 #urlbar {
-	background-color: #101415 !important;
+	background-color: #0B0F10 !important;
 }
 
 #nav-bar {
-	background-color: #131718 !important;
+	background-color: #101415 !important;
 	-moz-appearance: none !important;
 	background-image: none !important;
 	border: none !important;
@@ -180,12 +180,12 @@ window,
 }
 
 #urlbar-input {
-	background-color: #101415 !important;
+	background-color: transparent !important;
 	padding: 4px !important;
 }
 
 #urlbar-results {
-	background-color: #101415 !important;
+	background-color: #0B0F10 !important;
 	border-radius: 10px !important;
 }
 
@@ -209,5 +209,5 @@ window,
 }
 
 urlbar > #urlbar-background {
-	background-color: "#131a21" !important;
+	background-color: #101415 !important;
 }

@@ -1,0 +1,50 @@
+.sys-tray-box {
+    background-color: #0b0f10;
+    border-radius: 6px;
+    padding: 2em;
+
+    .sys-tray-box-left {
+        margin-right: 1px;
+        .date {
+            background-color: $bg;
+            border-radius: 6px;
+            margin-top: 1em;
+        
+            .weekday {
+                color: $fgDim;
+                margin-top: 1em;
+                margin-left: 1em;
+            }
+        
+            .monthday {
+                margin-left: -2.4em;
+                margin-bottom: 0.3em;
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+        .weather {
+            background-color: $bg;
+            border-radius: 6px;
+        
+            .weather-desc {
+                color: $fgDim;
+                margin-left: 1em;
+                margin-top: 1em;
+            }
+        
+            .weather-temp {
+                margin-left: -3.4em;
+                margin-bottom: 0.3em;
+                font-size: 24px;
+                font-weight: bolder;
+            }
+        
+            .weather-feels {
+                margin-top: 0.2em;
+                margin-left: -8px;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}

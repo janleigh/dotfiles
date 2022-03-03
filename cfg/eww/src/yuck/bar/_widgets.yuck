@@ -1,6 +1,6 @@
 (defwidget launcher []
     (box :class "launcher" :orientation "h" :space-evenly "false"
-        (button :class "launcher-btn" :onclick "$HOME/.local/bin/appmnu" "")
+        (button :class "launcher-btn" :onclick "$HOME/.local/bin/appmnu" "")
     )
 )
 
@@ -32,7 +32,7 @@
                     :max 101 
                     :min 0 
                     :onchange "amixer -D pulse sset Master {}%" ))
-            (button :class "volume-icon" ""))))
+            (button :class "volume-icon" :onclick "sh ./scripts/openSysTray.sh" ""))))
 (defvar volum false)
 
 (defwidget brightness []
@@ -53,7 +53,7 @@
                     :max 101 
                     :min 0 
                     :onchange "brightnessctl set {}%" ))
-            (button :class "brightness-icon" ""))))
+            (button :class "brightness-icon" :onclick "sh ./scripts/openSysTray.sh" ""))))
 (defvar bri false)
 
 (defwidget power []
@@ -65,15 +65,16 @@
 	            (box :orientation "v" :space-evenly "false"
                     (button :class "reboot-btn" :tooltip "Reboot" :onclick "systemctl reboot" "")
                     (button :class "logout-btn" :tooltip "Logout" :onclick "bspc quit" "")
-                    (button :class "lock-btn" :tooltip "Lock Screen":onclick "sh ./scripts/lockScreen" "")))
-            (button	:class "shutdown-btn" :tooltip "Shutdown" :onclick "systemctl poweroff" ""))))
+                    ; (button :class "lock-btn" :tooltip "Lock Screen":onclick "sh ./scripts/lockScreen" "")
+                    (button	:class "shutdown-btn" :tooltip "Shutdown" :onclick "systemctl poweroff" "")))
+            (button	:class "power-btn" :tooltip "Action Center" :onclick "$HOME/.local/bin/notifcntr" ""))))
 (defvar power false)
 
 (defwidget control []
     (box :orientation "v" :space-evenly "false" :class "control-panel"
 (network)
-(brightness)
-(volume)))
+(volume)
+(brightness)))
 
 (defwidget time []
     (box :orientation "v"
@@ -86,9 +87,58 @@
     )
 )
 
+(defwidget separator [] 
+    (box :orientation "h"
+        (label :class "separator" :text "———")
+    )
+)
+
 (defwidget cal []
     (box :class "cal-box" :orientation "v"
         (calendar :class "cal" :day calendar_day :month calendar_month :year calendar_year)
+    )
+)
+
+(defwidget music-player []
+    (box :class "music-player" :orientation "h"
+        (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
+            (box :class "music-info" :orientation "v" :space-evenly "false"
+                (box :class "title" :orientation "h" :space-evenly "false"
+                    (label :class "song-title" :text song_title)
+                )
+                (box :class "artist" :orientation "h" :space-evenly "false"
+                    (label :class "song-artist" :text "by ${song_artist}")
+                )
+            )
+        )
+        (box :class "song-controls" :orientation "v"
+            ; (button " ")
+            ; (button " ")
+            ; (button :class "play-pause" :onclick "playerctl play-pause" player_status)
+        )
+    )
+)
+
+(defwidget sys-tray []
+    (box :class "sys-tray-box" :orientation "h"
+        (box :class "sys-tray-box-left" :orientation "v" :space-evenly "false"
+            (box :class "weather" :orientation "v" :space-evenly "false"
+                (box :orientation "h" :space-evenly "false" 
+                    (label :class "weather-desc" :text "${weather_desc}")
+                )
+                (label :class "weather-temp" :text "${weather_temp}°C")
+                ; (label :class "weather-feels" :text "Feels like ${weather_feels}°C")
+            )
+            (box :class "date" :orientation "v" :space-evenly "false"
+                (box :orientation "h" :space-evenly "false"
+                    (label :class "weekday" :text "${weekday}")
+                )
+                (label :class "monthday" :text "${monthday}")
+            )
+        )
+        (box :class "sys-tray-box-right" :orientation "v" :space-evenly "false"
+            ; BLANK LMAO
+        )
     )
 )
 
@@ -107,7 +157,9 @@
 (defwidget bottom []
     (box :orientation "v" :space-evenly "false" :valign "end"
 (control)
+(separator)
 (time)
+(separator)
 (power)))
 
 (defwidget bar []

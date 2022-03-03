@@ -48,12 +48,6 @@
 (defpoll weather_feels :interval "5m"
     "./scripts/getWeather feels_like")
 
-;; QUOTE VARS
-(defpoll quote :interval "10h"
-    "./scripts/getQuote quote")
-(defpoll quote_author :interval "10h"
-    "./scripts/getQuote author")
-
 ;; CALENDAR VARS
 (defpoll calendar_day :interval "10h"
     "date '+%d'")

@@ -1,10 +1,10 @@
 .powermenu {
     font-family: "Material Icons";
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: bold;
 
     button {
-        padding: .55em .3em .75em .25em;
+        margin: .35em .35em .75em .35em;
         &:hover {
             color: $accent;
         }
@@ -21,5 +21,9 @@
     }
     .shutdown-btn {
         color: $red;
+    }
+    .power-btn {
+        color: $fg;
+        font-weight: normal;
     }
 }
