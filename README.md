@@ -4,24 +4,24 @@
 <div align="center">
    <p></p>
    <a href="https://github.com/janleigh/dotfiles/stargazers">
-      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%23ffb29b&labelColor=%23101415&style=for-the-badge">
+      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%23ffb29b&labelColor=%230B0F10&style=for-the-badge">
    </a>
    <a href="https://github.com/janleigh/dotfiles/network/members/">
-      <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%237ba5dd&labelColor=%23101415&style=for-the-badge">
+      <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%237ba5dd&labelColor=%230B0F10&style=for-the-badge">
    </a>
-   <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23ee6a70&labelColor=%23101415&style=for-the-badge">
+   <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23ee6a70&labelColor=%230B0F10&style=for-the-badge">
    <a href="https://discord.gg/2RfJb3CVfb">
-      <img src="https://img.shields.io/discord/853812920919261235?color=cb92f2&labelColor=101415&style=for-the-badge"/>
+      <img src="https://img.shields.io/discord/853812920919261235?color=cb92f2&labelColor=0B0F10&style=for-the-badge"/>
    </a>
    <br>
 </div>
 
 <p/>
 
----
+<h2></h2><br>
 
 <!-- INFORMATION -->
-### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
+### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=0B0F10"/>
 
    <img src=".github/rice.png" alt="Rice Preview" align="right" width="400px">
 
@@ -42,7 +42,7 @@
    - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
----
+<h2></h2><br>
 
 <!-- SETUP -->
 ### ❖ Setup
@@ -103,7 +103,7 @@
 
    ```sh
     # Copy wallpaper.
-    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-4.jpg $HOME/Pictures/walls/personal
+    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-6.jpg $HOME/Pictures/walls/personal
    ```
 
    </details>
@@ -121,7 +121,7 @@
 
    > Lastly, log out from your current desktop session and log in into bspwm.
 
----
+<h2></h2><br>
 
 ### ❖ Miscellaneous
 
@@ -158,7 +158,7 @@
 
    - **Inspiration**
       - [owl4ce](https://github.com/owl4ce) for the README style.
-      - [rxyhn](https://github.com/rxyhn) for the bar inspiration.
+      - [ner0z](https://github.com/ner0z/) for the bar inspiration.
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
