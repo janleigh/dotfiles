@@ -18,7 +18,7 @@
 
 <p/>
 
-<h2></h2><br>
+<h2></h2>
 
 <!-- INFORMATION -->
 ### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=0B0F10"/>
@@ -42,7 +42,7 @@
    - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
-<h2></h2><br>
+<h2></h2>
 
 <!-- SETUP -->
 ### ❖ Setup
@@ -121,7 +121,7 @@
 
    > Lastly, log out from your current desktop session and log in into bspwm.
 
-<h2></h2><br>
+<h2></h2>
 
 ### ❖ Miscellaneous
 
