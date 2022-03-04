@@ -65,9 +65,9 @@
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
-    $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom \
-    brightnessctl playerctl feh maim jq xclip imagemagick  \
-    dunst bsp-layout i3lock-color xdo giph
+    $ paru -S bspwm sxhkd rofi neovim alacritty viewnior \
+    picom brightnessctl playerctl feh maim jq xclip  \
+    imagemagick dunst i3lock-color xdo giph 
    ```
 
    </details>

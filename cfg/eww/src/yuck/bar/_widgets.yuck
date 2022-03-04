@@ -67,7 +67,7 @@
                     (button :class "logout-btn" :tooltip "Logout" :onclick "bspc quit" "")
                     ; (button :class "lock-btn" :tooltip "Lock Screen":onclick "sh ./scripts/lockScreen" "")
                     (button	:class "shutdown-btn" :tooltip "Shutdown" :onclick "systemctl poweroff" "")))
-            (button	:class "power-btn" :tooltip "Action Center" :onclick "$HOME/.local/bin/notifcntr" ""))))
+            (button	:class "power-btn" :tooltip "Notification Center" :onclick "$HOME/.local/bin/notifcntr" ""))))
 (defvar power false)
 
 (defwidget control []
