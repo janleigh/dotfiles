@@ -1,19 +1,26 @@
 #!/bin/bash
 artist=$(playerctl -p spotify metadata --format '{{ artist }}')
+title=$(playerctl -p spotify metadata --format '{{ title }}')
 count=$(echo -n "$artist" | wc -c)
 
-if [ -z "$artist" ]; then
-	echo "Unknown Artist";
+# Check if $title is "Advertisement"
+if [ "$title" = "Advertisement" ]; then
+	echo "Spotify"
 else
-	if [ "$count" -le 18 ]; then
-        echo $artist
-	else	
-		if [[ "$artist" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
-			echo $(playerctl metadata --format '{{ artist }}' | awk '{ print substr($1, 1, 15) }')...
-        elif [[ "$artist" -le 15 ]]; then
-            echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2}')
-        else
-	    	echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2, substr($3, 1, 4)}')...
-		fi
+	if [ -z "$artist" ]; then
+		echo "Unknown Artist";
+	else
+		echo $artist
+		# if [ "$count" -le 18 ]; then
+		#     echo $artist
+		# else
+		# 	if [[ "$artist" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
+		# 		echo $(playerctl metadata --format '{{ artist }}' | awk '{ print substr($1, 1, 15) }')...
+		#     elif [[ "$artist" -le 15 ]]; then
+		#         echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2}')
+		#     else
+		#     	echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2, substr($3, 1, 4)}')...
+		# 	fi
+		# fi
 	fi
 fi

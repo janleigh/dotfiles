@@ -4,7 +4,6 @@
     padding: 2em;
 
     .sys-tray-box-left {
-        margin-right: 1px;
         .date {
             background-color: $bg;
             border-radius: 6px;
@@ -26,7 +25,6 @@
         .weather {
             background-color: $bg;
             border-radius: 6px;
-        
             .weather-desc {
                 color: $fgDim;
                 margin-left: 1em;
@@ -44,6 +42,23 @@
                 margin-top: 0.2em;
                 margin-left: -8px;
                 margin-bottom: 0.5em;
+            }
+        }
+    }
+
+    .sys-tray-box-right {
+        margin: 1em 0em 0em 1.5em;
+
+        .volume {
+            .volume-progress {
+                background-color: $bg;
+                color: $green;
+
+                .volume-icon {
+                    margin: 1em;
+                    font-size: 40px;
+                    color: $green;
+                }
             }
         }
     }

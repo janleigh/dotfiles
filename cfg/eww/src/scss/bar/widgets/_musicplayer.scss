@@ -3,11 +3,12 @@
 
     .song-art {
         background-color: $bg;
-        background-size: auto 100%;
-        // background-repeat: no-repeat;
+        background-size: 60% 100%;
+        background-repeat: no-repeat;
         border-radius: 6px;
-    
-        margin: 1px -6px 1px 0;
+
+        min-width: 20em;
+        margin-right: 15px;
 
         .music-info {
             all: unset;
@@ -15,8 +16,8 @@
             border-radius: 6px;
 
             margin-top: 10px;
-            margin-left: -5.4rem;
-        
+            margin-left: -9.1rem;
+
             .title {
                 font-size: 16px;
                 font-weight: bolder;
@@ -28,9 +29,10 @@
     }
     
     .song-controls {
+        background-color: $bg;
+        padding: 0em 1em;
+        margin-left: 6px;
         border-radius: 6px;
-
-        margin: 1px 90px -1px -90px;
 
         button {
             font-family: "Material Icons";

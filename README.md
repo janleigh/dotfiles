@@ -158,7 +158,6 @@
 
    - **Inspiration**
       - [owl4ce](https://github.com/owl4ce) for the README style.
-      - [ner0z](https://github.com/ner0z/) for the bar inspiration.
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 

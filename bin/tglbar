@@ -10,7 +10,7 @@ if [[ ! -f "$LOCK_FILE" ]]; then
     bspc config left_padding 0
 else
     rm "$LOCK_FILE"
-    bspc config left_padding 45
+    bspc config left_padding 46
 
     sleep 0.4; ${EWW_BIN} open bar
 fi

@@ -13,7 +13,7 @@ else
         elif [[ "$title" -le 15 ]]; then
             echo $(playerctl metadata --format '{{ title }}' | awk '{print $1, $2}')
         else
-	    	echo $(playerctl metadata --format '{{ title }}' | awk '{print $1, $2, substr($3, 1, 2)}')...
+	    	echo $(playerctl metadata --format '{{ title }}' | awk '{print $1, $2, $3, substr($4, 1, 5)}')...
 		fi
 	fi
 fi

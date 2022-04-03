@@ -2,7 +2,7 @@
     :geometry (geometry :x "0%"
                         :y "0%" 
                         :height "100%" 
-                        :width "45px")
+                        :width "46px")
     :monitor 0
     :stacking "bg"
     :windowtype "dock"
@@ -11,18 +11,20 @@
 
 (defwindow system-tray
     :geometry (geometry :x "57px"
-                        :y "-90px" 
+                        :y "15px" 
                         :width "26%" 
-                        :height "20%"
-                        :anchor "bottom left")
+                        :height "45%"
+                        :anchor "top left")
     (sys-tray))
 
+; Cause why not make a separate window for it
+; :)
 (defwindow music-player
-    :geometry (geometry :x "18%"
-                        :y "-104px" 
-                        :width "20%" 
+    :geometry (geometry :x "81px"
+                        :y "195px" 
+                        :width "24%" 
                         :height "155px"
-                        :anchor "bottom left")
+                        :anchor "top left")
     (music-player))
 
 (defwindow calendar

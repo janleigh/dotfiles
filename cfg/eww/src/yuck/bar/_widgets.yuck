@@ -1,6 +1,6 @@
 (defwidget launcher []
     (box :class "launcher" :orientation "h" :space-evenly "false"
-        (button :class "launcher-btn" :onclick "$HOME/.local/bin/appmnu" "")
+        (button :class "launcher-btn" :onclick "sh ./scripts/openSysTray.sh" "")
     )
 )
 
@@ -8,53 +8,6 @@
     (literal :content workspace))
 
 (deflisten workspace "scripts/getWorkspaces")
-
-(defwidget network []
-	(box :class "network" :orientation "v"
-        :tooltip network-name
-	    (button :onclick "$HOME/.local/bin/ntwkmgr" :class "wifi-icon" network-icon)))
-
-(defwidget volume []
-    (eventbox :class "volume"
-            :onhover "${eww} update volum=true" 		
-            :onhoverlost "${eww} update volum=false"
-	    (box :orientation "v" 	  
-            :space-evenly "false" 
-            :spacing "2"
-	        (revealer :transition "slideup" 
-                :reveal volum
-                :duration "600ms"
-                (scale :class "volbar" 	  
-                    :value volume
-                    :orientation "v"      
-                    :flipped true 
-                    :tooltip "Volume: ${volume}%" 
-                    :max 101 
-                    :min 0 
-                    :onchange "amixer -D pulse sset Master {}%" ))
-            (button :class "volume-icon" :onclick "sh ./scripts/openSysTray.sh" ""))))
-(defvar volum false)
-
-(defwidget brightness []
-    (eventbox :class "brightness"
-            :onhover "${eww} update bri=true" 		
-            :onhoverlost "${eww} update bri=false"
-        (box :orientation "v" 	  
-            :space-evenly "false" 
-            :spacing "2"
-            (revealer :transition "slideup" 
-                :reveal bri
-                :duration "600ms"
-                (scale :class "bribar" 	  
-                    :value brightness
-                    :orientation "v"      
-                    :flipped true 
-                    :tooltip "Brightness: ${brightness}%" 
-                    :max 101 
-                    :min 0 
-                    :onchange "brightnessctl set {}%" ))
-            (button :class "brightness-icon" :onclick "sh ./scripts/openSysTray.sh" ""))))
-(defvar bri false)
 
 (defwidget power []
     (eventbox :onhover "${eww} update power=true" :onhoverlost "${eww} update power=false" 
@@ -69,12 +22,6 @@
                     (button	:class "shutdown-btn" :tooltip "Shutdown" :onclick "systemctl poweroff" "")))
             (button	:class "power-btn" :tooltip "Notification Center" :onclick "$HOME/.local/bin/notifcntr" ""))))
 (defvar power false)
-
-(defwidget control []
-    (box :orientation "v" :space-evenly "false" :class "control-panel"
-(network)
-(volume)
-(brightness)))
 
 (defwidget time []
     (box :orientation "v"
@@ -100,7 +47,7 @@
 )
 
 (defwidget music-player []
-    (box :class "music-player" :orientation "h"
+    (box :class "music-player" :orientation "h" :space-evenly "false"
         (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
             (box :class "music-info" :orientation "v" :space-evenly "false"
                 (box :class "title" :orientation "h" :space-evenly "false"
@@ -112,9 +59,9 @@
             )
         )
         (box :class "song-controls" :orientation "v"
-            ; (button " ")
-            ; (button " ")
-            ; (button :class "play-pause" :onclick "playerctl play-pause" player_status)
+            (button :onclick "playerctl next" "")
+            (button :class "play-pause" :onclick "playerctl play-pause" player_status)
+            (button :onclick "playerctl previous" "")
         )
     )
 )
@@ -137,7 +84,16 @@
             )
         )
         (box :class "sys-tray-box-right" :orientation "v" :space-evenly "false"
-            ; BLANK LMAO
+            (box :class "volume" :orientation "h"
+                (circular-progress :class "volume-progress"
+                    :value volume
+                    :thickness 12
+                    :clockwise "true"
+                    :tooltip "Volume: ${volume}%" 
+                    ; :onchange "amixer -D pulse sset Master {}%"
+                    (label :class "volume-icon" :text "")
+                )
+            )
         )
     )
 )
@@ -145,19 +101,17 @@
 ;; BAR IS SEPARATED INTO THREE PARTS: TOP, CENTER AND BOTTOM
 ;; TOP WIDGETS
 (defwidget top []
-    (box :orientation "v" :space-evenly "false" :valign "start"
-(launcher)
-(workspaces)))
+    (box :class "top" :orientation "v" :space-evenly "false" :valign "start"
+(launcher)))
 
-; (defwidget center []
-;     (box :orientation "v" :space-evenly "false" :valign "start"
-; (workspaces)))
+;; CENTER WIDGETS
+(defwidget center []
+    (box :orientation "v" :space-evenly "false" :valign "center"
+(workspaces)))
 
 ;; BOTTOM WIDGETS
 (defwidget bottom []
     (box :orientation "v" :space-evenly "false" :valign "end"
-(control)
-(separator)
 (time)
 (separator)
 (power)))
@@ -165,5 +119,5 @@
 (defwidget bar []
     (box :class "eww-bar" :orientation "v" :valign "false" :halign "false"
 (top)
-; (center)
+(center)
 (bottom)))

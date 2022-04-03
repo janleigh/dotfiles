@@ -2,7 +2,7 @@
 
 rofi -disable-history \
 -modi "drun" -show drun \
--location 1 \
+-location 8 \
 -font "Sarasa Mono CL Nerd Font 8.2" \
--theme ~/.config/rofi/appmnu.rasi \
--xoffset +61 -yoffset +16 \
+-theme $HOME/.config/rofi/appmnu.rasi \
+-xoffset +61 \
