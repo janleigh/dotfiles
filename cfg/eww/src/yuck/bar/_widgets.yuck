@@ -99,7 +99,7 @@
                 (box :class "volume" :orientation "h" :space-evenly "false"
                     (label :class "volume-icon" :text "")
                     (scale :min 0
-                        :max 100
+                        :max 101
                         :value volume
                         :orientation "h"
                         :tooltip "Volume: ${volume}%"
@@ -110,7 +110,7 @@
                 (box :class "brightness" :orientation "h" :space-evenly "false"
                     (label :class "brightness-icon" :text "")
                     (scale :min 0
-                        :max 100
+                        :max 101
                         :value brightness
                         :orientation "h"
                         :tooltip "Brightness: ${brightness}%"
@@ -121,7 +121,7 @@
                 (box :class "mic" :orientation "h" :space-evenly "false"
                     (label :class "mic-icon" :text "")
                     (scale :min 0
-                        :max 100
+                        :max 101
                         :value micro
                         :orientation "h"
                         :tooltip "Microphone Volume: ${mic}%"
