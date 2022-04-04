@@ -46,52 +46,53 @@
     )
 )
 
-(defwidget music-player []
-    (box :class "music-player" :orientation "h" :space-evenly "false"
-        (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
-            (box :class "music-info" :orientation "v" :space-evenly "false"
-                (box :class "title" :orientation "h" :space-evenly "false"
-                    (label :class "song-title" :text song_title)
-                )
-                (box :class "artist" :orientation "h" :space-evenly "false"
-                    (label :class "song-artist" :text "by ${song_artist}")
-                )
-            )
-        )
-        (box :class "song-controls" :orientation "v"
-            (button :onclick "playerctl next" "")
-            (button :class "play-pause" :onclick "playerctl play-pause" player_status)
-            (button :onclick "playerctl previous" "")
-        )
-    )
-)
-
 (defwidget sys-tray []
-    (box :class "sys-tray-box" :orientation "h"
-        (box :class "sys-tray-box-left" :orientation "v" :space-evenly "false"
-            (box :class "weather" :orientation "v" :space-evenly "false"
-                (box :orientation "h" :space-evenly "false" 
-                    (label :class "weather-desc" :text "${weather_desc}")
+    (box :class "sys-tray-box" :orientation "v"
+        (box :class "first-row" :orientation "h"
+            (box :class "sys-tray-box-left" :orientation "v" :space-evenly "false"
+                (box :class "weather" :orientation "v" :space-evenly "false"
+                    (box :orientation "h" :space-evenly "false" 
+                        (label :class "weather-desc" :text "${weather_desc}")
+                    )
+                    (label :class "weather-temp" :text "${weather_temp}°C")
+                    ; (label :class "weather-feels" :text "Feels like ${weather_feels}°C")
                 )
-                (label :class "weather-temp" :text "${weather_temp}°C")
-                ; (label :class "weather-feels" :text "Feels like ${weather_feels}°C")
+                (box :class "date" :orientation "v" :space-evenly "false"
+                    (box :orientation "h" :space-evenly "false"
+                        (label :class "weekday" :text "${weekday}")
+                    )
+                    (label :class "monthday" :text "${monthday}")
+                )
             )
-            (box :class "date" :orientation "v" :space-evenly "false"
-                (box :orientation "h" :space-evenly "false"
-                    (label :class "weekday" :text "${weekday}")
+            (box :class "sys-tray-box-right" :orientation "v" :space-evenly "false"
+                (box :class "volume" :orientation "h"
+                    (circular-progress :class "volume-progress"
+                        :value volume
+                        :thickness 12
+                        :clockwise "true"
+                        :tooltip "Volume: ${volume}%" 
+                        ; :onchange "amixer -D pulse sset Master {}%"
+                        (label :class "volume-icon" :text "")
+                    )
                 )
-                (label :class "monthday" :text "${monthday}")
             )
         )
-        (box :class "sys-tray-box-right" :orientation "v" :space-evenly "false"
-            (box :class "volume" :orientation "h"
-                (circular-progress :class "volume-progress"
-                    :value volume
-                    :thickness 12
-                    :clockwise "true"
-                    :tooltip "Volume: ${volume}%" 
-                    ; :onchange "amixer -D pulse sset Master {}%"
-                    (label :class "volume-icon" :text "")
+        (box :class "second-row" :orientation "h"
+            (box :class "music-player" :orientation "h" :space-evenly "false"
+                (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
+                    (box :class "music-info" :orientation "v" :space-evenly "false"
+                        (box :class "title" :orientation "h" :space-evenly "false"
+                            (label :class "song-title" :text song_title)
+                        )
+                        (box :class "artist" :orientation "h" :space-evenly "false"
+                            (label :class "song-artist" :text "by ${song_artist}")
+                        )
+                    )
+                )
+                (box :class "song-controls" :orientation "v"
+                    (button :onclick "playerctl next" "")
+                    (button :class "play-pause" :onclick "playerctl play-pause" player_status)
+                    (button :onclick "playerctl previous" "")
                 )
             )
         )

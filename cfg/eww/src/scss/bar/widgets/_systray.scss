@@ -3,61 +3,113 @@
     border-radius: 6px;
     padding: 2em;
 
-    .sys-tray-box-left {
-        .date {
-            background-color: $bg;
-            border-radius: 6px;
-            margin-top: 1em;
-        
-            .weekday {
-                color: $fgDim;
+    .first-row {
+        .sys-tray-box-left {
+            .date {
+                background-color: $bg;
+                border-radius: 6px;
                 margin-top: 1em;
-                margin-left: 1em;
+            
+                .weekday {
+                    color: $fgDim;
+                    margin-top: 1em;
+                    margin-left: 1em;
+                }
+            
+                .monthday {
+                    margin-left: -2.4em;
+                    margin-bottom: 0.3em;
+                    font-size: 24px;
+                    font-weight: bold;
+                }
             }
-        
-            .monthday {
-                margin-left: -2.4em;
-                margin-bottom: 0.3em;
-                font-size: 24px;
-                font-weight: bold;
+            .weather {
+                background-color: $bg;
+                border-radius: 6px;
+                .weather-desc {
+                    color: $fgDim;
+                    margin-left: 1em;
+                    margin-top: 1em;
+                }
+            
+                .weather-temp {
+                    margin-left: -3.4em;
+                    margin-bottom: 0.3em;
+                    font-size: 24px;
+                    font-weight: bolder;
+                }
+            
+                .weather-feels {
+                    margin-top: 0.2em;
+                    margin-left: -8px;
+                    margin-bottom: 0.5em;
+                }
             }
         }
-        .weather {
-            background-color: $bg;
-            border-radius: 6px;
-            .weather-desc {
-                color: $fgDim;
-                margin-left: 1em;
-                margin-top: 1em;
-            }
-        
-            .weather-temp {
-                margin-left: -3.4em;
-                margin-bottom: 0.3em;
-                font-size: 24px;
-                font-weight: bolder;
-            }
-        
-            .weather-feels {
-                margin-top: 0.2em;
-                margin-left: -8px;
-                margin-bottom: 0.5em;
+    
+        .sys-tray-box-right {
+            margin: 1em 0em 0em 1.5em;
+    
+            .volume {
+                .volume-progress {
+                    background-color: $bg;
+                    color: $green;
+    
+                    .volume-icon {
+                        margin: 1em;
+                        font-size: 40px;
+                        color: $green;
+                    }
+                }
             }
         }
     }
 
-    .sys-tray-box-right {
-        margin: 1em 0em 0em 1.5em;
+    .second-row {
+        margin-top: 0.7em;
 
-        .volume {
-            .volume-progress {
+        .music-player {
+            .song-art {
                 background-color: $bg;
-                color: $green;
-
-                .volume-icon {
-                    margin: 1em;
-                    font-size: 40px;
-                    color: $green;
+                background-size: 60% 100%;
+                background-repeat: no-repeat;
+                border-radius: 6px;
+        
+                min-width: 20em;
+                margin-right: 15px;
+        
+                .music-info {
+                    all: unset;
+                    background-color: transparent;
+                    border-radius: 6px;
+        
+                    margin-top: 10px;
+                    margin-left: -9.1rem;
+        
+                    .title {
+                        font-size: 16px;
+                        font-weight: bolder;
+                    }
+                    .artist {
+                        color: $fgDim;
+                    }
+                }
+            }
+            
+            .song-controls {
+                background-color: $bg;
+                padding: 0em 1em;
+                margin-left: 6px;
+                border-radius: 6px;
+        
+                button {
+                    font-family: "Material Icons";
+                    font-size: 22px;
+                    font-weight: bold;
+        
+                    &:hover {
+                        color: $accent;
+                    }
                 }
             }
         }
