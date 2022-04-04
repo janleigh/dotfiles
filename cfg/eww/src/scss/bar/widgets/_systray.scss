@@ -50,15 +50,16 @@
         .sys-tray-box-right {
             margin: 1em 0em 0em 1.5em;
     
-            .volume {
-                .volume-progress {
+            .ram {
+                .ram-progress {
                     background-color: $bg;
-                    color: $green;
+                    color: $red;
     
-                    .volume-icon {
+                    .ram-icon {
                         margin: 1em;
                         font-size: 40px;
-                        color: $green;
+                        font-family: "Material Icons";
+                        color: $red;
                     }
                 }
             }
@@ -66,7 +67,7 @@
     }
 
     .second-row {
-        margin-top: 0.7em;
+        margin-top: 1em;
 
         .music-player {
             .song-art {
@@ -110,6 +111,81 @@
                     &:hover {
                         color: $accent;
                     }
+                }
+            }
+        }
+    }
+
+    .third-row {
+        margin-top: 2em;
+
+        .system-info {
+            margin: 0em 1em 0em .7em;
+
+            .volume {
+                margin: 0.5em 0em;
+
+                .volume-icon {
+                    margin: 0rem 1rem;
+                    color: $green;
+                    font-size: 26px;
+                }
+                
+                scale trough {
+                    background-color: $bg;
+                    border-radius: 10px;
+                    min-height: 1em;
+                    min-width: 19em;
+                    margin: 0.5rem 0;
+                }
+                
+                .volbar trough highlight {
+                    background-image: linear-gradient(to right, $green, #87c7a1);
+                    border-radius: 10px;
+                }
+            }
+            .brightness {
+                margin: 0.75em 0em;
+
+                .brightness-icon {
+                    margin: 0rem 1rem;
+                    color: $yellow;
+                    font-size: 26px;
+                }
+                
+                scale trough {
+                    background-color: $bg;
+                    border-radius: 10px;
+                    min-height: 1em;
+                    min-width: 19em;
+                    margin: 0.5rem 0;
+                }
+                
+                .bribar trough highlight {
+                    background-image: linear-gradient(to right, $yellow, #de8f78);
+                    border-radius: 10px;
+                }
+            }
+            .mic {
+                margin: 0.5em 0em;
+
+                .mic-icon {
+                    margin: 0rem 1rem;
+                    color: $blue;
+                    font-size: 26px;
+                }
+                
+                scale trough {
+                    background-color: $bg;
+                    border-radius: 10px;
+                    min-height: 1em;
+                    min-width: 19em;
+                    margin: 0.5rem 0;
+                }
+                
+                .micbar trough highlight {
+                    background-image: linear-gradient(to right, $blue, $blue-desaturated);
+                    border-radius: 10px;
                 }
             }
         }

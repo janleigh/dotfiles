@@ -11,12 +11,12 @@
     "date '+%d %b'")
 
 ;;  SYSTEM INFO VARS
-(defpoll used_ram :interval "2s"
+(defpoll used_ram :interval "5s"
     "./scripts/getUsedRam")
-(defpoll used_cpu :interval "2s"
-    "sh echo `top -b -n1 | grep 'Cpu(s)' | awk '{print $2 + $4}'`")
 (defpoll volume :interval "2s"
     "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll micro :interval "2s"
+    "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll brightness :interval "2s"
     "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 
@@ -45,8 +45,6 @@
     "./scripts/getWeather current_temp")
 (defpoll weather_desc :interval "5m"
     "./scripts/getWeather weather_desc")
-(defpoll weather_feels :interval "5m"
-    "./scripts/getWeather feels_like")
 
 ;; CALENDAR VARS
 (defpoll calendar_day :interval "10h"

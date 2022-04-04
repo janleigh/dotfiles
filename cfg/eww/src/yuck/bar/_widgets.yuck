@@ -6,7 +6,6 @@
 
 (defwidget workspaces []
     (literal :content workspace))
-
 (deflisten workspace "scripts/getWorkspaces")
 
 (defwidget power []
@@ -55,7 +54,6 @@
                         (label :class "weather-desc" :text "${weather_desc}")
                     )
                     (label :class "weather-temp" :text "${weather_temp}°C")
-                    ; (label :class "weather-feels" :text "Feels like ${weather_feels}°C")
                 )
                 (box :class "date" :orientation "v" :space-evenly "false"
                     (box :orientation "h" :space-evenly "false"
@@ -65,14 +63,14 @@
                 )
             )
             (box :class "sys-tray-box-right" :orientation "v" :space-evenly "false"
-                (box :class "volume" :orientation "h"
-                    (circular-progress :class "volume-progress"
-                        :value volume
-                        :thickness 12
+                (box :class "ram" :orientation "h"
+                    (circular-progress :class "ram-progress"
+                        :value used_ram
+                        :thickness 6
                         :clockwise "true"
-                        :tooltip "Volume: ${volume}%" 
+                        :tooltip "Used RAM: ${used_ram}%" 
                         ; :onchange "amixer -D pulse sset Master {}%"
-                        (label :class "volume-icon" :text "")
+                        (label :class "ram-icon" :text "")
                     )
                 )
             )
@@ -95,6 +93,43 @@
                     (button :onclick "playerctl previous" "")
                 )
             )
+        )
+        (box :class "third-row" :orientation "h" :space-evenly "false"
+            (box :class "system-info" :orientation "v" :space-evenly "false"
+                (box :class "volume" :orientation "h" :space-evenly "false"
+                    (label :class "volume-icon" :text "")
+                    (scale :min 0
+                        :max 100
+                        :value volume
+                        :orientation "h"
+                        :tooltip "Volume: ${volume}%"
+                        :onchange "amixer -D pulse sset Master {}%"
+                        :class "volbar"
+                    )
+                )
+                (box :class "brightness" :orientation "h" :space-evenly "false"
+                    (label :class "brightness-icon" :text "")
+                    (scale :min 0
+                        :max 100
+                        :value brightness
+                        :orientation "h"
+                        :tooltip "Brightness: ${brightness}%"
+                        :onchange "brightnessctl set {}%"
+                        :class "bribar"
+                    )
+                )
+                (box :class "mic" :orientation "h" :space-evenly "false"
+                    (label :class "mic-icon" :text "")
+                    (scale :min 0
+                        :max 100
+                        :value micro
+                        :orientation "h"
+                        :tooltip "Microphone Volume: ${mic}%"
+                        :onchange "amixer -D pulse sset Capture {}%"
+                        :class "micbar"
+                    )
+                )
+            )45
         )
     )
 )
