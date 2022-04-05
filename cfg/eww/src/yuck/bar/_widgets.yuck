@@ -124,7 +124,7 @@
                         :max 101
                         :value micro
                         :orientation "h"
-                        :tooltip "Microphone Volume: ${mic}%"
+                        :tooltip "Microphone Volume: ${micro}%"
                         :onchange "amixer -D pulse sset Capture {}%"
                         :class "micbar"
                     )
