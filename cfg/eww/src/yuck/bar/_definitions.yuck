@@ -11,7 +11,7 @@
 
 (defwindow system-tray
     :geometry (geometry :x "57px"
-                        :y "15px" 
+                        :y "13px" 
                         :width "26%" 
                         :height "45%"
                         :anchor "top left")
