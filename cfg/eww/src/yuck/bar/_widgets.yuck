@@ -79,6 +79,9 @@
             (box :class "music-player" :orientation "h" :space-evenly "false"
                 (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
                     (box :class "music-info" :orientation "v" :space-evenly "false"
+                        (box :class "np" :orientation "h" :space-evenly "false"
+                            (label :class "now-playing" :text "Now Playing")
+                        )
                         (box :class "title" :orientation "h" :space-evenly "false"
                             (label :class "song-title" :text song_title)
                         )
