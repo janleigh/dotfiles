@@ -1,9 +1,9 @@
 #!/bin/bash
-title=$(playerctl -p spotify metadata --format '{{ title }}')
+title=$(playerctl metadata --format '{{ title }}')
 count=$(echo -n "$title" | wc -c)
 
 if [ -z "$title" ]; then
-	echo "Not Playing";
+	echo "Nothing Playing";
 else
 	if [ "$count" -le 24 ]; then
         echo $title

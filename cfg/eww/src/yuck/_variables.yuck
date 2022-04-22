@@ -33,6 +33,8 @@
     "./scripts/getSongTitle full")
 (defpoll player_status :interval "2s"
     "./scripts/getPlayerStatus")
+(defpoll player_status_text :interval "2s"
+    "./scripts/getPlayerStatusText")
 
 ;; LOCK SCREEN VARS
 (defpoll username :interval "12h"

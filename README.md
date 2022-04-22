@@ -31,14 +31,14 @@
 
    Here are more information about my setup:
 
+   - **OS:** [Arch Linux](https://archlinux.org)
    - **WM:** [bspwm](https://github.com/baskerville/bspwm)
-   - **OS:** [Arch Linux](https://archlinux.org/)
    - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
    - **Shell:** [zsh](https://www.zsh.org/)
    - **Panel:** [eww](https://github.com/elkowar/eww)
    - **Compositor:** [picom](https://github.com/yshui/picom)
    - **Editor:** [neovim](https://github.com/neovim/neovim)
-   - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox/)
+   - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
    - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 

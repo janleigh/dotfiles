@@ -17,7 +17,7 @@
                 }
             
                 .monthday {
-                    margin-left: -2.4em;
+                    margin-left: -2.5em;
                     margin-bottom: 0.3em;
                     font-size: 24px;
                     font-weight: bold;
@@ -33,7 +33,7 @@
                 }
             
                 .weather-temp {
-                    margin-left: -3.4em;
+                    margin-left: -3.5em;
                     margin-bottom: 0.3em;
                     font-size: 24px;
                     font-weight: bolder;
@@ -72,12 +72,12 @@
         .music-player {
             .song-art {
                 background-color: $bg;
-                background-size: 58% 100%;
+                background-size: 57% 100%;
                 background-repeat: no-repeat;
                 border-radius: 6px;
         
                 min-width: 20em;
-                margin-right: 15px;
+                margin-right: 10px;
         
                 .music-info {
                     all: unset;
@@ -104,7 +104,7 @@
             .song-controls {
                 background-color: $bg;
                 padding: 0em 1em;
-                margin-left: 6px;
+                margin-left: 9px;
                 border-radius: 6px;
         
                 button {

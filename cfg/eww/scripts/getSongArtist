@@ -1,16 +1,16 @@
 #!/bin/bash
-artist=$(playerctl -p spotify metadata --format '{{ artist }}')
-title=$(playerctl -p spotify metadata --format '{{ title }}')
+artist=$(playerctl metadata --format '{{ artist }}')
+title=$(playerctl metadata --format '{{ title }}')
 count=$(echo -n "$artist" | wc -c)
 
-# Check if $title is "Advertisement"
+# Check if $title is "Advertisement" cause I don't have Spotify Premium :(
 if [ "$title" = "Advertisement" ]; then
-	echo "Spotify"
+	echo "by Spotify"
 else
 	if [ -z "$artist" ]; then
-		echo "Unknown Artist";
+		echo "by 404 Not Found";
 	else
-		echo $artist
+		echo "by $artist"
 		# if [ "$count" -le 18 ]; then
 		#     echo $artist
 		# else

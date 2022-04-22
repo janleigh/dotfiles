@@ -80,13 +80,13 @@
                 (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
                     (box :class "music-info" :orientation "v" :space-evenly "false"
                         (box :class "np" :orientation "h" :space-evenly "false"
-                            (label :class "now-playing" :text "Now Playing")
+                            (label :class "now-playing" :text player_status_text)
                         )
                         (box :class "title" :orientation "h" :space-evenly "false"
                             (label :class "song-title" :text song_title)
                         )
                         (box :class "artist" :orientation "h" :space-evenly "false"
-                            (label :class "song-artist" :text "by ${song_artist}")
+                            (label :class "song-artist" :text song_artist)
                         )
                     )
                 )
