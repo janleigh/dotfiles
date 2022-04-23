@@ -23,7 +23,7 @@
 <!-- INFORMATION -->
 ### ❖ Information <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=0B0F10"/>
 
-   <img src=".github/assets/rice.png" alt="Rice Preview" align="right" width="400px">
+   <img src="assets/rice.png" alt="Rice Preview" align="right" width="400px">
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
