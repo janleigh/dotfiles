@@ -26,6 +26,8 @@ shell=$(basename $SHELL)
 o=os
 os="$(uname -s)"
 
+colors=$(for i in {0..7}; do echo -en "\e[${1}$((30 + $i))m▁▁▁"; done)
+
 # (\ /)
 # ( · ·)
 # c(")(")
@@ -37,9 +39,9 @@ os="$(uname -s)"
 tput clear
 cat << EOF
  
-  (\ /)     $f6$k $t~ $kernel
-  ( $d· ·$t)    $f6$h $t~ $wmname
-  c($f1"$t)($f1"$t)   $f6$sh $t~ $shell
-
+  (\ /)    $f6$k $t~ $kernel
+  ( $d· ·$t)   $f6$h $t~ $wmname
+  c($f1"$t)($f1"$t)  $f6$sh $t~ $shell
+$colors
  
 EOF

@@ -9,16 +9,16 @@ configuration {
 }
 
 window {    
-    location:	                    northwest;
-	anchor:		                    northwest;
-    x-offset:                       0px;
-    y-offset:                       0px;
+    location:	                    southwest;
+	anchor:		                    southwest;
+    x-offset:                       57px;
+    y-offset:                       -12px;
     transparency:                   "real";
     line-margin:                    1;
     line-padding:                   1;
-	width:						    30%;
-    height:							100%;
-    // border:                         14px;
+	width:						    27%;
+    height:							72%;
+    border-radius:                  6px;
     border-color:                   @background;
 }
 
@@ -42,10 +42,10 @@ listview {
     background-color:               @background;
     padding:                        10px;
     columns:                        1;
-    lines:                          8;
+    lines:                          5;
     spacing:                        0%;
     cycle:                          false;
-    dynamic:                        true;
+    dynamic:                        false;
     layout:                         vertical;
 }
 
@@ -76,7 +76,7 @@ element-icon {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
     size:                           48px;
-    margin:                         0px 0px 0px 12px;
+    margin:                         0px 0px 0px 3px;
     border:                         12px;
     border-color:                   transparent;
 }

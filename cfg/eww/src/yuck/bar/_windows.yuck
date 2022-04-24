@@ -1,0 +1,25 @@
+(defwindow bar
+    :geometry (geometry :x "0%"
+                        :y "0%" 
+                        :height "100%" 
+                        :width "46px")
+    :monitor 0
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore false
+(bar))
+
+(defwindow dashboard
+    :geometry (geometry :x "57px"
+                        :y "-5px" 
+                        :width "26%" 
+                        :height "45%"
+                        :anchor "center left")
+    (dashboard))
+
+(defwindow calendar
+    :geometry (geometry :x "57px"
+                        :y "67%" 
+                        :width "270px" 
+                        :height "60px")
+    (cal))

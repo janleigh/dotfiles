@@ -8,46 +8,49 @@ lock() {
     sleep 0.5
 
     i3lock -n -c 00000000 -t -e --pass-media-keys --pass-power-keys --pass-volume-keys --indicator \
-        --radius 48 --modif-size=9 --modif-pos="w/2:h/2-15" \
+        --radius 64 --modif-size=9 --modif-pos="w/2:h/2-15" \
         \
         --time-str="" \
         --time-pos="w/2:h/2+35" \
         --time-color=c5c8c9 \
         --time-size=14 \
-        --time-font="Iosevka Nerd Font" \
+        --time-font="Sarasa Mono CL Nerd Font" \
         \
-        --verif-text="Logging in..." \
+        --verif-text="" \
         --verif-color=7ba5dd \
         --verif-size=10 \
-        --verif-font="Iosevka Nerd Font" \
+        --verif-font="Sarasa Mono CL Nerd Font" \
         \
+        --wrong-text="" \
         --wrong-color=ee6a70 \
         --wrong-size=10 \
-        --wrong-font="Iosevka Nerd Font" \
+        --wrong-font="Sarasa Mono CL Nerd Font" \
         \
-        --greeter-text="" \
-        --greeter-color=7ba5dd \
+        --greeter-text="" \
+        --greeter-color=96D6B0 \
         --greeter-size=60 \
-        --greeter-font="Iosevka Nerd Font" \
-        --greeter-pos="w/2+14:h/2+285" \
+        --greeter-font="Sarasa Mono CL Nerd Font" \
+        --greeter-pos="w/2-20:h/2+285" \
         \
-        --ring-color=c5c8c9 \
-        --ringver-color=7ba5dd \
+        --ring-color=0B0F10 \
+        --ringver-color=96D6B0 \
         --ringwrong-color=ee6a70 \
-        --ring-width 2 \
+        --ring-width=5 \
         \
-        --insidever-color=32302fA8 \
-        --insidewrong-color=32302fA8 \
-        --inside-color=32302f00 \
-        --ind-pos="w/2:h/2-49" \
+        --insidever-color=079A8C02 \
+        --insidewrong-color=079A8C02 \
+        --inside-color=079A8C02 \
+        --ind-pos="w/2-150:h/2-45" \
+        \
+        --noinput-text="" \
         \
         --line-uses-inside --keyhl-color=7ba5dd --bshl-color=ee6a70 --separator-color=7ba5dd \
-        --pointer=default --no-verify
+        --pointer=default
 }
 
 run() {
     $HOME/.local/bin/tglbar
-    $HOME/.local/bin/eww open-many lock-screen
+    $HOME/.local/bin/eww open-many lock-screen lock-system-info
     lock
 }
 

@@ -2,7 +2,8 @@
 
 (include "./src/yuck/_variables.yuck")
 
-(include "./src/yuck/bar/_definitions.yuck")
 (include "./src/yuck/bar/_widgets.yuck")
-(include "./src/yuck/lock/_definitions.yuck")
+(include "./src/yuck/bar/_windows.yuck")
+
 (include "./src/yuck/lock/_widgets.yuck")
+(include "./src/yuck/lock/_windows.yuck")

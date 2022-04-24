@@ -4,7 +4,7 @@ add_newline = false
 # Prompt
 format = """
 $directory$git_branch$node$rust
-[](bold green) [|](dimmed white) """
+$cmd_duration[](bold green) [|](dimmed white) (none)"""
 
 # Custom character prompt
 # [character]                           
@@ -13,7 +13,7 @@ $directory$git_branch$node$rust
 
 # Modules
 [cmd_duration]
-disabled = true
+disabled = false
 
 [directory]
 home_symbol = ""

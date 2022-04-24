@@ -1,13 +1,19 @@
 #!/bin/sh
 
 symbol() {
-    [ $(cat /sys/class/net/w*/operstate) = down ] && echo   && exit
-    echo 
+    [ $(cat /sys/class/net/w*/operstate) = down ] && echo  && exit
+    echo 
 }
 
 name() {
     nmcli | grep "^wlan0" | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
 }
 
+color() {
+    [ $(cat /sys/class/net/w*/operstate) = down ] && echo "#ee6a70" && exit
+    echo "#96d6b0"
+}
+
 [ "$1" = "icon" ] && symbol && exit
 [ "$1" = "name" ] && name && exit
+[ "$1" = "color" ] && color && exit

@@ -23,6 +23,9 @@ start() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # #                                AUTOSTART APPS                              #
 # ##############################################################################
 
+# Clear dunst cache for notification manager
+rm $HOME/.cache/dunst.log
+
 # Autostart Apps
 # $HOME/.local/bin/eww daemon &
 $HOME/.local/bin/eww open bar &
@@ -33,9 +36,9 @@ picom --config $HOME/.config/picom/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set wallpaper
-# hsetroot -fill "$HOME/Pictures/walls/personal/personal-6.jpg"
+hsetroot -full "$HOME/Pictures/walls/personal/personal-10.png"
 # Hex Gang
-hsetroot -solid "#192022"
+# hsetroot -solid "#192022"
 
 # I hate mouse drift.
 xset m 0 0

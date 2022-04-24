@@ -1,0 +1,9 @@
+[submodule "etc/discord-css"]
+	path = etc/discord-css
+	url = https://github.com/janleigh/discord-css/
+[submodule "etc/gtk3"]
+	path = etc/gtk3
+	url = https://github.com/janleigh/gtk3
+[submodule "etc/walls"]
+	path = etc/walls
+	url = https://github.com/janleigh/walls

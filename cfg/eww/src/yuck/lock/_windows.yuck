@@ -1,0 +1,15 @@
+(defwindow lock-screen
+    :geometry (geometry :x "-11%"
+                        :y "0" 
+                        :width "260px" 
+                        :height "272px"
+                        :anchor "center")
+    (lock-screen))
+
+(defwindow lock-system-info
+    :geometry (geometry :x "12%"
+                        :y "0" 
+                        :width "260px" 
+                        :height "272px"
+                        :anchor "center")
+    (lock-system-info))

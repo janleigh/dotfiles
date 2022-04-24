@@ -1,0 +1,57 @@
+.dashboard-box {
+    .first-row {
+        .column-two {
+            margin: 0 0px 0 0;
+
+            .date {
+                background-color: $bg;
+                border-radius: 6px;
+                margin-top: 1em;
+            
+                .weekday {
+                    color: $fgDim;
+                    margin-top: 1em;
+                    margin-left: 1em;
+                }
+            
+                .monthday {
+                    margin-left: -2.5em;
+                    margin-bottom: 0.3em;
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+            }
+            .weather {
+                background-color: $bg;
+                border-radius: 6px;
+
+                .weather-desc {
+                    color: $fgDim;
+                    margin-left: 1em;
+                    margin-top: 1em;
+                }
+            
+                .weather-temp {
+                    margin-left: -3.5em;
+                    margin-bottom: 0.3em;
+                    font-size: 24px;
+                    font-weight: bolder;
+                }
+
+            }
+        }
+    
+        .column-one {
+            margin: 0px 1.2em 0em 1px;
+    
+            .avatar {
+                .avatar-image {
+                    background-image: url("./assets/avatar.png");
+                    background-size: cover;
+                    min-height: 144px;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

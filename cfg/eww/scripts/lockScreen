@@ -1,4 +1,3 @@
 #!/bin/bash
 
-pkill eww
 sleep 0.5 && $HOME/.local/bin/lck

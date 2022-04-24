@@ -13,11 +13,13 @@
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "5s"
     "./scripts/getUsedRam")
-(defpoll volume :interval "2s"
+(defpoll used_cpu :interval "5s"
+    "sh echo `top -b -n1 | grep 'Cpu(s)' | awk '{print $2 + $4}'`")
+(defpoll volume :interval "1s"
     "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll micro :interval "2s"
+(defpoll micro :interval "1s"
     "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll brightness :interval "2s"
+(defpoll brightness :interval "1s"
     "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 
 ;; MUSIC PLAYER VARS
@@ -59,3 +61,4 @@
 ;; NETWORK VARS
 (defpoll network-icon :interval "5s" "scripts/getNetwork icon")
 (defpoll network-name :interval "5s" "scripts/getNetwork name")
+(defpoll network-color :interval "5s" "scripts/getNetwork color")

@@ -2,8 +2,6 @@
 # #                                   KEYBINDS                                 #
 # ##############################################################################
 
-# NOTE: This is directly ported from my i3wim config.
-
 # Focus next/prev window
 super + {_,shift + }f
     bspc node -f {next,prev}.local.!hidden.window
@@ -59,13 +57,13 @@ super + b
 super + a
     sh $HOME/.local/bin/appmnu
 
+# Toggle dashboard
+super + shift + d
+    sh $HOME/.config/eww/scripts/openDashboard.sh
+
 # Toggle notif center
 super + n
     sh $HOME/.local/bin/notifcntr
-
-# Toggle network menu
-super + alt + n
-    sh $HOME/.local/bin/ntwkmgr
 
 # Toggle color picker
 super + p
