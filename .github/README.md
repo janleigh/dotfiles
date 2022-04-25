@@ -103,7 +103,7 @@
 
    ```sh
     # Copy wallpaper.
-    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-6.jpg $HOME/Pictures/walls/personal
+    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-10.png $HOME/Pictures/walls/personal
    ```
 
    </details>
