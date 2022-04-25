@@ -8,7 +8,7 @@
 (defpoll weekday :interval "24h"
     "date '+%A'")
 (defpoll monthday :interval "24h"
-    "date '+%d %b'")
+    "date '+%d %B'")
 
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "5s"

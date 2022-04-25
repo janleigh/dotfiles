@@ -1,7 +1,6 @@
 .powermenu {
     font-family: "Material Icons";
     font-size: 1.5em;
-    // font-weight: bold;
 
     button {
         margin: .35em .35em .75em .35em;
@@ -11,13 +10,10 @@
     }
 
     .reboot-btn {
-        color: $blue;
+        color: $magenta;
     }
     .logout-btn {
         color: $green;
-    }
-    .lock-btn {
-        color: $magenta
     }
     .shutdown-btn {
         color: $red;
