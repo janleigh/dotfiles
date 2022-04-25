@@ -38,7 +38,7 @@ inputbar {
     background-color:               @background;
     text-color:                     @background;
     expand:                         false;
-    margin:                         0px 0px 0px 0px;
+    margin:                         5px 0px 6px 0px;
     padding:                        1%;
 }
 
