@@ -41,6 +41,14 @@ super + ctrl + {h,j,k,l}
 super + ctrl + space
 	bspc node -p cancel
 
+# Shutdown system
+super + shift + s
+    systemctl poweroff
+
+# Restart system
+super + shift + r
+    systemctl reboot
+
 # Lock screen
 super + l
     sh $HOME/.local/bin/lck
@@ -48,10 +56,6 @@ super + l
 # Start alacritty
 super + Return
     tabbed -n "term" alacritty -t "term" --embed
-
-# Open browser
-super + b
-    firefox
 
 # Open application menu
 super + a
@@ -61,7 +65,11 @@ super + a
 super + shift + d
     sh $HOME/.config/eww/scripts/openDashboard.sh
 
-# Toggle notif center
+# Toggle dashboard but middle click
+~button2
+    sh $HOME/.config/sxhkd/scripts/openDashboard.sh
+
+# Toggle notification center
 super + n
     sh $HOME/.local/bin/notifcntr
 
@@ -100,3 +108,9 @@ super + shift + r
 # Quit and restart bspwm
 super + alt + {q,shift + }r
     bspc {quit,wm -r}
+
+# =============================================================================
+
+# Open browser
+super + b
+    firefox

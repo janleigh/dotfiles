@@ -2,8 +2,12 @@
 
 LOCK_FILE="$HOME/.cache/eww-lock.lock"
 
+hide_unhide_windows() {
+    while bspc node any.hidden.window -g hidden=off; do false; done && while bspc node 'any.!hidden.window' -g hidden=on; do :; done
+}
+
 lock() {
-    # hsetroot -fill "$HOME/.config/eww/assets/lockscreen.png"
+    hsetroot -fill "$HOME/.config/eww/assets/lockscreen.png"
     # Wait for eww to finish load widget
     sleep 0.5
 
@@ -27,10 +31,10 @@ lock() {
         --wrong-font="Sarasa Mono CL Nerd Font" \
         \
         --greeter-text="" \
-        --greeter-color=96D6B0 \
+        --greeter-color=0B0F10 \
         --greeter-size=60 \
         --greeter-font="Sarasa Mono CL Nerd Font" \
-        --greeter-pos="w/2-20:h/2+285" \
+        --greeter-pos="w/2-22:h/2+285" \
         \
         --ring-color=0B0F10 \
         --ringver-color=96D6B0 \
@@ -50,6 +54,7 @@ lock() {
 
 run() {
     $HOME/.local/bin/tglbar
+    hide_unhide_windows
     $HOME/.local/bin/eww open-many lock-screen lock-system-info
     lock
 }
@@ -69,8 +74,9 @@ if [[ ! -f "$LOCK_FILE" ]]; then
 fi
 
 rm "$LOCK_FILE"
-# hsetroot -solid "#192022"
+hsetroot -full ~/Pictures/walls/personal/personal-10.png
 $HOME/.local/bin/eww close-all
+sleep 0.2 && hide_unhide_windows
 $HOME/.local/bin/tglbar
 
 status2=$(playerctl -p spotify status || true)

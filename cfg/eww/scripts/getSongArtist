@@ -5,22 +5,22 @@ count=$(echo -n "$artist" | wc -c)
 
 # Check if $title is "Advertisement" cause I don't have Spotify Premium :(
 if [ "$title" = "Advertisement" ]; then
-	echo "by Spotify"
+    echo "by Spotify"
 else
-	if [ -z "$artist" ]; then
-		echo "by 404 Not Found";
-	else
-		echo "by $artist"
-		# if [ "$count" -le 18 ]; then
-		#     echo $artist
-		# else
-		# 	if [[ "$artist" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
-		# 		echo $(playerctl metadata --format '{{ artist }}' | awk '{ print substr($1, 1, 15) }')...
-		#     elif [[ "$artist" -le 15 ]]; then
-		#         echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2}')
-		#     else
-		#     	echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2, substr($3, 1, 4)}')...
-		# 	fi
-		# fi
-	fi
+    if [ -z "$artist" ]; then
+        echo "by 404 Not Found";
+    else
+        echo "by $artist"
+        # if [ "$count" -le 18 ]; then
+        #     echo $artist
+        # else
+        # 	if [[ "$artist" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
+        # 		echo $(playerctl metadata --format '{{ artist }}' | awk '{ print substr($1, 1, 15) }')...
+        #     elif [[ "$artist" -le 15 ]]; then
+        #         echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2}')
+        #     else
+        #     	echo $(playerctl metadata --format '{{ artist }}' | awk '{print $1, $2, substr($3, 1, 4)}')...
+        # 	fi
+        # fi
+    fi
 fi

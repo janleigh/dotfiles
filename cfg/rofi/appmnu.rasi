@@ -5,15 +5,16 @@ configuration {
     display-drun: 					"Applications";
     drun-display-format:            "{name}";
     disable-history:                false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    hide-scrollbar: 				true;
+    sidebar-mode: 					false;
+    font:                           "Sarasa Mono CL Nerd Font 8";
 }
 
 window {    
     transparency:                   "real";
-	width:						    36%;
-    border:                         14px;
-    border-radius:                  0px;
+    width:						    33%;
+    border:                         2px;
+    border-radius:                  5px;
     border-color:                   @background;
 }
 
@@ -22,7 +23,7 @@ entry {
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
-    horizontal-align:               0;
+    horizontal-align:               0.5;
     placeholder:                    "   Type here to search...";
     padding:                        10px;
     margin:                         0 1%;
@@ -33,7 +34,7 @@ entry {
 }
 
 inputbar {
-	children: 						[ entry ];
+    children: 						[ entry ];
     background-color:               @background;
     text-color:                     @background;
     expand:                         false;
@@ -54,11 +55,11 @@ listview {
 
 mainbox {
     background-color:               @background;
-	border:							4px;
-	border-color:					@border;
+    border:							0px;
+    border-color:					@border;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
-    padding:                        10px;
+    padding:                        8px;
 }
 
 element {
