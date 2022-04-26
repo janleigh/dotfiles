@@ -7,8 +7,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
+# Change cursor theme size.
+xrandr
+xrdb -merge ~/.Xresources
+
 # Fix the x-shaped cursor on root window.
 xsetroot -cursor_name left_ptr
 
-# Autostart the window manager.
+# Start the window manager.
+export XDG_SESSION_TYPE=x11
+export XDG_CURRENT_DESKTOP=bspwm
+export XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
 exec bspwm
