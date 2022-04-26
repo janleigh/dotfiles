@@ -44,7 +44,7 @@
                 
                 .bribar trough highlight {
                     background-image: linear-gradient(to right, #de8f78, $yellow);
-                    border-radius: 10px;
+                    border-radius: 8px;
                 }
             }
             .mic {
@@ -52,7 +52,7 @@
 
                 .micbar trough highlight {
                     background-image: linear-gradient(to right, $blue-desaturated, $blue);
-                    border-radius: 10px;
+                    border-radius: 8px;
                 }
             }
         }
