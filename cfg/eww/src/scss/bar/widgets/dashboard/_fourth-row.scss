@@ -12,10 +12,18 @@
             background-color: $bgSecondaryAlt;
             border-radius: 50%;
             font-family: "Material Icons";
+
+            &:hover {
+                color: $accent;
+            }
         }
 
         .network-btn {
             color: $bg;
+
+            &:hover {
+                color: $bg;
+            }
         }
 
         .lock-btn {
