@@ -57,14 +57,14 @@
 
    ### :blossom: <samp>INSTALLATION (DEPENDENCIES)<samp>
    
-   <details open>
+   <details>
    <summary><strong>Arch Linux (and other Arch-based distributions)</strong></summary>
 
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
     $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl \
-               feh maim jq xclip imagemagick dunst i3lock-color xdo giph --needed
+              feh maim jq xclip imagemagick dunst i3lock-color xdo giph --needed
    ```
 
    </details>
@@ -76,25 +76,21 @@
 
    </details>
 
-   ### :cherry_blossom: <samp>INSTALLATION (PREREQUISITES)<samp>
+   ### :cherry_blossom: <samp>INSTALLATION (DOTFILES)<samp>
 
    Then after the dependencies are installed, copy the files to it's respective folders.
 
    <details>
-   <summary><strong>Config and Binaries</strong></summary>
-
-   ```sh
-    $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
-    $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
-
-    # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
-    $ mv $HOME/.local/bin/usr/* /usr/local/bin
-   ```
-
-   </details>
-
-   <details>
    <summary><strong>Fonts</strong></summary>
+
+   |   Font List    |
+   | -------------- |
+   | [`Sarasa Mono CL`](https://github.com/be5invis/Sarasa-Gothic) |
+   | [`Victor Mono`](https://github.com/rubjo/victor-mono) |
+   | [`Material Icons`](https://github.com/google/material-design-icons/) |
+   | [`Icomoon`](https://icomoon.io/) |
+
+   > **NOTE**: Only important fonts has been listed on the table above.
 
    ```sh
     $ cp -r ./etc/fonts/* $HOME/.local/share/fonts
@@ -103,21 +99,73 @@
    </details>
 
    <details>
-   <summary><strong>Others</strong></summary>
+   <summary><strong>Wallpaper</strong></summary>
+
+   |   File Name    |  Alias  |
+   | -------------- | ------- |
+   | [`personal-10.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-10.png) | Solid `#192022` background with cat ASCII art. |
+   | [`personal-6.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-6.jpg) | Rocky beach. |
+
+   > **NOTE**: Only favorite wallpapers has been listed on the table above.
 
    ```sh
-    # Copy wallpaper.
     $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-10.png $HOME/Pictures/walls/personal
    ```
 
    </details>
 
-   ### :hibiscus: <samp>INSTALLATION (DOTFILES)<samp>
+   <details>
+   <summary><strong>Configuration Files and Binaries</strong></summary>
+
+   - `cp` method
+
+      ```sh
+      $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
+      $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
+
+      # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
+      $ sudo mv $HOME/.local/bin/usr/* /usr/local/bin/
+      ```
+
+   - `rsync` method <kbd>**UNTESTED**</kbd>
+
+      ```sh
+      $ rsync -avxHAXP cfg/ $HOME/.config
+      $ rsync -avxHAXP --exclude 'bin/usr/' bin/ $HOME/.local/bin/
+
+      # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
+      $ sudo rsync -avxHAXP bin/usr/ /usr/local/bin/
+      ```
+
+      > **WARNING**: Ensure the `rsync` command must be correct as above.
+      > 
+      > |   Options   |                      Function                         |
+      > | ----------- | ----------------------------------------------------- |
+      > | `-a`        | Archive mode                                          |
+      > | `-v`        | Verbose mode                                          |
+      > | `-x`        | Don't cross filesystem boundaries                     |
+      > | `-H`        | Preserve hard links                                   |
+      > | `-A`        | Preserve ACLs/permissions                             |
+      > | `-X`        | Preserve extended attributes                          |
+      > | `-P`        | Show progress during transfer                         |
+      > | `--exclude` | Exclude files matching `PATTERN`                      |
+      >
+      > **DIFFERENCES**  
+      > - `cp` is for duplicating stuff and by default only ensures files have unique full path names.
+      > - `rsync` is for synchronizing stuff and uses size and timestamp of files to decide if they should be replaced.
+
+      > I also recommend to not delete the **dotfiles** directory after cloning to make upgrades easier.
+
+   </details>
+
+   ### :hibiscus: <samp>INSTALLATION (FINALIZING)<samp>
 
    Once finished copying the files, you might want to finalize the changes to your system.
 
    <details>
    <summary><strong>Regenerating font cache</strong></summary>
+
+   > This ensures all existing caches are cleared and regenerated for all installed fonts.
 
    ```sh
     $ fc-cache -v

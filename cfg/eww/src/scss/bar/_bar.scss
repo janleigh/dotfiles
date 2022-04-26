@@ -5,17 +5,17 @@
 window {
     color: $fg;
     font-family: "Sarasa Mono CL Nerd Font";
-}
 
-button:hover {
-    color: $accent;
-}
+    button:hover {
+        color: $accent;
+    }
 
-.eww-bar {
-    background-color: #0b0f10;
-}
-
-.separator {
-    background-color: #0b0f10;
-    color: $bgSecondaryAlt;
+    .eww-bar {
+        background-color: #0b0f10;
+    }
+    
+    .separator {
+        background-color: #0b0f10;
+        color: $bgSecondaryAlt;
+    }
 }

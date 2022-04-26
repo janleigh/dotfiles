@@ -81,6 +81,9 @@
                         (box :class "artist" :orientation "h" :space-evenly "false"
                             (label :class "song-artist" :text song_artist)
                         )
+                        (box :class "position" :orientation "h" :space-evenly "false"
+                            (label :class "song-position" :text song_position)
+                        )
                     )
                 )
                 (box :class "song-controls" :orientation "v"
