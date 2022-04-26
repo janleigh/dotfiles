@@ -176,7 +176,7 @@
    <summary><strong>Star History</strong></summary>
 
    <a target="_blank" href="https://starchart.cc/janleigh/dotfiles">
-      <img alt="" align="center" width="96%" src="https://starchart.cc/janleigh/dotfiles.svg"/>
+      <img alt="" align="center" width="100%" src="https://starchart.cc/janleigh/dotfiles.svg"/>
    </a>
    </details>
 
