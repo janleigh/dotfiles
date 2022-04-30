@@ -48,8 +48,8 @@
 (defwidget dashboard []
     (box :class "dashboard-box" :orientation "v" :space-evenly "false"
         (box :class "first-row" :orientation "h"
-            (box :class "column-one" :orientation "v" :space-evenly "false"
-                (box :class "avatar" :orientation "h"
+            (box :class "column-one" :orientation "v"
+                (box :class "avatar"
                     (box :class "avatar-image")
                 )
             )
@@ -58,30 +58,34 @@
                     (box :orientation "h" :space-evenly "false" 
                         (label :class "weather-desc" :text "${weather_desc}")
                     )
-                    (label :class "weather-temp" :text "${weather_temp}°C")
+                    (label :class "weather-temp" :text "${weather_temp}°C (${weather_feels_like}°C)" :halign "start")
                 )
                 (box :class "date" :orientation "v" :space-evenly "false"
                     (box :orientation "h" :space-evenly "false"
                         (label :class "weekday" :text "${weekday}")
                     )
-                    (label :class "monthday" :text "${monthday}")
+                    (label :class "monthday" :text "${monthday}" :halign "start")
                 )
             )
         )
-        (box :class "second-row" :orientation "h"  :space-evenly "false"
+        (box :class "second-row" :orientation "h"
             (box :class "music-player" :orientation "h" :space-evenly "false"
                 (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
                     (box :class "music-info" :orientation "v" :space-evenly "false"
-                        (box :class "np" :orientation "h" :space-evenly "false"
+                        (box :class "np" :orientation "h" :halign "start"
                             (label :class "now-playing" :text player_status_text)
                         )
-                        (box :class "title" :orientation "h" :space-evenly "false"
-                            (label :class "song-title" :text song_title)
+                        (box :class "title" :orientation "h" :halign "start"
+                            (label :class "song-title"
+                            :text song_title
+                            :limit-width 20)
                         )
-                        (box :class "artist" :orientation "h" :space-evenly "false"
-                            (label :class "song-artist" :text song_artist)
+                        (box :class "artist" :orientation "h" :halign "start"
+                            (label :class "song-artist"
+                                :text song_artist
+                                :limit-width 30)
                         )
-                        (box :class "position" :orientation "h" :space-evenly "false"
+                        (box :class "position" :orientation "h" :halign "start"
                             (label :class "song-position" :text song_position)
                         )
                     )
@@ -94,7 +98,6 @@
             )
         )
         (box :class "third-row" :orientation "h" :space-evenly "false"
-            
             (box :class "system-info-scale" :orientation "h" :space-evenly "false"
                 (box :class "ram" :orientation "v"  :space-evenly "false"
                     (label :class "ram-usage" :text "RAM")

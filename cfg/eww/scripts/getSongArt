@@ -8,9 +8,12 @@ if [ ! -d $tmp_dir ]; then
 fi
 
 artlink="$(playerctl -p spotify metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
+artFromBrowser=$(playerctl metadata mpris:artUrl | sed 's/file:\/\///g')
 
 if [ $(playerctl -p spotify metadata mpris:artUrl) ]; then
     curl -s "$artlink" --output $tmp_temp_path
+elif [[ -n $artFromBrowser ]]; then
+    cp $artFromBrowser $tmp_temp_path
 else
     cp $HOME/.config/eww/assets/fallback.png $tmp_temp_path
 fi

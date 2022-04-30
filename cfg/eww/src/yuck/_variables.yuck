@@ -8,7 +8,7 @@
 (defpoll weekday :interval "24h"
     "date '+%A'")
 (defpoll monthday :interval "24h"
-    "date '+%d %B'")
+    "date '+%d %b'")
 
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "5s"
@@ -52,6 +52,8 @@
     "./scripts/getWeather current_temp")
 (defpoll weather_desc :interval "5m"
     "./scripts/getWeather weather_desc")
+(defpoll weather_feels_like :interval "5m"
+    "./scripts/getWeather feels_like")
 
 ;; CALENDAR VARS
 (defpoll calendar_day :interval "10h"
