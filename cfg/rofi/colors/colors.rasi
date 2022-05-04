@@ -7,4 +7,6 @@
 
     text-color:                 @fg;
     javacafe-blue:              #bac8ef;
+    green:                      #96d6b0;
+    magenta:                    #cb92f2;
 }

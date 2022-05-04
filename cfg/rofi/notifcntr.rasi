@@ -91,7 +91,7 @@ element-text {
 element selected {
     background-color:               @background-alt;
     text-color:                     @foreground;
-    border:                         0px 0px 2px 0px;
-    border-color:                   @javacafe-blue;
+    border:                         0px 0px 0px 2px;
+    border-color:                   @accent;
     border-radius:                  10px;
 }
