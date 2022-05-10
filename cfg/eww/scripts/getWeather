@@ -18,6 +18,14 @@ check_if_empty() {
     fi
 }
 
+check_if_empty_text() {
+    if [ -z "$1" ]; then
+        echo "null"
+    else
+        echo "$1"
+    fi
+}
+
 case $1 in
     current_temp)
         check_if_empty $weather_temp
@@ -26,7 +34,7 @@ case $1 in
         check_if_empty $feels_like
         ;;
     weather_desc)
-        check_if_empty $weather_desc
+        check_if_empty_text $weather_desc
         ;;
     humidity)
 		check_if_empty $humidity

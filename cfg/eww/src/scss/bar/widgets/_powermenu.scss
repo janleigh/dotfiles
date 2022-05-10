@@ -4,6 +4,7 @@
 
     button {
         margin: .35em .35em .75em .35em;
+
         &:hover {
             color: $accent;
         }
@@ -18,7 +19,7 @@
     .shutdown-btn {
         color: $red;
     }
-    .power-btn {
+    .notif-btn {
         color: $fg;
         font-weight: normal;
     }

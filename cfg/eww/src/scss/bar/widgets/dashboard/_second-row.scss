@@ -7,12 +7,12 @@
 
             .song-art {
                 background-color: $bg;
-                background-size: 53% 100%;
+                background-size: auto 100%;
                 background-repeat: no-repeat;
                 border-radius: 5px;
         
-                min-width: 245px;
-                margin-right: 7px;
+                min-width: 248px;
+                margin-right: 5px;
         
                 .music-info {
                     all: unset;

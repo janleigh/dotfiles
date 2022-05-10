@@ -13,8 +13,6 @@
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "5s"
     "./scripts/getUsedRam")
-(defpoll used_cpu :interval "5s"
-    "sh echo `top -b -n1 | grep 'Cpu(s)' | awk '{print $2 + $4}'`")
 (defpoll volume :interval "1s"
     "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll micro :interval "1s"
@@ -31,7 +29,7 @@
     "./scripts/getSongArtist")
 (defpoll song_title :interval "2s"
     "./scripts/getSongTitle")
-(defpoll song_position :interval "2s"
+(defpoll song_position :interval "1s"
     "./scripts/getSongPosition")
 (defpoll song_title_full :interval "5s"
     "./scripts/getSongTitle full")
@@ -39,7 +37,6 @@
     "./scripts/getPlayerStatus")
 (defpoll player_status_text :interval "2s"
     "./scripts/getPlayerStatusText")
-
 
 ;; LOCK SCREEN VARS
 (defpoll username :interval "12h"
