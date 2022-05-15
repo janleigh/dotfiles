@@ -46,6 +46,10 @@ xset m 0 0
 # Fix for eww bar not hiding on a fullscreen window.
 $HOME/.config/bspwm/bin/ewwFlScr &
 
+# Start MPD
+exec mpd &
+exec mpDris2 &
+
 # ##############################################################################
 # #                                 WINDOW RULES                               #
 # ##############################################################################

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 title=$(playerctl metadata --format '{{ title }}')
 count=$(echo -n "$title" | wc -c)
 

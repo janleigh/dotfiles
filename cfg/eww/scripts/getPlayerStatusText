@@ -1,35 +1,10 @@
 #!/bin/sh
 
-if ps -C spotify > /dev/null; then
-    PLAYER="spotify"
-fi
+# Simplfied because it was to complex and hacky, so removed the (on Browser) indication
+PLAYER=$(playerctl -p spotify,%any,firefox,chromium,brave status)
 
-if [ -z "$PLAYER" ]; then
-    if [ "$(playerctl -l | grep firefox)" ]; then
-        STATUS=$(playerctl -p firefox status)
-
-        if [ "$STATUS" = "Playing" ]; then
-            STATUS="Now Playing (on Browser)"
-        else
-            STATUS="Music"
-        fi
-        
-        printf "$STATUS"
-    else 
-        printf "Music"
-    fi
+if [ "$PLAYER" = "Playing" ]; then
+    echo "Now Playing"
 else
-    if [ "$PLAYER" = "spotify" ]; then
-        STATUS=$(playerctl -p spotify status)
-
-        if [ "$STATUS" = "Playing" ]; then
-            STATUS="Now Playing"
-        else
-            STATUS="Music"
-        fi
-        
-        if [ "$PLAYER" = "spotify" ]; then
-            printf "$STATUS"
-        fi
-    fi
+    echo "Music"
 fi
