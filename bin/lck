@@ -74,7 +74,8 @@ if [[ ! -f "$LOCK_FILE" ]]; then
 fi
 
 rm "$LOCK_FILE"
-hsetroot -full ~/Pictures/walls/personal/personal-10.png
+hsetroot -fill "$HOME/Pictures/walls/personal/personal-17.jpg"
+# hsetroot -solid "#192022"
 $HOME/.local/bin/eww close-all
 sleep 0.2 && hide_unhide_windows
 $HOME/.local/bin/tglbar

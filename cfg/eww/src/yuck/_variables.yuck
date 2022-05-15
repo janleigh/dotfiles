@@ -60,7 +60,7 @@
 (defpoll calendar_year :interval "10h"
     "date '+%Y'")
 
-;; NETWORK VARS
-(defpoll network-icon :interval "5s" "scripts/getNetwork icon")
-(defpoll network-name :interval "5s" "scripts/getNetwork name")
-(defpoll network-color :interval "5s" "scripts/getNetwork color")
+;; UTILITY ROW VARS
+(defpoll network_status :interval "1s" "scripts/getNetwork color")
+(defpoll redshift_status :interval "1s" "./scripts/getRedshift color")
+(defpoll jeff_status :interval "1s" "./scripts/dashActions.sh jstat")

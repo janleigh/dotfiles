@@ -10,8 +10,8 @@ name() {
 }
 
 color() {
-    [ $(cat /sys/class/net/w*/operstate) = down ] && echo "#ee6a70" && exit
-    echo "#96d6b0"
+    [ $(cat /sys/class/net/w*/operstate) = down ] && echo "$bgSecondary" && exit
+    echo "#1c2325"
 }
 
 [ "$1" = "icon" ] && symbol && exit

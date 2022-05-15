@@ -63,8 +63,8 @@
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
-    $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 \
-    hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph --needed
+    $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl \
+              hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph redshift --needed
    ```
 
    </details>
@@ -118,6 +118,7 @@
    | -------------- |
    | [`Sarasa Mono CL`](https://github.com/be5invis/Sarasa-Gothic) |
    | [`Victor Mono`](https://github.com/rubjo/victor-mono) |
+   | [`DM Sans`](https://fonts.google.com/specimen/DM+Sans) |
    | [`Material Icons`](https://github.com/google/material-design-icons/) |
    | [`Icomoon`](https://icomoon.io/) |
 

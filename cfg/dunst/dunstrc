@@ -58,7 +58,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "275x5-10+12"
+    geometry = "275x5-10-12"
 
     # Frame
     frame_width = 3
