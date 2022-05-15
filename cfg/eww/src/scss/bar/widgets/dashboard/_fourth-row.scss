@@ -9,8 +9,8 @@
             font-size: 28px;
             margin: .2em .3em;
             padding: .4em;
-            background-color: $bgSecondaryAlt;
-            border-radius: 50%;
+            background-color: $bgSecondary;
+            border-radius: 30%;
             font-family: "Material Icons";
 
             &:hover {
@@ -18,22 +18,12 @@
             }
         }
 
-        .network-btn {
-            color: $bg;
-
-            &:hover {
-                color: $bg;
-            }
-        }
-
         .lock-btn {
             color: $blue-desaturated;
         }
-
         .reboot-btn {
             color: $magenta;
         }
-
         .shutdown-btn {
             color: $red;
         }

@@ -87,6 +87,7 @@
    | -------------- |
    | [`Sarasa Mono CL`](https://github.com/be5invis/Sarasa-Gothic) |
    | [`Victor Mono`](https://github.com/rubjo/victor-mono) |
+   | [`DM Sans`](https://fonts.google.com/specimen/DM+Sans) |
    | [`Material Icons`](https://github.com/google/material-design-icons/) |
    | [`Icomoon`](https://icomoon.io/) |
 

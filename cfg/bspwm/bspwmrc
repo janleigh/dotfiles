@@ -4,10 +4,6 @@
 # #                                  ENV VARS                                  # 
 # ##############################################################################
 
-export BROWSER=firefox
-export EDITOR=nvim
-export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for JetBrains IDEs
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # ##############################################################################
@@ -36,7 +32,7 @@ picom --config $HOME/.config/picom/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set wallpaper
-hsetroot -full "$HOME/Pictures/walls/personal/personal-10.png"
+hsetroot -fill "$HOME/Pictures/walls/personal/personal-17.jpg"
 # Hex Gang
 # hsetroot -solid "#192022"
 
@@ -45,6 +41,9 @@ xset m 0 0
 
 # Fix for eww bar not hiding on a fullscreen window.
 $HOME/.config/bspwm/bin/ewwFlScr &
+
+# Initialize startup sound.
+# mpv --keep-open=no --really-quiet "$HOME/.config/bspwm/assets/loginSound.wav" &
 
 # ##############################################################################
 # #                                 WINDOW RULES                               #

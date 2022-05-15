@@ -75,34 +75,34 @@ super + n
 
 # Toggle color picker
 super + p
-  sh $HOME/.local/bin/xcolor-pick
+    sh $HOME/.local/bin/xcolor-pick
 
 # Screenshot
 # Save to local storage
 Print
     DATE=$(date '+%b%d-%H-%M.png'); \
     maim -us "$HOME/Pictures/Screenshots/$DATE"; \
-    sh ~/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE | xclip -selection clipboard -t image/png
+    sh $HOME/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE
 
 # Upload to CDN
 super + Print
     DATE=$(date '+%b%d-%H-%M.png'); \
     maim -us "$HOME/Pictures/Screenshots/$DATE"; \
-    sh ~/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
+    sh $HOME/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
 
 # Manage volume
 XF86Audio{Raise,Lower}Volume
     amixer -q set Master 5%{+,-}
 
 XF86AudioMute
-    amixer set Master toggle
+    sh $HOME/.config/sxhkd/scripts/audioToggle.sh
 
 # Manage brightness
 XF86MonBrightness{Up,Down}
     brightnessctl set 5%{+,-}
 
 # Restart sxhkd
-super + shift + r
+super + alt + r
     pkill -USR1 -x sxhkd
 
 # Quit and restart bspwm

@@ -15,7 +15,13 @@ window {
     }
     
     .separator {
-        background-color: #0b0f10;
+        // color: #3e4141;
         color: $bgSecondaryAlt;
+    }
+
+    .control-panel {
+        background-color: $bg;
+        margin: .35em;
+        border-radius: 6px;
     }
 }
