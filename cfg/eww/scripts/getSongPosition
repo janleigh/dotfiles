@@ -16,9 +16,11 @@ if ps -C spotify > /dev/null; then
 fi
 
 if [ "$PLAYER" = "spotify" ]; then
-    if [ $has_premium -gt 0 ]; then
+    if [ $HAS_SPOTIFY_PREMIUM -gt 0 ]; then
         print_position    
     fi
 else
-    print_position    
+    if [ $(playerctl metadata mpris:length | wc -c) -gt 0 ]; then
+        print_position
+    fi
 fi
