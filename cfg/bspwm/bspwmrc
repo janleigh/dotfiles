@@ -42,6 +42,10 @@ xset m 0 0
 # Fix for eww bar not hiding on a fullscreen window.
 $HOME/.config/bspwm/bin/ewwFlScr &
 
+# Start MPD and mpDris2
+exec mpd &
+exec mpDris2 &
+
 # Initialize startup sound.
 # mpv --keep-open=no --really-quiet "$HOME/.config/bspwm/assets/loginSound.wav" &
 
