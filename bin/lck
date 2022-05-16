@@ -59,7 +59,7 @@ run() {
     lock
 }
 
-status=$(playerctl -p spotify status || true)
+status=$(playerctl -p spotify,%any,firefox,chromium,brave status || true)
 if [ "$status" == "Playing" ]; then
 	playerctl pause
 fi
