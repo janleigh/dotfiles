@@ -4,11 +4,13 @@
 PLAYER=$(playerctl -p spotify,%any,firefox,chromium,brave status)
 
 if [ "$PLAYER" = "Playing" ]; then
-    STATUS=""
+    STATUS=""
 elif [ "$PLAYER" = "Paused" ]; then
-    STATUS=""
+    STATUS=""
 elif [ "$PLAYER" = "Stopped" ]; then
-    STATUS=""
+    STATUS=""
+else
+    STATUS=""
 fi
 
 echo $STATUS

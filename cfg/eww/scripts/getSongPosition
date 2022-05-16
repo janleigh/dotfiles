@@ -2,22 +2,23 @@
 
 # Change this to something above 0 if you have Spotify Premium.
 # Defaults to 0 cause I don't have Premium :(
-# Change the (has_premium) from line 12, collumm 17 into 1 if you have spotify premium
+HAS_SPOTIFY_PREMIUM=0
+
+print_position() {
+    POSITION=$(playerctl position | sed 's/..\{6\}$//')
+    DURATION=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
+    printf "%0d:%02d " $((POSITION%3600/60)) $((POSITION%60))
+    printf "/ %0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
+}
 
 if ps -C spotify > /dev/null; then
     PLAYER="spotify"
 fi
 
 if [ "$PLAYER" = "spotify" ]; then
-    has_premium=0
+    if [ $has_premium -gt 0 ]; then
+        print_position    
+    fi
 else
-    has_premium=1
-fi
-if [ $has_premium -gt 0 ]; then
-    POSITION=$(playerctl position | sed 's/..\{6\}$//')
-    DURATION=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
-    printf "%0d:%02d " $((POSITION%3600/60)) $((POSITION%60))
-    printf "/ %0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
-else
-    echo "You don't have Spotify Premium."
+    print_position    
 fi
