@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$HOME/.cache/eww/spotify/cover.png"
+echo "$HOME/.cache/eww/getart/cover.png"
