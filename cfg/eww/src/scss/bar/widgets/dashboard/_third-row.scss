@@ -3,6 +3,36 @@
         margin-top: 1em;
         margin-left: 0em;
 
+        .system-info-scale {
+            margin-left: 0px;
+            margin-right: .5em;
+            
+            .ram {
+                background-color: $bg;
+                border-radius: 5px;
+                padding: 0 1em 1em;
+
+                .ram-progress {
+                    margin-bottom: 3.8rem;
+                    background-color: $bgSecondary;
+                    color: $green;
+
+                    .ram-icon {
+                        margin: .8em;
+                        font-size: 40px;
+                        font-family: "Material Icons";
+                        color: $green;
+                    }
+                }
+                .ram-usage {
+                    color: $fgDim;
+                    margin-top: 1em;
+                    margin-left: -7.5rem;
+
+                }
+            }
+        }
+
         .system-info {
             margin-left: 8px;
             
@@ -43,7 +73,7 @@
                 }
                 
                 .bribar trough highlight {
-                    background-image: linear-gradient(to right, #de8f78, $yellow);
+                    background-image: linear-gradient(to top, #de8f78, $yellow);
                     border-radius: 10px;
                 }
             }
@@ -51,38 +81,8 @@
                 margin: 0.5em 0em 0.5em -1em;
 
                 .micbar trough highlight {
-                    background-image: linear-gradient(to right, $blue-desaturated, $blue);
+                    background-image: linear-gradient(to top, $blue-desaturated, $blue);
                     border-radius: 10px;
-                }
-            }
-        }
-
-        .system-info-scale {
-            margin-left: 0px;
-            margin-right: .5em;
-            
-            .ram {
-                background-color: $bg;
-                border-radius: 5px;
-                padding: 0 1em 1em;
-
-                .ram-progress {
-                    margin-bottom: 3.8rem;
-                    background-color: $bgSecondary;
-                    color: $green;
-
-                    .ram-icon {
-                        margin: .8em;
-                        font-size: 40px;
-                        font-family: "Material Icons";
-                        color: $green;
-                    }
-                }
-                .ram-usage {
-                    color: $fgDim;
-                    margin-top: 1em;
-                    margin-left: -7.5rem;
-
                 }
             }
         }

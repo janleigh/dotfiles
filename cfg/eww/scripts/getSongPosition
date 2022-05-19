@@ -16,7 +16,9 @@ if [ "$PLAYER" = "spotify" ]; then
 elif [ "$PLAYER" = "firefox" ]; then
     not_support=1
 else
-    has_premium=1
+    if [ $(playerctl metadata mpris:length | wc -c) -gt 0 ]; then
+        print_position
+    fi
 fi
 
 if [ $has_premium -gt 0 ]; then
@@ -29,3 +31,5 @@ elif [ $not_support -gt 0 ]; then
 else
     echo "You don't have Spotify Premium."
 fi
+
+# IDK maybe fix this I guess

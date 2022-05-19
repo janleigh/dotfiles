@@ -80,7 +80,7 @@
             )
             (box :class "second-row" :orientation "h"
                 (box :class "music-player" :orientation "h" :space-evenly "false"
-                    (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
+                    (box :class "song-art" :style "background-image: url('${art}')" song_art
                         (box :class "music-info" :orientation "v" :space-evenly "false"
                             (box :class "np" :orientation "h" :halign "start"
                                 (label :class "now-playing" :text player_status_text)
@@ -88,6 +88,7 @@
                             (box :class "title" :orientation "h" :halign "start"
                                 (label :class "song-title"
                                 :text song_title
+                                :tooltip song_title
                                 :limit-width 20)
                             )
                             (box :class "artist" :orientation "h" :halign "start"
@@ -161,10 +162,10 @@
             )
             (box :class "fourth-row" :orientation "h"
                 (box :class "system-btn" :orientation "h" :space-evenly "true"
-                    (button :class "network-btn" :style "background-color: ${network_status}" :onclick "iwgtk" "")
-                    (button :class "redshift-btn" :style "background-color: ${redshift_status}" :onclick "sh ./scripts/getRedshift toggle" "")
-                    (button :class "scrot-btn" :onclick "sh ./scripts/dashActions.sh scrot" "")
-                    (button :class "jeff-btn" :style "background-color: ${jeff_status}" :onclick "sh ./scripts/dashActions.sh jeff" "")
+                    (button :class "network-btn" :style "background-color: ${network_status}" :tooltip "Network" :onclick "iwgtk &" "")
+                    (button :class "redshift-btn" :style "background-color: ${redshift_status}" :tooltip "Night Light" :onclick "sh ./scripts/getRedshift toggle" "")
+                    (button :class "scrot-btn" :onclick "sh ./scripts/dashActions.sh scrot" :tooltip "Screenshot" "")
+                    (button :class "jeff-btn" :style "background-color: ${jeff_status}" :tooltip "Capture Screen" :onclick "sh ./scripts/dashActions.sh jeff" "")
 
                     ; (button :class "lock-btn" :onclick "sh ./scripts/lockScreen" "")
                     ; (button :class "reboot-btn" :onclick "systemctl reboot" "")

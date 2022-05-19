@@ -57,7 +57,7 @@
 
    ### :blossom: <samp>INSTALLATION (DEPENDENCIES)<samp>
    
-   <details>
+   <details open>
    <summary><strong>Arch Linux (and other Arch-based distributions)</strong></summary>
 
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
@@ -70,10 +70,10 @@
    </details>
 
    <details>
-   <summary><strong>Debian (and other debian-based distributions)</strong></summary>
+   <summary><strong>Debian (and other Debian-based distributions)</strong></summary>
 
    ```sh
-   $ sudo apt install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 hsetroot maim jq xclip imagemagick xdo
+    $ sudo apt install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 hsetroot maim jq xclip imagemagick xdo
    ```
 
    >For i3-lock and giph you need to build from source
@@ -81,28 +81,28 @@
    **``i3lock``**
 
    ```sh
-   $ sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
+    $ sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
    ```
    ```sh
-   $ git clone https://github.com/Raymo111/i3lock-color.git
-   $ cd i3lock-color
+    $ git clone https://github.com/Raymo111/i3lock-color.git
+    $ cd i3lock-color
    ```
    ```sh
-   $ ./build.sh
+    $ ./build.sh
    ```
    ```sh
-   $ ./install-i3lock-color.sh
+    $ ./install-i3lock-color.sh
    ```
 
    **``giph``**
 
    ```sh
-   $ sudo apt install ffmpeg xdotools
+    $ sudo apt install ffmpeg xdotools
    ```
    ```sh
-   $ git clone https://github.com/phisch/giph.git
-   $ cd giph
-   $ sudo make install
+    $ git clone https://github.com/phisch/giph.git
+    $ cd giph
+    $ sudo make install
    ```
 
    </details>
@@ -267,6 +267,7 @@
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
+      - [Deathemon](https://github.com/Deathemonic) for the dynamic music player support.
 
          <a href="https://github.com/janleigh/dotfiles/graphs/contributors">
             <img src="https://contrib.rocks/image?repo=janleigh/dotfiles"/>

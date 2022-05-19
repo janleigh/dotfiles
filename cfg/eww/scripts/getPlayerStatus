@@ -4,9 +4,9 @@
 PLAYER=$(playerctl -p spotify,%any,firefox,chromium,brave,mpd status)
 
 if [ "$PLAYER" = "Playing" ]; then
-    STATUS=""
+    STATUS=""
 elif [ "$PLAYER" = "Paused" ]; then
-    STATUS=""
+    STATUS=""
 elif [ "$PLAYER" = "Stopped" ]; then
     STATUS=""
 else
