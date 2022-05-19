@@ -1,13 +1,12 @@
 .dashboard-box {
     .second-row {
         .music-player {
-            // margin-left: 1px;
             margin-top: 1em;
             min-height: 130px;
 
             .song-art {
                 background-color: $bg;
-                background-size: auto 100%;
+                background-size: contain;
                 background-repeat: no-repeat;
                 border-radius: 5px;
         

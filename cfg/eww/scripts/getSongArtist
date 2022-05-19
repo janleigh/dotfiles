@@ -4,12 +4,12 @@ artist=$(playerctl metadata --format '{{ artist }}')
 title=$(playerctl metadata --format '{{ title }}')
 count=$(echo -n "$artist" | wc -c)
 
-# Check if $title is "Advertisement" cause I don't have Spotify Premium :(         Deathemonic: How about using a spicetify adblocker (The Easy Way) or a adblock script https://github.com/abba23/spotify-adblock (The Chad Way)
+# Check if $title is "Advertisement" cause I don't have Spotify Premium :(         Deathemonic: How about using a spicetify adblocker (The Easy Way) or a adblock script https://github.com/abba23/spotify-adblock (The Chad Way)       Kizu: https://github.com/abba23/spotify-adblock to big to clone for my wifi lmao
 if [ "$title" = "Advertisement" ]; then
     echo "by Spotify"
 else
     if [ -z "$artist" ]; then
-        echo "by 404 Not Found";
+        echo "Unknown Artist";
     else
         echo "by $artist"
     fi
