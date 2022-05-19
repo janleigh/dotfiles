@@ -1,5 +1,18 @@
 .dashboard-box {
     .first-row {
+        .column-one {
+            margin: 0px 1.2em 0em 0px;
+    
+            .avatar {
+                .avatar-image {
+                    background-image: url("./assets/avatar.png");
+                    background-size: cover;
+                    min-height: 144px;
+                    border-radius: 5px;
+                }
+            }
+        }
+
         .column-two {
             margin: 0 0px 0 0;
 
@@ -36,20 +49,6 @@
                     margin-bottom: 0.3em;
                     font-size: 24px;
                     font-weight: bolder;
-                }
-
-            }
-        }
-    
-        .column-one {
-            margin: 0px 1.2em 0em 0px;
-    
-            .avatar {
-                .avatar-image {
-                    background-image: url("./assets/avatar.png");
-                    background-size: cover;
-                    min-height: 144px;
-                    border-radius: 5px;
                 }
             }
         }

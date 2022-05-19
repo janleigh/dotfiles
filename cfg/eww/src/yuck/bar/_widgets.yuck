@@ -1,5 +1,5 @@
 (defwidget launcher []
-    (box :class "launcher" :orientation "h" :space-evenly "false"
+    (box :class "launcher" :orientation "v" :space-evenly "false" :valign "center"
         (button :class "launcher-btn"
             :onclick "sh ./scripts/openDashboard.sh"
             "")
@@ -72,7 +72,7 @@
                     )
                     (box :class "date" :orientation "v" :space-evenly "false"
                         (box :orientation "h" :space-evenly "false"
-                            (label :class "weekday" :text "${weekday}")
+                            (label :class "weekday" :text "${weekday}" :halign "start")
                         )
                         (label :class "monthday" :text "${monthday}" :halign "start")
                     )
@@ -161,16 +161,28 @@
             )
             (box :class "fourth-row" :orientation "h"
                 (box :class "system-btn" :orientation "h" :space-evenly "true"
-                    (button :class "network-btn" :style "background-color: ${network-color}" :onclick "iwgtk" "")
-                    (button :class "lock-btn" :onclick "sh ./scripts/lockScreen" "")
-                    (button :class "reboot-btn" :onclick "systemctl reboot" "")
-                    (button :class "shutdown-btn" :onclick "systemctl poweroff" "")
+                    (button :class "network-btn" :style "background-color: ${network_status}" :onclick "iwgtk" "")
+                    (button :class "redshift-btn" :style "background-color: ${redshift_status}" :onclick "sh ./scripts/getRedshift toggle" "")
+                    (button :class "scrot-btn" :onclick "sh ./scripts/dashActions.sh scrot" "")
+                    (button :class "jeff-btn" :style "background-color: ${jeff_status}" :onclick "sh ./scripts/dashActions.sh jeff" "")
+
+                    ; (button :class "lock-btn" :onclick "sh ./scripts/lockScreen" "")
+                    ; (button :class "reboot-btn" :onclick "systemctl reboot" "")
+                    ; (button :class "shutdown-btn" :onclick "systemctl poweroff" "")
                 )
             )
         )
     )
 )
 (defvar dash false)
+
+; (defwidget control []
+;     (box :class "control-panel" :orientation "v"  :space-evenly "false"
+;         (time)
+;         (separator)
+;         (power)
+;     )
+; )
 
 ;; BAR IS SEPARATED INTO THREE PARTS: TOP, CENTER AND BOTTOM
 ;; TOP WIDGETS
@@ -182,7 +194,6 @@
 (defwidget center []
     (box :orientation "v" :space-evenly "false" :valign "center"
         (workspaces)))
-
 ;; BOTTOM WIDGETS
 (defwidget bottom []
     (box :orientation "v" :space-evenly "false" :valign "end"
