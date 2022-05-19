@@ -153,21 +153,11 @@
    <details>
    <summary><strong>Configuration Files and Binaries</strong></summary>
 
-   - `cp` method
+   - `rsync` method <kbd>**RECOMMENDED**</kbd>
 
       ```sh
-      $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
-      $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
-
-      # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
-      $ sudo mv $HOME/.local/bin/usr/* /usr/local/bin/
-      ```
-
-   - `rsync` method <kbd>**UNTESTED**</kbd>
-
-      ```sh
-      $ rsync -avxHAXP cfg/ $HOME/.config
-      $ rsync -avxHAXP --exclude 'bin/usr/' bin/ $HOME/.local/bin/
+      $ mkdir -p $HOME/.config/ && rsync -avxHAXP cfg/ $HOME/.config
+      $ mkdir -p $HOME/.local/bin/ && rsync -avxHAXP --exclude 'bin/usr/' bin/ $HOME/.local/bin/
 
       # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
       $ sudo rsync -avxHAXP bin/usr/ /usr/local/bin/
@@ -185,12 +175,22 @@
       > | `-X`        | Preserve extended attributes                          |
       > | `-P`        | Show progress during transfer                         |
       > | `--exclude` | Exclude files matching `PATTERN`                      |
-      >
-      > **DIFFERENCES**  
-      > - `cp` is for duplicating stuff and by default only ensures files have unique full path names.
-      > - `rsync` is for synchronizing stuff and uses size and timestamp of files to decide if they should be replaced.
 
-      > I also recommend to not delete the **dotfiles** directory after cloning to make upgrades easier.
+   - `cp` method
+
+      ```sh
+      $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
+      $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
+
+      # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
+      $ sudo mv $HOME/.local/bin/usr/* /usr/local/bin/
+      ```
+
+   > **DIFFERENCES**  
+   > - `cp` is for duplicating stuff and by default only ensures files have unique full path names.
+   > - `rsync` is for synchronizing stuff and uses size and timestamp of files to decide if they should be replaced.
+
+   > I also recommend to not delete the **dotfiles** directory after cloning to make upgrades easier.
 
    </details>
 
@@ -274,7 +274,7 @@
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
-      - [Deathemon](https://github.com/Deathemonic) for the dynamic music player support.
+      - [Deathemon](https://github.com/Deathemonic) for the dynamic music player and network support.
 
          <a href="https://github.com/janleigh/dotfiles/graphs/contributors">
             <img src="https://contrib.rocks/image?repo=janleigh/dotfiles"/>
