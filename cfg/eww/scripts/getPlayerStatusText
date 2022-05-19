@@ -1,10 +1,19 @@
 #!/bin/sh
 
-# Simplfied because it was to complex and hacky, so removed the (on Browser) indication
-PLAYER=$(playerctl -p spotify,%any,firefox,chromium,brave status)
+# Kinda hacky but I will improve this
+PLAYER=$(playerctl -p spotify,%any,mpd -i firefox,chromium,brave status)
+BROWSER=$(playerctl -p firefox,chromium,brave status)
 
-if [ "$PLAYER" = "Playing" ]; then
-    echo "Now Playing"
+if [ "$BROWSER" = "Playing" ]; then
+  BROWSERMSG="true"
+elif [ "$PLAYER" = "Playing" ]; then
+  PLAYERMSG="true"
 else
-    echo "Music"
+  echo "Music"
+fi
+
+if [ "$BROWSERMSG" = "true" ]; then
+  echo "Now Playing (on Browser)"
+elif [ "$PLAYERMSG" = "true" ]; then
+  echo "Now Playing"
 fi
