@@ -1,9 +1,20 @@
 #!/bin/sh
 
+# Better fix than on https://github.com/janleigh/dotfiles/pull/26 lol
+
 # Author Notes:
-# Defaults to 0 cause I don't have Premium :(
-# Change the (has_premium) from line 15, collumm 17 into 1 if you have spotify premium
-# For some reason firefox position doesn't work I probably need to check more players if they support possition
+# Change this to something above 0 if you have Spotify Premium.
+HAS_SPOTIFY_PREMIUM=1
+# Change this to something above 0 if you want to show player position on the music player.
+SHOW_POSITION=1
+
+print_position() {
+    POSITION=$(playerctl position | sed 's/..\{6\}$//')
+    DURATION=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
+    
+    printf "%0d:%02d " $((POSITION%3600/60)) $((POSITION%60))
+    printf "/ %0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
+}
 
 if ps -C spotify > /dev/null; then
     PLAYER="spotify"
@@ -11,25 +22,23 @@ elif ps -C firefox > /dev/null; then
     PLAYER="firefox"
 fi
 
-if [ "$PLAYER" = "spotify" ]; then
-    has_premium=0
-elif [ "$PLAYER" = "firefox" ]; then
-    not_support=1
-else
-    if [ $(playerctl metadata mpris:length | wc -c) -gt 0 ]; then
-        print_position
-    fi
+if [ $SHOW_POSITION -gt 0 ]; then
+    case $PLAYER in
+        spotify)
+            if [ $HAS_SPOTIFY_PREMIUM -gt 0 ]; then
+                print_position
+            fi
+            ;;
+        *)
+            # Check if mpris:length is not null.
+            # If its not null, then we can print the song position of the player.
+            if [ $(playerctl metadata mpris:length | wc -c) -gt 0 ]; then
+                print_position
+            else
+                printf " "
+            fi
+            ;;
+    esac
 fi
 
-if [ $has_premium -gt 0 ]; then
-    POSITION=$(playerctl position | sed 's/..\{6\}$//')
-    DURATION=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
-    printf "%0d:%02d " $((POSITION%3600/60)) $((POSITION%60))
-    printf "/ %0d:%02d" $((DURATION%3600/60)) $((DURATION%60))
-elif [ $not_support -gt 0 ]; then
-    echo "Player does not support possition"
-else
-    echo "You don't have Spotify Premium."
-fi
-
-# IDK maybe fix this I guess
+# Kizu: No need to show the song duration if no player is active lol

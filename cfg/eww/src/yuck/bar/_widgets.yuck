@@ -102,9 +102,9 @@
                         )
                     )
                     (box :class "song-controls" :orientation "v"
-                        (button :onclick "playerctl next" "")
+                        (button :onclick "playerctl previous" "")
                         (button :class "play-pause" :onclick "playerctl play-pause" player_status)
-                        (button :onclick "playerctl previous" "")
+                        (button :onclick "playerctl next" "")
                     )
                 )
             )

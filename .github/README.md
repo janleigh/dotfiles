@@ -3,17 +3,21 @@
 <!-- BADGES -->
 <div align="center">
    <p></p>
-   <a href="https://github.com/janleigh/dotfiles/stargazers">
-      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%23ffb29b&labelColor=%23101415&style=for-the-badge">
+   <a href="">
+      <img src="https://img.shields.io/github/issues/janleigh/dotfiles?color=ffb29b&labelColor=1C2325&style=for-the-badge">
    </a>
-   <a href="https://github.com/janleigh/dotfiles/network/members/">
-      <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%23A2B7EE&labelColor=%23101415&style=for-the-badge">
+   <a href="https://github.com/janleigh/dotfiles/stargazers">
+      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=C9CBFF&labelColor=1C2325&style=for-the-badge">
    </a>
    <a href="https://github.com/janleigh/dotfiles/">
-      <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23ee6a70&labelColor=%23101415&style=for-the-badge">
+      <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=FCA2AA&labelColor=1C2325&style=for-the-badge">
    </a>
-   <a href="LICENSE.md">
-      <img src="https://img.shields.io/github/license/janleigh/dotfiles?color=cb92f2&labelColor=101415&style=for-the-badge">
+   <br>
+</div>
+<div align="center">
+   <p></p>
+   <a href="https://discord.gg/2RfJb3CVfb">
+      <img alt="Support Server" src="https://discord.com/api/guilds/853812920919261235/embed.png?style=banner2">
    </a>
    <br>
 </div>
@@ -23,7 +27,7 @@
 <h2></h2>
 
 <!-- INFORMATION -->
-## :herb: <samp>INFORMATION</samp> <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=91e6b1&logoColor=white&labelColor=101415"/>
+## :herb: <samp>INFORMATION</samp> <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=A7D9B2&logoColor=white&labelColor=1C2325"/>
 
    <img src="assets/rice.png" alt="Rice Preview" align="right" width="400px">
 
@@ -114,8 +118,8 @@
    <details>
    <summary><strong>Fonts</strong></summary>
 
-   |   Font List    |
-   | -------------- |
+   |    Font List     |
+   | :--------------: |
    | [`Sarasa Mono CL`](https://github.com/be5invis/Sarasa-Gothic) |
    | [`Victor Mono`](https://github.com/rubjo/victor-mono) |
    | [`DM Sans`](https://fonts.google.com/specimen/DM+Sans) |
@@ -206,21 +210,13 @@
    </details>
 
    <details>
-   <summary><strong>Finishing step</strong></summary>
+   <summary><strong>Finalizing installation</strong></summary>
 
    > Lastly, log out from your current desktop session and log in into bspwm.
 
    </details>
 
 ## :rocket: <samp>MISCELLANEOUS</samp>
-
-   - **Elkowar's Wacky Widgets** 
-      <details>
-      <summary><strong>See</strong></summary>
-
-      > If you're **NOT** using a monitor with a 1366x768 resolution, you might want to change the `x` and `y` values **AND** the margins and paddings of the SCSS of the widgets on the config.
-
-      </details>
 
    - **GTK and Icon Theme**
       <details>
@@ -259,6 +255,17 @@
       <img alt="" align="center" width="100%" src="https://starchart.cc/janleigh/dotfiles.svg"/>
    </a>
    </details>
+
+## :money_with_wings: <samp>TIP JAR</samp>
+
+   If you enjoyed it and would like to show your appreciation, you may want to tip me here.
+
+   It is never required but always appreciated. Thanks from the bottom of my heart!
+
+   |  Donate With  |                      Address                       |
+   | :-----------: | :------------------------------------------------: |
+   |     Ko-fi     |     [Click Here](https://ko-fi.com/M4M272EAY)      |
+   |    PayPal     | [Click Here](https://paypal.me/JanLeighAugustineM) |
 
 ## :tada: <samp>ACKNOWLEDGEMENTS</samp>
 

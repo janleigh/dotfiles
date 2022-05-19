@@ -13,11 +13,11 @@
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "5s"
     "./scripts/getUsedRam")
-(defpoll volume :interval "1s"
+(defpoll volume :interval "500ms"
     "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll micro :interval "1s"
+(defpoll micro :interval "500ms"
     "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll brightness :interval "1s"
+(defpoll brightness :interval "500ms"
     "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 
 ;; MUSIC PLAYER VARS
@@ -29,7 +29,7 @@
     "./scripts/getSongArtist")
 (defpoll song_title :interval "2s"
     "./scripts/getSongTitle")
-(defpoll song_position :interval "1s"
+(defpoll song_position :interval "250ms"
     "./scripts/getSongPosition")
 (defpoll song_title_full :interval "5s"
     "./scripts/getSongTitle full")
@@ -62,5 +62,5 @@
 
 ;; UTILITY ROW VARS
 (defpoll network_status :interval "1s" "scripts/getNetwork color")
-(defpoll redshift_status :interval "1s" "./scripts/getRedshift color")
+(defpoll redshift_status :interval "500ms" "./scripts/getRedshift color")
 (defpoll jeff_status :interval "1s" "./scripts/dashActions.sh jstat")
