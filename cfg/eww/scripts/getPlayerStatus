@@ -1,14 +1,16 @@
 #!/bin/sh
 
 # Set playerctl to check for spotify first priority, and any player at second priority, and make the browser the last priority
-PLAYER=$(playerctl -p spotify,%any,firefox,chromium,brave status)
+PLAYER=$(playerctl -p spotify,%any,firefox,chromium,brave,mpd status)
 
 if [ "$PLAYER" = "Playing" ]; then
-    STATUS="PL"
+    STATUS=""
 elif [ "$PLAYER" = "Paused" ]; then
-    STATUS="P"
+    STATUS=""
 elif [ "$PLAYER" = "Stopped" ]; then
-    STATUS="S"
+    STATUS=""
+else
+    STATUS=""
 fi
 
 echo $STATUS

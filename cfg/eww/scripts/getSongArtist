@@ -6,10 +6,10 @@ count=$(echo -n "$artist" | wc -c)
 
 # Check if $title is "Advertisement" cause I don't have Spotify Premium :(         Deathemonic: How about using a spicetify adblocker (The Easy Way) or a adblock script https://github.com/abba23/spotify-adblock (The Chad Way)
 if [ "$title" = "Advertisement" ]; then
-    echo "by Spotify"
+    echo "Spotify Free"
 else
     if [ -z "$artist" ]; then
-        echo "by 404 Not Found";
+        echo "Unknown Artist";
     else
         echo "by $artist"
     fi

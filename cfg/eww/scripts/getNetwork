@@ -1,12 +1,15 @@
 #!/bin/sh
 
+# Check for the available wifi interface (Wifi for now will add ethernet support soon) making it dynamic
+INTERFACE=$(iw dev | awk '$1=="Interface"{print $2}')
+
 symbol() {
     [ $(cat /sys/class/net/w*/operstate) = down ] && echo  && exit
     echo 
 }
 
 name() {
-    nmcli | grep "^wlan0" | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
+    nmcli | grep $INTERFACE | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
 }
 
 color() {

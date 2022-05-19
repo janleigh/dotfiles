@@ -59,7 +59,7 @@ run() {
     lock
 }
 
-status=$(playerctl -p spotify,%any,firefox,chromium,brave status || true)
+status=$(playerctl -p %any status || true)
 if [ "$status" == "Playing" ]; then
 	playerctl pause
 fi
@@ -79,7 +79,7 @@ $HOME/.local/bin/eww close-all
 sleep 0.2 && hide_unhide_windows
 $HOME/.local/bin/tglbar
 
-status2=$(playerctl -p spotify status || true)
+status2=$(playerctl -p %any status || true)
 if [ "$status2" == "Paused" ]; then
     playerctl play
 fi
