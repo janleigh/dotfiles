@@ -40,7 +40,7 @@ hsetroot -fill "$HOME/Pictures/walls/personal/personal-17.jpg"
 xset m 0 0
 
 # Fix for eww bar not hiding on a fullscreen window.
-$HOME/.config/bspwm/bin/ewwFlScr &
+$HOME/.config/bspwm/scripts/eww_fullscreen_fix.sh &
 
 # Start MPD and mpDris2
 exec mpd &
