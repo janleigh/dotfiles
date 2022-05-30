@@ -19,7 +19,7 @@ if [[ ! -f "$LOCK_FILE" ]]; then
     touch "$LOCK_FILE"
     run
 else
-    ${EWW_BIN} update dash=false && sleep 0.05
+    ${EWW_BIN} update dash=false && sleep 0.5
     ${EWW_BIN} close dashboard
     rm "$LOCK_FILE"
 fi
