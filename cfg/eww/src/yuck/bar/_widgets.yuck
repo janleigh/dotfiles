@@ -95,7 +95,7 @@
                 )
                 (box :class "second-row" :orientation "h"
                     (box :class "music-player" :orientation "h" :space-evenly "false"
-                        (box :class "song-art" :style "background-image: url('${art}')" song_art
+                        (box :class "song-art" :style "background-image: url('${art}')" song_art 
                             (box :class "music-info" :orientation "v" :space-evenly "false"
                                 (box :class "np" :orientation "h" :halign "start"
                                     (label :class "now-playing" :text player_status_text)
