@@ -37,7 +37,7 @@
 
    Here are more information about my setup:
 
-   - **OS:** [EndeavourOS](hhttps://endeavouros.com)
+   - **OS:** [EndeavourOS](https://endeavouros.com)
    - **WM:** [bspwm](https://github.com/baskerville/bspwm)
    - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
    - **Shell:** [zsh](https://www.zsh.org/)
