@@ -59,7 +59,7 @@
     $ cd dotfiles && git submodule update --remote --merge
    ```
 
-   ### :blossom: <samp>INSTALLATION (DEPENDENCIES)<samp>
+   ### <samp><kbd>I.</kbd> INSTALLATION (DEPENDENCIES)<samp>
    
    <details open>
    <summary><strong>Arch Linux (and other Arch-based distributions)</strong></summary>
@@ -77,15 +77,19 @@
    <summary><strong>Debian (and other Debian-based distributions)</strong></summary>
 
    ```sh
-    $ sudo apt install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 hsetroot maim jq xclip imagemagick xdo jgmenu
+    $ sudo apt install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl \
+                     mpd mpdris2 hsetroot maim jq xclip imagemagick xdo jgmenu --no-install-recommends
    ```
 
-   >For i3-lock and giph you need to build from source
+   > For `i3-lock` and `giph`, you need to build it from source.
 
    **``i3lock``**
 
    ```sh
-    $ sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
+    $ sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev \
+                     libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev \
+                     libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev \
+                     libxkbcommon-x11-dev libjpeg-dev
    ```
    ```sh
     $ git clone https://github.com/Raymo111/i3lock-color.git
@@ -111,20 +115,20 @@
 
    </details>
 
-   ### :cherry_blossom: <samp>INSTALLATION (DOTFILES)<samp>
+   ### <samp><kbd>II.</kbd> INSTALLATION (DOTFILES)<samp>
 
    Then after the dependencies are installed, copy the files to it's respective folders.
 
    <details>
    <summary><strong>Fonts</strong></summary>
 
-   |    Font List     |
-   | :--------------: |
-   | [`Sarasa Mono CL`](https://github.com/be5invis/Sarasa-Gothic) |
-   | [`Victor Mono`](https://github.com/rubjo/victor-mono) |
-   | [`DM Sans`](https://fonts.google.com/specimen/DM+Sans) |
-   | [`Material Icons`](https://github.com/google/material-design-icons/) |
-   | [`Icomoon`](https://icomoon.io/) |
+   |    Font List     |  Use  |
+   | :--------------: | :---: |
+   | [`Sarasa Mono CL`](https://github.com/be5invis/Sarasa-Gothic) | Main Font |
+   | [`Victor Mono`](https://github.com/rubjo/victor-mono) | Stylish Italic Font |
+   | [`DM Sans`](https://fonts.google.com/specimen/DM+Sans) | Main UI Font |
+   | [`Material Icons`](https://github.com/google/material-design-icons/) | Main Icon Font |
+   | [`Icomoon`](https://icomoon.io/) | Secondary Icon Font |
 
    > **NOTE**: Only important fonts has been listed on the table above.
 
@@ -139,13 +143,14 @@
 
    |   File Name    |  Alias  |
    | -------------- | ------- |
+   | [`personal-20.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-20.jpg) | Shore. |
    | [`personal-10.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-10.png) | Solid `#192022` background with cat ASCII art. |
    | [`personal-6.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-6.jpg) | Rocky beach. |
 
    > **NOTE**: Only favorite wallpapers has been listed on the table above.
 
    ```sh
-    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-10.png $HOME/Pictures/walls/personal
+    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-20.jpg $HOME/Pictures/walls/personal
    ```
 
    </details>
@@ -194,7 +199,7 @@
 
    </details>
 
-   ### :hibiscus: <samp>INSTALLATION (FINALIZING)<samp>
+   ### <samp><kbd>III.</kbd> INSTALLATION (FINALIZING)<samp>
 
    Once finished copying the files, you might want to finalize the changes to your system.
 
@@ -222,11 +227,21 @@
       <details>
       <summary><strong>See</strong></summary>
 
-      > You can find the custom GTK theme [here](https://github.com/janleigh/gtk3). You can then apply it by changing the `gtk-theme-name` to `kizus_phocus` on your GTK3 config. For the icon theme, you can install [Zafiro Icons](https://github.com/zayronxio/Zafiro-icons/) icon theme since it suits the GTK theme.
+      > You can find the custom GTK theme [here](https://github.com/janleigh/gtk3). You can then apply it by changing the value of `gtk-theme-name` to `kizus_phocus` on your GTK3 config. 
+      
+      > For the icon theme, you can install [Zafiro Icons](https://github.com/zayronxio/Zafiro-icons/) icon theme since it suits the GTK theme.
 
       </details>
 
-   - **Firefox Custom CSS <kbd>Suggested</kbd>**
+   - **Cursor Theme**
+      <details>
+      <summary><strong>See</strong></summary>
+
+      > You can install [volantes-cursors](https://github.com/varlesh/volantes-cursors) or [phinger-cursors](https://github.com/phisch/phinger-cursors) cursor themes since it blends well with the overall desktop.
+
+      </details>
+
+   - **Firefox Custom CSS <kbd>OPTIONAL</kbd>**
       <details>
       <summary><strong>See</strong></summary>
 
@@ -234,7 +249,7 @@
 
       </details>
 
-   - **Replacement Commands <kbd>Suggested</kbd>**
+   - **Replacement Commands <kbd>OPTIONAL</kbd>**
       <details>
       <summary><strong>See</strong></summary>
 
@@ -248,13 +263,13 @@
 
 ## :japan: <samp>GALLERY</samp>
 
-   <details open>
-   <summary><strong>Star History</strong></summary>
+   | <b>Minimal Vertical Bar</b> |
+   | :-------------------------: |
+   | <img src="assets/gallery_bar.png" alt="Bar Preview"> |
 
-   <a target="_blank" href="https://starchart.cc/janleigh/dotfiles">
-      <img alt="" align="center" width="100%" src="https://starchart.cc/janleigh/dotfiles.svg"/>
-   </a>
-   </details>
+   | <b>Dashboard Action Center</b>
+   | :----------------------------: |
+   | <img src="assets/gallery_dashboard.png" alt="Dashboard Preview"> |
 
 ## :money_with_wings: <samp>TIP JAR</samp>
 
