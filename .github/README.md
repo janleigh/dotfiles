@@ -29,7 +29,7 @@
 <!-- INFORMATION -->
 ## :herb: <samp>INFORMATION</samp> <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=A7D9B2&logoColor=white&labelColor=1C2325"/>
 
-   <img src="assets/rice.png" alt="Rice Preview" align="right" width="400px">
+   <img src="assets/showcase.png" alt="Rice Showcase" align="right" width="400px">
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
@@ -37,7 +37,7 @@
 
    Here are more information about my setup:
 
-   - **OS:** [Arch Linux](https://archlinux.org)
+   - **OS:** [EndeavourOS](hhttps://endeavouros.com)
    - **WM:** [bspwm](https://github.com/baskerville/bspwm)
    - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
    - **Shell:** [zsh](https://www.zsh.org/)
@@ -143,9 +143,9 @@
 
    |   File Name    |  Alias  |
    | -------------- | ------- |
-   | [`personal-20.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-20.jpg) | Shore. |
-   | [`personal-10.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-10.png) | Solid `#192022` background with cat ASCII art. |
    | [`personal-6.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-6.jpg) | Rocky beach. |
+   | [`personal-10.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-10.png) | Solid `#192022` background with cat ASCII art. |
+   | [`personal-20.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-20.jpg) | Comfy waves. |
 
    > **NOTE**: Only favorite wallpapers has been listed on the table above.
 
@@ -161,11 +161,11 @@
    - `rsync` method <kbd>**RECOMMENDED**</kbd>
 
       ```sh
-      $ mkdir -p $HOME/.config/ && rsync -avxHAXP cfg/ $HOME/.config
-      $ mkdir -p $HOME/.local/bin/ && rsync -avxHAXP --exclude 'bin/usr/' bin/ $HOME/.local/bin/
+       $ mkdir -p $HOME/.config/ && rsync -avxHAXP cfg/ $HOME/.config
+       $ mkdir -p $HOME/.local/bin/ && rsync -avxHAXP --exclude 'bin/usr/' bin/ $HOME/.local/bin/
 
-      # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
-      $ sudo rsync -avxHAXP bin/usr/ /usr/local/bin/
+       # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
+       $ sudo rsync -avxHAXP bin/usr/ /usr/local/bin/
       ```
 
       > **WARNING**: Ensure the `rsync` command must be correct as above.
@@ -184,11 +184,11 @@
    - `cp` method
 
       ```sh
-      $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
-      $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
+       $ mkdir -p $HOME/.config/ && cp -r ./cfg/* $HOME/.config/
+       $ mkdir -p $HOME/.local/bin/ && cp -r ./bin/* $HOME/.local/bin/
 
-      # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
-      $ sudo mv $HOME/.local/bin/usr/* /usr/local/bin/
+       # To make tabbed and chwb2 to work, you must move it to /usr/local/bin.
+       $ sudo mv $HOME/.local/bin/usr/* /usr/local/bin/
       ```
 
    > **DIFFERENCES**  
@@ -267,7 +267,7 @@
    | :-------------------------: |
    | <img src="assets/gallery_bar.png" height="500px" alt="Bar Preview"> |
 
-   | <b>Dashboard Action Center</b> |
+   | <b>Dashboard / Action Center</b> |
    | :----------------------------: |
    | <img src="assets/gallery_dashboard.png" height="500px" alt="Dashboard Preview"> |
 
@@ -293,7 +293,7 @@
 
    - **Contributors**
       - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
-      - [Deathemon](https://github.com/Deathemonic) for the dynamic music player and network support.
+      - [Deathemon](https://github.com/Deathemonic) for the dynamic music player, network support of the dashboard and maintaining the wiki.
 
          <a href="https://github.com/janleigh/dotfiles/graphs/contributors">
             <img src="https://contrib.rocks/image?repo=janleigh/dotfiles"/>
