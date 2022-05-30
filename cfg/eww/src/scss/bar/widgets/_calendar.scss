@@ -1,15 +1,21 @@
-.cal-box {
-    background-color: #0b0f10;
-    border-radius: 8px;
-    padding: 1rem 1rem .2rem;
-
-    .cal {
-        &.highlight {
-            padding: 10rem;
+.cal-window {
+    .cal-spacer {
+        transition: all 1800ms cubic-bezier(.1,-0.00,.0,1.49);
+    }
+    
+    .cal-box {
+        background-color: #0b0f10;
+        border-radius: 8px;
+        padding: 1rem 1rem .2rem;
+    
+        .cal {
+            &.highlight {
+                padding: 10rem;
+            }
+    
+            padding: .8rem .5rem 0rem;
+            margin-left: 10px;
         }
-
-        padding: .8rem .25rem 0rem;
-        margin-left: 10px;
     }
 }
 

@@ -7,7 +7,7 @@
     :stacking "bg"
     :windowtype "dock"
     :wm-ignore false
-(bar))
+    (bar))
 
 (defwindow dashboard
     :geometry (geometry :x "30%"
@@ -22,8 +22,11 @@
 
 (defwindow calendar
     :geometry (geometry :x "57px"
-                        :y "-1%" 
-                        :width "270px" 
-                        :height "60px"
+                        :y "12%" 
+                        :width "250px" 
+                        :height "340px"
                         :anchor "bottom left")
+    :windowtype "dock"
+    :stacking "fg"
+    :wm-ignore false
     (cal))

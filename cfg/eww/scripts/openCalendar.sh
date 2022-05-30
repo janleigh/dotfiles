@@ -20,7 +20,7 @@ if [[ ! -f "$LOCK_FILE" ]]; then
     touch "$LOCK_FILE"
     run
 else
-    ${EWW_BIN} update call=false && sleep 0.05
+    ${EWW_BIN} update call=false && sleep 0.5
     ${EWW_BIN} close calendar
     rm "$LOCK_FILE"
 fi

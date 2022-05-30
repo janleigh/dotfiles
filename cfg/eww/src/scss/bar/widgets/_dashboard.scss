@@ -1,5 +1,11 @@
-.dashboard-box {
-    background-color: #0b0f10;
-    border-radius: 6px;
-    padding: 2em;
+.dashboard-window {
+    .dashboard-spacer {
+        transition: all 1800ms cubic-bezier(.1,-0.00,.0,1.49);
+    }
+    
+    .dashboard-box {
+        background-color: #0b0f10;
+        border-radius: 6px;
+        padding: 2em;
+    }
 }
