@@ -17,5 +17,5 @@ xsetroot -cursor_name left_ptr
 # Start the window manager.
 export XDG_SESSION_TYPE=x11
 export XDG_CURRENT_DESKTOP=bspwm
-export XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+# exec dbus-run-session bspwm
 exec bspwm

@@ -52,6 +52,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dl="curl -C - -L -O"
+alias gitgud="echo 'git gud loser'"
+alias mirrorupd="sudo reflector --verbose -c Philippines -c Indonesia -c Japan -c Singapore --sort rate --save /etc/pacman.d/mirrorlist"
+alias rfsh="sudo swapoff -a && sudo swapon -a && sudo sysctl vm.drop_caches=1"
+alias reload="source ~/.zshrc"
 
 alias c="clear"
 alias cat="bat"
@@ -60,12 +64,15 @@ alias ls="exa"
 alias find="fd"
 alias nf="neofetch"
 alias vi="nvim"
+alias nv="nvim"
+alias mv="mv -v"
+alias cp="cp -vr"
+alias rm="rm -vr"
 
 # Init starship
 eval "$(starship init zsh)"
-
-# Setup Starship custom prompt
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # Change history file
 export HISTFILE=$HOME/.cache/.zsh_history
+export HISTSIZE=10000
