@@ -265,11 +265,15 @@
 
    | <b>Minimal Vertical Bar</b> |
    | :-------------------------: |
-   | <img src="assets/gallery_bar.png" alt="Bar Preview"> |
+   | <img src="assets/gallery_bar.png" height="500px" alt="Bar Preview"> |
 
-   | <b>Dashboard Action Center</b>
+   | <b>Dashboard Action Center</b> |
    | :----------------------------: |
-   | <img src="assets/gallery_dashboard.png" alt="Dashboard Preview"> |
+   | <img src="assets/gallery_dashboard.png" height="500px" alt="Dashboard Preview"> |
+
+   | <b>Lockscreen</b> |
+   | :---------------: |
+   | <img src="assets/gallery_lockscreen.png" width="500px" alt="Lockscreen Preview"> |
 
 ## :money_with_wings: <samp>TIP JAR</samp>
 
