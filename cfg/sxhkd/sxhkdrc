@@ -1,120 +1,143 @@
 # ##############################################################################
-# #                                   KEYBINDS                                 #
+# #                                 APPLICATIONS                               #
 # ##############################################################################
 
-# Focus next/prev window
-super + {_,shift + }f
-    bspc node -f {next,prev}.local.!hidden.window
+# Open web browser, and file manager.
+super + shift + {w,f}
+	{firefox,thunar}
 
-# Fullscreen window with gaps
-alt + f
-    sh $HOME/.local/bin/tglbar
+# Open terminal.
+super + Return
+	tabbed -n "term" alacritty -t "term" --embed
 
-# Move the focused window
+# Open application menu.
+super + d
+	sh $HOME/.local/bin/appmnu
+
+# ##############################################################################
+# #                                   HOTKEYS                                  #
+# ##############################################################################
+
+# Toggle lock screen.
+super + shift + l
+	sh $HOME/.local/bin/lck
+
+# Toggle dashboard.
+super + shift + d
+	sh $HOME/.config/eww/scripts/openDashboard.sh
+
+# Toggle notification center.
+super + shift + n
+	sh $HOME/.local/bin/notifcntr
+
+# Toggle color picker.
+super + shift + p
+	sh $HOME/.local/bin/xcolor-pick
+
+# Toggle bar.
+super + shift + b
+	sh $HOME/.local/bin/tglbar
+
+# ##############################################################################
+# #                                 CONTROL KEYS                               #
+# ##############################################################################
+
+# Raise/lower volume.
+XF86Audio{Raise,Lower}Volume
+	amixer -q set Master 5%{+,-}
+
+# Mute/unmute volume.
+XF86AudioMute
+	sh $HOME/.config/sxhkd/scripts/audioToggle.sh
+
+# Raise/lower brightness.
+XF86MonBrightness{Up,Down}
+	brightnessctl set 5%{+,-}
+
+# Screenshot; Save to local storage
+Print
+	DATE=$(date '+%b%d-%H-%M.png'); \
+	maim -us "$HOME/Pictures/Screenshots/$DATE"; \
+	sh $HOME/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE
+
+# Screenshot; Upload to CDN
+super + Print
+	DATE=$(date '+%b%d-%H-%M.png'); \
+	maim -us "$HOME/Pictures/Screenshots/$DATE"; \
+	sh $HOME/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
+
+# ##############################################################################
+# #                                 WINDOW KEYS                                #
+# ##############################################################################
+
+# Cycle focus through windows.
+super + {p,n}
+	bspc node -f {prev,next}.local.!hidden.window
+
+# Kill the focused window.
+super + c
+	bspc node -c
+
+# Move the focused window by direction.
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# Kill the focused window
-super + c
-    bspc node -c
-
-# Move to or send window to workspace #
+# Move to or send window to workspace.
 super + {_,shift + }{1-8}
 	bspc {desktop -f,node -d} '^{1-8}'
 
-# Resize window
+# Shrink focused window.
 super + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + shift + {Right,Top,Bottom,Left}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
+# Expand focused window.
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + alt + {Right,Top,Bottom,Left}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# Set window state
-super + {alt + t,shift + t,space,alt + f}
+# Set window state.
+super + {t,shift + t,space,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# Set new window orientation
+# Set new window orientation.
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
+super + ctrl + {Left,Bottom,Top,Right}
+	bspc node -p {west,south,north,east}
 
-# Cancel the new window orientation
+# Cancel the new window orientation.
 super + ctrl + space
 	bspc node -p cancel
 
-# Shutdown system
-super + shift + s
-    systemctl poweroff
+# ##############################################################################
+# #                             WINDOW MANAGER KEYS                            #
+# ##############################################################################
 
-# Restart system
-super + shift + r
-    systemctl reboot
-
-# Lock screen
-super + l
-    sh $HOME/.local/bin/lck
-
-# Start alacritty
-super + Return
-    tabbed -n "term" alacritty -t "term" --embed
-
-# Open application menu
-super + a
-    sh $HOME/.local/bin/appmnu
-
-# Toggle dashboard
-super + shift + d
-    sh $HOME/.config/eww/scripts/openDashboard.sh
-
-# Toggle dashboard but middle click
-~button2
-    sh $HOME/.config/sxhkd/scripts/openDashboard.sh
-
-# Toggle notification center
-super + n
-    sh $HOME/.local/bin/notifcntr
-
-# Toggle color picker
-super + p
-    sh $HOME/.local/bin/xcolor-pick
-
-# Toggle right click context menu
-~button3
-    bspc query -D -d .focused.!occupied && echo -e "$(cat ~/.config/jgmenu/menu.txt)" | jgmenu --simple
-
-# Screenshot
-# Save to local storage
-Print
-    DATE=$(date '+%b%d-%H-%M.png'); \
-    maim -us "$HOME/Pictures/Screenshots/$DATE"; \
-    sh $HOME/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE
-
-# Upload to CDN
-super + Print
-    DATE=$(date '+%b%d-%H-%M.png'); \
-    maim -us "$HOME/Pictures/Screenshots/$DATE"; \
-    sh $HOME/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
-
-# Manage volume
-XF86Audio{Raise,Lower}Volume
-    amixer -q set Master 5%{+,-}
-
-XF86AudioMute
-    sh $HOME/.config/sxhkd/scripts/audioToggle.sh
-
-# Manage brightness
-XF86MonBrightness{Up,Down}
-    brightnessctl set 5%{+,-}
-
-# Restart sxhkd
+# Restart sxhkd.
 super + alt + r
-    pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd
 
-# Quit and restart bspwm
+# Quit/restart bspwm.
 super + ctrl + {q,r}
-    bspc {quit,wm -r}
+	bspc {quit,wm -r}
 
-# =============================================================================
+# ##############################################################################
+# #                                MOUSE HOTKEYS                               #
+# ##############################################################################
 
-# Open browser
-super + b
-    firefox
+# Close all active notifications.
+~button1
+	bspc query -D -d .focused.!occupied && dunstctl close-all
+
+# Toggle dashboard using middle click.
+~button2
+	bspc query -D -d .focused.!occupied && sh $HOME/.config/eww/scripts/openDashboard.sh
+
+# Toggle right click context menu.
+~button3
+	bspc query -D -d .focused.!occupied && echo -e "$(cat ~/.config/jgmenu/menu.txt)" | jgmenu --simple
+
+# EOF
