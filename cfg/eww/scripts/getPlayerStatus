@@ -7,10 +7,8 @@ if [ "$PLAYER" = "Playing" ]; then
     STATUS=""
 elif [ "$PLAYER" = "Paused" ]; then
     STATUS=""
-elif [ "$PLAYER" = "Stopped" ]; then
-    STATUS=""
 else
-    STATUS=""
+    STATUS=""
 fi
 
 echo $STATUS

@@ -1,0 +1,33 @@
+.battery {
+    // .bat-icon {
+    //     font-size: 1.8em;
+    //     color: #192022;
+    // }
+
+    // scale trough {
+    //     background-color: $bgSecondary;
+    //     border-radius: 6px;
+    //     min-height: 6.5em;
+    //     min-width: 3em;
+    //     margin: 0rem .4em 0.2em;
+    // }
+
+    // .bat-bar  {
+    //     trough highlight {
+    //         background-image: linear-gradient(to top, #87c7a1, $green);
+    //         border-radius: 6px;
+    //     }
+    // }
+
+    .bat-progress {
+        margin-bottom: 1em;
+        background-color: $bgSecondary;
+        color: $green;
+
+        .bat-icon {
+            font-size: 2.5em;
+
+            margin: .5em;
+        }
+    }
+}

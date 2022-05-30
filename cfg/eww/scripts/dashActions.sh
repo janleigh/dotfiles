@@ -14,7 +14,6 @@ run_giph() {
         # Some stuff.
         ps x | grep 'ffmpeg -f x11grab' | grep -v grep | awk '{print $1}' | xargs kill
 
-
         sh $HOME/.local/bin/jeff selmp4
     else
         rm "$JEFF_LOCK_FILE"
@@ -37,7 +36,6 @@ case $1 in
 
         DATE=$(date '+%b%d-%H-%M.png')
         maim -us | tee "$HOME/Pictures/Screenshots/$DATE" | xclip -selection clipboard -t image/png
-        # Can't send notification though. Idk why.
         ;;
     "jeff")
         pre_run

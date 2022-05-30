@@ -77,6 +77,10 @@ super + n
 super + p
     sh $HOME/.local/bin/xcolor-pick
 
+# Toggle right click context menu
+~button3
+    bspc query -D -d .focused.!occupied && echo -e "$(cat ~/.config/jgmenu/menu.txt)" | jgmenu --simple
+
 # Screenshot
 # Save to local storage
 Print
@@ -106,7 +110,7 @@ super + alt + r
     pkill -USR1 -x sxhkd
 
 # Quit and restart bspwm
-super + alt + {q,shift + }r
+super + ctrl + {q,r}
     bspc {quit,wm -r}
 
 # =============================================================================

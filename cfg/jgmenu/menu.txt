@@ -1,0 +1,11 @@
+Browser,firefox,firefox
+File Manager,thunar,org.xfce.thunar
+^sep()
+Launch Terminal,alacritty,utilities-terminal
+^sep()
+Lock,$HOME/.local/bin/lck,utox
+Exit,^checkout(exit),system-shutdown
+^tag(exit)
+Log Out, bspc quit,system-logout
+Reboot,systemctl -i reboot,system-reboot
+Shutdown,systemctl -i poweroff,system-shutdown

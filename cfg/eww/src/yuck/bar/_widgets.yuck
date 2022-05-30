@@ -1,7 +1,8 @@
 (defwidget launcher []
     (box :class "launcher" :orientation "v" :space-evenly "false" :valign "center"
         (button :class "launcher-btn"
-            :onclick "sh ./scripts/openDashboard.sh"
+            :onclick "$HOME/.local/bin/appmnu"
+            ; :onrightclick "sh ./scripts/openDashboard.sh"
             "")
     )
 )
@@ -11,18 +12,10 @@
 (deflisten workspace "scripts/getWorkspaces")
 
 (defwidget power []
-    (eventbox :onhover "${eww} update power=true" :onhoverlost "${eww} update power=false" 
-        (box :orientation "v" :space-evenly "false" :vexpand "false" :class "powermenu"
-            (revealer :transition "slideup"
-                :reveal power
-                :duration "600ms"
-                (box :orientation "v" :space-evenly "false"
-                    (button :class "logout-btn" :tooltip "Logout" :onclick "bspc quit" "")
-                    ; (button :class "lock-btn" :tooltip "Lock Screen":onclick "sh ./scripts/lockScreen" "")
-                    (button :class "reboot-btn" :tooltip "Reboot" :onclick "systemctl reboot" "")
-                    (button	:class "shutdown-btn" :tooltip "Shutdown" :onclick "systemctl poweroff" "")))
-            (button :class "notif-btn" :tooltip "Notification Center" :onclick "$HOME/.local/bin/notifcntr" ""))))
-(defvar power false)
+    (box :orientation "v" :space-evenly "false" :vexpand "false" :class "powermenu"
+        (button :class "notif-btn" :tooltip "Notification Center" :onclick "$HOME/.local/bin/notifcntr" "")
+    )
+)
 
 (defwidget time []
     (box :orientation "v"
@@ -31,7 +24,28 @@
         (button :onclick "sh scripts/openCalendar.sh"
             :class "time-hour" hour)
         (button :onclick "sh scripts/openCalendar.sh"
-            :class "time-min"  minute)
+            :class "time-min" minute)
+    )
+)
+
+(defwidget battery []
+    (box :class "battery" :orientation "v" :space-evenly "false"
+        ; (overlay
+        ;     (scale :class "bat-bar"
+        ;         :value battery_capacity
+        ;         :max 100
+        ;         :orientation "v"
+        ;         :flipped true
+        ;     )
+        ;     (label :class "bat-icon" :text battery_icon)
+        ; )
+        (circular-progress :class "bat-progress"
+            :value battery_capacity
+            :thickness 4
+            :clockwise true
+            :start-at 75
+            (label :class "bat-icon" :text "")
+        )
     )
 )
 
@@ -53,137 +67,127 @@
 (defvar call false)
 
 (defwidget dashboard []
-    (revealer :transition "crossfade"
+    (revealer :transition "slideleft"
         :reveal dash
-        :duration "250ms"
-        (box :class "dashboard-box" :orientation "v" :space-evenly "false"
-            (box :class "first-row" :orientation "h"
-                (box :class "column-one" :orientation "v"
-                    (box :class "avatar"
-                        (box :class "avatar-image")
-                    )
-                )
-                (box :class "column-two" :orientation "v" :space-evenly "false"
-                    (box :class "weather" :orientation "v" :space-evenly "false"
-                        (box :orientation "h" :space-evenly "false" 
-                            (label :class "weather-desc" :text "${weather_desc}")
+        :duration "800ms"
+        (box :class "fake-box"
+            (box :class "dashboard-box" :orientation "v" :space-evenly "false"
+                (box :class "first-row" :orientation "h"
+                    (box :class "column-one" :orientation "v"
+                        (box :class "avatar"
+                            (box :class "avatar-image")
                         )
-                        (label :class "weather-temp" :text "${weather_temp}°C (${weather_feels_like}°C)" :halign "start")
                     )
-                    (box :class "date" :orientation "v" :space-evenly "false"
-                        (box :orientation "h" :space-evenly "false"
-                            (label :class "weekday" :text "${weekday}" :halign "start")
-                        )
-                        (label :class "monthday" :text "${monthday}" :halign "start")
-                    )
-                )
-            )
-            (box :class "second-row" :orientation "h"
-                (box :class "music-player" :orientation "h" :space-evenly "false"
-                    (box :class "song-art" :style "background-image: url('${art}')" song_art
-                        (box :class "music-info" :orientation "v" :space-evenly "false"
-                            (box :class "np" :orientation "h" :halign "start"
-                                (label :class "now-playing" :text player_status_text)
+                    (box :class "column-two" :orientation "v" :space-evenly "false"
+                        (box :class "weather" :orientation "v" :space-evenly "false"
+                            (box :orientation "h" :space-evenly "false" 
+                                (label :class "weather-desc" :text "${weather_desc}")
                             )
-                            (box :class "title" :orientation "h" :halign "start"
-                                (label :class "song-title"
-                                :text song_title
-                                :tooltip song_title
-                                :limit-width 20)
-                            )
-                            (box :class "artist" :orientation "h" :halign "start"
-                                (label :class "song-artist"
-                                    :text song_artist
-                                    :limit-width 30)
-                            )
-                            (box :class "position" :orientation "h" :halign "start"
-                                (label :class "song-position" :text song_position)
-                            )
+                            (label :class "weather-temp" :text "${weather_temp}°C (${weather_feels_like}°C)" :halign "start")
                         )
-                    )
-                    (box :class "song-controls" :orientation "v"
-                        (button :onclick "playerctl previous" "")
-                        (button :class "play-pause" :onclick "playerctl play-pause" player_status)
-                        (button :onclick "playerctl next" "")
-                    )
-                )
-            )
-            (box :class "third-row" :orientation "h" :space-evenly "false"
-                (box :class "system-info-scale" :orientation "h" :space-evenly "false"
-                    (box :class "ram" :orientation "v"  :space-evenly "false"
-                        (label :class "ram-usage" :text "RAM")
-                        (circular-progress :class "ram-progress"
-                            :value used_ram
-                            :thickness 5
-                            :clockwise "true"
-                            :tooltip "Used RAM: ${used_ram}%" 
-                            (label :class "ram-icon" :text "")
+                        (box :class "date" :orientation "v" :space-evenly "false"
+                            (box :orientation "h" :space-evenly "false"
+                                (label :class "weekday" :text "${weekday}" :halign "start")
+                            )
+                            (label :class "monthday" :text "${monthday}" :halign "start")
                         )
                     )
                 )
-                (box :class "system-info" :orientation "h" :space-evenly "false"
-                    (box :class "volume" :orientation "v" :space-evenly "false"
-                        (label :class "volume-icon" :text "")
-                        (scale :min 0
-                            :max 101
-                            :value volume
-                            :orientation "v"
-                            :flipped true
-                            :tooltip "Volume: ${volume}%"
-                            :onchange "amixer -D pulse sset Master {}%"
-                            :class "volbar"
+                (box :class "second-row" :orientation "h"
+                    (box :class "music-player" :orientation "h" :space-evenly "false"
+                        (box :class "song-art" :style "background-image: url('${art}')" song_art
+                            (box :class "music-info" :orientation "v" :space-evenly "false"
+                                (box :class "np" :orientation "h" :halign "start"
+                                    (label :class "now-playing" :text player_status_text)
+                                )
+                                (box :class "title" :orientation "h" :halign "start"
+                                    (label :class "song-title"
+                                    :text song_title
+                                    :tooltip song_title
+                                    :limit-width 20)
+                                )
+                                (box :class "artist" :orientation "h" :halign "start"
+                                    (label :class "song-artist"
+                                        :text song_artist
+                                        :limit-width 30)
+                                )
+                                (box :class "position" :orientation "h" :halign "start"
+                                    (label :class "song-position" :text song_position)
+                                )
+                            )
                         )
-                    )
-                    (box :class "brightness" :orientation "v" :space-evenly "false"
-                        (label :class "brightness-icon" :text "")
-                        (scale :min 0
-                            :max 101
-                            :value brightness
-                            :orientation "v"
-                            :flipped true
-                            :tooltip "Brightness: ${brightness}%"
-                            :onchange "brightnessctl set {}%"
-                            :class "bribar"
-                        )
-                    )
-                    (box :class "mic" :orientation "v" :space-evenly "false"
-                        (label :class "mic-icon" :text "")
-                        (scale :min 0
-                            :max 101
-                            :value micro
-                            :orientation "v"
-                            :flipped true
-                            :tooltip "Microphone Volume: ${micro}%"
-                            :onchange "amixer -D pulse sset Capture {}%"
-                            :class "micbar"
+                        (box :class "song-controls" :orientation "v"
+                            (button :onclick "playerctl previous" "")
+                            (button :class "play-pause" :onclick "playerctl play-pause" player_status)
+                            (button :onclick "playerctl next" "")
                         )
                     )
                 )
-            )
-            (box :class "fourth-row" :orientation "h"
-                (box :class "system-btn" :orientation "h" :space-evenly "true"
-                    (button :class "network-btn" :style "background-color: ${network_status}" :tooltip "Network" :onclick "iwgtk &" "")
-                    (button :class "redshift-btn" :style "background-color: ${redshift_status}" :tooltip "Night Light" :onclick "sh ./scripts/getRedshift toggle" "")
-                    (button :class "scrot-btn" :onclick "sh ./scripts/dashActions.sh scrot" :tooltip "Screenshot" "")
-                    (button :class "jeff-btn" :style "background-color: ${jeff_status}" :tooltip "Capture Screen" :onclick "sh ./scripts/dashActions.sh jeff" "")
-
-                    ; (button :class "lock-btn" :onclick "sh ./scripts/lockScreen" "")
-                    ; (button :class "reboot-btn" :onclick "systemctl reboot" "")
-                    ; (button :class "shutdown-btn" :onclick "systemctl poweroff" "")
+                (box :class "third-row" :orientation "h" :space-evenly "false"
+                    (box :class "system-info-scale" :orientation "h" :space-evenly "false"
+                        (box :class "ram" :orientation "v"  :space-evenly "false"
+                            (label :class "ram-usage" :text "RAM")
+                            (circular-progress :class "ram-progress"
+                                :value used_ram
+                                :thickness 5
+                                :clockwise "true"
+                                :tooltip "Used RAM: ${used_ram}%" 
+                                (label :class "ram-icon" :text "")
+                            )
+                        )
+                    )
+                    (box :class "system-info" :orientation "h" :space-evenly "false"
+                        (box :class "volume" :orientation "v" :space-evenly "false"
+                            (label :class "volume-icon" :text "")
+                            (scale :min 0
+                                :max 101
+                                :value volume
+                                :orientation "v"
+                                :flipped true
+                                :tooltip "Volume: ${volume}%"
+                                :onchange "amixer -D pulse sset Master {}%"
+                                :class "volbar"
+                            )
+                        )
+                        (box :class "brightness" :orientation "v" :space-evenly "false"
+                            (label :class "brightness-icon" :text "")
+                            (scale :min 0
+                                :max 101
+                                :value brightness
+                                :orientation "v"
+                                :flipped true
+                                :tooltip "Brightness: ${brightness}%"
+                                :onchange "brightnessctl set {}%"
+                                :class "bribar"
+                            )
+                        )
+                        (box :class "mic" :orientation "v" :space-evenly "false"
+                            (label :class "mic-icon" :text "")
+                            (scale :min 0
+                                :max 101
+                                :value micro
+                                :orientation "v"
+                                :flipped true
+                                :tooltip "Microphone Volume: ${micro}%"
+                                :onchange "amixer -D pulse sset Capture {}%"
+                                :class "micbar"
+                            )
+                        )
+                    )
+                )
+                (box :class "fourth-row" :orientation "h"
+                    (box :class "system-btn" :orientation "h" :space-evenly "true"
+                        (button :class "network-btn" :style "background-color: ${network_status}" :tooltip "Network" :onclick "iwgtk &" "")
+                        (button :class "redshift-btn" :style "background-color: ${redshift_status}" :tooltip "Night Light" :onclick "sh ./scripts/getRedshift toggle" "")
+                        (button :class "scrot-btn" :onclick "sh ./scripts/dashActions.sh scrot" :tooltip "Screenshot" "")
+                        (button :class "jeff-btn" :style "background-color: ${jeff_status}" :tooltip "Capture Screen" :onclick "sh ./scripts/dashActions.sh jeff" "")
+                    )
                 )
             )
         )
     )
 )
 (defvar dash false)
-
-; (defwidget control []
-;     (box :class "control-panel" :orientation "v"  :space-evenly "false"
-;         (time)
-;         (separator)
-;         (power)
-;     )
-; )
 
 ;; BAR IS SEPARATED INTO THREE PARTS: TOP, CENTER AND BOTTOM
 ;; TOP WIDGETS
@@ -198,10 +202,12 @@
 ;; BOTTOM WIDGETS
 (defwidget bottom []
     (box :orientation "v" :space-evenly "false" :valign "end"
+        (battery)
+        (separator)
         (time)
         (separator)
         (power)))
-
+    
 (defwidget bar []
     (box :class "eww-bar" :orientation "v" :valign "false" :halign "false"
         (top)

@@ -19,6 +19,10 @@
     "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll brightness :interval "500ms"
     "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll battery_icon :interval "1s"
+    "./scripts/getBattery icon")
+(defpoll battery_capacity :interval "1s"
+    "./scripts/getBattery capacity")
 
 ;; MUSIC PLAYER VARS
 (defpoll art :interval "5s"

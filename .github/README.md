@@ -68,7 +68,7 @@
 
    ```sh
     $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl \
-              hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph redshift --needed
+              hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph redshift jgmenu --needed
    ```
 
    </details>
@@ -77,7 +77,7 @@
    <summary><strong>Debian (and other Debian-based distributions)</strong></summary>
 
    ```sh
-    $ sudo apt install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 hsetroot maim jq xclip imagemagick xdo
+    $ sudo apt install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 hsetroot maim jq xclip imagemagick xdo jgmenu
    ```
 
    >For i3-lock and giph you need to build from source
