@@ -19,7 +19,7 @@ super + d
 # ##############################################################################
 
 # Toggle lock screen.
-super + shift + l
+super + l
 	sh $HOME/.local/bin/lck
 
 # Toggle dashboard.

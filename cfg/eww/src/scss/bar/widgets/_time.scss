@@ -1,8 +1,10 @@
 .time {
-    font-weight: bold;
-    font-size: 1.3em;
-    color: $foreground;
-    border-radius: 6px;
-    margin: .1em .2em;
-    padding: .4em .1em .3em;
+	background-color: #1C2325;
+	border-radius: inherit;
+
+	font-weight: bold;
+	font-size: 1.3em;
+
+	margin: .2em 0em 0em;
+	padding: .6em .1em;
 }

@@ -1,33 +1,33 @@
 .lock-screen {
-    background-color: #0B0F10;
-    border-radius: 6px;
+	background-color: #0B0F10;
+	border-radius: 6px;
 
-    .lock-inner {
-        margin-top: 1em;
-        .lock-pfp {
-            background-image: url("./assets/avatar.png");
-            background-size: 100%;
-            border-radius: 100%;
-    
-            margin: 2.4rem 6.5rem 0rem;
-        }
-    
-        .lock-text {
-            margin: 2.5rem 1rem;
-            padding: 1rem;
-    
-            .lock-username {
-                color: $fg;
-                font-size: 20px;
-            }
-    
-            .lock-hostname {
-                color: #6e7071;
-                font-size: 16px;
-                font-style: italic;
-                font-family: "VictorMono Nerd Font";
-                // margin-bottom: -6rem;
-            }
-        }
-    }
+	.lock-inner {
+		margin-top: 1em;
+		.lock-pfp {
+			background-image: url("./assets/avatar.png");
+			background-size: 100%;
+			border-radius: 100%;
+	
+			margin: 2.4rem 6.5rem 0rem;
+		}
+	
+		.lock-text {
+			margin: 2.5rem 1rem;
+			padding: 1rem;
+	
+			.lock-username {
+				color: $fg;
+				font-size: 20px;
+			}
+	
+			.lock-hostname {
+				color: #6e7071;
+				font-size: 16px;
+				font-style: italic;
+				font-family: "VictorMono Nerd Font";
+				// margin-bottom: -6rem;
+			}
+		}
+	}
 }

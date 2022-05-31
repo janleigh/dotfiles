@@ -1,7 +1,7 @@
 Browser,firefox,firefox
 File Manager,thunar,org.xfce.thunar
 ^sep()
-Launch Terminal,alacritty,utilities-terminal
+Launch Terminal,tabbed -n "term" alacritty -t "term" --embed,utilities-terminal
 ^sep()
 Lock,$HOME/.local/bin/lck,utox
 Exit,^checkout(exit),system-shutdown

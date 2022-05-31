@@ -1,0 +1,31 @@
+.dashboard-box {
+	.system-btn {
+		margin-top: 1em;
+		padding: 1em 1.5em;
+		background-color: $bg;
+		border-radius: 5px;
+
+		button {
+			font-size: 28px;
+			margin: .2em .3em;
+			padding: .4em;
+			background-color: $bgSecondary;
+			border-radius: 30%;
+			font-family: "Material Icons";
+
+			&:hover {
+				color: $accent;
+			}
+		}
+
+		.lock-btn {
+			color: $blue-desaturated;
+		}
+		.reboot-btn {
+			color: $magenta;
+		}
+		.shutdown-btn {
+			color: $red;
+		}
+	}
+}

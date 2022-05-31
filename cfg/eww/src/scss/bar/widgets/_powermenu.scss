@@ -1,29 +1,29 @@
 .powermenu {
-    font-family: "Material Icons";
-    font-size: 1.5em;
+	font-family: "Material Icons";
+	font-size: 1.5em;
 
-    button {
-        margin: .35em .35em .75em .35em;
+	button {
+		margin: .35em .35em .75em .35em;
 
-        &:hover {
-            color: $accent;
-        }
-    }
+		&:hover {
+			color: $accent;
+		}
+	}
 
-    // .reboot-btn {
-    //     color: $magenta;
-    // }
-    // .lock-btn {
-    //     color: $green;
-    // }
-    // .logout-btn {
-    //     color: $blue-desaturated;
-    // }
-    // .shutdown-btn {
-    //     color: $red;
-    // }
-    .notif-btn {
-        color: $fg;
-        font-weight: normal;
-    }
+	// .reboot-btn {
+	//     color: $magenta;
+	// }
+	// .lock-btn {
+	//     color: $green;
+	// }
+	// .logout-btn {
+	//     color: $blue-desaturated;
+	// }
+	// .shutdown-btn {
+	//     color: $red;
+	// }
+	.notif-btn {
+		color: $fg;
+		font-weight: normal;
+	}
 }

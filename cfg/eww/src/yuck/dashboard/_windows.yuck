@@ -1,0 +1,10 @@
+(defwindow dashboard
+	:geometry (geometry :x "30%"
+						:y "0px" 
+						:width "26%" 
+						:height "82%"
+						:anchor "center right")
+	:windowtype "dock"
+	:stacking "fg"
+	:wm-ignore false
+	(dashboard))

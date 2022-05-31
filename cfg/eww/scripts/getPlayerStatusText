@@ -5,15 +5,15 @@ PLAYER=$(playerctl -p spotify,%any,mpd -i firefox,chromium,brave status)
 BROWSER=$(playerctl -p firefox,chromium,brave status)
 
 if [ "$BROWSER" = "Playing" ]; then
-  BROWSERMSG="true"
+	BROWSERMSG="true"
 elif [ "$PLAYER" = "Playing" ]; then
-  PLAYERMSG="true"
+	PLAYERMSG="true"
 else
-  echo "Music"
+	echo "Music"
 fi
 
 if [ "$BROWSERMSG" = "true" ]; then
-  echo "Now Playing (on Browser)"
+	echo "Now Playing (on Browser)"
 elif [ "$PLAYERMSG" = "true" ]; then
-  echo "Now Playing"
+	echo "Now Playing"
 fi

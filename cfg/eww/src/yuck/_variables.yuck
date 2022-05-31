@@ -2,67 +2,67 @@
 
 ;;  DATE VARS 
 (defpoll minute :interval "1s"
-    "date '+%M'")
+	"date '+%M'")
 (defpoll hour :interval "1s"
-    "date '+%H'")
+	"date '+%H'")
 (defpoll weekday :interval "24h"
-    "date '+%A'")
+	"date '+%A'")
 (defpoll monthday :interval "24h"
-    "date '+%d %b'")
+	"date '+%d %b'")
 
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "5s"
-    "./scripts/getUsedRam")
+	"./scripts/getUsedRam")
 (defpoll volume :interval "500ms"
-    "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+	"amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll micro :interval "500ms"
-    "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+	"amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll brightness :interval "500ms"
-    "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+	"brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 (defpoll battery_icon :interval "1s"
-    "./scripts/getBattery icon")
+	"./scripts/getBattery icon")
 (defpoll battery_capacity :interval "1s"
-    "./scripts/getBattery capacity")
+	"./scripts/getBattery capacity")
 
 ;; MUSIC PLAYER VARS
 (defpoll art :interval "5s"
-    "./scripts/echoSongArt")
+	"./scripts/echoSongArt")
 (defpoll song_art :interval "5s"
-    "./scripts/getSongArt")
+	"./scripts/getSongArt")
 (defpoll song_artist :interval "5s"
-    "./scripts/getSongArtist")
+	"./scripts/getSongArtist")
 (defpoll song_title :interval "2s"
-    "./scripts/getSongTitle")
+	"./scripts/getSongTitle")
 (defpoll song_position :interval "250ms"
-    "./scripts/getSongPosition")
+	"./scripts/getSongPosition")
 (defpoll song_title_full :interval "5s"
-    "./scripts/getSongTitle full")
+	"./scripts/getSongTitle full")
 (defpoll player_status :interval "2s"
-    "./scripts/getPlayerStatus")
+	"./scripts/getPlayerStatus")
 (defpoll player_status_text :interval "2s"
-    "./scripts/getPlayerStatusText")
+	"./scripts/getPlayerStatusText")
 
 ;; LOCK SCREEN VARS
 (defpoll username :interval "12h"
-    "whoami")
+	"whoami")
 (defpoll hostname :interval "12h"
-    "hostname")
+	"hostname")
 
 ;; WEATHER VARS
 (defpoll weather_temp :interval "5m"
-    "./scripts/getWeather current_temp")
+	"./scripts/getWeather current_temp")
 (defpoll weather_desc :interval "5m"
-    "./scripts/getWeather weather_desc")
+	"./scripts/getWeather weather_desc")
 (defpoll weather_feels_like :interval "5m"
-    "./scripts/getWeather feels_like")
+	"./scripts/getWeather feels_like")
 
 ;; CALENDAR VARS
 (defpoll calendar_day :interval "10h"
-    "date '+%d'")
+	"date '+%d'")
 (defpoll calendar_month :interval "10h"
-    "./scripts/getCalendarMonth")
+	"./scripts/getCalendarMonth")
 (defpoll calendar_year :interval "10h"
-    "date '+%Y'")
+	"date '+%Y'")
 
 ;; UTILITY ROW VARS
 (defpoll network_status :interval "1s" "scripts/getNetwork color")

@@ -1,16 +1,16 @@
 * {
-    all: unset;
+	all: unset;
 }
 
 window {
-    color: $fg;
-    font-family: "Sarasa Mono CL Nerd Font";
-    // font-family: "Roboto";
+	color: $fg;
+	font-family: "Sarasa Mono CL Nerd Font";
+	// font-family: "Roboto";
 }
 
 tooltip {
-    background-color: $bgSecondaryAlt;
-    border-radius: 4px;
-    font-family: "DM Sans";
-    font-size: 14px;
+	background-color: $bgSecondaryAlt;
+	border-radius: 4px;
+	font-family: "DM Sans";
+	font-size: 14px;
 }

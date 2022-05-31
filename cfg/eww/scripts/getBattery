@@ -1,24 +1,24 @@
 #!/bin/bash
 
 case $1 in
-    "icon")
-        if [[ -d /sys/class/power_supply/ACAD ]]; then
-            echo ""
-        elif [[ -d /sys/class/power_supply/BAT ]]; then
-            if [[ $(cat /sys/class/power_supply/BAT/status) == "Discharging" ]]; then
-                echo ""
-            else
-                echo ""
-            fi
-        else
-            echo ""
-        fi
-        ;;
-    "capacity")
-        if [ -f /sys/class/power_supply/BAT0/capacity ]; then
-            echo $(cat /sys/class/power_supply/BAT0/capacity)
-        else
-            echo 100
-        fi
-        ;;
+	"icon")
+		if [[ -d /sys/class/power_supply/ACAD ]]; then
+			echo ""
+		elif [[ -d /sys/class/power_supply/BAT ]]; then
+			if [[ $(cat /sys/class/power_supply/BAT/status) == "Discharging" ]]; then
+				echo ""
+			else
+				echo ""
+			fi
+		else
+			echo ""
+		fi
+		;;
+	"capacity")
+		if [ -f /sys/class/power_supply/BAT0/capacity ]; then
+			echo $(cat /sys/class/power_supply/BAT0/capacity)
+		else
+			echo 100
+		fi
+		;;
 esac
