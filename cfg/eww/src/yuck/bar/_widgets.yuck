@@ -42,7 +42,7 @@
 		:orientation "v"
 		:space-evenly "false"
 		(circular-progress :class "bat-progress"
-			:value 70
+			:value battery_capacity
 			:thickness 4
 			:clockwise true
 			:start-at 75
