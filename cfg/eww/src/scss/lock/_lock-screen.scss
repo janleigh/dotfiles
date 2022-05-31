@@ -1,7 +1,9 @@
-.lock-screen {
+.lock-screen, .lock-system-info {
 	background-color: #0B0F10;
 	border-radius: 6px;
+}
 
+.lock-screen {
 	.lock-inner {
 		margin-top: 1em;
 		.lock-pfp {
