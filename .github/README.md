@@ -68,7 +68,8 @@
 
    ```sh
     $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl \
-              hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph redshift jgmenu --needed
+              hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph redshift \ 
+              jgmenu git-lfs --needed
    ```
 
    </details>
@@ -77,8 +78,9 @@
    <summary><strong>Debian (and other Debian-based distributions)</strong></summary>
 
    ```sh
-    $ sudo apt install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl \
-                     mpd mpdris2 hsetroot maim jq xclip imagemagick xdo jgmenu --no-install-recommends
+    $ sudo apt install --no-install-recommends bspwm sxhkd rofi neovim alacritty viewnior \
+                     picom brightnessctl playerctl mpd mpdris2 hsetroot maim jq xclip \
+                     imagemagick xdo jgmenu git-lfs
    ```
 
    > For `i3-lock` and `giph`, you need to build it from source.
@@ -143,14 +145,12 @@
 
    |   File Name    |  Alias  |
    | -------------- | ------- |
-   | [`personal-6.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-6.jpg) | Rocky beach. |
-   | [`personal-10.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-10.png) | Solid `#192022` background with cat ASCII art. |
-   | [`personal-20.jpg`](https://github.com/janleigh/walls/blob/master/personal/personal-20.jpg) | Comfy waves. |
+   | [`comfy_waves.jpg`](https://github.com/janleigh/walls/blob/master/real/comfy_waves.jpg) | Comfy waves. |
 
    > **NOTE**: Only favorite wallpapers has been listed on the table above.
 
    ```sh
-    $ mkdir -p $HOME/Pictures/walls/personal && cp -r ./etc/walls/personal/personal-20.jpg $HOME/Pictures/walls/personal
+    $ mkdir -p $HOME/Pictures/walls/real && cp -r ./etc/walls/real/comfy_waves.jpg $HOME/Pictures/walls/real
    ```
 
    </details>
