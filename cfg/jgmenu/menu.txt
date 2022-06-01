@@ -1,4 +1,4 @@
-Browser,firefox,firefox
+Browser,firefox-developer-edition,firefox-developer-edition
 File Manager,thunar,org.xfce.thunar
 ^sep()
 Launch Terminal,tabbed -n "term" alacritty -t "term" --embed,utilities-terminal

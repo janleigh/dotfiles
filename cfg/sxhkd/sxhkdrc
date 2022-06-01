@@ -4,7 +4,7 @@
 
 # Open web browser, and file manager.
 super + shift + {w,f}
-	{firefox,thunar}
+	{firefox-developer-edition,thunar}
 
 # Open terminal.
 super + Return

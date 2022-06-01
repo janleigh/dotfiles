@@ -55,15 +55,10 @@ exec mpDris2 &
 
 bspc monitor -d 1 2 3 4 5 6
 
-rule Vivaldi-stable                 desktop=1
-rule firefox                        desktop=1
+rule firefoxdeveloperedition        desktop=1
 rule discord                        desktop=2
 rule Code                           desktop=3
-rule Client                         desktop=3 state=floating
-rule lunarclient                    desktop=3 state=tiled
-rule Lutris                         desktop=5 state=floating
 rule Steam                          desktop=5
-rule mpv                            state=floating
 rule Viewnior                       state=floating
 
 # bspc config external_rules_command  "$HOME/.config/bspwm/scripts/spotify_wmclass.sh"
