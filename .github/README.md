@@ -54,6 +54,8 @@
    This is step-by-step how to install these dotfiles. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
 
    First of all, this repository contains submodules. Ensure they are updated before installing.
+
+   > Make sure to have [Git LFS](https://git-lfs.github.com) installed since it's being used for the wallpaper submodule.
    ```sh
     $ git clone --recurse-submodules https://github.com/janleigh/dotfiles.git
     $ cd dotfiles && git submodule update --remote --merge
@@ -67,9 +69,9 @@
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
-    $ paru -S bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl \
-              hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph redshift \ 
-              jgmenu git-lfs --needed
+    $ paru -S --needed bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl \
+              playerctl hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph \ 
+              jgmenu redshift
    ```
 
    </details>
@@ -80,7 +82,7 @@
    ```sh
     $ sudo apt install --no-install-recommends bspwm sxhkd rofi neovim alacritty viewnior \
                      picom brightnessctl playerctl mpd mpdris2 hsetroot maim jq xclip \
-                     imagemagick xdo jgmenu git-lfs
+                     imagemagick xdo jgmenu
    ```
 
    > For `i3-lock` and `giph`, you need to build it from source.
