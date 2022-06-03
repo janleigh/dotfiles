@@ -58,12 +58,12 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "275x5-10-12"
+    geometry = "275x15-10-12"
 
     # Frame
-    frame_width = 3
-    frame_color = "#131718"
-    outer_frame_width = 7
+    frame_width = 4
+    frame_color = "#151A1C"
+    outer_frame_width = 10
     outer_frame_color = "#0B0F10"
 
     # The transparency of the window. range: [0; 100]
@@ -95,7 +95,7 @@
 
     # Should a notification popped up from history be sticky or
     # timeout as if it would normally do.
-    sticky_history = yes
+    sticky_history = no
 
     # The height of a single line. If the height is smaller than the font height,
     # it will get raised to the font height.
@@ -125,11 +125,8 @@
     # automatically after a crash.
     startup_notification = false
 
-    # Browser for opening urls in context menu
-    browser = /usr/bin/firefox
-
     # Align icons left/right/off
-    icon_position = left
+    icon_position = on
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 64
@@ -152,15 +149,15 @@
 
 [urgency_low]
     background = "#0B0F10"
-    foreground = "#898c8d"
-    timeout = 5
+    foreground = "#6e7071"
+    timeout = 4
 
 [urgency_normal]
     background = "#0B0F10"
-    foreground = "#a7aaab"
-    timeout = 7
+    foreground = "#9fa0a0"
+    timeout = 4
 
 [urgency_critical]
     background = "#0B0F10"
     foreground = "#c5c8c9"
-    timeout = 10
+    timeout = 4
