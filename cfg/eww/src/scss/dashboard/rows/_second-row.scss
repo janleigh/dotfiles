@@ -5,7 +5,7 @@
 			min-height: 130px;
 
 			.song-art {
-				background-color: $bg;
+				background-color: $background-primary;
 				background-size: cover;
 				background-repeat: no-repeat;
 				border-radius: 5px;
@@ -29,18 +29,17 @@
 						font-size: 16px;
 						font-weight: bolder;
 					}
-					.artist {
-						color: $fgDim;
+					.artist, .position {
+						color: $foreground-secondary;
 					}
 					.position {
-						color: $fgDim;
 						margin-top: 3em;
 					}
 				}
 			}
 			
 			.song-controls {
-				background-color: $bg;
+				background-color: $background-primary;
 				padding: 0em 1em;
 				margin-left: 10px;
 				border-radius: 5px;

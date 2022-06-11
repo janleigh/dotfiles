@@ -6,9 +6,10 @@ count=$(echo -n "$title" | wc -c)
 if [ -z "$title" ]; then
 	echo "Nothing Playing";
 else
+	# Eww can't truncate Japanese characters.
 	if [[ "$title" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
-		echo $(playerctl metadata --format '{{ title }}' | awk '{ print substr($1, 1, 10) }')...
+		echo ${title::10}...
 	else
 		echo $title
-	fi 
+	fi
 fi

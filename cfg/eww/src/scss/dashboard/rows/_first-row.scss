@@ -17,12 +17,12 @@
 			margin: 0 0px 0 0;
 
 			.date {
-				background-color: $bg;
+				background-color: $background-primary;
 				border-radius: 5px;
 				margin-top: 1em;
 			
 				.weekday {
-					color: $fgDim;
+					color: $foreground-secondary;
 					margin-top: 1em;
 					margin-left: 1em;
 				}
@@ -35,11 +35,11 @@
 				}
 			}
 			.weather {
-				background-color: $bg;
+				background-color: $background-primary;
 				border-radius: 5px;
 
 				.weather-desc {
-					color: $fgDim;
+					color: $foreground-secondary;
 					margin-left: 1em;
 					margin-top: 1em;
 				}

@@ -1,5 +1,5 @@
 .lock-screen, .lock-system-info {
-	background-color: #0B0F10;
+	background-color: $darker-background;
 	border-radius: 6px;
 }
 
@@ -19,16 +19,15 @@
 			padding: 1rem;
 	
 			.lock-username {
-				color: $fg;
+				color: $foreground-primary;
 				font-size: 20px;
 			}
 	
 			.lock-hostname {
-				color: #6e7071;
+				color: $foreground-tertiary;
 				font-size: 16px;
 				font-style: italic;
 				font-family: "VictorMono Nerd Font";
-				// margin-bottom: -6rem;
 			}
 		}
 	}

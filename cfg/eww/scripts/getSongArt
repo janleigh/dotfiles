@@ -22,6 +22,6 @@ fi
 # an epic effekt
 # convert $tmp_temp_path -alpha set -channel A -evaluate multiply 0.3  $tmp_cover_path
 convert $tmp_temp_path -gravity center +repage -alpha set -channel A \
-	-sparse-color Barycentric '%[fx:w*2/32],0 opaque  %[fx:w+0.5],0 transparent' \
+	-sparse-color Barycentric '%[fx:w*2/32],0 transparent  %[fx:w+0.5],0 opaque' \
 	-evaluate multiply 0.45 \
 	$tmp_cover_path

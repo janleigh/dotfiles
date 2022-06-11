@@ -4,10 +4,10 @@ window {
 	}
 
 	.eww-bar {
-		background-color: #0b0f10;
+		background-color: $darker-background;
 	}
 	
 	.separator {
-		color: $bgSecondaryAlt;
+		color: $background-tertiary;
 	}
 }

@@ -37,14 +37,14 @@
 
    Here are more information about my setup:
 
-   - **OS:** [EndeavourOS](https://endeavouros.com)
-   - **WM:** [bspwm](https://github.com/baskerville/bspwm)
+   - **Window Manager:** [bspwm](https://github.com/baskerville/bspwm)
    - **Terminal:** [alacritty](https://github.com/alacritty/alacritty)
    - **Shell:** [zsh](https://www.zsh.org/)
    - **Panel:** [eww](https://github.com/elkowar/eww)
    - **Compositor:** [picom](https://github.com/yshui/picom)
    - **Editor:** [neovim](https://github.com/neovim/neovim)
    - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
+   - **Notification Manager:** [dunst](https://github.com/dunst-project/dunst)
    - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
@@ -63,7 +63,7 @@
 
    ### <samp><kbd>I.</kbd> INSTALLATION (DEPENDENCIES)<samp>
    
-   <details open>
+   <details>
    <summary><strong>Arch Linux (and other Arch-based distributions)</strong></summary>
 
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
@@ -220,6 +220,12 @@
    <summary><strong>Finalizing installation</strong></summary>
 
    > Lastly, log out from your current desktop session and log in into bspwm.
+
+   > If you're using [`~/.xinitrc`](https://wiki.archlinux.org/title/Xinit), simply add the following line at the end.
+
+   ```sh
+    exec bspwm
+   ```
 
    </details>
 

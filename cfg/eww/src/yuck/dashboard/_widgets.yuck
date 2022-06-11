@@ -39,7 +39,7 @@
 							(box :class "artist" :orientation "h" :halign "start"
 								(label :class "song-artist"
 									:text song_artist
-									:limit-width 30)
+									:limit-width 35)
 							)
 							(box :class "position" :orientation "h" :halign "start"
 								(label :class "song-position" :text song_position)

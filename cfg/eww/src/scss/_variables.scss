@@ -1,16 +1,11 @@
-$bg: #101415;
-$bgSecondary: #131718;
-$bgSecondaryAlt: #151a1c;
-$fg: #C5C8C9;
-$fgDim: #9fa0a0;
-$watermelon: #ff4757;
+$darker-background: #0b0f10;
+$background-primary: #101415;
+$background-secondary: #131718;
+$background-tertiary: #151a1c;
 
-// Aliases
-$background: $bg;
-$backgroundSecondary: $bgSecondary;
-$backgroundSecondaryAlt: $bgSecondaryAlt;
-$foreground: $fg;
-$foregroundDim: $fgDim;
+$foreground-primary: #C5C8C9;
+$foreground-secondary: #9fa0a0;
+$foreground-tertiary: #6e7071;
 
 $red: #ee6a70;
 $blue: #7ba5dd;
@@ -19,6 +14,7 @@ $magenta: #cb92f2;
 $green: #96d6b0;
 $yellow: #ffb29b;
 $accent: $blue;
+
 $javacafeMagenta: #d7c1ed;
 $javacafeBlue: #bac8ef;
 $javacafeCyan: #c7e5d6;

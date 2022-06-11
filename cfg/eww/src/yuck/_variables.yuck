@@ -26,7 +26,7 @@
 
 ;; MUSIC PLAYER VARS
 (defpoll art :interval "5s"
-	"./scripts/echoSongArt")
+	"echo \"$HOME/.cache/eww/getart/cover.png\"")
 (defpoll song_art :interval "5s"
 	"./scripts/getSongArt")
 (defpoll song_artist :interval "5s"
