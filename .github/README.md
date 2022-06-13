@@ -297,11 +297,12 @@
 ## :tada: <samp>ACKNOWLEDGEMENTS</samp>
 
    - **Inspiration**
-      - [owl4ce](https://github.com/owl4ce) for the README style.
+      - [`owl4ce`](https://github.com/owl4ce)
 
    - **Contributors**
-      - [flyingcakes85](https://github.com/flyingcakes85) for the **OLD** 1920x1080 eww config. 
-      - [Deathemon](https://github.com/Deathemonic) for the dynamic music player, network support of the dashboard and maintaining the wiki.
+      - [`flyingcakes85`](https://github.com/flyingcakes85)
+      - [`Deathemon`](https://github.com/Deathemonic)
+      - [`abissaldev`](https://github.com/abissaldev)
 
          <a href="https://github.com/janleigh/dotfiles/graphs/contributors">
             <img src="https://contrib.rocks/image?repo=janleigh/dotfiles"/>
