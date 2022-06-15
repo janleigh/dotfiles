@@ -16,10 +16,10 @@
   background-color: #080c0d !important;
 }
 .epWhU7hHGktzlO_dop6z {
-  background-color: #7ba5dd !important;
+  background-color: #96d6b0 !important;
 }
 .progress-bar__slider {
-  border: 2px solid #7ba5dd !important;
+  border: 2px solid #96d6b0 !important;
 }
 .n87ifzfQlmGX8vkeYGDL {
   background-color: #0b0f10 !important;
@@ -40,6 +40,16 @@
 }
 .main-playPauseButton-button {
   color: #c5c8c9 !important;
+}
+.gHYQaG:hover {
+  background-color: #96d6b0 !important;
+}
+.main-trackList-trackList .JUa6JJNj7R_Y3i4P8YUX {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+.eSMjmiD29Ox35O95waw6:after, .eSMjmiD29Ox35O95waw6:before {
+  background: none !important;
 }
 /* fuck ads */
 .main-leaderboardComponent-container,
