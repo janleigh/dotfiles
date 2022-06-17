@@ -5,7 +5,7 @@
 		:halign "center"
 		(button :class "launcher-btn"
 				:onclick "$HOME/.local/bin/appmnu"
-				""
+				""
 		)
 	)
 )
@@ -18,9 +18,13 @@
 	(box :class "action-center"
 		:orientation "h"
 		:space-evenly "false"
-		(button :class "dash-btn" :tooltip "Dashboard"
+		(button :class "notif-btn" :tooltip "Notification Center"
 			:onclick "$HOME/.local/bin/notifcntr"
 			""
+		)
+		(button :class "dash-btn" :tooltip "Dashboard"
+			:onclick "$HOME/.config/eww/scripts/openDashboard.sh; $HOME/.local/bin/eww close dashboard"
+			""
 		)
 	)
 )
@@ -58,7 +62,7 @@
 
 (defwidget separator [] 
 	(box :orientation "h"
-		(label :class "separator":text "｜")
+		(label :class "separator" :text "‏‏‎ ‎‏‏‎ ‎")
 	)
 )
 
@@ -93,6 +97,8 @@
 ;; BOTTOM WIDGETS
 (defwidget bottom []
 	(box :orientation "h" :space-evenly "false" :halign "end"
+		(battery)
+		(separator)
 		(action-center)))
 	
 (defwidget bar []

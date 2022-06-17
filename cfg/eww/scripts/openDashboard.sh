@@ -17,7 +17,8 @@ fi
 		touch "$LOCK_FILE"
 		run
 	else
-		${EWW_BIN} update dash=false && sleep 0.5
+		${EWW_BIN} update dash=false
+		sleep 0.4
 		${EWW_BIN} close dashboard
 		rm "$LOCK_FILE"
 	fi

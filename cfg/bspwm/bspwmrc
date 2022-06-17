@@ -19,8 +19,9 @@ start() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # #                                AUTOSTART APPS                              #
 # ##############################################################################
 
-# Clear dunst cache for notification manager
+# Clear cache.
 rm $HOME/.cache/dunst.log
+rm $HOME/.cache/fake_battery_capacity
 
 # Autostart Apps
 # $HOME/.local/bin/eww daemon &

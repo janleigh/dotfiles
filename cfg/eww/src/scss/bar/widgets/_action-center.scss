@@ -2,13 +2,13 @@
 	font-family: "Material Icons";
 	font-size: 1.5em;
 
-	margin: .5em .5em .5em 1.25em;
+	border-radius: 6px;
+	background-color: #1c2325;
+
+	margin: .5em .95em .5em 0em;
 
 	button {
-		border-radius: 6px;
-		margin: 0em .25em;
-		padding: .05em .75em 0em;
-
-		background-color: #1c2325;
+		padding: .05em .5em 0em;
+		
 	}
 }
