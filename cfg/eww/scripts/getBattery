@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Internal use. Do not edit.
-FAKE_BATTERY="1"
+FAKE_BATTERY="0"
 
 if [ "$FAKE_BATTERY" -gt 0 ]; then
 	if [ ! -f "$HOME/.cache/fake_battery_capacity" ]; then
