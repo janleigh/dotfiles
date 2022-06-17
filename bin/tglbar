@@ -12,8 +12,8 @@ if [[ ! -f "$LOCK_FILE" ]]; then
     bspc config top_padding 0
 else
     rm "$LOCK_FILE"
-    bspc config left_padding 20
-    bspc config right_padding 20
+    bspc config left_padding 13
+    bspc config right_padding 13
     bspc config top_padding 62
 
     sleep 0.4; ${EWW_BIN} open bar && xdo lower -N eww-bar

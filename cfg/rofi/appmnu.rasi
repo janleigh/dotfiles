@@ -13,7 +13,7 @@ configuration {
 window {    
     location:	                    west;
     anchor:		                    west;
-    x-offset:                       28px;
+    x-offset:                       29px;
     y-offset:                       15px;
     transparency:                   "real";
     width:						    359px;

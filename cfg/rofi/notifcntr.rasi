@@ -11,7 +11,7 @@ configuration {
 window {    
     location:	                    northeast;
     anchor:		                    northeast;
-    x-offset:                       -28px;
+    x-offset:                       -29px;
     y-offset:                       78px;
     transparency:                   "real";
     line-margin:                    1;
