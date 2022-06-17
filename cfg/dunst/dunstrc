@@ -61,9 +61,9 @@
     geometry = "275x15-10-12"
 
     # Frame
-    frame_width = 4
+    frame_width = 3
     frame_color = "#151A1C"
-    outer_frame_width = 10
+    outer_frame_width = 7
     outer_frame_color = "#0B0F10"
 
     # The transparency of the window. range: [0; 100]

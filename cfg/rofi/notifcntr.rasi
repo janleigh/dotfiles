@@ -9,17 +9,17 @@ configuration {
 }
 
 window {    
-    location:	                    southwest;
-    anchor:		                    southwest;
-    x-offset:                       57px;
-    y-offset:                       -12px;
+    location:	                    northeast;
+    anchor:		                    northeast;
+    x-offset:                       -28px;
+    y-offset:                       78px;
     transparency:                   "real";
     line-margin:                    1;
     line-padding:                   1;
     width:						    27%;
     height:							72%;
     border:                         2px;
-    border-radius:                  6px;
+    border-radius:                  10px;
     border-color:                   @background;
 }
 

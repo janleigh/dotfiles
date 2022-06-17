@@ -148,11 +148,12 @@
    |   File Name    |  Alias  |
    | -------------- | ------- |
    | [`comfy_waves.jpg`](https://github.com/janleigh/walls/blob/master/real/comfy_waves.jpg) | Comfy waves. |
+   | [`wave.png`](https://github.com/janleigh/walls/blob/master/real/wave.png) | To be filled. |
 
    > **NOTE**: Only favorite wallpapers has been listed on the table above.
 
    ```sh
-    $ mkdir -p $HOME/Pictures/walls/real && cp -r ./etc/walls/real/comfy_waves.jpg $HOME/Pictures/walls/real
+    $ mkdir -p $HOME/Pictures/walls/real && cp -r ./etc/walls/real/wave.png $HOME/Pictures/walls/real
    ```
 
    </details>

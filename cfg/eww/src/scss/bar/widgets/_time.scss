@@ -1,10 +1,11 @@
 .time {
-	background-color: #1C2325;
-	border-radius: inherit;
-
 	font-weight: bold;
 	font-size: 1.3em;
 
 	margin: .2em 0em 0em;
-	padding: .6em .1em;
+
+	.time-sep {
+		margin-bottom: .2em;
+		color: $foreground-primary;
+	}
 }

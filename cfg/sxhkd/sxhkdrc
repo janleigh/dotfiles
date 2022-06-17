@@ -83,8 +83,8 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Move to or send window to workspace.
-super + {_,shift + }{1-8}
-	bspc {desktop -f,node -d} '^{1-8}'
+super + {_,shift + }{1-5}
+	bspc {desktop -f,node -d} '^{1-5}'
 
 # Shrink focused window.
 super + shift + {h,j,k,l}

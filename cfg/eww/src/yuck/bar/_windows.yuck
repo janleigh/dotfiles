@@ -1,8 +1,8 @@
 (defwindow bar
-	:geometry (geometry :x "0%"
-						:y "0%" 
-						:height "100%" 
-						:width "46px")
+	:geometry (geometry :x "2%"
+						:y "2%" 
+						:height "6%" 
+						:width "96%")
 	:monitor 0
 	:stacking "bg"
 	:windowtype "dock"
@@ -10,11 +10,11 @@
 	(bar))
 
 (defwindow calendar
-	:geometry (geometry :x "57px"
-						:y "-1%" 
+	:geometry (geometry :x "0%"
+						:y "10%" 
 						:width "250px" 
 						:height "240px"
-						:anchor "bottom left")
+						:anchor "top center")
 	:windowtype "dock"
 	:stacking "fg"
 	:wm-ignore false

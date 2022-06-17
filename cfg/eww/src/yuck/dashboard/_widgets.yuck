@@ -1,6 +1,6 @@
 (defwidget dashboard []
 	(box :class "dashboard-window" :space-evenly "false"  :orientation "h"
-		(box :class "dashboard-spacer" :style {dash ? "padding-left: 0em;" : "padding-left: 35em;"})
+		(box :class "dashboard-spacer" :style {dash ? "padding-left: 0em;" : "padding-left: 437px;"})
 		(box :class "dashboard-box" :orientation "v" :space-evenly "false"
 			(box :class "first-row" :orientation "h"
 				(box :class "column-one" :orientation "v"

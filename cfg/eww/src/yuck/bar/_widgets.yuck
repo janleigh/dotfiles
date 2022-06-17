@@ -1,11 +1,11 @@
 (defwidget launcher []
 	(box :class "launcher"
-		:orientation "v"
+		:orientation "h"
 		:space-evenly "false"
-		:valign "center"
+		:halign "center"
 		(button :class "launcher-btn"
 				:onclick "$HOME/.local/bin/appmnu"
-				""
+				""
 		)
 	)
 )
@@ -14,22 +14,26 @@
 	(literal :content workspace))
 (deflisten workspace "scripts/getWorkspaces")
 
-(defwidget power []
-	(box :class "powermenu"
-		:orientation "v"
+(defwidget action-center []
+	(box :class "action-center"
+		:orientation "h"
 		:space-evenly "false"
-		(button :class "notif-btn" :tooltip "Notification Center" :onclick "$HOME/.local/bin/notifcntr" "")
+		(button :class "dash-btn" :tooltip "Dashboard"
+			:onclick "$HOME/.local/bin/notifcntr"
+			""
+		)
 	)
 )
 
 (defwidget time []
-	(box :orientation "v"
-		:class "time" 
-		:valign "end"
+	(box :orientation "h"
+		:class "time"
+		:valign "center"
 		(button :class "time-hour" 
 			:onclick "sh scripts/openCalendar.sh"
 			:tooltip "It is currently ${hour}:${minute}"
 			hour)
+		(label :class "time-sep" :text ":")
 		(button :class "time-min"
 			:onclick "sh scripts/openCalendar.sh"
 			:tooltip "It is currently ${hour}:${minute}"
@@ -39,7 +43,7 @@
 
 (defwidget battery []
 	(box :class "battery"
-		:orientation "v"
+		:orientation "h"
 		:space-evenly "false"
 		(circular-progress :class "bat-progress"
 			:value battery_capacity
@@ -54,7 +58,7 @@
 
 (defwidget separator [] 
 	(box :orientation "h"
-		(label :class "separator":text "———")
+		(label :class "separator":text "｜")
 	)
 )
 
@@ -75,34 +79,24 @@
 )
 (defvar call false)
 
-(defwidget control-panel []
-	(box :class "control-panel"
-		:orientation "v"
-		:space-evenly "false"
-		(battery)
-		(time)
-	)
-)
-
 ;; BAR IS SEPARATED INTO THREE PARTS: TOP, CENTER AND BOTTOM
 ;; TOP WIDGETS
 (defwidget top []
-	(box :class "top" :orientation "v" :space-evenly "false" :valign "start"
-		(launcher)))
+	(box :class "top" :orientation "h" :space-evenly "false" :halign "start"
+		(launcher)
+		(workspaces)))
 
 ;; CENTER WIDGETS
 (defwidget center []
-	(box :orientation "v" :space-evenly "false" :valign "center"
-		(workspaces)))
+	(box :orientation "h" :space-evenly "false" :halign "center"
+		(time)))
 ;; BOTTOM WIDGETS
 (defwidget bottom []
-	(box :orientation "v" :space-evenly "false" :valign "end"
-		(control-panel)
-		(separator)
-		(power)))
+	(box :orientation "h" :space-evenly "false" :halign "end"
+		(action-center)))
 	
 (defwidget bar []
-	(box :class "eww-bar" :orientation "v" :valign "false" :halign "false"
+	(box :class "eww-bar" :orientation "h" :valign "false" :halign "false"
 		(top)
 		(center)
 		(bottom)))

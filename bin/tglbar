@@ -8,9 +8,13 @@ if [[ ! -f "$LOCK_FILE" ]]; then
     touch "$LOCK_FILE"
     ${EWW_BIN} close bar; sleep 0.4
     bspc config left_padding 0
+    bspc config right_padding 0
+    bspc config top_padding 0
 else
     rm "$LOCK_FILE"
-    bspc config left_padding 46
+    bspc config left_padding 45
+    bspc config right_padding 45
+    bspc config top_padding 62
 
-    sleep 0.4; ${EWW_BIN} open bar
+    sleep 0.4; ${EWW_BIN} open bar && xdo lower -N eww-bar
 fi

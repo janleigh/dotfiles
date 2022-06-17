@@ -11,10 +11,14 @@ configuration {
 }
 
 window {    
+    location:	                    west;
+    anchor:		                    west;
+    x-offset:                       28px;
+    y-offset:                       15px;
     transparency:                   "real";
     width:						    359px;
     border:                         4px;
-    border-radius:                  6px;
+    border-radius:                  10px;
     border-color:                   @background;
 }
 
@@ -35,7 +39,6 @@ entry {
 
 inputbar {
     children: 						[ entry ];
-    // background-color:               @background;
     background-image:               url("assets/bg.jpg", width);
     border-radius:                  12px;
     text-color:                     @background;
@@ -48,7 +51,7 @@ listview {
     background-color:               @background;
     padding:                        10px;
     columns:                        1;
-    lines:                          7;
+    lines:                          6;
     spacing:                        0%;
     cycle:                          false;
     dynamic:                        true;

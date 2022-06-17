@@ -5,9 +5,12 @@ window {
 
 	.eww-bar {
 		background-color: $darker-background;
+		font-family: "Roboto";
+		font-weight: normal;
 	}
 	
 	.separator {
-		color: $background-tertiary;
+		color: #1c2325;
+		font-size: 2em;
 	}
 }

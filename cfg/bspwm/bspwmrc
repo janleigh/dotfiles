@@ -32,7 +32,7 @@ picom --config $HOME/.config/picom/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set wallpaper
-hsetroot -fill "$HOME/Pictures/walls/real/comfy_waves.jpg"
+hsetroot -fill "$HOME/Pictures/walls/real/wave.png"
 # Hex Gang
 # hsetroot -solid "#192022"
 
@@ -53,12 +53,12 @@ exec mpDris2 &
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-bspc monitor -d 1 2 3 4 5 6
+bspc monitor -d 1 2 3 4 5
 
 rule firefoxdeveloperedition        desktop=1
 rule discord                        desktop=2
 rule Code                           desktop=3
-rule Steam                          desktop=5
+rule Steam                          desktop=4
 rule Viewnior                       state=floating
 
 # bspc config external_rules_command  "$HOME/.config/bspwm/scripts/spotify_wmclass.sh"
@@ -72,7 +72,9 @@ config pointer_modifier             Mod4
 # config border_width                 20
 config window_gap                   16
 
-config left_padding                 46
+config top_padding                  62
+config left_padding                 45
+config right_padding                45
 
 config split_ratio                  0.62
 config borderless_monocle           true
@@ -83,3 +85,5 @@ config gapless_monocle              true
 # ##############################################################################
 
 start $HOME/.local/bin/brdr
+# Fix windows being below bar
+xdo lower -N eww-bar
