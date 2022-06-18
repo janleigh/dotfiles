@@ -5,18 +5,18 @@ configuration {
     display-drun:                   "Applications";
     drun-display-format:            "{name}";
     disable-history:                false;
-    hide-scrollbar:                 true;
+    hide-scrollbar:                 false;
     sidebar-mode:                   false;
     font:                           "Sarasa Mono CL Nerd Font 8";
 }
 
 window {    
-    location:	                    northwest;
-    anchor:                         northwest;
-    x-offset:                       28px;
-    y-offset:                       78px;
+    location:	                    center;
+    anchor:                         center;
+    x-offset:                       0px;
+    y-offset:                       0px;
     transparency:                   "real";
-    width:                          32%;
+    width:                          34%;
     border:                         2px;
     border-radius:                  10px;
     border-color:                   @background;
