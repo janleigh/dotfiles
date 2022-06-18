@@ -272,9 +272,9 @@
 
 ## :japan: <samp>GALLERY</samp>
 
-   | <b>Minimal Vertical Bar</b> |
+   | <b>Minimal Horizontal Bar</b> |
    | :-------------------------: |
-   | <img src="assets/gallery_bar.png" height="500px" alt="Bar Preview"> |
+   | <img src="assets/gallery_bar.png" width="500px" alt="Bar Preview"> |
 
    | <b>Dashboard / Action Center</b> |
    | :----------------------------: |

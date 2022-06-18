@@ -1,22 +1,18 @@
 .cal-window {
 	font-family: "Roboto";
 
-	.cal-spacer {
-		transition: all 1800ms cubic-bezier(.1,-0.00,.0,1.49);
-	}
-	
 	.cal-box {
 		background-color: $darker-background;
 		border-radius: 10px;
-		padding: 1rem 1rem .2rem;
+		padding: 1em 0.75em .25em;
 	
 		.cal {
 			&.highlight {
-				padding: 10rem;
+				padding: 10em 8em;
 			}
 	
-			padding: .8rem .5rem 0rem;
-			margin-left: 10px;
+			padding: .8em .5em 0em;
+			// margin-left: 10px;
 		}
 	}
 }
@@ -36,7 +32,6 @@ calendar.button {
 
 calendar.highlight {
 	color: $javacafeBlue;
-	font-weight: bold;
 }
 
 calendar:indeterminate {

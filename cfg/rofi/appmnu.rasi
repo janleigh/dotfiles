@@ -11,10 +11,10 @@ configuration {
 }
 
 window {    
-    location:	                    center;
-    anchor:                         center;
+    location:	                    north;
+    anchor:                         north;
     x-offset:                       0px;
-    y-offset:                       0px;
+    y-offset:                       78px;
     transparency:                   "real";
     width:                          34%;
     border:                         2px;
