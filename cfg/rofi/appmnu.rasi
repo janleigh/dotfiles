@@ -2,28 +2,28 @@
 
 configuration {
     show-icons:                     true;
-    display-drun: 					"Applications";
+    display-drun:                   "Applications";
     drun-display-format:            "{name}";
     disable-history:                false;
-    hide-scrollbar: 				true;
-    sidebar-mode: 					false;
+    hide-scrollbar:                 true;
+    sidebar-mode:                   false;
     font:                           "Sarasa Mono CL Nerd Font 8";
 }
 
 window {    
-    location:	                    west;
-    anchor:		                    west;
-    x-offset:                       29px;
-    y-offset:                       15px;
+    location:	                    northwest;
+    anchor:                         northwest;
+    x-offset:                       28px;
+    y-offset:                       78px;
     transparency:                   "real";
-    width:						    359px;
-    border:                         4px;
+    width:                          32%;
+    border:                         2px;
     border-radius:                  10px;
     border-color:                   @background;
 }
 
 entry {
-    background-color:               @background-alt;
+    background-color:               @background-secondary;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
@@ -34,42 +34,40 @@ entry {
     blink:                          true;
     border:                         0px 0px 2px 0px;
     border-radius:                  6px;
-    border-color:                   @accent;
+    border-color:                   #7ba5dd;
 }
 
 inputbar {
-    children: 						[ entry ];
-    background-image:               url("assets/bg.jpg", width);
-    border-radius:                  12px;
+    children:                       [ entry ];
+    background-color:               @background;
     text-color:                     @background;
     expand:                         false;
-    margin:                         0px;
-    padding:                        7% 4%;
+    margin:                         5px 0px 6px 0px;
+    padding:                        1%;
 }
 
 listview {
     background-color:               @background;
     padding:                        10px;
-    columns:                        1;
-    lines:                          6;
+    columns:                        4;
+    lines:                          3;
     spacing:                        0%;
     cycle:                          false;
     dynamic:                        true;
-    margin:                         1% 0 0 0;
     layout:                         vertical;
 }
 
 mainbox {
     background-color:               @background;
-    border:							0px;
-    border-color:					@border;
+    border:                         0px;
+    border-color:                   @border-color;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
-    padding:                        4px;
+    padding:                        8px;
 }
 
 element {
-    orientation:                    horizontal;
+    orientation:                    vertical;
     background-color:               @background;
     text-color:                     @foreground;
     border-radius:                  0%;
@@ -84,23 +82,22 @@ element-icon, element-text {
 element-icon {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    size:                           32px;
+    size:                           42px;
     border:                         16px;
     border-color:                   transparent;
 }
 
 element-text {
     expand:                         true;
-    // horizontal-align:               0.5;
+    horizontal-align:               0.5;
     vertical-align:                 0.5;
-    font:                           "Sarasa Mono CL Nerd Font 9.5";
-    // margin:                         -12px 0px 12px 0px;
+    margin:                         -12px 0px 12px 0px;
 }
 
 element selected {
-    background-color:               @background-alt;
+    background-color:               @background-secondary;
     text-color:                     @foreground;
-    border:                         0px 0px 0px 2px;
-    border-color:                   @accent;
+    border:                         0px 0px 2px 0px;
+    border-color:                   @border-color;
     border-radius:                  10px;
 }

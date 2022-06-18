@@ -4,20 +4,20 @@ configuration {
     show-icons:                     true;
     drun-display-format:            "{name}";
     disable-history:                false;
-    hide-scrollbar: 				true;
-    sidebar-mode: 					false;
+    hide-scrollbar:                 true;
+    sidebar-mode:                   false;
 }
 
 window {    
-    location:	                    northeast;
-    anchor:		                    northeast;
+    location:                       northeast;
+    anchor:                         northeast;
     x-offset:                       -29px;
     y-offset:                       78px;
     transparency:                   "real";
     line-margin:                    1;
     line-padding:                   1;
-    width:						    27%;
-    height:							72%;
+    width:                          27%;
+    height:                         72%;
     border:                         2px;
     border-radius:                  10px;
     border-color:                   @background;
@@ -31,7 +31,7 @@ prompt {
 }
 
 inputbar {
-    children: 						[ prompt ];
+    children:                       [ prompt ];
     background-color:               @background;
     text-color:                     @background;
     expand:                         false;
@@ -52,7 +52,7 @@ listview {
 
 mainbox {
     background-color:               @background;
-    border-color:					@border;
+    border-color:                   @border;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
     padding:                        8px;
@@ -60,7 +60,7 @@ mainbox {
 
 element {
     orientation:                    horizontal;
-    background-color:               @background-alt;
+    background-color:               @background-secondary;
     text-color:                     @foreground;
     border-radius:                  10px;
     padding:                        3px 0px 0px 3px;
@@ -89,7 +89,7 @@ element-text {
 }
 
 element selected {
-    background-color:               @background-alt;
+    background-color:               @background-secondary;
     text-color:                     @foreground;
     border:                         0px 0px 0px 2px;
     border-color:                   @accent;

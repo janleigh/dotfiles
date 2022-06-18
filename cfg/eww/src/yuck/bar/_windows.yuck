@@ -12,8 +12,8 @@
 (defwindow calendar
 	:geometry (geometry :x "0%"
 						:y "10%" 
-						:width "250px" 
-						:height "240px"
+						:width "230px" 
+						:height "230px"
 						:anchor "top center")
 	:windowtype "dock"
 	:stacking "fg"

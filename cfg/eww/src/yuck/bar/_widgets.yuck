@@ -24,7 +24,7 @@
 		)
 		(button :class "dash-btn" :tooltip "Dashboard"
 			:onclick "$HOME/.config/eww/scripts/openDashboard.sh; $HOME/.local/bin/eww close dashboard"
-			""
+			""
 		)
 	)
 )

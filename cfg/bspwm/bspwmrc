@@ -74,8 +74,8 @@ config pointer_modifier             Mod4
 config window_gap                   16
 
 config top_padding                  62
-config left_padding                 13
-config right_padding                13
+config left_padding                 12
+config right_padding                12
 
 config split_ratio                  0.62
 config borderless_monocle           true
