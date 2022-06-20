@@ -1,0 +1,45 @@
+.notification-window {
+	font-family: "Roboto";
+
+	background-color: $darker-background;
+	border-radius: 10px;
+
+	.notification-title {
+		background-color: $background-secondary;
+		padding: .95em 0em .75em;
+		font-size: 14px;
+
+		.notification-title-text {
+			margin: 0em 0em 0em 1em;
+			font-weight: bold;
+		}
+
+		.notification-timestamp-text {
+			margin: 0em 1em 0em 0em;
+			color: $foreground-tertiary;
+		}
+
+		.notification-close {
+			margin: 0em 1em 0em 0em;
+			color: $red;
+		}
+	}
+
+	.notification-body {
+		padding: .75em 0em;
+		font-size: 14px;
+
+		.notification-image {
+			background-size: 100%;
+			background-repeat: no-repeat;
+			border-radius: 6px;
+			min-height: 64px;
+			min-width: 64px;
+			margin-left: 1em;
+		}
+
+		.notification-body-text {
+			margin: 0em 1.5em;
+		}
+	}
+}

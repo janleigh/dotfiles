@@ -68,3 +68,9 @@
 (defpoll network_status :interval "1s" "scripts/getNetwork color")
 (defpoll redshift_status :interval "500ms" "./scripts/getRedshift color")
 (defpoll jeff_status :interval "1s" "./scripts/dashActions.sh jstat")
+
+;; NOTIFICATION POPUP VARS
+; (defvar notification_title "")
+; (defvar notification_body "")
+; (defvar notification_icon "")
+; (defvar notification_timestamp "")

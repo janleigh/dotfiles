@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [[ -z $(amixer get Master | grep off) ]]; then
-    notify-send -i "$HOME/.icons/Zafiro-Icons-Dark/panel/22/audio-volume-muted.svg" "Audio Muted"
+    notify-send -a "Volume Manager" "Audio Muted"
     amixer set Master toggle
 else
     amixer set Master toggle
-    notify-send -i "$HOME/.icons/Zafiro-Icons-Dark/panel/22/audio-volume-high.svg" "Audio On"
+    notify-send -a "Volume Manager" "Audio On"
 fi

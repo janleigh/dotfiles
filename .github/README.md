@@ -69,7 +69,7 @@
    > Assuming your **AUR Helper** is [paru](https://github.com/Morganamilo/paru).
 
    ```sh
-    $ paru -S --needed bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl \
+    $ paru -S --needed bspwm sxhkd rofi neovim alacritty viewnior picom-arian8j2-git brightnessctl \
               playerctl hsetroot maim jq xclip imagemagick dunst i3lock-color xdo giph \ 
               jgmenu redshift
    ```
@@ -77,7 +77,7 @@
    </details>
 
    <details>
-   <summary><strong>Debian (and other Debian-based distributions)</strong></summary>
+   <summary><strong>Debian (and other Debian-based distributions) <kbd>UPDATES NEEDED</kbd></strong></summary>
 
    ```sh
     $ sudo apt install --no-install-recommends bspwm sxhkd rofi neovim alacritty viewnior \
@@ -119,6 +119,18 @@
 
    </details>
 
+   <details>
+   <summary><strong>Independent Linux Distributions <kbd>HELP WANTED</kbd></strong></summary>
+
+   ```
+   The Linux philosophy is ‘Laugh in the face of danger’.
+   Oops. Wrong One. ‘Do it yourself’.
+
+   - Linus Torvalds
+   ```
+
+   </details>
+
    ### <samp><kbd>II.</kbd> INSTALLATION (DOTFILES)<samp>
 
    Then after the dependencies are installed, copy the files to it's respective folders.
@@ -129,6 +141,7 @@
    |    Font List     |  Use  |
    | :--------------: | :---: |
    | [`Sarasa Mono CL`](https://github.com/be5invis/Sarasa-Gothic) | Main Font |
+   | [`Roboto`](https://fonts.google.com/specimen/Roboto) | Secondary Main Font |
    | [`Victor Mono`](https://github.com/rubjo/victor-mono) | Stylish Italic Font |
    | [`DM Sans`](https://fonts.google.com/specimen/DM+Sans) | Main UI Font |
    | [`Material Icons`](https://github.com/google/material-design-icons/) | Main Icon Font |
@@ -299,6 +312,7 @@
 
    - **Inspiration**
       - [`owl4ce`](https://github.com/owl4ce)
+      - [`rxyhn`](https://github.com/rxyhn)
 
    - **Contributors**
       - [`flyingcakes85`](https://github.com/flyingcakes85)

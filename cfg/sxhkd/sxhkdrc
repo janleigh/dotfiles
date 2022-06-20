@@ -118,7 +118,7 @@ super + ctrl + space
 
 # Restart sxhkd.
 super + alt + r
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; notify-send "sxhkd" "Restarted successfully."
 
 # Quit/restart bspwm.
 super + ctrl + {q,r}

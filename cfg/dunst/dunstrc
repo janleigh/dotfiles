@@ -1,5 +1,5 @@
 [global]
-    font = Iosevka Nerd Font 9
+    font = Roboto 10
 
     # Allow a small subset of html markup:
     # <b>bold</b>
@@ -29,7 +29,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right"
-    alignment = center
+    alignment = left
 
     # The frequency with wich text that is longer than the notification
     # window allows bounces back and forth.
@@ -58,12 +58,13 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "275x15-10-12"
+    geometry = "300x30-15-12"
+    # geometry = "275x15-15-10000"
 
     # Frame
     frame_width = 3
-    frame_color = "#151A1C"
-    outer_frame_width = 7
+    frame_color = "#192022"
+    outer_frame_width = 9
     outer_frame_color = "#0B0F10"
 
     # The transparency of the window. range: [0; 100]
@@ -95,7 +96,7 @@
 
     # Should a notification popped up from history be sticky or
     # timeout as if it would normally do.
-    sticky_history = no
+    sticky_history = yes
 
     # The height of a single line. If the height is smaller than the font height,
     # it will get raised to the font height.
@@ -126,20 +127,26 @@
     startup_notification = false
 
     # Align icons left/right/off
-    icon_position = on
+    icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = 48
 
     # Define the corner radius of the notification window
     # in pixel size. If the radius is 0, you have no rounded
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 10
 
-[log_notifs]
-    script = ~/.config/dunst/scripts/lognotifs.sh
+# [eww_notification_popup]
+#     script = ~/.config/dunst/scripts/ewwNotificationPopup.sh
+
+[notification_logger]
+    script = ~/.config/dunst/scripts/notificationLogger.sh
+
+[notification_sound]
+    script = ~/.config/dunst/scripts/notificationSound.sh
 
 [shortcuts]
     close = ctrl+space
@@ -150,14 +157,14 @@
 [urgency_low]
     background = "#0B0F10"
     foreground = "#6e7071"
-    timeout = 4
+    timeout = 7
 
 [urgency_normal]
     background = "#0B0F10"
     foreground = "#9fa0a0"
-    timeout = 4
+    timeout = 7
 
 [urgency_critical]
     background = "#0B0F10"
     foreground = "#c5c8c9"
-    timeout = 4
+    timeout = 7

@@ -2,7 +2,7 @@
 # Deps: curl, jq, xclip, imagemagick
 
 _notify() {
-    dunstify "$1" "$2" -i "$3"
+    notify-send -a "Screenshot Tool" -i "$HOME/.config/eww/assets/notification/scrot.png" "$1" "$2"
 }
 
 _cleanup() {
@@ -19,7 +19,6 @@ if [[ $(file --mime-type -b $1) != "image/png" ]]; then
     _notify "screenshot aborted." && exit 1
 fi
 
-# image=$(convert "$1" \( +clone -background "#101415" -shadow 90x15+0+0+0 \) +swap -bordercolor none -border 0 -background "#00000000" -layers merge +repage "$1" | echo "$1")
 imageURL=$(curl -X POST -H "Content-Type: multipart/form-data" -H "Authorization: $key" -F "file=@$1" "$url" | jq -r '.files[].url')
 echo -n $imageURL | xclip -sel c
-_notify "screenshot copied." "" $1 && _cleanup $1
+_notify "screenshot uploaded." "" && _cleanup $1

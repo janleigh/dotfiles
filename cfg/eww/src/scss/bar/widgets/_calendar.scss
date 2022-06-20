@@ -7,22 +7,17 @@
 		padding: 1em 0.75em .25em;
 	
 		.cal {
-			&.highlight {
-				padding: 10em 8em;
-			}
-	
-			padding: .8em .5em 0em;
-			// margin-left: 10px;
+			padding: .8em .3em 0em;
 		}
 	}
 }
 
 calendar:selected {
-	color: $yellow;
+	color: $accent;
 }
 
 calendar.header {
-	color: $javacafeMagenta;
+	color: $javacafeBlue;
 	font-weight: bold;
 }
 
@@ -31,7 +26,7 @@ calendar.button {
 }
 
 calendar.highlight {
-	color: $javacafeBlue;
+	color: $green;
 }
 
 calendar:indeterminate {
