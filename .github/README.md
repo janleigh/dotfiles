@@ -120,7 +120,7 @@
    </details>
 
    <details>
-   <summary><strong>Independent Linux Distributions <kbd>HELP WANTED</kbd></strong></summary>
+   <summary><strong>Other Independent Linux Distributions</strong></summary>
 
    ```
    The Linux philosophy is ‘Laugh in the face of danger’.
@@ -166,7 +166,7 @@
    > **NOTE**: Only favorite wallpapers has been listed on the table above.
 
    ```sh
-    $ mkdir -p $HOME/Pictures/walls/real && cp -r ./etc/walls/real/wave.png $HOME/Pictures/walls/real
+    $ mkdir -p $HOME/.config/bspwm/assets && cp -r ./etc/walls/real/wave.png $HOME/.config/bspwm/assets/wallpaper.png
    ```
 
    </details>

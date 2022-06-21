@@ -52,6 +52,14 @@ lock() {
         --pointer=default
 }
 
+finish() {
+    rm "$LOCK_FILE"
+    hsetroot -fill "$WALLPAPER"
+    $HOME/.local/bin/eww close-all
+    sleep 0.2 && hide_unhide_windows
+    $HOME/.local/bin/tglbar
+}
+
 run() {
     $HOME/.local/bin/tglbar
     hide_unhide_windows
@@ -73,11 +81,7 @@ if [[ ! -f "$LOCK_FILE" ]]; then
     run
 fi
 
-rm "$LOCK_FILE"
-hsetroot -fill "$HOME/Pictures/walls/real/wave.png"
-$HOME/.local/bin/eww close-all
-sleep 0.2 && hide_unhide_windows
-$HOME/.local/bin/tglbar
+finish
 
 status2=$(playerctl -p %any status || true)
 if [ "$status2" == "Paused" ]; then

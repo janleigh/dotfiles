@@ -2,7 +2,7 @@
 # Deps: viewnior
 
 _notify() {
-    notify-send -a "Screenshot Tool" -i "$HOME/.config/eww/assets/notification/scrot.png" "$1" "$2"
+    notify-send -a "Screenshot Tool" -i "$HOME/.config/dunst/assets/notification/scrot.png" "$1" "$2"
 }
 
 if [[ $(file --mime-type -b $1) != "image/png" ]]; then

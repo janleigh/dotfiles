@@ -19,14 +19,3 @@
 	:stacking "fg"
 	:wm-ignore false
 	(cal))
-
-; (defwindow notification
-; 	:geometry (geometry :x "-2%"
-; 						:y "10%" 
-; 						:width "340px" 
-; 						:height "16%"
-; 						:anchor "top right")
-; 	:windowtype "dock"
-; 	:stacking "fg"
-; 	:wm-ignore false
-; 	(notification))

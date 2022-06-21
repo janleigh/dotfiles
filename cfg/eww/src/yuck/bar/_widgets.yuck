@@ -81,29 +81,6 @@
 )
 (defvar call false)
 
-; (defwidget notification []
-; 	(revealer :transition "crossfade" :duration "250ms" :reveal noti
-; 		(box :class "notification-window" :space-evenly "false" :orientation "v"
-; 			(box :class "notification-title" :space-evenly "true" :orientation "h"
-; 				(label :class "notification-title-text" :halign "start" :text "${notification_title}")
-; 				(box :halign "end" :space-evenly "false"
-; 					(label :class "notification-timestamp-text" :halign "end" :text "${notification_timestamp}")
-; 					(button :class "notification-close" :halign "end"
-; 						:onclick "${EWW_CMD} update noti=false; sleep 0.100; ${EWW_CMD} close notification"
-; 						"")
-; 				)
-; 			)
-; 			(box :class "notification-body" :space-evenly "false" :orientation "h"
-; 				(box :class "notification-image" :orientation "h" :valign "center" :style "background-image: url('${notification_icon}')")
-; 				(box :orientation "v"
-; 					(label :class "notification-body-text" :wrap "true" :limit-width 60 :text "${notification_body}")
-; 				)
-; 			)
-; 		)
-; 	)
-; )
-; (defvar noti false)
-
 ;; BAR IS SEPARATED INTO THREE PARTS: TOP, CENTER AND BOTTOM
 ;; TOP WIDGETS
 (defwidget top []

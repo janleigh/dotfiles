@@ -1,7 +1,7 @@
 #!/bin/sh
 
-KEY="5f2c37f7b50d8f95483c261a69873463"
-CITY="Numancia"
+KEY=""
+CITY=""
 
 weather=$(curl -sf "api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$KEY&units=metric")
 weather_desc=$(echo $weather | jq -r ".weather[0].main")

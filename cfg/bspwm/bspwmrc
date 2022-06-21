@@ -4,7 +4,7 @@
 # #                                  ENV VARS                                  # 
 # ##############################################################################
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+export WALLPAPER="$HOME/.config/bspwm/assets/wallpaper.png"
 
 # ##############################################################################
 # #                                  FUNCTIONS                                 # 
@@ -24,18 +24,16 @@ rm $HOME/.cache/dunst.log
 rm $HOME/.cache/fake_battery_capacity
 
 # Autostart Apps
-# $HOME/.local/bin/eww daemon &
 $HOME/.local/bin/eww open bar &
+pgrep -x sxhkd > /dev/null || sxhkd &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
 
 # Start polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Set wallpaper
-hsetroot -fill "$HOME/Pictures/walls/real/wave.png"
-# Hex Gang
-# hsetroot -solid "#192022"
+# Setup wallpaper
+hsetroot -fill "$WALLPAPER"
 
 # I hate mouse drift.
 xset m 0 0
@@ -47,22 +45,20 @@ $HOME/.config/bspwm/scripts/eww_fullscreen_fix.sh &
 exec mpd &
 exec mpDris2 &
 
-# Initialize startup sound.
-# mpv --keep-open=no --really-quiet "$HOME/.config/bspwm/assets/loginSound.wav" &
-
 # ##############################################################################
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
 bspc monitor -d 1 2 3 4 5
 
-rule firefoxdeveloperedition        desktop=1
-rule discord                        desktop=2
+rule firefoxdeveloperedition        desktop=1 follow=on
+
+rule discord                        desktop=2 follow=off
 rule Code                           desktop=3
 rule Steam                          desktop=4
-rule Viewnior                       state=floating
 
-# bspc config external_rules_command  "$HOME/.config/bspwm/scripts/spotify_wmclass.sh"
+rule Viewnior                       state=floating
+rule mpv                            state=floating
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
@@ -70,7 +66,6 @@ rule Viewnior                       state=floating
 
 config pointer_modifier             Mod4
 
-# config border_width                 20
 config window_gap                   16
 
 config top_padding                  62
