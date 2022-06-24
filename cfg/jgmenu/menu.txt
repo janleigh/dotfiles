@@ -1,11 +1,11 @@
-Browser,firefox-developer-edition,firefox-developer-edition
+Web Browser,firefox-developer-edition,firefox-developer-edition
 File Manager,thunar,org.xfce.thunar
 Favorites,^checkout(favorites),user-bookmarks
 ^sep()
 Launch Terminal,tabbed -n "term" alacritty -t "term" --embed,utilities-terminal
 ^sep()
 Lock Screen,$HOME/.local/bin/lck,utox
-Exit,^checkout(exit),system-shutdown
+Exit BSPWM,^checkout(exit),system-shutdown
 ^tag(favorites)
 Discord,discord-canary,discord
 Visual Studio Code,code --unity-launch,visual-studio-code

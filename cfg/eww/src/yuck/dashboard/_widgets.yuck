@@ -34,7 +34,7 @@
 								(label :class "song-title"
 								:text song_title
 								:tooltip song_title
-								:limit-width 20)
+								:limit-width 23)
 							)
 							(box :class "artist" :orientation "h" :halign "start"
 								(label :class "song-artist"
@@ -59,7 +59,7 @@
 						(label :class "ram-usage" :text "RAM")
 						(circular-progress :class "ram-progress"
 							:value used_ram
-							:thickness 5
+							:thickness 6
 							:clockwise "true"
 							:tooltip "Used RAM: ${used_ram}%" 
 							(label :class "ram-icon" :text "")

@@ -58,9 +58,9 @@
 	)
 )
 
-(defwidget separator [] 
+(defwidget separator [text] 
 	(box :orientation "h"
-		(label :class "separator" :text "‏‏‏‏ ‏‏‏‏ ‏")
+		(label :class "separator" :text text)
 	)
 )
 
@@ -96,7 +96,7 @@
 (defwidget bottom []
 	(box :orientation "h" :space-evenly "false" :halign "end"
 		(battery)
-		(separator)
+		(separator :text "‏‏‏‏ ‏‏‏‏ ‏")
 		(action-center)))
 	
 (defwidget bar []
