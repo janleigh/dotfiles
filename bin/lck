@@ -34,7 +34,7 @@ lock() {
         --greeter-color=0B0F10 \
         --greeter-size=60 \
         --greeter-font="Sarasa Mono CL Nerd Font" \
-        --greeter-pos="w/2-22:h/2+285" \
+        --greeter-pos="w/2-6:h/2+285" \
         \
         --ring-color=0B0F10 \
         --ringver-color=96D6B0 \
@@ -44,11 +44,12 @@ lock() {
         --insidever-color=079A8C02 \
         --insidewrong-color=079A8C02 \
         --inside-color=079A8C02 \
-        --ind-pos="w/2-150:h/2-45" \
+        --ind-pos="w/2:h/2-45" \
         \
         --noinput-text="" \
         \
         --line-uses-inside --keyhl-color=7ba5dd --bshl-color=ee6a70 --separator-color=7ba5dd \
+        \
         --pointer=default
 }
 
@@ -63,7 +64,7 @@ finish() {
 run() {
     $HOME/.local/bin/tglbar
     hide_unhide_windows
-    $HOME/.local/bin/eww open-many lock-screen lock-system-info
+    $HOME/.local/bin/eww open-many lock-screen
     lock
 }
 

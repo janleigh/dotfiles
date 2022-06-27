@@ -1,34 +1,46 @@
 .cal-window {
+	background-color: $darker-background;
+	border-radius: 10px;
 	font-family: "Roboto";
 
 	.cal-box {
-		background-color: $darker-background;
-		border-radius: 10px;
-		padding: 1em 0.75em .25em;
+		margin: 1em 0.75em .25em;
+
+		.month-year {
+			font-size: 18px;
+			font-weight: bold;
+			margin: 0.5em 0em 0em;
+		}
+
+		.day-names {
+			margin: 1em .75em 0em;
+			font-size: 14px;
+			font-weight: bold;
+			color: $green;
+		}
 	
 		.cal {
-			padding: .8em .3em 0em;
+			font-family: "Roboto";
+			padding: 1em .75em 0em;
 		}
 	}
 }
 
-calendar:selected {
-	color: $accent;
-}
-
-calendar.header {
-	color: $javacafeBlue;
-	font-weight: bold;
+calendar {
+	&:selected {
+		color: $accent;
+	}
+	&:indeterminate {
+		color: rgba(205, 219, 249, 0.3);
+	}
 }
 
 calendar.button {
 	color: #192022;
 }
-
 calendar.highlight {
 	color: $green;
-}
-
-calendar:indeterminate {
-	color: rgba(205, 219, 249, 0.3);
+	font-weight: bold;
+	padding: 20px;
+	margin: 20px;
 }

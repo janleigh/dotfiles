@@ -130,7 +130,7 @@ super + ctrl + {q,r}
 
 # Close all active notifications.
 ~button1
-	bspc query -D -d .focused.!occupied && dunstctl close-all
+	bspc query -D -d .focused.!occupied && dunstctl close-all && $HOME/.local/bin/eww update noti=false; sleep 0.270; $HOME/.local/bin/eww close notification-history; pkill openEwwPopup.s
 
 # Toggle dashboard using middle click.
 ~button2

@@ -19,8 +19,6 @@ print_position() {
 
 if ps -C spotify > /dev/null; then
 	PLAYER="spotify"
-elif ps -C firefox > /dev/null; then
-	PLAYER="firefox"
 fi
 
 if [ $SHOW_POSITION -gt 0 ]; then
@@ -36,7 +34,7 @@ if [ $SHOW_POSITION -gt 0 ]; then
 			if [ $(playerctl metadata mpris:length | wc -c) -gt 0 ]; then
 				print_position
 			else
-				printf " "
+				printf "--:-- / --:-- "
 			fi
 			;;
 	esac

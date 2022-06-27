@@ -285,17 +285,7 @@
 
 ## :japan: <samp>GALLERY</samp>
 
-   | <b>Minimal Horizontal Bar</b> |
-   | :-------------------------: |
-   | <img src="assets/gallery_bar.png" width="500px" alt="Bar Preview"> |
-
-   | <b>Dashboard / Action Center</b> |
-   | :----------------------------: |
-   | <img src="assets/gallery_dashboard.png" height="500px" alt="Dashboard Preview"> |
-
-   | <b>Lockscreen</b> |
-   | :---------------: |
-   | <img src="assets/gallery_lockscreen.png" width="500px" alt="Lockscreen Preview"> |
+   > **WIP.**
 
 ## :money_with_wings: <samp>TIP JAR</samp>
 

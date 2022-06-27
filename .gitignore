@@ -1,5 +1,7 @@
 # Folders
 cfg/eww/.vscode/
+cfg/jgmenu/backup/
 
 # Files
 cfg/eww/.editorconfig
+cfg/ncmpcpp/error.log

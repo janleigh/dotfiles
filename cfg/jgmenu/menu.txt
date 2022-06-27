@@ -5,7 +5,7 @@ Favorites,^checkout(favorites),user-bookmarks
 Launch Terminal,tabbed -n "term" alacritty -t "term" --embed,utilities-terminal
 ^sep()
 Lock Screen,$HOME/.local/bin/lck,utox
-Exit BSPWM,^checkout(exit),system-shutdown
+Exit,^checkout(exit),system-shutdown
 ^tag(favorites)
 Discord,discord-canary,discord
 Visual Studio Code,code --unity-launch,visual-studio-code

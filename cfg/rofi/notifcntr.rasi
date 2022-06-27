@@ -6,18 +6,19 @@ configuration {
     disable-history:                false;
     hide-scrollbar:                 true;
     sidebar-mode:                   false;
+    font:                           "Sarasa Mono CL Nerd Font 10";
 }
 
 window {    
-    location:                       northeast;
-    anchor:                         northeast;
-    x-offset:                       -29px;
-    y-offset:                       78px;
+    location:                       east;
+    anchor:                         east;
+    x-offset:                       -14px;
+    y-offset:                       3%;
     transparency:                   "real";
     line-margin:                    1;
     line-padding:                   1;
-    width:                          27%;
-    height:                         72%;
+    width:                          358px;
+    height:                         84%;
     border:                         2px;
     border-radius:                  10px;
     border-color:                   @background;
@@ -27,6 +28,7 @@ prompt {
     background-color:               @background;
     text-color:                     @foreground;
     padding:                        15px 20px 5px 5px;
+    margin:                         0 5%;
     font:                           "Sarasa Mono CL Nerd Font 14";
 }
 
@@ -43,7 +45,7 @@ listview {
     background-color:               @background;
     padding:                        10px;
     columns:                        1;
-    lines:                          5;
+    lines:                          6;
     spacing:                        0%;
     cycle:                          false;
     dynamic:                        false;
@@ -91,7 +93,7 @@ element-text {
 element selected {
     background-color:               @background-secondary;
     text-color:                     @foreground;
-    border:                         0px 0px 0px 2px;
+    border:                         0px 0px 0px 3px;
     border-color:                   @accent;
     border-radius:                  10px;
 }

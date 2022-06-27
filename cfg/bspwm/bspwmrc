@@ -22,6 +22,7 @@ start() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # Clear cache.
 rm $HOME/.cache/dunst.log
 rm $HOME/.cache/fake_battery_capacity
+rm -r $HOME/.cache/dunst/
 
 # Autostart Apps
 $HOME/.local/bin/eww open bar &
@@ -68,9 +69,10 @@ config pointer_modifier             Mod4
 
 config window_gap                   16
 
-config top_padding                  62
-config left_padding                 12
-config right_padding                12
+config top_padding                  48
+config left_padding                 0
+config right_padding                0
+config bottom_padding               0
 
 config split_ratio                  0.62
 config borderless_monocle           true

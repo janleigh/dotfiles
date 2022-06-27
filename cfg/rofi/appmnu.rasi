@@ -13,8 +13,8 @@ configuration {
 window {    
     location:	                    north;
     anchor:                         north;
-    x-offset:                       0px;
-    y-offset:                       78px;
+    x-offset:                       0%;
+    y-offset:                       62px;
     transparency:                   "real";
     width:                          34%;
     border:                         2px;
@@ -98,6 +98,6 @@ element selected {
     background-color:               @background-secondary;
     text-color:                     @foreground;
     border:                         0px 0px 2px 0px;
-    border-color:                   @border-color;
+    border-color:                   @accent;
     border-radius:                  10px;
 }

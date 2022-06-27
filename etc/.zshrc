@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.local/bin/color-toys:$HOME/.cargo/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -71,7 +71,10 @@ alias nv="nvim"
 alias mv="mv -v"
 alias cp="cp -vr"
 alias rm="rm -vr"
+alias notify-send="notify-send -i \"$HOME/.config/dunst/assets/notification/fallback-notif.png\""
 
 # Init starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

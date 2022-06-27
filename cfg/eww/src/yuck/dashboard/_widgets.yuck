@@ -25,7 +25,7 @@
 			)
 			(box :class "second-row" :orientation "h"
 				(box :class "music-player" :orientation "h" :space-evenly "false"
-					(box :class "song-art" :style "background-image: url('${art}')" song_art 
+					(box :class "song-art" :style "background-image: url('${art}')" song_art
 						(box :class "music-info" :orientation "v" :space-evenly "false"
 							(box :class "np" :orientation "h" :halign "start"
 								(label :class "now-playing" :text player_status_text)
@@ -109,7 +109,7 @@
 				(box :class "system-btn" :orientation "h" :space-evenly "true"
 					(button :class "network-btn" :style "background-color: ${network_status}" :tooltip "Network" :onclick "iwgtk &" "")
 					(button :class "redshift-btn" :style "background-color: ${redshift_status}" :tooltip "Night Light" :onclick "sh ./scripts/getRedshift toggle" "")
-					(button :class "scrot-btn" :onclick "sh ./scripts/dashActions.sh scrot" :tooltip "Screenshot" "")
+					(button :class "dnd-btn" :style "background-color: ${dnd_status}" :onclick "sh ./scripts/dashActions.sh dnd" :tooltip "Do Not Disturb" "")
 					(button :class "jeff-btn" :style "background-color: ${jeff_status}" :tooltip "Capture Screen" :onclick "sh ./scripts/dashActions.sh jeff" "")
 				)
 			)

@@ -1,8 +1,8 @@
 (defwindow bar
-	:geometry (geometry :x "2%"
-						:y "2%" 
+	:geometry (geometry :x "0%"
+						:y "0%" 
 						:height "6%" 
-						:width "96%")
+						:width "100%")
 	:monitor 0
 	:stacking "bg"
 	:windowtype "dock"
@@ -11,7 +11,7 @@
 
 (defwindow calendar
 	:geometry (geometry :x "0%"
-						:y "10%" 
+						:y "8%" 
 						:width "230px" 
 						:height "230px"
 						:anchor "top center")

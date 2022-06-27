@@ -1,7 +1,6 @@
 .dashboard-box {
 	.third-row {
-		margin-top: 1em;
-		margin-left: 0em;
+		margin: 1em 0em 0em;
 
 		.system-info-scale {
 			margin-left: 0px;
@@ -15,13 +14,13 @@
 				.ram-progress {
 					margin-bottom: 3.8rem;
 					background-color: $background-secondary;
-					color: $green;
+					color: $javacafeBlue;
 
 					.ram-icon {
 						margin: .8em;
 						font-size: 40px;
 						font-family: "Material Icons";
-						color: $green;
+						color: $javacafeBlue;
 					}
 				}
 				.ram-usage {

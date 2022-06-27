@@ -42,6 +42,5 @@ cat << EOF
   (\ /)    $f6$k $t~ $kernel
   ( $d· ·$t)   $f6$h $t~ $wmname
   c($f1"$t)($f1"$t)  $f6$sh $t~ $shell
-$colors
  
 EOF

@@ -8,3 +8,6 @@
 
 (include "./src/yuck/lock/_widgets.yuck")
 (include "./src/yuck/lock/_windows.yuck")
+
+(include "./src/yuck/notification-history/_widgets.yuck")
+(include "./src/yuck/notification-history/_windows.yuck")

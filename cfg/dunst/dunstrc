@@ -65,7 +65,7 @@
     origin = bottom-right
 
     # Offset from the origin
-    offset = 10x10
+    offset = 10x-400
 
     # Frame
     frame_width = 3
@@ -143,14 +143,17 @@
     # notification height to avoid clipping text and/or icons.
     corner_radius = 10
 
-# [eww_notification_popup]
-#     script = ~/.config/dunst/scripts/ewwNotificationPopup.sh
-
 [notification_logger]
     script = ~/.config/dunst/scripts/notificationLogger.sh
 
 [notification_sound]
     script = ~/.config/dunst/scripts/notificationSound.sh
+
+[open_eww_popup]
+    script = ~/.config/dunst/scripts/openEwwPopup.sh
+
+[song_art]
+    script = ~/.config/dunst/scripts/songArtLogger.sh
 
 [shortcuts]
     close = ctrl+space
@@ -161,14 +164,14 @@
 [urgency_low]
     background = "#0B0F10"
     foreground = "#6e7071"
-    timeout = 7
+    timeout = 1
 
 [urgency_normal]
     background = "#0B0F10"
     foreground = "#9fa0a0"
-    timeout = 7
+    timeout = 1
 
 [urgency_critical]
     background = "#0B0F10"
     foreground = "#c5c8c9"
-    timeout = 7
+    timeout = 1

@@ -30,6 +30,11 @@ case $1 in
 	current_temp)
 		check_if_empty $weather_temp
 		;;
+	current_temp_fahrenheit)
+		# Convert $weather_temp to Fahrenheit without decimals.
+		weather_temp=$((($weather_temp * 9 / 5) + 32))
+		check_if_empty $weather_temp
+		;;
 	feels_like)
 		check_if_empty $feels_like
 		;;

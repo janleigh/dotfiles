@@ -9,18 +9,18 @@
 	"date '+%A'")
 (defpoll monthday :interval "24h"
 	"date '+%d %b'")
+(defpoll month_year :interval "24h"
+	"date '+%B, %Y'")
 
 ;;  SYSTEM INFO VARS
-(defpoll used_ram :interval "5s"
+(defpoll used_ram :interval "2s"
 	"./scripts/getUsedRam")
 (defpoll volume :interval "500ms"
 	"amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll micro :interval "500ms"
+(defpoll micro :interval "1s"
 	"amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll brightness :interval "500ms"
 	"brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
-(defpoll battery_icon :interval "1s"
-	"./scripts/getBattery icon")
 (defpoll battery_capacity :interval "1s"
 	"./scripts/getBattery capacity")
 
@@ -43,17 +43,19 @@
 	"./scripts/getPlayerStatusText")
 
 ;; LOCK SCREEN VARS
-(defpoll username :interval "12h"
+(defpoll username :interval "24h"
 	"whoami")
-(defpoll hostname :interval "12h"
+(defpoll hostname :interval "24h"
 	"hostname")
 
 ;; WEATHER VARS
-(defpoll weather_temp :interval "5m"
+(defpoll weather_temp :interval "3h"
 	"./scripts/getWeather current_temp")
-(defpoll weather_desc :interval "5m"
+(defpoll weather_temp_f :interval "3h"
+	"./scripts/getWeather current_temp_fahrenheit")
+(defpoll weather_desc :interval "3h"
 	"./scripts/getWeather weather_desc")
-(defpoll weather_feels_like :interval "5m"
+(defpoll weather_feels_like :interval "3h"
 	"./scripts/getWeather feels_like")
 
 ;; CALENDAR VARS
@@ -66,11 +68,9 @@
 
 ;; UTILITY ROW VARS
 (defpoll network_status :interval "1s" "scripts/getNetwork color")
-(defpoll redshift_status :interval "500ms" "./scripts/getRedshift color")
+(defpoll redshift_status :interval "1s" "./scripts/getRedshift color")
+(defpoll dnd_status :interval "1s" "./scripts/dashActions.sh dndstat")
 (defpoll jeff_status :interval "1s" "./scripts/dashActions.sh jstat")
 
-;; NOTIFICATION POPUP VARS
-; (defvar notification_title "")
-; (defvar notification_body "")
-; (defvar notification_icon "")
-; (defvar notification_timestamp "")
+;; VOLUME INDICATOR VARS
+(defvar volume_muted false)

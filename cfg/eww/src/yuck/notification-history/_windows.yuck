@@ -1,0 +1,10 @@
+(defwindow notification-history
+	:geometry (geometry :x "-1%"
+						:y "-1%" 
+						:width "25%" 
+						:height "18%"
+						:anchor "bottom right")
+	:windowtype "dock"
+	:stacking "fg"
+	:wm-ignore false
+	(notification-history))

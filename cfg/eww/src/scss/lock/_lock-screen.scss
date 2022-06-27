@@ -1,11 +1,12 @@
-.lock-screen, .lock-system-info {
+.lock-screen {
 	background-color: $darker-background;
-	border-radius: 6px;
+	border-radius: 10px;
 }
 
 .lock-screen {
 	.lock-inner {
 		margin-top: 1em;
+		
 		.lock-pfp {
 			background-image: url("./assets/avatar.png");
 			background-size: 100%;
