@@ -5,7 +5,7 @@ EWW_BIN="$HOME/.local/bin/eww"
 
 finish() {
 	${EWW_BIN} update noti=false; sleep 0.270
-	${EWW_BIN} close notification-history
+	${EWW_BIN} close notification-popup
 }
 
 # Run eww daemon if not running
@@ -26,7 +26,7 @@ else
 		if ! $KILLED; then
 			sleep 0.5
 			${EWW_BIN} update noti=true
-			${EWW_BIN} open notification-history
+			${EWW_BIN} open notification-popup
 			canberra-gtk-play -i message
 		fi
 

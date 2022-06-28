@@ -1,0 +1,30 @@
+(defwidget notification-center []
+	(box :class "notification-center-window" :orientation "h" :space-evenly "false"
+		(box :class "notification-center-spacer" :style {noticenter ? "padding-left: 0em;" : "padding-left: 437px;"})
+		(box :class "notification-center-box" :orientation "v" :space-evenly "false"
+			(box :space-evenly "false" :orientation "v"
+				(label :class "notification-text" :text "Notification Center")
+			)
+			(box :space-evenly "true" :orientation "v"
+				(scroll :class "notification-scroller" :vscroll "true" :space-evenly "false"
+					(box :class "notification-history" :orientation "v" :space-evenly "false"
+						(for entry in {dunst-history["data"][0]}
+							(notification :class 'notif-${entry["id"]["data"]}'
+								:title {entry["appname"]["data"]}
+								:body '${entry["summary"]["data"]}\\n${entry["body"]["data"]}'
+								:icon {entry["appname"]["data"] == "Spotify" ? "../../.cache/dunst/${entry['id']['data']}.png" : (entry["icon_path"]["data"] ?: "../dunst/assets/notification/fallback-notif.png")}
+								:reveal_close_icon "false"
+							)
+						)
+						(revealer :reveal reveal_no_notification_text
+							(label :class "eon" 
+								:style {reveal_no_notification_text ? "margin: 5em 0em;" : "margin: 0em 0em;"}
+								:text "No Notifications :)")
+						)
+					)
+				)
+			)
+		)
+	)
+)
+(defvar noticenter false)

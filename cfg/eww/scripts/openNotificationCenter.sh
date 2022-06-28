@@ -1,11 +1,11 @@
 #!/bin/bash
 
-LOCK_FILE="$HOME/.cache/eww-dash.lock"
+LOCK_FILE="$HOME/.cache/eww-noticenter.lock"
 EWW_BIN="$HOME/.local/bin/eww"
 
 run() {
-	${EWW_BIN} open dashboard
-	${EWW_BIN} update dash=true
+	${EWW_BIN} open notification-center
+	${EWW_BIN} update noticenter=true
 }
 
 # Run eww daemon if not running
@@ -17,9 +17,9 @@ else
 		touch "$LOCK_FILE"
 		run
 	else
-		${EWW_BIN} update dash=false
+		${EWW_BIN} update noticenter=false
 		sleep 0.4
-		${EWW_BIN} close dashboard
+		${EWW_BIN} close notification-center
 		rm "$LOCK_FILE"
 	fi
 fi

@@ -1,4 +1,4 @@
-(defwindow notification-history
+(defwindow notification-popup
 	:geometry (geometry :x "-1%"
 						:y "-1%" 
 						:width "25%" 
@@ -7,4 +7,4 @@
 	:windowtype "dock"
 	:stacking "fg"
 	:wm-ignore false
-	(notification-history))
+	(notification-popup))

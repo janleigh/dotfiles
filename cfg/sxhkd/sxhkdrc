@@ -28,7 +28,7 @@ super + shift + d
 
 # Toggle notification center.
 super + shift + n
-	sh $HOME/.local/bin/notifcntr
+	sh $HOME/.config/eww/scripts/openNotificationCenter.sh
 
 # Toggle color picker.
 super + shift + p

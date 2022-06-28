@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$(dunstctl history | jq -r '.data[0]')" = "[]" ]; then
+    echo true
+else
+    echo false
+fi

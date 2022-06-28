@@ -1,0 +1,32 @@
+.notification-center-window {
+	.notification-center-spacer {
+		transition: all 1800ms cubic-bezier(.1, -0.00, .0, 1.49);
+	}
+	
+	.notification-center-box {
+		background-color: $darker-background;
+		border-radius: 10px;
+		padding: 2em;
+
+		min-width: 310px;
+
+		.notification-text {
+			margin: .75em 0em;
+			font-size: 22px;
+			font-weight: bolder;
+			font-family: "Roboto";
+		}
+	
+		.notification-scroller {
+			min-height: 42em;
+	
+			.notification-history {
+				.eon {
+					font-size: 14px;
+					font-weight: bolder;
+					font-family: "Roboto";
+				}
+			}
+		}
+	}
+}

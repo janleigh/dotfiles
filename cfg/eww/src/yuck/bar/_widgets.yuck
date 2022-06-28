@@ -19,7 +19,7 @@
 		:orientation "h"
 		:space-evenly "false"
 		(button :class "notif-btn" :tooltip "Notification Center"
-			:onclick "$HOME/.local/bin/notifcntr"
+			:onclick "$HOME/.config/eww/scripts/openNotificationCenter.sh"
 			""
 		)
 		(button :class "dash-btn" :tooltip "Dashboard"
