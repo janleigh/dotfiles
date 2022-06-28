@@ -11,20 +11,28 @@
 		min-width: 310px;
 
 		.notification-text {
-			margin: .75em 0em;
+			margin: .5em 0em;
 			font-size: 22px;
 			font-weight: bolder;
 			font-family: "Roboto";
 		}
 	
 		.notification-scroller {
-			min-height: 42em;
+			min-height: 44em;
 	
 			.notification-history {
 				.eon {
 					font-size: 14px;
 					font-weight: bolder;
 					font-family: "Roboto";
+				}
+
+				.notification {
+					background-color: $background-secondary;
+
+					.notification-title {
+						background-color: $background-tertiary;
+					}
 				}
 			}
 		}
