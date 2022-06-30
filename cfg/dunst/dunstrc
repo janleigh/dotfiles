@@ -143,23 +143,11 @@
     # notification height to avoid clipping text and/or icons.
     corner_radius = 10
 
-[notification_logger]
-    script = ~/.config/dunst/scripts/notificationLogger.sh
-
-[notification_sound]
-    script = ~/.config/dunst/scripts/notificationSound.sh
-
 [open_eww_popup]
     script = ~/.config/dunst/scripts/openEwwPopup.sh
 
 [song_art]
     script = ~/.config/dunst/scripts/songArtLogger.sh
-
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
 
 [urgency_low]
     background = "#0B0F10"

@@ -1,15 +1,14 @@
 #!/bin/bash
 
-title=$(playerctl metadata --format '{{ title }}')
-count=$(echo -n "$title" | wc -c)
+TITLE=$(playerctl metadata --format '{{ title }}')
 
-if [ -z "$title" ]; then
+if [ -z "$TITLE" ]; then
 	echo "Nothing Playing";
 else
 	# Eww can't truncate Japanese characters.
-	if [[ "$title" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
-		echo ${title::10}...
+	if [[ "$TITLE" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
+		echo ${TITLE::10}...
 	else
-		echo $title
+		echo $TITLE
 	fi
 fi

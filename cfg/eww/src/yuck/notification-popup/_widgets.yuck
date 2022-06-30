@@ -7,6 +7,7 @@
 						:title {entry["appname"]["data"]}
 						:body '${entry["summary"]["data"]}\\n${entry["body"]["data"]}'
 						:icon {entry["appname"]["data"] == "Spotify" ? "../../.cache/dunst/${entry['id']['data']}.png" : (entry["icon_path"]["data"] ?: "../dunst/assets/notification/fallback-notif.png")}
+                        :LC "${EWW_CMD} update noti=false; sleep 0.270; ${EWW_CMD} close notification-popup; pkill openEwwPopup.sh"
 						:reveal_close_icon "true"
 					)
 				)
@@ -16,24 +17,22 @@
 )
 (defvar noti false)
 
-(defwidget notification [title body icon ?reveal_close_icon]
-	(eventbox :onrightclick "${EWW_CMD} update noti=false; sleep 0.270; ${EWW_CMD} close notification-popup; pkill openEwwPopup.sh"
-		(box :class "notification" :orientation "v" :space-evenly "false"
-			(box :class "notification-title"
-				(label :class "notification-title-text" :halign "start" :text title)
-				(revealer :reveal {reveal_close_icon ?: false}
-					(box :halign "end"
-						(button :class "notification-close"
-						:onclick "${EWW_CMD} update noti=false; sleep 0.270; ${EWW_CMD} close notification-popup; pkill openEwwPopup.sh"
-						"")
-					)
+(defwidget notification [title body icon ?LC ?reveal_close_icon]
+	(box :class "notification" :orientation "v" :space-evenly "false"
+		(box :class "notification-title"
+			(label :class "notification-title-text" :halign "start" :text title)
+			(revealer :reveal {reveal_close_icon ?: false}
+				(box :halign "end"
+					(button :class "notification-close"
+					:onclick {LC ?: "echo 'Hello, world!'"}
+					"")
 				)
 			)
-			(box :class "notification-body" :space-evenly "false" :orientation "h"
-				(box :class "notification-image" :orientation "h" :valign "center" :style "background-image: url('${icon}')")
-				(box :orientation "v"
-					(label :class "notification-body-text" :wrap "true" :limit-width 60 :text body)
-				)
+		)
+		(box :class "notification-body" :space-evenly "false" :orientation "h"
+			(box :class "notification-image" :orientation "h" :valign "center" :style "background-image: url('${icon}')")
+			(box :orientation "v"
+				(label :class "notification-body-text" :wrap "true" :limit-width 60 :text body)
 			)
 		)
 	)

@@ -1,20 +1,20 @@
 #!/bin/bash
 
-tmp_dir="$HOME/.cache/dunst"
-tmp_cover_path=$tmp_dir/$DUNST_ID.png
-tmp_temp_path=$tmp_dir/temp.png
+TMP_DIR="$HOME/.cache/eww/getart"
+TMP_COVER_PATH=$TMP_DIR/cover.png
+TMP_TEMP_PATH=$TMP_DIR/temp.png
 
-if [ ! -d $tmp_dir ]; then
-	mkdir -p $tmp_dir
+if [ ! -d $TMP_DIR ]; then
+	mkdir -p $TMP_DIR
 fi
 
-artlink="$(playerctl -p spotify,$any,mpd,firefox,chromium,brave metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
-artFromBrowser=$(playerctl metadata mpris:artUrl | sed 's/file:\/\///g')
+ART_LINK="$(playerctl -p spotify,$any,mpd,firefox,chromium,brave metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
+ART_FROM_BROWSER=$(playerctl metadata mpris:artUrl | sed 's/file:\/\///g')
 
 if [ $(playerctl -p spotify,%any,firefox,chromium,brave,mpd metadata mpris:artUrl) ]; then
-	curl -s "$artlink" --output $tmp_temp_path
-elif [[ -n $artFromBrowser ]]; then
-	cp $artFromBrowser $tmp_temp_path
+	curl -s "$ART_LINK" --output $TMP_TEMP_PATH
+elif [[ -n $ART_FROM_BROWSER ]]; then
+	cp $ART_FROM_BROWSER $TMP_TEMP_PATH
 fi
 
-cp $tmp_temp_path $tmp_cover_path
+cp $TMP_TEMP_PATH $TMP_COVER_PATH

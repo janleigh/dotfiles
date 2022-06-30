@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Don't wanna bother to clean this mess. :D
+
 workspaces() {
 	ws1=1
 	ws2=2
