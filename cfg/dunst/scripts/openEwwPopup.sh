@@ -19,7 +19,6 @@ else
 			if [ $pid != $$ ]; then
 				kill -9 $pid
 				KILLED=true
-				finish
 			fi
 		done >/dev/null
 
