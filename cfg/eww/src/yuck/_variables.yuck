@@ -1,6 +1,4 @@
-(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/")
-
-;;  DATE VARS 
+;; DATE VARS 
 (defpoll minute :interval "1s"
 	"date '+%M'")
 (defpoll hour :interval "1s"
@@ -12,7 +10,7 @@
 (defpoll month_year :interval "24h"
 	"date '+%B, %Y'")
 
-;;  SYSTEM INFO VARS
+;; SYSTEM INFO VARS
 (defpoll used_ram :interval "2s"
 	"./scripts/getUsedRam")
 (defpoll volume :interval "500ms"
@@ -26,17 +24,15 @@
 
 ;; MUSIC PLAYER VARS
 (defpoll art :interval "5s"
-	"echo \"$HOME/.cache/eww/getart/cover.png\"")
-(defpoll song_art :interval "5s"
+	"echo \"$HOME/.cache/eww/cover.png\"")
+(defpoll song_art :interval "2s"
 	"./scripts/getSongArt")
-(defpoll song_artist :interval "5s"
+(defpoll song_artist :interval "2s"
 	"./scripts/getSongArtist")
 (defpoll song_title :interval "2s"
 	"./scripts/getSongTitle")
 (defpoll song_position :interval "250ms"
 	"./scripts/getSongPosition")
-(defpoll song_title_full :interval "5s"
-	"./scripts/getSongTitle full")
 (defpoll player_status :interval "2s"
 	"./scripts/getPlayerStatus")
 (defpoll player_status_text :interval "2s"

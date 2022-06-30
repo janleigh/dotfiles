@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TMP_DIR="$HOME/.cache/eww/getart"
-TMP_COVER_PATH=$TMP_DIR/cover.png
+TMP_DIR="$HOME/.cache/dunst"
+TMP_COVER_PATH=$TMP_DIR/$DUNST_ID.png
 TMP_TEMP_PATH=$TMP_DIR/temp.png
 
 if [ ! -d $TMP_DIR ]; then

@@ -1,6 +1,6 @@
 (defwindow notification-center
 	:geometry (geometry :x "31%"
-						:y "2%" 
+						:y "3%" 
 						:width "26%" 
 						:height "83%"
 						:anchor "center right")

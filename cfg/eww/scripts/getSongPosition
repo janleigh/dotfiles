@@ -34,7 +34,7 @@ if [ $SHOW_POSITION -gt 0 ]; then
 			if [ $(playerctl metadata mpris:length | wc -c) -gt 0 ]; then
 				print_position
 			else
-				printf "--:-- / --:-- "
+				echo "--:-- / --:-- "
 			fi
 			;;
 	esac

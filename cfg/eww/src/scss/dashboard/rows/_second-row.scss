@@ -8,30 +8,30 @@
 				background-color: $background-primary;
 				background-size: cover;
 				background-repeat: no-repeat;
-				border-radius: 5px;
-		
-				min-width: 248px;
+				background-position: center;
+				border-radius: 6px;
+
 				margin-right: 5px;
+				min-width: 252px;
 
 				.music-info {
-					background-color: transparent;
-					border-radius: 6px;
-		
-					margin-top: 10px;
-					margin-left: -9.4rem;
+					border-radius: inherit;
+					// background: linear-gradient(to right, $background-primary 8%, transparent);
+	
+					padding-top: 10px;
+					padding-left: 1em;
 
-					.np {
+					.now-playing {
 						margin-bottom: 6px;
 					}
-		
-					.title {
+					.song-title {
 						font-size: 16px;
 						font-weight: bolder;
 					}
-					.artist, .position {
+					.song-artist, .song-position {
 						color: $foreground-secondary;
 					}
-					.position {
+					.song-position {
 						margin-top: 4em;
 					}
 				}

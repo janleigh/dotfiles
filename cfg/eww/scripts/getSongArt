@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TMP_DIR="$HOME/.cache/eww/getart"
+TMP_DIR="$HOME/.cache/eww"
 TMP_COVER_PATH=$TMP_DIR/cover.png
 TMP_TEMP_PATH=$TMP_DIR/temp.png
 
@@ -18,6 +18,8 @@ elif [[ -n $ART_FROM_BROWSER ]]; then
 else
 	cp $HOME/.config/eww/assets/fallback.png $TMP_TEMP_PATH
 fi
+
+cp $TMP_TEMP_PATH $TMP_COVER_PATH
 
 # an epic effekt
 # convert $TMP_TEMP_PATH -alpha set -channel A -evaluate multiply 1.0  $TMP_COVER_PATH
