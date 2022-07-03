@@ -23,19 +23,19 @@
 	"./scripts/getBattery capacity")
 
 ;; MUSIC PLAYER VARS
-(defpoll art :interval "5s"
+(defpoll art :interval "1s"
 	"echo \"$HOME/.cache/eww/cover.png\"")
-(defpoll song_art :interval "2s"
+(defpoll song_art :interval "3s"
 	"./scripts/getSongArt")
-(defpoll song_artist :interval "2s"
+(defpoll song_artist :interval "1s"
 	"./scripts/getSongArtist")
-(defpoll song_title :interval "2s"
+(defpoll song_title :interval "1s"
 	"./scripts/getSongTitle")
 (defpoll song_position :interval "250ms"
 	"./scripts/getSongPosition")
-(defpoll player_status :interval "2s"
+(defpoll player_status :interval "1s"
 	"./scripts/getPlayerStatus")
-(defpoll player_status_text :interval "2s"
+(defpoll player_status_text :interval "1s"
 	"./scripts/getPlayerStatusText")
 
 ;; LOCK SCREEN VARS
