@@ -9,7 +9,7 @@
    <a href="https://github.com/janleigh/dotfiles/issues">
       <img src="https://img.shields.io/github/issues/janleigh/dotfiles?color=ffb29b&labelColor=1C2325&style=for-the-badge">
    </a>
-   <a href="LICENSE.md">
+   <a href="../LICENSE.md">
       <img src="https://img.shields.io/github/license/janleigh/dotfiles?color=FCA2AA&labelColor=1C2325&style=for-the-badge">
    </a>
    <br>
