@@ -291,7 +291,9 @@
 
    Apparently, my colorscheme doesn't have a name yet. It is based around [rxyhn](https://github.com/rxyhn)'s "Night" colorscheme and [JavaCafe01](https://github.com/JavaCafe01/)'s colorscheme. Feel free to suggest a name for it on the [discussions](https://github.com/janleigh/dotfiles/discussions) tab. Also, here's a nice preview of it.
 
-   <img align="center" src="assets/colorscheme.png" alt="Colorscheme Showcase">
+   <p align="center">
+      <img src="assets/colorscheme.png" alt="Colorscheme Showcase">
+   </p>
 
 ## :money_with_wings: <samp>TIP JAR</samp>
 
