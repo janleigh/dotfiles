@@ -5,6 +5,7 @@
 # ##############################################################################
 
 export WALLPAPER="$HOME/.config/bspwm/assets/wallpaper.png"
+export LOCKSCREEN_WALLPAPER="$HOME/.config/bspwm/assets/lockscreen.png"
 
 # ##############################################################################
 # #                                  FUNCTIONS                                 # 
@@ -41,6 +42,9 @@ xset m 0 0
 
 # Fix for eww bar not hiding on a fullscreen window.
 $HOME/.config/bspwm/scripts/eww_fullscreen_fix.sh &
+
+# Autolock screen after 15 minutes of inactivity. (systemd only!)
+xautolock -time 15 -locker $HOME/.local/bin/lck -detectsleep &
 
 # Start MPD and mpDris2
 exec mpd &

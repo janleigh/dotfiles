@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Internal use. Do not edit.
+# INTERNAL USE! Do not edit.
 FAKE_BATTERY="0"
 
 if [ "$FAKE_BATTERY" -gt 0 ]; then
@@ -24,8 +24,10 @@ case $1 in
 		fi
 		;;
 	"capacity")
-		if [ -f "$HOME/.cache/fake_battery_capacity" ]; then
-			echo $(cat "$HOME/.cache/fake_battery_capacity")
+		if [ "$FAKE_BATTERY" -gt 0 ]; then
+			if [ -f "$HOME/.cache/fake_battery_capacity" ]; then
+				echo $(cat "$HOME/.cache/fake_battery_capacity")
+			fi
 		elif [ -f /sys/class/power_supply/BAT0/capacity ]; then
 			echo $(cat /sys/class/power_supply/BAT0/capacity)
 		fi

@@ -1,13 +1,20 @@
 .battery {
-	.bat-progress {
-		margin: .5em 0em .7em;
+
+	scale trough {
 		background-color: #50906a;
-		color: $green;
+		border-radius: 6px;
+		min-height: 2.4em;
+		min-width: 5em;
+	}
 
-		.bat-icon {
-			font-size: 2.5em;
+	trough highlight {
+		background-image: linear-gradient(to right, $green);
+		border-radius: 6px;
+	}
 
-			margin: .4em;
-		}
+	.battery-label {
+		color: $background-primary;
+		font-size: 18px;
+		margin: .1em 0em 0em;
 	}
 }

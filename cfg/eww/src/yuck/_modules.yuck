@@ -1,0 +1,35 @@
+(defwidget notification [title body icon ?LC ?reveal_close_icon]
+	(box :class "notification" :orientation "v" :space-evenly "false"
+		(box :class "notification-title"
+			(label :class "notification-title-text" :halign "start" :text title)
+			(revealer :reveal {reveal_close_icon ?: false}
+				(box :halign "end"
+					(button :class "notification-close"
+					:onclick {LC ?: "echo 'Hello, world!'"}
+					"")
+				)
+			)
+		)
+		(box :class "notification-body" :space-evenly "false" :orientation "h"
+			(box :class "notification-image" :orientation "h" :valign "center" :style "background-image: url('${icon}')")
+			(box :orientation "v"
+				(label :class "notification-body-text" :wrap "true" :limit-width 60 :text body)
+			)
+		)
+	)
+)
+
+(defwidget layout []
+	(box :orientation "h"
+		(button :class "layout-btn" 
+			:onclick "sh ./scripts/bspLayout.sh set"
+			:onmiddleclick "sh ./scripts/bspLayout.sh reset"
+			{layout_icon ?: ""})
+	)
+)
+
+(defwidget separator [text] 
+	(box :orientation "h"
+		(label :class "separator" :text text)
+	)
+)

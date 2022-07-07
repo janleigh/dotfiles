@@ -3,7 +3,7 @@
 KEY=""
 CITY=""
 
-weather=$(curl -sf "api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$KEY&units=metric")
+weather=$(curl --connect-timeout 4 -sf "api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$KEY&units=metric")
 weather_desc=$(echo $weather | jq -r ".weather[0].main")
 weather_temp=$(echo $weather | jq ".main.temp" | cut -d "." -f 1)
 feels_like=$(echo $weather | jq ".main.feels_like" | cut -d "." -f 1)
@@ -12,7 +12,7 @@ wind=$(echo $weather | jq ".wind.speed")
 
 check_if_empty() {
 	if [ -z "$1" ]; then
-		echo "0"
+		echo "-1"
 	else
 		echo "$1"
 	fi
@@ -20,7 +20,7 @@ check_if_empty() {
 
 check_if_empty_text() {
 	if [ -z "$1" ]; then
-		echo "404"
+		echo "Not Available."
 	else
 		echo "$1"
 	fi
@@ -31,7 +31,6 @@ case $1 in
 		check_if_empty $weather_temp
 		;;
 	current_temp_fahrenheit)
-		# Convert $weather_temp to Fahrenheit without decimals.
 		weather_temp=$((($weather_temp * 9 / 5) + 32))
 		check_if_empty $weather_temp
 		;;

@@ -18,9 +18,9 @@ super + d
 # #                                   HOTKEYS                                  #
 # ##############################################################################
 
-# Toggle lock screen.
-super + l
-	sh $HOME/.local/bin/lck
+# Toggle lock screen via xautolock.
+{super,ctrl} + alt + Delete
+	xautolock -locknow
 
 # Toggle dashboard.
 super + shift + d
@@ -40,7 +40,7 @@ super + shift + b
 
 # If dashboard/notification center failed to close, run this.
 super + alt + {d,n}
-    $HOME/.local/bin/eww close {dashboard,notification-center}
+	$HOME/.local/bin/eww close {dashboard,notification-center}
 
 # ##############################################################################
 # #                                 CONTROL KEYS                               #
@@ -58,13 +58,13 @@ XF86AudioMute
 XF86MonBrightness{Up,Down}
 	brightnessctl set 5%{+,-}
 
-# Screenshot; Save to local storage
+# Screenshot; Save to local storage.
 Print
 	DATE=$(date '+%b%d-%H-%M.png'); \
 	maim -us "$HOME/Pictures/Screenshots/$DATE"; \
 	sh $HOME/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE
 
-# Screenshot; Upload to CDN
+# Screenshot; Upload to CDN.
 super + Print
 	DATE=$(date '+%b%d-%H-%M.png'); \
 	maim -us "$HOME/Pictures/Screenshots/$DATE"; \
@@ -121,7 +121,7 @@ super + ctrl + space
 # ##############################################################################
 
 # Restart sxhkd.
-super + alt + r
+super + ctrl + r
 	pkill -USR1 -x sxhkd; notify-send "sxhkd" "Restarted successfully."
 
 # Quit/restart bspwm.
@@ -133,8 +133,8 @@ super + ctrl + {q,r}
 # ##############################################################################
 
 # Close all active notifications.
-~button1
-	bspc query -D -d .focused.!occupied && dunstctl close-all && $HOME/.local/bin/eww update noti=false; sleep 0.270; $HOME/.local/bin/eww close notification-popup; pkill openEwwPopup.sh
+# ~button1
+#	bspc query -D -d .focused.!occupied && dunstctl close-all && $HOME/.local/bin/eww update noti=false; sleep 0.270; $HOME/.local/bin/eww close notification-popup; pkill openEwwPopup.sh
 
 # Toggle dashboard using middle click.
 ~button2
@@ -142,6 +142,6 @@ super + ctrl + {q,r}
 
 # Toggle right click context menu.
 ~button3
-	bspc query -D -d .focused.!occupied && echo -e "$(cat ~/.config/jgmenu/menu.txt)" | jgmenu --simple
+	bspc query -D -d .focused.!occupied && cd $HOME/.config/jgmenu && echo -e "$(cat ~/.config/jgmenu/menu.txt)" | jgmenu --simple
 
 # EOF

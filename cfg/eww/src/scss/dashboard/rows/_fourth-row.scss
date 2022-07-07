@@ -1,20 +1,29 @@
 .dashboard-box {
-	.system-btn {
-		margin-top: 1em;
-		padding: 1em 1.5em;
+	.fourth-row {
 		background-color: $background-primary;
 		border-radius: 5px;
+		margin-top: 1em;
 
-		button {
-			font-size: 28px;
-			margin: .2em .3em;
-			padding: .4em;
-			background-color: $background-secondary;
-			border-radius: 30%;
-			font-family: "Material Icons";
+		.system-btn-text {
+			color: $foreground-secondary;
+			margin: 1em 0em 0em .9em;
+		}
 
-			&:hover {
-				color: $accent;
+		.system-btn {
+			padding: 1em 1.5em;
+
+			button {
+				font-size: 28px;
+				margin: .2em .3em;
+				padding: .4em;
+				background-color: $background-secondary;
+				border-radius: 30%;
+				font-family: "Material Icons";
+	
+				&:hover {
+					color: $accent;
+					background-color: $background-tertiary;
+				}
 			}
 		}
 	}

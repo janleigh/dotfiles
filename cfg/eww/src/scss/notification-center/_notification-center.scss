@@ -9,22 +9,21 @@
 		padding: 2em;
 
 		min-width: 310px;
+		font-family: "Roboto";
 
 		.notification-text {
 			margin: .5em 0em;
 			font-size: 22px;
-			font-weight: bolder;
-			font-family: "Roboto";
+			font-weight: bold;
 		}
 	
 		.notification-scroller {
-			min-height: 44em;
+			min-height: 43em;
 	
 			.notification-history {
 				.eon {
-					font-size: 14px;
-					font-weight: bolder;
-					font-family: "Roboto";
+					font-size: 18px;
+					font-weight: bold;
 				}
 
 				.notification {
@@ -35,6 +34,14 @@
 					}
 				}
 			}
+		}
+
+		.clear-all-btn {
+			background-color: $background-tertiary;
+			border-radius: 16px;
+			padding: 1em;
+			font-size: 14px;
+			font-weight: bold;
 		}
 	}
 }

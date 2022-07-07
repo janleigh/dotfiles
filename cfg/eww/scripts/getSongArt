@@ -16,10 +16,8 @@ if [ $(playerctl -p spotify,%any,firefox,chromium,brave,mpd metadata mpris:artUr
 elif [[ -n $ART_FROM_BROWSER ]]; then
 	cp $ART_FROM_BROWSER $TMP_TEMP_PATH
 else
-	cp $HOME/.config/eww/assets/fallback.png $TMP_TEMP_PATH
+	cp $HOME/.config/eww/assets/music_fallback.png $TMP_TEMP_PATH
 fi
-
-cp $TMP_TEMP_PATH $TMP_COVER_PATH
 
 # an epic effekt
 # convert $TMP_TEMP_PATH -alpha set -channel A -evaluate multiply 1.0  $TMP_COVER_PATH

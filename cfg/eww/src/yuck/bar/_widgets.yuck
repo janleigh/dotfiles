@@ -5,7 +5,7 @@
 		:halign "center"
 		(button :class "launcher-btn"
 				:onclick "$HOME/.local/bin/appmnu"
-				""
+				""
 		)
 	)
 )
@@ -14,25 +14,10 @@
 	(literal :content workspace))
 (deflisten workspace "scripts/getWorkspaces")
 
-(defwidget action-center []
-	(box :class "action-center"
-		:orientation "h"
-		:space-evenly "false"
-		(button :class "notif-btn" :tooltip "Notification Center"
-			:onclick "$HOME/.config/eww/scripts/openNotificationCenter.sh"
-			""
-		)
-		(button :class "dash-btn" :tooltip "Dashboard"
-			:onclick "$HOME/.config/eww/scripts/openDashboard.sh; $HOME/.local/bin/eww close dashboard"
-			""
-		)
-	)
-)
-
 (defwidget time []
 	(box :orientation "h"
 		:class "time"
-		:valign "center"
+		:halign "start"
 		(button :class "time-hour" 
 			:onclick "sh scripts/openCalendar.sh"
 			hour)
@@ -47,20 +32,34 @@
 	(box :class "battery"
 		:orientation "h"
 		:space-evenly "false"
-		(circular-progress :class "bat-progress"
-			:value battery_capacity
-			:thickness 4
-			:clockwise true
-			:start-at 75
-			:tooltip "Battery: ${battery_capacity}%"
-			(label :class "bat-icon" :text "")
+		:tooltip "Battery: ${battery_capacity}%"
+		
+		(overlay
+			(scale :class "battery-scale"
+				:min 0
+				:max 100
+				:orientation "h"
+				:value battery_capacity
+			)
+			(label :class "battery-label"
+				:text ""
+			)
 		)
 	)
 )
 
-(defwidget separator [text] 
-	(box :orientation "h"
-		(label :class "separator" :text text)
+(defwidget action-center []
+	(box :class "action-center"
+		:orientation "h"
+		:space-evenly "true"
+		(button :class "wifi-btn" :tooltip "Connected to ${network_name}"
+			:onclick "iwgtk &"
+			network_icon
+		)
+		(button :class "bluetooth-btn" :tooltip "Powered: ${bluetooth_status}"
+			:onclick "blueman-manager &"
+			bluetooth_icon
+		)
 	)
 )
 
@@ -106,7 +105,9 @@
 	(box :orientation "h" :space-evenly "false" :halign "end"
 		(battery)
 		(separator :text "‏ ‏ ‏")
-		(action-center)))
+		(action-center)
+		; (separator :text "‏ ‏ ‏")
+		(layout)))
 	
 (defwidget bar []
 	(box :class "eww-bar" :orientation "h" :valign "false" :halign "false"

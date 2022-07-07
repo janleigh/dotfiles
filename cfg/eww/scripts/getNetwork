@@ -1,22 +1,17 @@
 #!/bin/sh
 
-# Check for the available wifi interface (Wifi for now will add ethernet support soon) making it dynamic
-INTERFACE=$(iw dev | awk '$1=="Interface"{print $2}')
-
-symbol() {
-	[ $(cat /sys/class/net/w*/operstate) = down ] && echo  && exit
-	echo 
-}
-
-name() {
-	nmcli | grep $INTERFACE | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
-}
-
-color() {
-	[ $(cat /sys/class/net/w*/operstate) = down ] && echo "$bgSecondary" && exit
-	echo "#1c2325"
-}
-
-[ "$1" = "icon" ] && symbol && exit
-[ "$1" = "name" ] && name && exit
-[ "$1" = "color" ] && color && exit
+case $1 in
+	"icon")
+		[ $(cat /sys/class/net/w*/operstate) = down ] && echo "" && exit
+		echo ""
+		;;
+	"name")
+		SSID=$(iwgetid -r)
+		[ -z "$SSID" ] && echo "" && exit
+		echo "$SSID"
+		;;
+	"color")
+		[ $(cat /sys/class/net/w*/operstate) = down ] && echo "$bgSecondary" && exit
+		echo "#1c2325"
+		;;
+esac

@@ -5,3 +5,4 @@ cfg/jgmenu/backup/
 # Files
 cfg/eww/.editorconfig
 cfg/ncmpcpp/error.log
+etc/fonts/**/.uuid

@@ -63,11 +63,29 @@
 	"date '+%Y'")
 
 ;; UTILITY ROW VARS
-(defpoll network_status :interval "1s" "scripts/getNetwork color")
-(defpoll redshift_status :interval "1s" "./scripts/getRedshift color")
-(defpoll dnd_status :interval "1s" "./scripts/dashActions.sh dndstat")
-(defpoll jeff_status :interval "1s" "./scripts/dashActions.sh jstat")
+(defpoll network_status :interval "1s"
+	"scripts/getNetwork color")
+(defpoll network_icon :interval "1s"
+	"scripts/getNetwork icon")
+(defpoll network_name :interval "1s"
+	"scripts/getNetwork name")
+(defpoll redshift_status :interval "1s"
+	"./scripts/getRedshift color")
+(defpoll dnd_status :interval "1s"
+	"./scripts/dashActions.sh dndstat")
+(defpoll jeff_status :interval "1s"
+	"./scripts/dashActions.sh jstat")
 
 ;; NOTIFICATION CENTER/POPUP VARS
-(defpoll dunst-history :interval "250ms" "dunstctl history")
-(defpoll reveal_no_notification_text :interval "5m" "./scripts/getNotificationCount")
+(defpoll dunst_history :interval "250ms"
+	"dunstctl history")
+(defpoll reveal_no_notification_text :interval "5m"
+	"./scripts/getNotificationCount")
+
+;; UNSORTED VARS
+(defpoll layout_icon :interval "250ms"
+	"./scripts/bspLayout.sh icon")
+(defpoll bluetooth_icon :interval "1s"
+	"scripts/getBluetooth icon")
+(defpoll bluetooth_status :interval "1s"
+	"scripts/getBluetooth status")

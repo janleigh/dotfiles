@@ -3,14 +3,16 @@ File Manager,thunar,org.xfce.thunar
 Favorites,^checkout(favorites),user-bookmarks
 ^sep()
 Launch Terminal,tabbed -n "term" alacritty -t "term" --embed,utilities-terminal
+Lock Screen,xautolock -now,xfsm-lock
 ^sep()
-Lock Screen,$HOME/.local/bin/lck,utox
-Exit,^checkout(exit),system-shutdown
+Exit,^checkout(exit),./assets/system-shutdown.svg
+
 ^tag(favorites)
 Discord,discord-canary,discord
 Visual Studio Code,code --unity-launch,visual-studio-code
 Spotify,spotify --uri=%U,spotify
+
 ^tag(exit)
-Log Out,bspc quit,system-logout
-Reboot,systemctl -i reboot,system-reboot
-Shutdown,systemctl -i poweroff,system-shutdown
+Log Out,bspc quit,./assets/system-logout.svg
+Reboot,systemctl -i reboot,./assets/system-reboot.svg
+Shutdown,systemctl -i poweroff,./assets/system-shutdown.svg

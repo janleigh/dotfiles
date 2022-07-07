@@ -1,6 +1,6 @@
 (defwidget dashboard []
 	(box :class "dashboard-window" :space-evenly "false"  :orientation "h"
-		(box :class "dashboard-spacer" :style {dash ? "padding-left: 0em;" : "padding-left: 437px;"})
+		(box :class "dashboard-spacer" :style {dash ? "padding-left: 0em;" : "padding-left: 432px;"})
 		(box :class "dashboard-box" :orientation "v" :space-evenly "false"
 			(box :class "first-row" :orientation "h"
 				(box :class "column-one" :orientation "v"
@@ -96,12 +96,34 @@
 					)
 				)
 			)
-			(box :class "fourth-row" :orientation "h"
-				(box :class "system-btn" :orientation "h" :space-evenly "true"
-					(button :class "network-btn" :style "background-color: ${network_status}" :tooltip "Network" :onclick "iwgtk &" "")
-					(button :class "redshift-btn" :style "background-color: ${redshift_status}" :tooltip "Night Light" :onclick "sh ./scripts/getRedshift toggle" "")
-					(button :class "dnd-btn" :style "background-color: ${dnd_status}" :onclick "sh ./scripts/dashActions.sh dnd" :tooltip "Do Not Disturb" "")
-					(button :class "jeff-btn" :style "background-color: ${jeff_status}" :tooltip "Capture Screen" :onclick "sh ./scripts/dashActions.sh jeff" "")
+			(box :class "fourth-row" :orientation "v" :space-evenly "false"
+				(label :class "system-btn-text" :text "Quick Utilities" :halign "start")
+				(box :class "system-btn" :orientation "v" :space-evenly "true"
+					(box :orientation "h"
+						(button :class "scrot-btn"
+							:tooltip "Screenshot"
+							:onclick "sh ./scripts/dashActions.sh scrot"
+							""
+						)
+						(button :class "jeff-btn"
+							:style "background-color: ${jeff_status}"
+							:tooltip "Capture Screen"
+							:onclick "sh ./scripts/dashActions.sh jeff"
+							""
+						)
+						(button :class "redshift-btn"
+							:style "background-color: ${redshift_status}"
+							:tooltip "Night Light"
+							:onclick "sh ./scripts/getRedshift toggle"
+							""
+						)
+						(button :class "dnd-btn"
+							:style "background-color: ${dnd_status}"
+							:onclick "sh ./scripts/dashActions.sh dnd"
+							:tooltip "Do Not Disturb"
+							""
+						)
+					)
 				)
 			)
 		)

@@ -1,22 +1,15 @@
 #!/bin/bash
 
+EWW_BIN="$HOME/.local/bin/eww"
+AIRPLANE_MODE_LOCK_FILE="$HOME/.cache/airplane-mode.lock"
 DND_LOCK_FILE="$HOME/.cache/dnd-lock.lock"
 JEFF_LOCK_FILE="$HOME/.cache/jeff-lock.lock"
 
-_notify() {
-    local icon
-    if [ -z "$3" ]; then
-        icon="$HOME/.config/dunst/assets/notification/scrot.png"
-    else
-        icon="$3"
-    fi
-
-    notify-send -a "Dashboard" -i "$icon" "$1" "$2"
-}
-
 pre_run() {
-	# Close eww dashboard
-	sh $HOME/.config/eww/scripts/openDashboard.sh
+	${EWW_BIN} update dash=false
+	sleep 0.4
+	${EWW_BIN} close dashboard
+	rm "$HOME/.cache/eww-dash.lock"
 }
 
 run_dnd() {
@@ -39,7 +32,7 @@ run_giph() {
 		ps x | grep 'ffmpeg -f x11grab' | grep -v grep | awk '{print $1}' | xargs kill
 
 		sh $HOME/.local/bin/jeff selmp4
-	else
+	elsew
 		rm "$JEFF_LOCK_FILE"
 		ps x | grep 'ffmpeg -f x11grab' | grep -v grep | awk '{print $1}' | xargs kill -2
 	fi
@@ -59,14 +52,10 @@ case $1 in
 		;;
 	"scrot")
 		# Yes, this is different from the sxhkdrc config.
-		pre_run
-
 		DATE=$(date '+%b%d-%H-%M.png')
 		maim -us | tee "$HOME/Pictures/Screenshots/$DATE" | xclip -selection clipboard -t image/png
 		;;
 	"jeff")
-		pre_run
-		
 		run_giph
 		;;
 	"dndstat")
