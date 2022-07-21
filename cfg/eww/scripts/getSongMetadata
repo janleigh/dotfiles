@@ -1,0 +1,67 @@
+#!/bin/bash
+
+ARTIST=$(playerctl metadata --format '{{ artist }}')
+TITLE=$(playerctl metadata --format '{{ title }}')
+PLAYER=$(playerctl -p spotify,%any,firefox,chromium,brave,mpd status)
+
+artist() {
+	# Check if $title is "Advertisement" cause fuck Spotify.
+	# Deathemonic: How about using a spicetify adblocker (The Easy Way) or a adblock script https://github.com/abba23/spotify-adblock (The Chad Way) 
+	# Kizu: https://github.com/abba23/spotify-adblock to big to clone for my wifi lmao
+	if [ "$TITLE" = "Advertisement" ]; then
+		echo "Spotify Free"
+	else
+		if [ -z "$ARTIST" ]; then
+			echo "Unknown Artist";
+		else
+			echo "by $ARTIST"
+		fi
+	fi
+}
+
+title() {
+	if [ -z "$TITLE" ]; then
+		echo "Nothing Playing";
+	else
+		# Eww can't truncate Japanese characters.
+		if [[ "$TITLE" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
+			echo ${TITLE::10}...
+		else
+			echo $TITLE
+		fi
+	fi
+}
+
+player_status() {
+	if [ "$PLAYER" = "Playing" ]; then
+		STATUS=""
+	elif [ "$PLAYER" = "Paused" ]; then
+		STATUS=""
+	else
+		STATUS=""
+	fi
+
+	echo $STATUS
+}
+
+player_status_text() {
+	PLAYER_NAME=$(playerctl -l)
+	PLAYER_NAME=$(echo $PLAYER_NAME | cut -d '.' -f 1)
+
+	if [ "$PLAYER" = "Playing" ]; then
+		PLAYERMSG="true"
+	else
+		echo "Music"
+	fi
+
+	if [ "$PLAYERMSG" = "true" ]; then
+		echo "Now Playing ⁃ via ${PLAYER_NAME^}"
+	fi
+}
+
+case $1 in
+	"artist") artist;;
+	"title") title;;
+	"player_status") player_status;;
+	"player_status_text") player_status_text;;
+esac

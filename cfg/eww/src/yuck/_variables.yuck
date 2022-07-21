@@ -28,15 +28,15 @@
 (defpoll song_art :interval "3s"
 	"./scripts/getSongArt")
 (defpoll song_artist :interval "1s"
-	"./scripts/getSongArtist")
+	"./scripts/getSongMetadata artist")
 (defpoll song_title :interval "1s"
-	"./scripts/getSongTitle")
+	"./scripts/getSongMetadata title")
 (defpoll song_position :interval "250ms"
 	"./scripts/getSongPosition")
 (defpoll player_status :interval "1s"
-	"./scripts/getPlayerStatus")
+	"./scripts/getSongMetadata player_status")
 (defpoll player_status_text :interval "1s"
-	"./scripts/getPlayerStatusText")
+	"./scripts/getSongMetadata player_status_text")
 
 ;; LOCK SCREEN VARS
 (defpoll username :interval "24h"

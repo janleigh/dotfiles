@@ -5,7 +5,7 @@
 			(box :class "notification-text"
 				(label :text "Notification Center")
 			)
-			(box :space-evenly "true" :orientation "v"
+			(box :space-evenly "true" :orientation "v" :style "min-width: 315px;"
 				(scroll :class "notification-scroller" :vscroll "true"
 					(box :class "notification-history" :orientation "v" :space-evenly "false"
 						(box :orientation "v"
