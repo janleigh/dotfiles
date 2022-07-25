@@ -17,7 +17,7 @@
 					(box :class "notification-content" :orientation "v" :space-evenly "false"
 						; WIP!!! Still finding a way to remove the extra margin on a multi-line label.
 						(label :class "notification-summary" :halign "start" :valign "start"
-							:limit-width 20
+							:limit-width 15
 							:text summary)
 						(label :class "notification-message" :halign "start" :valign "start"
 							:limit-width 27 :wrap true :tooltip body
