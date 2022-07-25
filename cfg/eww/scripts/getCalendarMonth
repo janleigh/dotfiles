@@ -1,6 +1,0 @@
-#!/bin/sh
-
-MONTH=$(date +%m)
-MONTH=$((MONTH - 1)) # For some reason, eww gives the month as a zero-based integer.
-
-echo $MONTH
