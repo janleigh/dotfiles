@@ -2,18 +2,14 @@
 # Deps: curl, jq, xclip, imagemagick
 
 _notify() {
-    local icon
-    if [ -z "$3" ]; then
-        icon="$HOME/.config/dunst/assets/notification/scrot.png"
-    else
-        icon="$3"
-    fi
+	local icon
+	if [[ -z "$3" ]]; then
+		icon="$HOME/.config/dunst/assets/notification/scrot.png"
+	else
+		icon="$3"
+	fi
 
-    notify-send -a "Screenshot Tool" -i "$icon" "$1" "$2"
-}
-
-_cleanup() {
-    sleep && rm -f "$1"
+	notify-send -a "Screenshot Tool" -i "$icon" "$1" "$2"
 }
 
 # Voidchan is dead. Use p3ac CDN instead.
@@ -22,11 +18,11 @@ key=""
 url=""
 
 if [[ $(file --mime-type -b $1) != "image/png" ]]; then
-    _cleanup $1
-    _notify "Screenshot aborted." && exit 1
+	rm $1
+    _notify "Screenshot!" "Screenshot aborted." && exit 1
 fi
 
 imageURL=$(curl -X POST -H "Content-Type: multipart/form-data" -H "Authorization: $key" -F "file=@$1" "$url" | jq -r '.files[].url')
 echo -n $imageURL | xclip -sel c
 canberra-gtk-play -i "camera-shutter"
-_notify "Screenshot uploaded and copied to clipboard." "" $1 && _cleanup $1
+_notify "Screenshot!" "Screenshot taken and uploaded to CDN." $1 && _cleanup $1

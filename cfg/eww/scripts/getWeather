@@ -11,19 +11,7 @@ humidity=$(echo $weather | jq ".main.humidity")
 wind=$(echo $weather | jq ".wind.speed")
 
 check_if_empty() {
-	if [ -z "$1" ]; then
-		echo "-1"
-	else
-		echo "$1"
-	fi
-}
-
-check_if_empty_text() {
-	if [ -z "$1" ]; then
-		echo "Not Available."
-	else
-		echo "$1"
-	fi
+	[[ -z "$1" ]] && echo "Not Available." || echo "$1"
 }
 
 case $1 in
@@ -38,7 +26,7 @@ case $1 in
 		check_if_empty $feels_like
 		;;
 	weather_desc)
-		check_if_empty_text $weather_desc
+		check_if_empty $weather_desc
 		;;
 	humidity)
 		check_if_empty $humidity

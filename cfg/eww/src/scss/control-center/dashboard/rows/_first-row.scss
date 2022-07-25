@@ -1,0 +1,57 @@
+.dashboard-box {
+	.first-row {
+		.column-one {
+			margin: 0px 1.2em 0em 0px;
+	
+			.avatar {
+				.avatar-image {
+					background-image: url("./assets/avatar.png");
+					background-size: cover;
+					min-height: 144px;
+					min-width: 144px;
+					border-radius: 5px;
+				}
+			}
+		}
+
+		.column-two {
+			margin: 0 0px 0 0;
+
+			.date {
+				background-color: $background-primary;
+				border-radius: 5px;
+				margin-top: 1em;
+			
+				.weekday {
+					color: $foreground-secondary;
+					margin-top: 1em;
+					margin-left: 1em;
+				}
+			
+				.monthday {
+					margin-left: 11px;
+					margin-bottom: 0.3em;
+					font-size: 24px;
+					font-weight: bold;
+				}
+			}
+			.weather {
+				background-color: $background-primary;
+				border-radius: 5px;
+
+				.weather-desc {
+					color: $foreground-secondary;
+					margin-left: 1em;
+					margin-top: 1em;
+				}
+			
+				.weather-temp {
+					margin-left: 11px;
+					margin-bottom: 0.3em;
+					font-size: 24px;
+					font-weight: bolder;
+				}
+			}
+		}
+	}
+}

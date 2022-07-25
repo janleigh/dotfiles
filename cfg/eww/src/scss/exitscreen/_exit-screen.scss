@@ -1,0 +1,44 @@
+.exit-screen {
+	button {
+		background-color: $darker-background;
+		color: $background-primary;
+		border: 6px solid $background-primary;
+		border-radius: 10px;
+		font-family: "Material Icons";
+		font-size: 64px;
+
+		margin: 0em .5em;
+		padding: .25em;
+	}
+
+	.shutdown-btn {
+		color: $red;
+		&:hover {
+			border-color: $red;
+		}
+	}
+	.reboot-btn {
+		color: $green;
+		&:hover {
+			border-color: $green;
+		}
+	}
+	.sleep-btn {
+		color: $yellow;
+		&:hover {
+			border-color: $yellow;
+		}
+	}
+	.hibernate-btn {
+		color: $blue;
+		&:hover {
+			border-color: $blue;
+		}
+	}
+	.logout-btn {
+		color: $magenta;
+		&:hover {
+			border-color: $magenta;
+		}
+	}
+}

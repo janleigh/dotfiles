@@ -1,0 +1,13 @@
+(defwidget control-center []
+	(box :class "control-center-window" :space-evenly "false" :orientation "v"
+		(box :class "control-center-spacer" :style {ccenter ? "padding-top: 60em;" : "padding-top: 0em;"})
+		(box :class "control-center" :orientation "h" :space-evenly "false"
+			(dashboard)
+			(box :class "sep-column"
+				(label :text "‏")
+			)
+			(notification-center)
+		)
+	)
+)
+(defvar ccenter false)

@@ -4,7 +4,7 @@
 	border-radius: 10px;
 	margin-bottom: 1.5em;
 
-	box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.55);
+	box-shadow: 4px 3px 8px 1px rgba(0, 0, 0, 0.55);
 
 	.notification-title {
 		// background-color: $background-secondary;
@@ -26,8 +26,9 @@
 	}
 
 	.notification-body {
-		padding: .75em 0em;
+		padding: .5em 0em 1em;
 		font-size: 14px;
+		border-radius: 0px 0px 10px 10px;
 
 		.notification-image {
 			background-size: cover;
@@ -36,11 +37,35 @@
 			border-radius: 8px;
 			min-height: 64px;
 			min-width: 64px;
-			margin-left: 1em;
+			margin-left: 1.5em;
 		}
 
-		.notification-body-text {
-			margin: 0em 1.5em;
+		.notification-content {
+			margin: 1em;
+
+			.notification-summary {
+				font-size: 16px;
+				font-weight: bold;
+				margin: .25em 0em .5em 0em;				
+			}
+
+			.notification-message {
+				// margin-left: -1em;
+				font-size: 12px;
+				color: $foreground-secondary;
+			}
+		}
+	}
+
+	.notification-screenshot-opt, .notification-opt {
+		margin: 1em 1em 0em;
+		border-radius: inherit;
+
+		button {
+			background-color: $background-tertiary;
+			border-radius: 6px;
+			padding: .5em;
+			margin: 0em .5em;
 		}
 	}
 }

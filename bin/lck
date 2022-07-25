@@ -7,18 +7,24 @@ hide_unhide_windows() {
 }
 
 lock() {
-    hsetroot -fill "$HOME/.config/eww/assets/lockscreen.png"
+    hsetroot -fill "$LOCKSCREEN_WALLPAPER"
     # Wait for eww to finish load widget
     sleep 0.5
 
-    i3lock -n -c 00000000 -t -e --pass-media-keys --pass-power-keys --pass-volume-keys --indicator \
-        --radius 64 --modif-size=9 --modif-pos="w/2:h/2-15" \
+    i3lock -n -c 00000000 -t -e --pass-media-keys --pass-power-keys --pass-volume-keys --indicator --force-clock \
+        --radius 52 --modif-size=9 --modif-pos="w/2:h/2-15" \
         \
-        --time-str="" \
-        --time-pos="w/2:h/2+35" \
+        --time-str="%H:%M" \
+        --time-pos="w/2:h/4" \
         --time-color=c5c8c9 \
-        --time-size=14 \
-        --time-font="Sarasa Mono CL Nerd Font" \
+        --time-size=120 \
+        --time-font="SF Pro Display" \
+        \
+        --date-str="%A, %B %d" \
+        --date-pos="w/2:h/4+40" \
+        --date-color=c5c8c9 \
+        --date-size=35 \
+        --date-font="SF Pro Display" \
         \
         --verif-text="" \
         --verif-color=7ba5dd \
@@ -30,13 +36,13 @@ lock() {
         --wrong-size=10 \
         --wrong-font="Sarasa Mono CL Nerd Font" \
         \
-        --greeter-text="" \
-        --greeter-color=0B0F10 \
+        --greeter-text="" \
+        --greeter-color=96d6b0 \
         --greeter-size=60 \
-        --greeter-font="Sarasa Mono CL Nerd Font" \
-        --greeter-pos="w/2-6:h/2+285" \
+        --greeter-font="Material Icons" \
+        --greeter-pos="w/2:h/2+285" \
         \
-        --ring-color=0B0F10 \
+        --ring-color=00000000 \
         --ringver-color=96D6B0 \
         --ringwrong-color=ee6a70 \
         --ring-width=5 \
@@ -44,7 +50,7 @@ lock() {
         --insidever-color=079A8C02 \
         --insidewrong-color=079A8C02 \
         --inside-color=079A8C02 \
-        --ind-pos="w/2:h/2-45" \
+        --ind-pos="w/2:h-130" \
         \
         --noinput-text="" \
         \

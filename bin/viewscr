@@ -2,21 +2,21 @@
 # Deps: viewnior
 
 _notify() {
-    local icon
-    if [ -z "$3" ]; then
-        icon="$HOME/.config/dunst/assets/notification/scrot.png"
-    else
-        icon="$3"
-    fi
+	local icon
+	if [[ -z "$3" ]]; then
+		icon="$HOME/.config/dunst/assets/notification/scrot.png"
+	else
+		icon="$3"
+	fi
 
-    notify-send -a "Screenshot Tool" -i "$icon" "$1" "$2"
+	notify-send -a "Screenshot Tool" -i "$icon" "$1" "$2"
 }
 
 if [[ $(file --mime-type -b $1) != "image/png" ]]; then
 	rm $1
-    _notify "Screenshot aborted." && exit 1
+    _notify "Screenshot!" "Screenshot aborted." && exit 1
 fi
 
 canberra-gtk-play -i "camera-shutter"
-_notify "Screenshot saved and copied to clipboard." "" $1
+_notify "Screenshot!" "Screenshot taken and copied to clipboard." $1
 cat $1 | xclip -sel c -t image/png

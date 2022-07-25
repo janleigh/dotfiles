@@ -19,28 +19,28 @@ super + d
 # ##############################################################################
 
 # Toggle lock screen via xautolock.
-{super,ctrl} + alt + Delete
-	xautolock -locknow
+ctrl + alt + l
+    sh $HOME/.local/bin/lck
 
-# Toggle dashboard.
-super + shift + d
-	sh $HOME/.config/eww/scripts/openDashboard.sh
-
-# Toggle notification center.
-super + shift + n
-	sh $HOME/.config/eww/scripts/openNotificationCenter.sh
+# Toggle control center.
+super + shift + {d,n}
+	sh $HOME/.config/eww/scripts/openControlCenter.sh
 
 # Toggle color picker.
-super + shift + p
+super + shift + x
 	sh $HOME/.local/bin/xcolor-pick
 
 # Toggle bar.
 super + shift + b
 	sh $HOME/.local/bin/tglbar
 
-# If dashboard/notification center failed to close, run this.
+# Toggle exit screen.
+super + Escape
+    sh $HOME/.config/eww/scripts/openExitScreen.sh
+
+# If control center failed to close, run this.
 super + alt + {d,n}
-	$HOME/.local/bin/eww close {dashboard,notification-center}
+	$HOME/.local/bin/eww close control-center
 
 # ##############################################################################
 # #                                 CONTROL KEYS                               #
@@ -58,15 +58,19 @@ XF86AudioMute
 XF86MonBrightness{Up,Down}
 	brightnessctl set 5%{+,-}
 
+# Raise/lower brightness to maximum or minimum.
+super + XF86MonBrightness{Up,Down}
+    brightnessctl set {100%,30%}
+
 # Screenshot; Save to local storage.
 Print
-	DATE=$(date '+%b%d-%H-%M.png'); \
+	DATE=$(date '+%b%d-%H-%M:%S.png'); \
 	maim -us "$HOME/Pictures/Screenshots/$DATE"; \
 	sh $HOME/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE
 
 # Screenshot; Upload to CDN.
 super + Print
-	DATE=$(date '+%b%d-%H-%M.png'); \
+	DATE=$(date '+%b%d-%H-%M:%S.png'); \
 	maim -us "$HOME/Pictures/Screenshots/$DATE"; \
 	sh $HOME/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
 
@@ -128,6 +132,10 @@ super + ctrl + r
 super + ctrl + {q,r}
 	bspc {quit,wm -r}
 
+# Force restart eww.
+super + ctrl + e
+    pkill eww && $HOME/.local/bin/eww open bar &; pkill ewwFullscreenFix.sh; $HOME/.config/bspwm/scripts/ewwFullscreenFix.sh &
+
 # ##############################################################################
 # #                                MOUSE HOTKEYS                               #
 # ##############################################################################
@@ -136,9 +144,9 @@ super + ctrl + {q,r}
 # ~button1
 #	bspc query -D -d .focused.!occupied && dunstctl close-all && $HOME/.local/bin/eww update noti=false; sleep 0.270; $HOME/.local/bin/eww close notification-popup; pkill openEwwPopup.sh
 
-# Toggle dashboard using middle click.
+# Toggle control center using middle click.
 ~button2
-	bspc query -D -d .focused.!occupied && sh $HOME/.config/eww/scripts/openDashboard.sh
+	bspc query -D -d .focused.!occupied && sh $HOME/.config/eww/scripts/openControlCenter.sh
 
 # Toggle right click context menu.
 ~button3

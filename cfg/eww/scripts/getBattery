@@ -3,8 +3,8 @@
 # INTERNAL USE! Do not edit.
 FAKE_BATTERY="0"
 
-if [ "$FAKE_BATTERY" -gt 0 ]; then
-	if [ ! -f "$HOME/.cache/fake_battery_capacity" ]; then
+if [[ "$FAKE_BATTERY" -gt 0 ]]; then
+	if [[ ! -f "$HOME/.cache/fake_battery_capacity" ]]; then
 		echo $(($RANDOM % 100)) > "$HOME/.cache/fake_battery_capacity"
 	fi
 fi
@@ -24,12 +24,14 @@ case $1 in
 		fi
 		;;
 	"capacity")
-		if [ "$FAKE_BATTERY" -gt 0 ]; then
-			if [ -f "$HOME/.cache/fake_battery_capacity" ]; then
+		if [[ "$FAKE_BATTERY" -gt 0 ]]; then
+			if [[ -f "$HOME/.cache/fake_battery_capacity" ]]; then
 				echo $(cat "$HOME/.cache/fake_battery_capacity")
 			fi
-		elif [ -f /sys/class/power_supply/BAT0/capacity ]; then
+		elif [[ -f /sys/class/power_supply/BAT0/capacity ]]; then
 			echo $(cat /sys/class/power_supply/BAT0/capacity)
+        elif [[ ! -d /sys/class/power_supply/BAT ]]; then
+            echo "100"
 		fi
 		;;
 esac

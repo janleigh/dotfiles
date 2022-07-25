@@ -1,0 +1,17 @@
+.control-center-window {
+	.control-center-spacer {
+		transition: all 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	}
+
+	.control-center {
+		background-color: $darker-background;
+		border-radius: 10px;
+
+		.sep-column {
+			background-color: $background-secondary;
+			border-radius: 6px;
+			margin: 2em .2em;
+			padding: 0em .1em;
+		}
+	}
+}

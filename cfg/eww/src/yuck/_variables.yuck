@@ -11,7 +11,7 @@
 	"date '+%B, %Y'")
 
 ;; SYSTEM INFO VARS
-(defpoll used_ram :interval "2s"
+(defpoll used_ram :interval "5s"
 	"./scripts/getUsedRam")
 (defpoll volume :interval "500ms"
 	"amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
@@ -86,6 +86,6 @@
 (defpoll layout_icon :interval "250ms"
 	"./scripts/bspLayout.sh icon")
 (defpoll bluetooth_icon :interval "1s"
-	"scripts/getBluetooth icon")
+	"./scripts/getBluetooth icon")
 (defpoll bluetooth_status :interval "1s"
-	"scripts/getBluetooth status")
+	"./scripts/getBluetooth status")

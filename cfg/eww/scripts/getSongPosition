@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# Better fix than on https://github.com/janleigh/dotfiles/pull/26 lol
-
 # Author Notes:
 # Change this to something above 0 if you have Spotify Premium.
 HAS_SPOTIFY_PREMIUM=1
@@ -21,21 +19,15 @@ if ps -C spotify > /dev/null; then
 	PLAYER="spotify"
 fi
 
-if [ $SHOW_POSITION -gt 0 ]; then
+if [[ $SHOW_POSITION -gt 0 ]]; then
 	case $PLAYER in
 		spotify)
-			if [ $HAS_SPOTIFY_PREMIUM -gt 0 ]; then
+			if [[ $HAS_SPOTIFY_PREMIUM -gt 0 ]] || [[ -f "$HOME/.config/spicetify/Extensions/adblock.js" ]]; then
 				print_position
 			fi
 			;;
 		*)
-			# Check if mpris:length is not null.
-			# If its not null, then we can print the song position of the player.
-			if [ $(playerctl metadata mpris:length | wc -c) -gt 0 ]; then
-				print_position
-			else
-				echo "--:-- / --:-- "
-			fi
+			[[ $(playerctl metadata mpris:length | wc -c) -gt 0 ]] && print_position || echo "--:-- / --:-- "
 			;;
 	esac
 fi

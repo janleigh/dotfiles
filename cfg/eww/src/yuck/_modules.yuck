@@ -1,20 +1,37 @@
-(defwidget notification [title body icon ?LC ?reveal_close_icon]
+(defwidget notification [title summary body icon ?LC ?reveal_close_icon ?is_ss]
 	(box :class "notification" :orientation "v" :space-evenly "false"
 		(box :class "notification-title"
 			(label :class "notification-title-text" :halign "start" :text title)
 			(revealer :reveal {reveal_close_icon ?: false}
 				(box :halign "end"
 					(button :class "notification-close"
-					:onclick {LC ?: "echo 'Hello, world!'"}
-					"")
+						:onclick {LC ?: "echo 'Hello, world!'"}
+						"")
 				)
 			)
 		)
-		(box :class "notification-body" :space-evenly "false" :orientation "h"
-			(box :class "notification-image" :orientation "h" :valign "center" :style "background-image: url('${icon}')")
-			(box :orientation "v"
-				(label :class "notification-body-text" :wrap "true" :limit-width 60 :text body)
+		(box :class "notification-body" :space-evenly "false" :orientation "v"
+			(box :space-evenly "false" :orientation "h"
+				(box :class "notification-image" :orientation "h" :valign "center" :style "background-image: url('${icon}')")
+				(box
+					(box :class "notification-content" :orientation "v" :space-evenly "false"
+						; WIP!!! Still finding a way to remove the extra margin on a multi-line label.
+						(label :class "notification-summary" :halign "start" :valign "start"
+							:limit-width 20
+							:text summary)
+						(label :class "notification-message" :halign "start" :valign "start"
+							:limit-width 27 :wrap true :tooltip body
+							:text body)
+					)
+				)
 			)
+			; (box :class "notification-screenshot-opt" :space-evenly "true" :orientation "h" :visible {is_ss ?: false} 
+			; 	(button :onclick "viewnior '${icon}' &" "Open")
+			; 	(button :onclick "rm -f '${icon}'" "Delete")
+			; )
+			; (box :class "notification-opt" :space-evenly "true" :orientation "h" :visible {!is_ss ?: true} 
+			; 	(button :onclick "notify-send \"To be implemented.\"" "Dismiss")
+			; )
 		)
 	)
 )

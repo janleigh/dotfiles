@@ -11,24 +11,21 @@ artist() {
 	if [ "$TITLE" = "Advertisement" ]; then
 		echo "Spotify Free"
 	else
-		if [ -z "$ARTIST" ]; then
-			echo "Unknown Artist";
-		else
-			echo "by $ARTIST"
-		fi
+		[[ -z "$ARTIST" ]] && echo "Unknown Artist" || echo "by $ARTIST"
 	fi
 }
 
 title() {
 	if [ -z "$TITLE" ]; then
-		echo "Nothing Playing";
+		echo "Nothing Playing"
 	else
-		# Eww can't truncate Japanese characters.
+		# Eww can't truncate Japanese and Chinese characters.
 		if [[ "$TITLE" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
-			echo ${TITLE::10}...
+			[[ ${#TITLE} -gt 16 ]] && echo ${TITLE::10}... || echo $TITLE
 		else
-			echo $TITLE
-		fi
+            echo $TITLE
+        fi
+		
 	fi
 }
 

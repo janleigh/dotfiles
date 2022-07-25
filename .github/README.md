@@ -44,7 +44,7 @@
    - **Compositor:** [picom](https://github.com/yshui/picom)
    - **Editor:** [neovim](https://github.com/neovim/neovim)
    - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
-   - **Notification Manager:** [dunst](https://github.com/dunst-project/dunst)
+   - **Notification Daemon:** [dunst](https://github.com/dunst-project/dunst)
    - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
@@ -144,6 +144,7 @@
    | [`Roboto`](https://fonts.google.com/specimen/Roboto) | Secondary Main Font |
    | [`Victor Mono`](https://github.com/rubjo/victor-mono) | Stylish Italic Font |
    | [`DM Sans`](https://fonts.google.com/specimen/DM+Sans) | Main UI Font |
+   | [`SF Pro Display`](https://developer.apple.com/fonts/) | Secondary UI Font |
    | [`Material Icons`](https://github.com/google/material-design-icons/) | Main Icon Font |
    | [`Icomoon`](https://icomoon.io/) | Secondary Icon Font |
 
@@ -249,7 +250,7 @@
       <details>
       <summary><strong>See</strong></summary>
 
-      > You can find the custom GTK theme [here](https://github.com/janleigh/gtk3). You can then apply it by changing the value of `gtk-theme-name` to `kizus_phocus` on your GTK3 config. 
+      > You can find the custom GTK theme [here](https://github.com/janleigh/gtk3). You can then apply it by changing the value of `gtk-theme-name` to `janleigh-phocus` on your GTK3 config. 
       
       > For the icon theme, you can install [Zafiro Icons](https://github.com/zayronxio/Zafiro-icons/) icon theme since it suits the GTK theme.
 
@@ -289,7 +290,7 @@
 
 ## :art: <samp>COLORSCHEME</samp>
 
-   Apparently, my colorscheme doesn't have a name yet. It is based around [rxyhn](https://github.com/rxyhn)'s "Night" colorscheme and [JavaCafe01](https://github.com/JavaCafe01/)'s colorscheme. Feel free to suggest a name for it on the [discussions](https://github.com/janleigh/dotfiles/discussions) tab. Also, here's a nice preview of it.
+   Apparently, my colorscheme doesn't have a name yet. It is based around [rxyhn](https://github.com/rxyhn)'s colorscheme. Feel free to suggest a name for it on the [discussions](https://github.com/janleigh/dotfiles/discussions) tab. Also, here's a nice preview of it.
 
    <p align="center">
       <img src="assets/colorscheme.png" alt="Colorscheme Showcase">

@@ -1,0 +1,57 @@
+.dashboard-box {
+	.second-row {
+		.music-player {
+			margin-top: 1em;
+			min-height: 148px;
+
+			.song-art {
+				background-color: $background-primary;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				border-radius: 6px;
+
+				margin-right: 5px;
+				min-width: 252px;
+
+				.music-info {
+					border-radius: 4px 6px 6px 4px;
+					background: linear-gradient(to right, rgba(16, 20, 21, 0.9), rgba(16, 20, 21, 0.5));
+	
+					padding-top: 10px;
+					padding-left: 1em;
+
+					.now-playing {
+						margin-bottom: 6px;
+					}
+					.song-title {
+						font-size: 16px;
+						font-weight: bolder;
+					}
+					.song-artist, .song-position {
+						color: $foreground-secondary;
+					}
+					.song-position {
+						margin-top: 4.8em;
+					}
+				}
+			}
+			
+			.song-controls {
+				background-color: $background-primary;
+				padding: 0em 1em;
+				margin-left: 10px;
+				border-radius: 5px;
+
+				button {
+					font-family: "Material Icons";
+					font-size: 24px;
+		
+					&:hover {
+						color: $accent;
+					}
+				}
+			}
+		}
+	}
+}

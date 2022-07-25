@@ -1,11 +1,12 @@
 .time {
+	// font-family: "Sarasa Mono CL Nerd Font";
 	font-weight: bold;
 	font-size: 1.3em;
 
 	margin: .2em 0em 0em 0em;
 
 	.time-sep {
-		margin-bottom: .2em;
+		margin-bottom: .25em;
 		color: $foreground-primary;
 	}
 }

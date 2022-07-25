@@ -4,11 +4,7 @@ LOCK_FILE="$HOME/.cache/eww-redshift.lock"
 
 case $1 in
 	"color")
-		if [[ ! -f "$LOCK_FILE" ]]; then
-			echo "$bgSecondary"
-		else
-			echo "#1c2325"
-		fi
+		[[ ! -f "$LOCK_FILE" ]] && echo "$bgSecondary" || echo "#1c2325"
 		;;
 	"toggle")
 		if [[ ! -f "$LOCK_FILE" ]]; then

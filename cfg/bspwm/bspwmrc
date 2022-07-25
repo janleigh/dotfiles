@@ -25,6 +25,9 @@ rm $HOME/.cache/dunst.log
 rm $HOME/.cache/fake_battery_capacity
 rm -r $HOME/.cache/dunst/
 
+# Fix cursor size.
+xsetroot -xcf /usr/share/icons/volantes-cursors/cursors/left_ptr 32
+
 # Autostart Apps
 $HOME/.local/bin/eww open bar &
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -41,10 +44,9 @@ hsetroot -fill "$WALLPAPER"
 xset m 0 0
 
 # Fix for eww bar not hiding on a fullscreen window.
-$HOME/.config/bspwm/scripts/eww_fullscreen_fix.sh &
-
-# Autolock screen after 15 minutes of inactivity. (systemd only!)
-xautolock -time 15 -locker $HOME/.local/bin/lck -detectsleep &
+pkill ewwFullscreenFix.sh; $HOME/.config/bspwm/scripts/ewwFullscreenFix.sh &
+# Make Do Not Disturb and Night Light work after power on or reboot.
+pkill persistentQuickUtilities.sh; $HOME/.config/bspwm/scripts/persistentQuickUtilities.sh &
 
 # Start MPD and mpDris2
 exec mpd &

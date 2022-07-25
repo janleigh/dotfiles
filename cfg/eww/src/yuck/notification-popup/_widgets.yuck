@@ -5,9 +5,12 @@
 				(for entry in {dunst_history["data"][0]}
 					(notification :class 'notif-${entry["id"]["data"]}'
 						:title {entry["appname"]["data"]}
-						:body '${entry["summary"]["data"]}\\n${entry["body"]["data"]}'
-						:icon {entry["appname"]["data"] == "Spotify" ? "../../.cache/dunst/${entry['id']['data']}.png" : (entry["icon_path"]["data"] ?: "../dunst/assets/notification/fallback-notif.png")}
-                        :LC "${EWW_CMD} update noti=false; sleep 0.270; ${EWW_CMD} close notification-popup; pkill openEwwPopup.sh"
+						:summary {entry["summary"]["data"]}
+						:body {entry["body"]["data"]}
+						:icon {entry["appname"]["data"] == "Spotify" ? "../../.cache/dunst/${entry['summary']['data']}.png" :
+							entry["appname"]["data"] == "discord" ? "./assets/applications/discord.png" :
+							(entry["icon_path"]["data"] ?: "../dunst/assets/notification/fallback.png")}
+						:LC "${EWW_CMD} update noti=false; sleep 0.270; ${EWW_CMD} close notification-popup; pkill openEwwPopup.sh"
 						:reveal_close_icon "true"
 					)
 				)

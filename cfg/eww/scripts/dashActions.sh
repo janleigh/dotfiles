@@ -1,49 +1,69 @@
 #!/bin/bash
 
+DATE=$(date '+%b%d-%H-%M:%S.png');
+
 EWW_BIN="$HOME/.local/bin/eww"
 AIRPLANE_MODE_LOCK_FILE="$HOME/.cache/airplane-mode.lock"
 DND_LOCK_FILE="$HOME/.cache/dnd-lock.lock"
 JEFF_LOCK_FILE="$HOME/.cache/jeff-lock.lock"
 
+hide_unhide_windows() {
+	while bspc node any.hidden.window -g hidden=off; do false; done && while bspc node 'any.!hidden.window' -g hidden=on; do :; done
+}
+
 pre_run() {
-	${EWW_BIN} update dash=false
-	sleep 0.4
-	${EWW_BIN} close dashboard
-	rm "$HOME/.cache/eww-dash.lock"
+	if [[ -f "$HOME/.cache/eww-control-center.lock" ]]; then
+		${EWW_BIN} update ccenter=false
+		sleep 0.8
+		${EWW_BIN} close control-center
+		rm "$HOME/.cache/eww-control-center.lock"
+	fi
+
+	if [[ -f "$HOME/.cache/eww-escreen.lock" ]]; then
+		${EWW_BIN} update escreen=false
+		sleep 0.8
+		$HOME/.local/bin/tglbar
+		hide_unhide_windows
+		${EWW_BIN} close exit-screen
+		rm "$HOME/.cache/eww-escreen.lock"
+	fi
 }
 
 run_dnd() {
 	if [[ ! -f "$DND_LOCK_FILE" ]]; then
 		touch "$DND_LOCK_FILE"
-
 		dunstctl set-paused true
 	else
 		rm "$DND_LOCK_FILE"
-
 		dunstctl set-paused false
 	fi
 }
 
+run_scrot() {
+	pre_run & sleep 0.8
+
+	maim -us "$HOME/Pictures/Screenshots/$DATE";
+	sh $HOME/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE
+}
+
 run_giph() {
+	pre_run & sleep 0.8
+
 	if [[ ! -f "$JEFF_LOCK_FILE" ]]; then
 		touch "$JEFF_LOCK_FILE"
 
-		# Some stuff.
 		ps x | grep 'ffmpeg -f x11grab' | grep -v grep | awk '{print $1}' | xargs kill
-
 		sh $HOME/.local/bin/jeff selmp4
-	elsew
+	else
 		rm "$JEFF_LOCK_FILE"
 		ps x | grep 'ffmpeg -f x11grab' | grep -v grep | awk '{print $1}' | xargs kill -2
 	fi
 }
 
-is_giph_running() {
-	if [[ ! -f "$JEFF_LOCK_FILE" ]]; then
-		echo "$bgSecondary"
-	else
-		echo "#1c2325"
-	fi
+run_suspend() {
+	pre_run && sleep 0.8
+
+	systemctl suspend
 }
 
 case $1 in
@@ -51,21 +71,18 @@ case $1 in
 		run_dnd
 		;;
 	"scrot")
-		# Yes, this is different from the sxhkdrc config.
-		DATE=$(date '+%b%d-%H-%M.png')
-		maim -us | tee "$HOME/Pictures/Screenshots/$DATE" | xclip -selection clipboard -t image/png
+		run_scrot &
 		;;
 	"jeff")
-		run_giph
+		run_giph &
 		;;
 	"dndstat")
-		if [[ ! -f "$DND_LOCK_FILE" ]]; then
-			echo "$bgSecondary"
-		else
-			echo "#1c2325"
-		fi
+		[[ ! -f "$DND_LOCK_FILE" ]] && echo "$bgSecondary" || echo "#1c2325"
 		;;
 	"jstat")
-		is_giph_running
+		[[ ! -f "$JEFF_LOCK_FILE" ]] && echo "$bgSecondary" || echo "#1c2325"
+		;;
+	"suspend")
+		run_suspend &
 		;;
 esac

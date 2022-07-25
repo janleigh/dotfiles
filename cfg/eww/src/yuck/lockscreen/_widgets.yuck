@@ -1,0 +1,14 @@
+;; Change me!!! :D
+(defvar name "Jan Leigh Muñoz")
+
+(defwidget lock-screen [] 
+	(box :class "lock-screen" :orientation "h" :space-evenly "true"
+		(box :class "lock-inner" :orientation "v" :space-evenly "true"
+			; (box :class "lock-pfp")
+			; (box :class "lock-text" :orientation "v" :space-evenly "false"
+			; 	(label :class "lock-username" :text "${name}")
+			; 	(label :class "lock-hostname" :text "@${username}")
+			; )
+		)
+	)
+)

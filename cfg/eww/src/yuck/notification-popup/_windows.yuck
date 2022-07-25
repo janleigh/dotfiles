@@ -1,8 +1,8 @@
 (defwindow notification-popup
 	:geometry (geometry :x "-1%"
 						:y "-1%" 
-						:width "25%" 
-						:height "18%"
+						:width "24%" 
+						:height "20%"
 						:anchor "bottom right")
 	:windowtype "dock"
 	:stacking "fg"
