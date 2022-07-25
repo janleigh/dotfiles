@@ -58,7 +58,7 @@
 (defpoll calendar_day :interval "10h"
 	"date '+%d'")
 (defpoll calendar_month :interval "10h"
-	"./scripts/getCalendarMonth")
+	"MONTH=$(date +%m) && MONTH=$((MONTH - 1)) && echo $MONTH")
 (defpoll calendar_year :interval "10h"
 	"date '+%Y'")
 
