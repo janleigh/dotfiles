@@ -12,7 +12,7 @@
 
 (defwidget workspaces []
 	(literal :content workspace))
-(deflisten workspace "scripts/getWorkspaces")
+(deflisten workspace "scripts/getWorkspaces.sh")
 
 (defwidget time []
 	(box :orientation "h"

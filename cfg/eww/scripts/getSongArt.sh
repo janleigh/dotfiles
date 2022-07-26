@@ -4,7 +4,7 @@ TMP_DIR="$HOME/.cache/eww"
 TMP_COVER_PATH=$TMP_DIR/cover.png
 TMP_TEMP_PATH=$TMP_DIR/temp.png
 
-if [ ! -d $TMP_DIR ]; then
+if [[ ! -d $TMP_DIR ]]; then
 	mkdir -p $TMP_DIR
 fi
 

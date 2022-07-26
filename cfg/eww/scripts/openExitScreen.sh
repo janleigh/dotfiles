@@ -7,11 +7,22 @@ hide_unhide_windows() {
 	while bspc node any.hidden.window -g hidden=off; do false; done && while bspc node 'any.!hidden.window' -g hidden=on; do :; done
 }
 
+rerun() {
+	if [[ ! -f "$HOME/.cache/bar.lck" ]]; then
+		$HOME/.local/bin/tglbar
+	fi
+	
+	${EWW_BIN} update escreen=true
+}
+
 run() {
 	$HOME/.local/bin/tglbar
 	${EWW_BIN} open exit-screen
 	sleep 0.2 && hide_unhide_windows
 	sleep 0.15 && ${EWW_BIN} update escreen=true
+
+	# Sometimes, eww is a dick. It doesn't update the exitscreen properly.
+	rerun
 }
 
 # Run eww daemon if not running
@@ -23,7 +34,7 @@ else
 		touch "$LOCK_FILE"
 		run
 	else
-		${EWW_BIN} update escreen=false
+		sleep 0.15 && ${EWW_BIN} update escreen=false
 		sleep 0.2 && hide_unhide_windows
 		$HOME/.local/bin/tglbar
 		${EWW_BIN} close exit-screen

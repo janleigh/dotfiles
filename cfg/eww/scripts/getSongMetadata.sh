@@ -8,7 +8,7 @@ artist() {
 	# Check if $title is "Advertisement" cause fuck Spotify.
 	# Deathemonic: How about using a spicetify adblocker (The Easy Way) or a adblock script https://github.com/abba23/spotify-adblock (The Chad Way) 
 	# Kizu: https://github.com/abba23/spotify-adblock to big to clone for my wifi lmao
-	if [ "$TITLE" = "Advertisement" ]; then
+	if [[ "$TITLE" = "Advertisement" ]]; then
 		echo "Spotify Free"
 	else
 		[[ -z "$ARTIST" ]] && echo "Unknown Artist" || echo "by $ARTIST"
@@ -16,23 +16,23 @@ artist() {
 }
 
 title() {
-	if [ -z "$TITLE" ]; then
+	if [[ -z "$TITLE" ]]; then
 		echo "Nothing Playing"
 	else
 		# Eww can't truncate Japanese and Chinese characters.
 		if [[ "$TITLE" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
 			[[ ${#TITLE} -gt 16 ]] && echo ${TITLE::10}... || echo $TITLE
 		else
-            echo $TITLE
-        fi
+			echo $TITLE
+		fi
 		
 	fi
 }
 
 player_status() {
-	if [ "$PLAYER" = "Playing" ]; then
+	if [[ "$PLAYER" = "Playing" ]]; then
 		STATUS=""
-	elif [ "$PLAYER" = "Paused" ]; then
+	elif [[ "$PLAYER" = "Paused" ]]; then
 		STATUS=""
 	else
 		STATUS=""
@@ -45,28 +45,27 @@ player_status_text() {
 	PLAYER_NAME=$(playerctl -l)
 	PLAYER_NAME=$(echo $PLAYER_NAME | cut -d '.' -f 1)
 
-	if [ "$PLAYER" = "Playing" ]; then
-		echo "Now Playing ⁃ via ${PLAYER_NAME^}"
+	if [[ "$PLAYER" = "Playing" ]]; then
+		echo "Now Playing - via ${PLAYER_NAME^}"
 	else
 		echo "Music"
 	fi
 }
 
-position () {
-	position=$(playerctl position | sed 's/..\{6\}$//')
-	duration=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
+position() {
+	POSITION=$(playerctl position | sed 's/..\{6\}$//')
+	DURATION=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
 	
 	# Author Notes:
 	# Deathemonic: It check if the position is greater than 0 then execute the position if not just echo a empty space
 	# Why do this? Because playerctl can't detect position on some players like firefox and spotify, and instead of manually modifying the script it just detects
-	
-    	if [[ $position -gt 0 ]]; then
-	    	printf "%0d:%02d" $((position%3600/60)) $((position%60))
-	    	printf " / "
-		printf "%0d:%02d" $((duration%3600/60)) $((duration%60))
-    	else
-        	echo " "
-    	fi
+	if [[ $POSITION -gt 0 ]]; then
+		printf "%0d:%02d" $((POSITION % 3600 / 60)) $((POSITION % 60))
+		printf " / "
+		printf "%0d:%02d" $((DURATION % 3600 / 60)) $((DURATION % 60))
+	else
+		echo ""
+	fi
 }
 
 case $1 in

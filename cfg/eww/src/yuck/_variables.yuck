@@ -12,7 +12,7 @@
 
 ;; SYSTEM INFO VARS
 (defpoll used_ram :interval "5s"
-	"./scripts/getUsedRam")
+	"./scripts/getUsedRam.sh")
 (defpoll volume :interval "500ms"
 	"amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll micro :interval "1s"
@@ -20,23 +20,23 @@
 (defpoll brightness :interval "500ms"
 	"brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 (defpoll battery_capacity :interval "1s"
-	"./scripts/getBattery capacity")
+	"./scripts/getBattery.sh capacity")
 
 ;; MUSIC PLAYER VARS
 (defpoll art :interval "1s"
 	"echo \"$HOME/.cache/eww/cover.png\"")
 (defpoll song_art :interval "3s"
-	"./scripts/getSongArt")
+	"./scripts/getSongArt.sh")
 (defpoll song_artist :interval "1s"
-	"./scripts/getSongMetadata artist")
+	"./scripts/getSongMetadata.sh artist")
 (defpoll song_title :interval "1s"
-	"./scripts/getSongMetadata title")
+	"./scripts/getSongMetadata.sh title")
 (defpoll song_position :interval "250ms"
-	"./scripts/getSongMetadata position")
+	"./scripts/getSongMetadata.sh position")
 (defpoll player_status :interval "1s"
-	"./scripts/getSongMetadata player_status")
+	"./scripts/getSongMetadata.sh player_status")
 (defpoll player_status_text :interval "1s"
-	"./scripts/getSongMetadata player_status_text")
+	"./scripts/getSongMetadata.sh player_status_text")
 
 ;; LOCK SCREEN VARS
 (defpoll username :interval "24h"
@@ -46,13 +46,13 @@
 
 ;; WEATHER VARS
 (defpoll weather_temp :interval "3h"
-	"./scripts/getWeather current_temp")
+	"./scripts/getWeather.sh current_temp")
 (defpoll weather_temp_f :interval "3h"
-	"./scripts/getWeather current_temp_fahrenheit")
+	"./scripts/getWeather.sh current_temp_fahrenheit")
 (defpoll weather_desc :interval "3h"
-	"./scripts/getWeather weather_desc")
+	"./scripts/getWeather.sh weather_desc")
 (defpoll weather_feels_like :interval "3h"
-	"./scripts/getWeather feels_like")
+	"./scripts/getWeather.sh feels_like")
 
 ;; CALENDAR VARS
 (defpoll calendar_day :interval "10h"
@@ -64,13 +64,13 @@
 
 ;; UTILITY ROW VARS
 (defpoll network_status :interval "1s"
-	"scripts/getNetwork color")
+	"./scripts/getNetwork.sh color")
 (defpoll network_icon :interval "1s"
-	"scripts/getNetwork icon")
+	"./scripts/getNetwork.sh icon")
 (defpoll network_name :interval "1s"
-	"scripts/getNetwork name")
+	"./scripts/getNetwork.sh name")
 (defpoll redshift_status :interval "1s"
-	"./scripts/getRedshift color")
+	"./scripts/getRedshift.sh color")
 (defpoll dnd_status :interval "1s"
 	"./scripts/dashActions.sh dndstat")
 (defpoll jeff_status :interval "1s"
@@ -80,12 +80,12 @@
 (defpoll dunst_history :interval "250ms"
 	"dunstctl history")
 (defpoll reveal_no_notification_text :interval "5m"
-	"./scripts/getNotificationCount")
+	"./scripts/getNotificationCount.sh")
 
 ;; UNSORTED VARS
 (defpoll layout_icon :interval "250ms"
 	"./scripts/bspLayout.sh icon")
 (defpoll bluetooth_icon :interval "1s"
-	"./scripts/getBluetooth icon")
+	"./scripts/getBluetooth.sh icon")
 (defpoll bluetooth_status :interval "1s"
-	"./scripts/getBluetooth status")
+	"./scripts/getBluetooth.sh status")
