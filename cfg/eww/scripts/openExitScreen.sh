@@ -10,9 +10,8 @@ hide_unhide_windows() {
 run() {
 	$HOME/.local/bin/tglbar
 	${EWW_BIN} open exit-screen
-	hide_unhide_windows
-	sleep 0.2
-	${EWW_BIN} update escreen=true
+	sleep 0.2 && hide_unhide_windows
+	sleep 0.15 && ${EWW_BIN} update escreen=true
 }
 
 # Run eww daemon if not running
@@ -25,9 +24,8 @@ else
 		run
 	else
 		${EWW_BIN} update escreen=false
-		sleep 0.8
+		sleep 0.2 && hide_unhide_windows
 		$HOME/.local/bin/tglbar
-		hide_unhide_windows
 		${EWW_BIN} close exit-screen
 		rm "$LOCK_FILE"
 	fi

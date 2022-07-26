@@ -66,6 +66,12 @@ run_suspend() {
 	systemctl suspend
 }
 
+run_hibernate() {
+	pre_run && sleep 0.8
+
+	systemctl hibernate
+}
+
 case $1 in
 	"dnd")
 		run_dnd
@@ -84,5 +90,8 @@ case $1 in
 		;;
 	"suspend")
 		run_suspend &
+		;;
+	"hibernate")
+		run_hibernate &
 		;;
 esac
