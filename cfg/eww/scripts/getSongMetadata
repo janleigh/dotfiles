@@ -46,13 +46,9 @@ player_status_text() {
 	PLAYER_NAME=$(echo $PLAYER_NAME | cut -d '.' -f 1)
 
 	if [ "$PLAYER" = "Playing" ]; then
-		PLAYERMSG="true"
+		echo "Now Playing ⁃ via ${PLAYER_NAME^}"
 	else
 		echo "Music"
-	fi
-
-	if [ "$PLAYERMSG" = "true" ]; then
-		echo "Now Playing ⁃ via ${PLAYER_NAME^}"
 	fi
 }
 
