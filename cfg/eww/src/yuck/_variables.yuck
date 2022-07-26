@@ -32,7 +32,7 @@
 (defpoll song_title :interval "1s"
 	"./scripts/getSongMetadata title")
 (defpoll song_position :interval "250ms"
-	"./scripts/getSongPosition")
+	"./scripts/getSongMetadata position")
 (defpoll player_status :interval "1s"
 	"./scripts/getSongMetadata player_status")
 (defpoll player_status_text :interval "1s"
