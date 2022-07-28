@@ -38,10 +38,6 @@ super + shift + b
 super + Escape
     sh $HOME/.config/eww/scripts/openExitScreen.sh
 
-# If control center failed to close, run this.
-super + alt + {d,n}
-	$HOME/.local/bin/eww close control-center
-
 # ##############################################################################
 # #                                 CONTROL KEYS                               #
 # ##############################################################################
@@ -63,16 +59,10 @@ super + XF86MonBrightness{Up,Down}
     brightnessctl set {100%,30%}
 
 # Screenshot; Save to local storage.
-Print
+{super,ctrl} + Print
 	DATE=$(date '+%b%d-%H-%M:%S.png'); \
 	maim -us "$HOME/Pictures/Screenshots/$DATE"; \
-	sh $HOME/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE
-
-# Screenshot; Upload to CDN.
-super + Print
-	DATE=$(date '+%b%d-%H-%M:%S.png'); \
-	maim -us "$HOME/Pictures/Screenshots/$DATE"; \
-	sh $HOME/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
+	sh $HOME/.local/bin/{viewscr,upldscr} $HOME/Pictures/Screenshots/$DATE
 
 # ##############################################################################
 # #                                 WINDOW KEYS                                #
@@ -97,13 +87,13 @@ super + {_,shift + }{1-5}
 # Shrink focused window.
 super + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-super + shift + {Right,Top,Bottom,Left}
+super + shift + {Right,Up,Down,Left}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # Expand focused window.
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-super + alt + {Right,Top,Bottom,Left}
+super + alt + {Right,Up,Down,Left}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # Set window state.
@@ -113,7 +103,7 @@ super + {t,shift + t,space,f}
 # Set new window orientation.
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
-super + ctrl + {Left,Bottom,Top,Right}
+super + ctrl + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
 
 # Cancel the new window orientation.
@@ -136,13 +126,17 @@ super + ctrl + {q,r}
 super + ctrl + e
     pkill eww && $HOME/.local/bin/eww open bar &; pkill ewwFullscreenFix.sh; $HOME/.config/bspwm/scripts/ewwFullscreenFix.sh &
 
+# Close exit screen via Escape.
+# Escape
+#     [[ -f "$HOME/.cache/eww-escreen.lock" ]] && sh $HOME/.config/eww/scripts/openExitScreen.sh
+
 # ##############################################################################
 # #                                MOUSE HOTKEYS                               #
 # ##############################################################################
 
 # Close all active notifications.
 # ~button1
-#	bspc query -D -d .focused.!occupied && dunstctl close-all && $HOME/.local/bin/eww update noti=false; sleep 0.270; $HOME/.local/bin/eww close notification-popup; pkill openEwwPopup.sh
+#	bspc query -D -d .focused.!occupied && $HOME/.local/bin/eww update noti=false; sleep 0.270; $HOME/.local/bin/eww close notification-popup; pkill openEwwPopup.sh
 
 # Toggle control center using middle click.
 ~button2
@@ -150,6 +144,6 @@ super + ctrl + e
 
 # Toggle right click context menu.
 ~button3
-	bspc query -D -d .focused.!occupied && cd $HOME/.config/jgmenu && echo -e "$(cat ~/.config/jgmenu/menu.txt)" | jgmenu --simple
+    bspc query -D -d .focused.!occupied && [[ ! -f "$HOME/.cache/eww-escreen.lock" ]] && cd $HOME/.config/jgmenu && echo -e "$(cat ~/.config/jgmenu/menu.txt)" | jgmenu --simple
 
 # EOF

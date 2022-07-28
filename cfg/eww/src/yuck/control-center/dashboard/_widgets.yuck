@@ -113,7 +113,7 @@
 						(button :class "redshift-btn"
 							:style "background-color: ${redshift_status}"
 							:tooltip "Night Light"
-							:onclick "sh ./scripts/getRedshift toggle"
+							:onclick "sh ./scripts/getRedshift.sh toggle"
 							""
 						)
 						(button :class "dnd-btn"

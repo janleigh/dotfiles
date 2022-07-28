@@ -22,7 +22,7 @@ run() {
 	sleep 0.15 && ${EWW_BIN} update escreen=true
 
 	# Sometimes, eww is a dick. It doesn't update the exitscreen properly.
-	rerun
+	sleep 0.2 && rerun
 }
 
 # Run eww daemon if not running
