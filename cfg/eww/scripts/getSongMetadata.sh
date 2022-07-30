@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLAYERS="spotify,%any,firefox,chromium,brave,mpd status"
+PLAYERS="spotify,%any,firefox,chromium,brave,mpd"
 ARTIST=$(playerctl -p $PLAYERS metadata --format '{{ artist }}')
 TITLE=$(playerctl -p $PLAYERS metadata --format '{{ title }}')
 STATUS=$(playerctl -p $PLAYERS status)
@@ -26,7 +26,6 @@ title() {
 		else
 			echo $TITLE
 		fi
-		
 	fi
 }
 
