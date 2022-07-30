@@ -7,25 +7,12 @@ AIRPLANE_MODE_LOCK_FILE="$HOME/.cache/airplane-mode.lock"
 DND_LOCK_FILE="$HOME/.cache/dnd-lock.lock"
 JEFF_LOCK_FILE="$HOME/.cache/jeff-lock.lock"
 
-hide_unhide_windows() {
-	while bspc node any.hidden.window -g hidden=off; do false; done && while bspc node 'any.!hidden.window' -g hidden=on; do :; done
-}
-
 pre_run() {
 	if [[ -f "$HOME/.cache/eww-control-center.lock" ]]; then
 		${EWW_BIN} update ccenter=false
 		sleep 0.8
 		${EWW_BIN} close control-center
 		rm "$HOME/.cache/eww-control-center.lock"
-	fi
-
-	if [[ -f "$HOME/.cache/eww-escreen.lock" ]]; then
-		${EWW_BIN} update escreen=false
-		sleep 0.8
-		$HOME/.local/bin/tglbar
-		hide_unhide_windows
-		${EWW_BIN} close exit-screen
-		rm "$HOME/.cache/eww-escreen.lock"
 	fi
 }
 
@@ -60,18 +47,6 @@ run_giph() {
 	fi
 }
 
-run_suspend() {
-	pre_run && sleep 0.8
-
-	systemctl suspend
-}
-
-run_hibernate() {
-	pre_run && sleep 0.8
-
-	systemctl hibernate
-}
-
 case $1 in
 	"dnd")
 		run_dnd
@@ -87,11 +62,5 @@ case $1 in
 		;;
 	"jstat")
 		[[ ! -f "$JEFF_LOCK_FILE" ]] && echo "$bgSecondary" || echo "#1c2325"
-		;;
-	"suspend")
-		run_suspend &
-		;;
-	"hibernate")
-		run_hibernate &
 		;;
 esac
