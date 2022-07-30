@@ -1,7 +1,7 @@
 (defwidget exit-screen []
 	(revealer :reveal escreen :duration "500ms" :transition "crossfade"
 		(box :orientation "h" :space-evenly "true"
-			(box :class "exit-screen" :orientation "h" :space-evenly "false" :halign "center" :valign "center"shutdown
+			(box :class "exit-screen" :orientation "h" :space-evenly "false" :halign "center" :valign "center"
 				(button :class "shutdown-btn" :onclick "sh $HOME/.config/eww/scripts/exitScreenActions.sh poweroff" :tooltip "Shutdown" "")
 				(button :class "reboot-btn" :onclick "sh $HOME/.config/eww/scripts/exitScreenActions.sh reboot" :tooltip "Reboot" "")
 				(button :class "sleep-btn" :onclick "sh $HOME/.config/eww/scripts/exitScreenActions.sh suspend" :tooltip "Sleep" "")
