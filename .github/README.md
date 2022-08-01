@@ -62,11 +62,11 @@
          <sup>
             <sub>
                <samp>
-                  THIS DOTFILES IS CONFIGURED AT 1366x768 WITH 96 DPI!
+                  THIS DOTFILES IS CONFIGURED AT 1366x768 WITH 96 DPI!<br>
+                  SOME STUFF MIGHT BREAK ON LOWER OR HIGHER
                   <p align="center">
-                     SOME STUFF MIGHT BREAK ON LOWER OR HIGHER RESOLUTIONS BUT WILL STILL WORK!
+                     RESOLUTIONS BUT WILL STILL WORK!
                   </p>
-                  IF YOU WANT TO ADD SUPPORT FOR A LOWER OR HIGHER RESOLUTION, KINDLY MAKE A PR!
                </samp>
             </sub>
          </sup>
@@ -315,6 +315,49 @@
    <p align="center">
       <img src="assets/colorscheme.png" alt="Colorscheme Showcase">
    </p>
+
+   <details>
+   <summary><strong>Xresources</strong></summary>
+
+   ```
+    ! special
+    *.foreground:   #c5c8c9
+    *.background:   #0B0F10
+
+    ! black
+    *.color0:       #101415
+    *.color8:       #131718
+
+    ! red
+    *.color1:       #df5b61
+    *.color9:       #ee6a70
+
+    ! green
+    *.color2:       #87c7a1
+    *.color10:      #96d6b0
+
+    ! yellow
+    *.color3:       #de8f78
+    *.color11:      #ffb29b
+
+    ! blue
+    *.color4:       #6791c9
+    *.color12:      #7ba5dd
+
+    ! magenta
+    *.color5:       #bc83e3
+    *.color13:      #cb92f2
+
+    ! cyan
+    *.color6:       #70b9cc
+    *.color14:      #7fc8db
+
+    ! white
+    *.color7:       #c4c4c4
+    *.color15:      #cccccc
+   ```
+
+   </details>
 
 ## :money_with_wings: <samp>TIP JAR</samp>
 
