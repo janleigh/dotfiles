@@ -22,7 +22,7 @@ else
 		touch "$LOCK_FILE"
 		run
 	else
-		[[ ! -z "$ACTIVE_PLAYERS" ]] && ${EWW_BIN} update mp=false && sleep 0.4
+		[[ ! -z "$ACTIVE_PLAYERS" ]] && ${EWW_BIN} update mp=false && sleep 0.5
 		${EWW_BIN} update ccenter=false
 		sleep 0.6
 		${EWW_BIN} close control-center
