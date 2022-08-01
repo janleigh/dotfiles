@@ -13,7 +13,7 @@
       <img src="https://img.shields.io/github/license/janleigh/dotfiles?color=FCA2AA&labelColor=1C2325&style=for-the-badge">
    </a>
    <br>
-</div>
+</div>`
 <div align="center">
    <p></p>
    <a href="https://discord.gg/2RfJb3CVfb">
@@ -50,6 +50,29 @@
 
 <!-- SETUP -->
 ## :wrench: <samp>SETUP</samp>
+
+   <table align="right">
+   <tr>
+      <th align="center">
+         <sup><sub>:warning: WARNING :warning:</sub></sup>
+      </th>
+   </tr>
+   <tr>
+      <td align="center">
+         <sup>
+            <sub>
+               <samp>
+                  THIS DOTFILES IS CONFIGURED AT 1366x768 WITH 96 DPI!
+                  <p align="center">
+                     SOME STUFF MIGHT BREAK ON LOWER OR HIGHER RESOLUTIONS BUT WILL STILL WORK!
+                  </p>
+                  IF YOU WANT TO ADD SUPPORT FOR A LOWER OR HIGHER RESOLUTION, KINDLY MAKE A PR!
+               </samp>
+            </sub>
+         </sup>
+      </td>
+   </tr>
+   </table>
 
    This is step-by-step how to install these dotfiles. Just [R.T.F.M](https://en.wikipedia.org/wiki/RTFM).
 
