@@ -13,7 +13,7 @@
       <img src="https://img.shields.io/github/license/janleigh/dotfiles?color=FCA2AA&labelColor=1C2325&style=for-the-badge">
    </a>
    <br>
-</div>`
+</div>
 <div align="center">
    <p></p>
    <a href="https://discord.gg/2RfJb3CVfb">
