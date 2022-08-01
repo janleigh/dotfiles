@@ -71,7 +71,6 @@ alias nv="nvim"
 alias mv="mv -v"
 alias cp="cp -vr"
 alias rm="rm -vr"
-alias notify-send="notify-send -i \"$HOME/.config/dunst/assets/notification/fallback-notif.png\""
 
 # Init starship
 eval "$(starship init zsh)"

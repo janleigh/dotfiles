@@ -1,0 +1,67 @@
+.control-center {
+	.second-row {
+		font-family: "Material Icons";
+		margin-bottom: 1.25em;
+
+		box {
+			margin: .25em 0em;
+		}
+
+		scale trough {
+			background-color: $background-primary;
+			border-radius: 10px;
+			min-height: 1em;
+			min-width: 20em;
+			margin: 0em 1em;
+
+			highlight {
+				margin: .25em;
+				border-radius: inherit;
+			}
+		}
+
+		.slider-clicker {
+			font-size: 20px;
+			background-color: $background-tertiary;
+			border-radius: 100%;
+			padding: .25em;
+		}
+
+		.volume-slider {
+			margin-left: 2em;
+
+			.volume-icon {
+				padding: .25em;
+				border-radius: 2em;
+				// background-color: $background-primary;
+				color: $foreground-tertiary;
+				font-size: 20px;
+			}
+
+			.volume-level {
+				color: wheat;
+			}
+
+			trough highlight {
+				// background-image: linear-gradient(to top, #df5b61, $red);
+				background-color: #7ba5dd;
+			}
+		}
+		.brightness-slider {
+			margin-left: 2em;
+
+			.brightness-icon {
+				padding: .25em;
+				border-radius: 2em;
+				// background-color: $background-primary;
+				color: $foreground-tertiary;
+				font-size: 20px;
+			}
+
+			trough highlight {
+				// background-image: linear-gradient(to top, #de8f78, $yellow);
+				background-color: #96d6b0;
+			}
+		}		
+	}
+}

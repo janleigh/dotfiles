@@ -15,6 +15,12 @@ rerun() {
 	${EWW_BIN} update escreen=true
 }
 
+prerun() {
+	[[ -f "$HOME/.cache/eww-info-center.lock" ]] && sh $HOME/.config/eww/scripts/openInfoCenter.sh &
+	[[ -f "$HOME/.cache/eww-control-center.lock" ]] && sh $HOME/.config/eww/scripts/openControlCenter.sh &
+	[[ -f "$HOME/.cache/eww-notification-center.lock" ]] && sh $HOME/.config/eww/scripts/openNotificationCenter.sh &
+}
+
 run() {
 	$HOME/.local/bin/tglbar
 	${EWW_BIN} open exit-screen
@@ -32,7 +38,7 @@ if [[ ! `pidof eww` ]]; then
 else
 	if [[ ! -f "$LOCK_FILE" ]]; then
 		touch "$LOCK_FILE"
-		run
+		prerun && run
 	else
 		sleep 0.15 && ${EWW_BIN} update escreen=false
 		sleep 0.2 && hide_unhide_windows

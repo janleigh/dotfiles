@@ -1,15 +1,14 @@
 .battery {
-
 	scale trough {
 		background-color: #50906a;
-		border-radius: 6px;
+		border-radius: 10px;
 		min-height: 2.4em;
 		min-width: 6em;
 	}
 
 	trough highlight {
 		background-image: linear-gradient(to right, $green);
-		border-radius: 6px;
+		border-radius: 10px;
 	}
 
 	.battery-label {

@@ -1,6 +1,3 @@
-;; Change me!!! :D
-(defvar name "Jan Leigh Muñoz")
-
 (defwidget lock-screen [] 
 	(box :class "lock-screen" :orientation "h" :space-evenly "true"
 		(box :class "lock-inner" :orientation "v" :space-evenly "true"

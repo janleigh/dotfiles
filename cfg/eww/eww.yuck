@@ -6,16 +6,18 @@
 
 (include "./src/yuck/control-center/_widgets.yuck")
 (include "./src/yuck/control-center/_windows.yuck")
-(include "./src/yuck/control-center/dashboard/_widgets.yuck")
-(include "./src/yuck/control-center/dashboard/_windows.yuck")
-(include "./src/yuck/control-center/notification-center/_widgets.yuck")
-(include "./src/yuck/control-center/notification-center/_windows.yuck")
 
 (include "./src/yuck/exitscreen/_widgets.yuck")
 (include "./src/yuck/exitscreen/_windows.yuck")
 
+(include "./src/yuck/info-center/_widgets.yuck")
+(include "./src/yuck/info-center/_windows.yuck")
+
 (include "./src/yuck/lockscreen/_widgets.yuck")
 (include "./src/yuck/lockscreen/_windows.yuck")
+
+(include "./src/yuck/notification-center/_widgets.yuck")
+(include "./src/yuck/notification-center/_windows.yuck")
 
 (include "./src/yuck/notification-popup/_widgets.yuck")
 (include "./src/yuck/notification-popup/_windows.yuck")

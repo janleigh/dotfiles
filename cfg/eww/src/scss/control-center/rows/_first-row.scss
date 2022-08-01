@@ -1,0 +1,40 @@
+.control-center {	
+	.first-row {
+		margin: 1em 1em 0em;
+
+		.weather {
+			margin: .5em 0em 0em 0em;
+
+			.weather-icon {
+				font-size: 36px;
+				font-family: "Sarasa Mono CL Nerd Font";
+			}
+
+			.weather-data {
+				margin-left: 1em;
+
+				.weather-temp {
+					font-size: 20px;
+					font-weight: bold;
+				}
+			}
+		}
+
+		.date {
+			margin: 0em 0em 0em 0em;
+
+			.current-time {
+				font-size: 36px;
+				margin-left: .5em;
+			}
+
+			.date-data {
+				.date-md {
+					font-size: 20px;
+					font-weight: bold;
+					margin-bottom: -.65em;
+				}
+			}
+		}
+	}
+}

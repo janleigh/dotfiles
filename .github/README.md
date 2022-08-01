@@ -141,12 +141,9 @@
    |    Font List     |  Use  |
    | :--------------: | :---: |
    | [`Sarasa Mono CL`](https://github.com/be5invis/Sarasa-Gothic) | Main Font |
-   | [`Roboto`](https://fonts.google.com/specimen/Roboto) | Secondary Main Font |
-   | [`Victor Mono`](https://github.com/rubjo/victor-mono) | Stylish Italic Font |
+   | [`Victor Mono`](https://github.com/rubjo/victor-mono) | Main Italic Font |
    | [`DM Sans`](https://fonts.google.com/specimen/DM+Sans) | Main UI Font |
-   | [`SF Pro Display`](https://developer.apple.com/fonts/) | Secondary UI Font |
    | [`Material Icons`](https://github.com/google/material-design-icons/) | Main Icon Font |
-   | [`Icomoon`](https://icomoon.io/) | Secondary Icon Font |
 
    > **NOTE**: Only important fonts has been listed on the table above.
 
@@ -312,6 +309,7 @@
    - **Inspiration**
       - [`owl4ce`](https://github.com/owl4ce)
       - [`rxyhn`](https://github.com/rxyhn)
+      - [`Syndrizzle`](https://github.com/Syndrizzle)
 
    - **Contributors**
       - [`flyingcakes85`](https://github.com/flyingcakes85)

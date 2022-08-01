@@ -1,0 +1,32 @@
+.info-center {
+	.time {
+		font-size: 48px;
+
+		// label {
+		// 	margin: 0em .25em;
+		// }
+	
+		.time-separator {
+			margin: 0em .5em;
+	
+			label {
+				font-size: 24px;
+				font-family: "Material Icons";
+	
+				&:nth-child(1) {
+					color: $red;
+				}
+				&:nth-child(2) {
+					color: $green;
+				}
+				&:nth-child(3) {
+					color: $blue;
+				}
+			}
+		}
+	}
+	
+	.date {
+		font-size: 18px;
+	}
+}

@@ -18,13 +18,9 @@
 	(box :orientation "h"
 		:class "time"
 		:halign "start"
-		(button :class "time-hour" 
-			:onclick "sh scripts/openCalendar.sh"
-			hour)
-		(label :class "time-sep" :text ":")
-		(button :class "time-min"
-			:onclick "sh scripts/openCalendar.sh"
-			minute)
+		(button :onclick "sh scripts/openInfoCenter.sh &"
+			"${monthday}, ${hour}:${minute}"
+		)
 	)
 )
 
@@ -52,61 +48,40 @@
 	(box :class "action-center"
 		:orientation "h"
 		:space-evenly "true"
-		(button :class "wifi-btn" :tooltip "Connected to ${network_name}"
-			:onclick "iwgtk &"
-			network_icon
+		(button :class "control-center-btn"
+			:onclick "sh scripts/openControlCenter.sh &"
+			:tooltip "Control Center"
+			"${network_icon}  ${bluetooth_icon}  ${airplane_mode_status}"
 		)
-		(button :class "bluetooth-btn" :tooltip "Powered: ${bluetooth_status}"
-			:onclick "blueman-manager &"
-			bluetooth_icon
-		)
+		; (button :class "wifi-btn" :tooltip "Connected to ${network_name}"
+		; 	:onclick "sh scripts/openControlCenter.sh &"
+		; 	network_icon
+		; )
+		; (button :class "bluetooth-btn" :tooltip "Powered: ${bluetooth_status}"
+		; 	:onclick "sh scripts/openControlCenter.sh &"
+		; 	bluetooth_icon
+		; )
 	)
 )
-
-(defwidget cal []
-	(revealer :transition "crossfade" :duration "250ms" :reveal call
-		(box :class "cal-window"
-			:orientation "v"
-			(box :class "cal-box"
-				:orientation "v"
-				:space-evenly "false"
-				(label :class "month-year" :text month_year)
-				(box :class "day-names" :orientation "h" :space-evenly "true"
-					(label :text "Su")
-					(label :text "Mo")
-					(label :text "Tu")
-					(label :text "We")
-					(label :text "Th")
-					(label :text "Fr")
-					(label :text "Sa")
-				)
-				(calendar :class "cal" 
-					:show-details false :show-heading false :show-day-names false
-					:day calendar_day :month calendar_month :year calendar_year)
-			)
-		)
-	)
-)
-(defvar call false)
 
 ;; BAR IS SEPARATED INTO THREE PARTS: TOP, CENTER AND BOTTOM
 ;; TOP WIDGETS
 (defwidget top []
 	(box :class "top" :orientation "h" :space-evenly "false" :halign "start"
-		(launcher)
-		(workspaces)))
+		(time)))
 
 ;; CENTER WIDGETS
 (defwidget center []
 	(box :orientation "h" :space-evenly "false" :halign "center"
-		(time)))
+		(workspaces)))
 ;; BOTTOM WIDGETS
 (defwidget bottom []
 	(box :orientation "h" :space-evenly "false" :halign "end"
-		(battery)
-		(separator :text "‏ ‏ ‏")
 		(action-center)
-		; (separator :text "‏ ‏ ‏")
+		(separator :text "‏ ‏ ‏")
+		(battery)
+		; (time)
+		(separator :text "‏ ‏ ‏")
 		(layout)))
 	
 (defwidget bar []

@@ -4,7 +4,7 @@ DND_LOCK_FILE="$HOME/.cache/dnd-lock.lock"
 EWW_BIN="$HOME/.local/bin/eww"
 
 finish() {
-	${EWW_BIN} update noti=false; sleep 0.270
+	${EWW_BIN} update noti=false; sleep 0.075
 	${EWW_BIN} close notification-popup
 }
 

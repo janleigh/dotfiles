@@ -8,7 +8,9 @@
 (defpoll monthday :interval "24h"
 	"date '+%d %b'")
 (defpoll month_year :interval "24h"
-	"date '+%B, %Y'")
+    "date '+%B %Y'")
+(defpoll wd-m-d :interval "24h"
+	"date '+%A, %d %B'")
 
 ;; SYSTEM INFO VARS
 (defpoll used_ram :interval "5s"
@@ -41,6 +43,8 @@
 ;; LOCK SCREEN VARS
 (defpoll username :interval "24h"
 	"whoami")
+(defpoll fullname :interval "24h"
+	"user_record=\"$(getent passwd $USER)\"; user_gecos_field=\"$(echo \"$user_record\" | cut -d ':' -f 5)\"; user_full_name=\"$(echo \"$user_gecos_field\" | cut -d ',' -f 1)\"; echo $user_full_name")
 (defpoll hostname :interval "24h"
 	"hostname")
 
@@ -53,6 +57,12 @@
 	"./scripts/getWeather.sh weather_desc")
 (defpoll weather_feels_like :interval "3h"
 	"./scripts/getWeather.sh feels_like")
+(defpoll weather_humidity :interval "3h"
+	"./scripts/getWeather.sh humidity")
+(defpoll weather_icon :interval "3h"
+	"./scripts/getWeather.sh icon")
+(defpoll weather_hex :interval "3h"
+	"./scripts/getWeather.sh hex")
 
 ;; CALENDAR VARS
 (defpoll calendar_day :interval "10h"
@@ -69,6 +79,8 @@
 	"./scripts/getNetwork.sh icon")
 (defpoll network_name :interval "1s"
 	"./scripts/getNetwork.sh name")
+(defpoll network_name_truncated :interval "1s"
+	"./scripts/getNetwork.sh trname")
 (defpoll redshift_status :interval "1s"
 	"./scripts/getRedshift.sh color")
 (defpoll dnd_status :interval "1s"
@@ -89,3 +101,5 @@
 	"./scripts/getBluetooth.sh icon")
 (defpoll bluetooth_status :interval "1s"
 	"./scripts/getBluetooth.sh status")
+(defpoll airplane_mode_status :interval "1s"
+	"./scripts/dashActions.sh amstat")

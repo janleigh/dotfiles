@@ -44,8 +44,11 @@ player_status_text() {
 	# Deathemonic: It checks for the first priority player name and removes the rest of the players. This is usefull when spotify and mpd are both running
 
 	PLAYER_NAME=$(playerctl -p $PLAYERS -l | head -n 1)
+	# Some browsers sometimes have ".instance(RANDOM_STRING)" in their names like Firefox. This removes the instance name.
+	PLAYER_NAME_SPLIT=($(echo $PLAYER_NAME | tr "." "\n"))
+	PLAYER_NAME_SPLIT=${PLAYER_NAME_SPLIT[0]}
 
-	[[ "$STATUS" = "Playing" ]] && echo "Now Playing - via ${PLAYER_NAME^}" || echo "Music"
+	[[ "$STATUS" = "Playing" ]] && echo "Now Playing - via ${PLAYER_NAME_SPLIT^}" || echo "Music"
 }
 
 position() {

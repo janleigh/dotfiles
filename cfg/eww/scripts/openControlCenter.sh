@@ -2,12 +2,15 @@
 
 LOCK_FILE="$HOME/.cache/eww-control-center.lock"
 EWW_BIN="$HOME/.local/bin/eww"
+ACTIVE_PLAYERS=$(playerctl -l | head -n 1)
 
 run() {
 	${EWW_BIN} open control-center
 	sleep 0.2
 	xdo raise -N eww-bar
 	${EWW_BIN} update ccenter=true
+
+	sleep 1 && [[ ! -z "$ACTIVE_PLAYERS" ]] && ${EWW_BIN} update mp=true
 }
 
 # Run eww daemon if not running
@@ -19,10 +22,11 @@ else
 		touch "$LOCK_FILE"
 		run
 	else
+		[[ ! -z "$ACTIVE_PLAYERS" ]] && ${EWW_BIN} update mp=false && sleep 0.4
 		${EWW_BIN} update ccenter=false
-		sleep 0.8
+		sleep 0.6
 		${EWW_BIN} close control-center
-		xdo lower -N eww-bar
+		[[ ! -f "$HOME/.cache/eww-calendar.lock" ]] && xdo lower -N eww-bar
 		rm "$LOCK_FILE"
 	fi
 fi

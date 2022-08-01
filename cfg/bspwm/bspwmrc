@@ -23,22 +23,26 @@ start() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # Clear cache.
 rm $HOME/.cache/dunst.log
 rm $HOME/.cache/fake_battery_capacity
+rm $HOME/.cache/eww-calendar.lock
+rm $HOME/.cache/eww-escreen.lock
+rm $HOME/.cache/eww-control-center.lock
 rm -r $HOME/.cache/dunst/
 
 # Fix cursor size.
 xsetroot -xcf /usr/share/icons/volantes-cursors/cursors/left_ptr 32
 
-# Autostart Apps
+# Autostart applications.
 $HOME/.local/bin/eww open bar &
 pgrep -x sxhkd > /dev/null || sxhkd &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
 
-# Start polkit agent
+# Start polkit agent.
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Setup wallpaper
-hsetroot -fill "$WALLPAPER"
+# Setup wallpaper.
+# hsetroot -fill "$WALLPAPER"
+hsetroot -solid "#1C2325"
 
 # I hate mouse drift.
 xset m 0 0
@@ -59,13 +63,14 @@ exec mpDris2 &
 bspc monitor -d 1 2 3 4 5
 
 rule firefoxdeveloperedition        desktop=1 follow=on
+rule Navigator                      desktop=1 follow=on
 
 rule discord                        desktop=2 follow=off
 rule Code                           desktop=3
 rule Steam                          desktop=4
 
 rule Viewnior                       state=floating
-rule mpv                            state=floating
+rule mpv                            state=fullscreen follow=on
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #

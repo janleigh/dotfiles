@@ -26,7 +26,7 @@ run() {
 
 case $1 in
 	"shutdown")
-		run "shutdown" &
+		run "poweroff" &
 		;;
 	"reboot")
 		run "reboot" &

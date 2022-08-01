@@ -1,9 +1,12 @@
-Web Browser,firefox-developer-edition,firefox-developer-edition
+Web Browser,firefox-developer-edition,browser
 File Manager,thunar,org.xfce.thunar
 Favorites,^checkout(favorites),user-bookmarks
 ^sep()
 Launch Terminal,tabbed -n "term" alacritty -t "term" --embed,utilities-terminal
 Lock Screen,~/.local/bin/lck,xfsm-lock
+^sep()
+Control Center,~/.config/eww/scripts/openControlCenter.sh,applications-system-orange
+Notification Center,~/.config/eww/scripts/openNotificationCenter.sh,bell
 ^sep()
 Exit,~/.config/eww/scripts/openExitScreen.sh,./assets/system-shutdown.svg
 

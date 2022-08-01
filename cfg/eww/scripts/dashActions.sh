@@ -47,6 +47,18 @@ run_giph() {
 	fi
 }
 
+run_am() {
+	if [[ ! -f "$AIRPLANE_MODE_LOCK_FILE" ]]; then
+		touch "$AIRPLANE_MODE_LOCK_FILE"
+		rfkill block wlan
+		rfkill block bluetooth
+	else
+		rm "$AIRPLANE_MODE_LOCK_FILE"
+		rfkill unblock wlan
+		rfkill unblock bluetooth
+	fi
+}
+
 case $1 in
 	"dnd")
 		run_dnd
@@ -57,10 +69,15 @@ case $1 in
 	"jeff")
 		run_giph &
 		;;
+	"am")
+		run_am
+		;;
 	"dndstat")
 		[[ ! -f "$DND_LOCK_FILE" ]] && echo "$bgSecondary" || echo "#1c2325"
 		;;
 	"jstat")
 		[[ ! -f "$JEFF_LOCK_FILE" ]] && echo "$bgSecondary" || echo "#1c2325"
 		;;
+	"amstat")
+		[[ ! -f "$AIRPLANE_MODE_LOCK_FILE" ]] && echo "" || echo ""
 esac

@@ -1,0 +1,48 @@
+.notification-center-window {
+	.notification-center-spacer {
+		transition: all 0.8s cubic-bezier(0.455, 0.03, 0.515, 1);
+	}
+
+	.notification-center-box {
+		border-radius: 10px;
+		padding: 2em;
+
+		background-color: $darker-background;
+
+		min-width: 310px;
+		font-family: "DM Sans";
+
+		.notification-text {
+			margin: .5em 0em;
+			font-size: 22px;
+			font-weight: bold;
+		}
+	
+		.notification-scroller {
+			margin-top: .75em;
+			min-height: 40em;
+			// background-color: $background-secondary;
+			border-radius: 6px;
+	
+			.notification-history {
+				.eon {
+					font-size: 18px;
+					font-weight: bold;
+				}
+
+				.notification {
+					margin: .25em 1em .75em;
+					box-shadow: none;
+
+					background-color: $background-secondary;
+				}
+			}
+		}
+	}
+
+	.quick-utilities {
+		// background-color: $background-primary;
+		border-radius: 5px;
+		// margin-top: 2em;
+	}
+}

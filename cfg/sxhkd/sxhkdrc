@@ -10,6 +10,9 @@ super + shift + {w,f}
 super + Return
 	tabbed -n "term" alacritty -t "term" --embed
 
+super + alt + Return
+    bspc rule -a tabbed -o state=floating rectangle=$(slop) && tabbed -n "term" alacritty -t "term" --embed
+
 # Open application menu.
 super + d
 	sh $HOME/.local/bin/appmnu
@@ -18,13 +21,21 @@ super + d
 # #                                   HOTKEYS                                  #
 # ##############################################################################
 
-# Toggle lock screen via xautolock.
+# Toggle lock screen.
 ctrl + alt + l
     sh $HOME/.local/bin/lck
 
 # Toggle control center.
-super + shift + {d,n}
+super + shift + {d,c}
 	sh $HOME/.config/eww/scripts/openControlCenter.sh
+
+# Toggle notification center.
+super + shift + n
+	sh $HOME/.config/eww/scripts/openNotificationCenter.sh
+
+# Toggle info center.
+super + shift + i
+	sh $HOME/.config/eww/scripts/openInfoCenter.sh
 
 # Toggle color picker.
 super + shift + x
@@ -37,6 +48,10 @@ super + shift + b
 # Toggle exit screen.
 super + Escape
     sh $HOME/.config/eww/scripts/openExitScreen.sh
+
+# Close exit screen when it's enabled.
+~Escape
+    [[ -f "$HOME/.cache/eww-escreen.lock" ]] && sh $HOME/.config/eww/scripts/openExitScreen.sh
 
 # ##############################################################################
 # #                                 CONTROL KEYS                               #
@@ -69,12 +84,12 @@ super + XF86MonBrightness{Up,Down}
 # ##############################################################################
 
 # Cycle focus through windows.
-super + {p,n}
+super + {_,shift + }Tab
 	bspc node -f {prev,next}.local.!hidden.window
 
 # Kill the focused window.
-super + c
-	bspc node -c
+super + {_,shift + }c
+	bspc node -{c,k}
 
 # Move the focused window by direction.
 super + {Left,Down,Up,Right}
@@ -98,7 +113,11 @@ super + alt + {Right,Up,Down,Left}
 
 # Set window state.
 super + {t,shift + t,space,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen
+
+# Set window ratio  
+super + ctrl + {1-9}
+  bspc node -o 0.{1-9}
 
 # Set new window orientation.
 super + ctrl + {h,j,k,l}
@@ -119,7 +138,7 @@ super + ctrl + r
 	pkill -USR1 -x sxhkd; notify-send "sxhkd" "Restarted successfully."
 
 # Quit/restart bspwm.
-super + ctrl + {q,r}
+super + ctrl + {q,alt +r}
 	bspc {quit,wm -r}
 
 # Force restart eww.

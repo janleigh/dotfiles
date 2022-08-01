@@ -1,10 +1,10 @@
 .notification {
-	font-family: "Roboto";
+	font-family: "DM Sans", "Sarasa Mono CL Nerd Font";
 	background-color: $darker-background;
 	border-radius: 10px;
 	margin-bottom: 1.5em;
 
-	box-shadow: 4px 3px 8px 1px rgba(0, 0, 0, 0.55);
+	// box-shadow: 4px 3px 8px 1px rgba(0, 0, 0, 0.55);
 
 	.notification-title {
 		// background-color: $background-secondary;
@@ -26,7 +26,7 @@
 	}
 
 	.notification-body {
-		padding: .5em 0em 1em;
+		padding: .05em 0em .15em;
 		font-size: 14px;
 		border-radius: 0px 0px 10px 10px;
 
@@ -46,11 +46,10 @@
 			.notification-summary {
 				font-size: 16px;
 				font-weight: bold;
-				margin: .25em 0em .5em 0em;				
+				margin: .25em 0em .5em;
 			}
 
 			.notification-message {
-				// margin-left: -1em;
 				font-size: 12px;
 				color: $foreground-secondary;
 			}
@@ -70,7 +69,58 @@
 	}
 }
 
+.cc-button {
+	font-family: "DM Sans";
+	margin: 1em .5;
+
+	.cc-button-btn {
+		font-family: "Material Icons";
+		padding: .5em;
+		margin: .5em;
+		border-radius: 6px;
+		font-size: 18px;
+		// color: $darker-background;
+
+		.sep-column {
+			font-size: 24px;
+			margin: 0em .05em;
+			color: $foreground-tertiary;
+		}
+	}
+
+	.cc-button-title {
+		font-size: 13px;
+	}
+}
+
+.cc-button-icon-only {
+	font-family: "DM Sans";
+	margin: 1em .5;
+
+	.cc-button-btn {
+		font-family: "Material Icons";
+		padding: .75em 2.25em;
+		margin: .5em;
+		border-radius: 6px;
+		font-size: 18px;
+		// color: $darker-background;
+
+		.sep-column {
+			font-size: 24px;
+			margin: 0em .05em;
+			color: $foreground-tertiary;
+		}
+	}
+
+	.cc-button-title {
+		font-size: 13px;
+	}
+}
+
 .layout-btn {
 	font-size: 24px;
-	margin: 0em .7em 0em 0em;
+	margin: .4em .5em .4em 0em;
+	padding: .0em .6em;
+	background-color: #1C2325;
+	border-radius: 10px;
 }

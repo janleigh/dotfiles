@@ -1,13 +1,111 @@
 (defwidget control-center []
 	(box :class "control-center-window" :space-evenly "false" :orientation "v"
-		(box :class "control-center-spacer" :style {ccenter ? "padding-top: 60em;" : "padding-top: 0em;"})
-		(box :class "control-center" :orientation "h" :space-evenly "false"
-			(dashboard)
-			(box :class "sep-column"
-				(label :text "‏")
+		(box :class "control-center-spacer" :style {ccenter ? "padding-top: 43em;" : "padding-top: 0em;"})
+		(box :class "control-center" :orientation "v" :space-evenly "false" :style "margin-top: 5px;"
+			(box :class "first-row" :orientation "v" :space-evenly "false"
+				; (box :orientation "h" :space-evenly "true"
+				; 	(box :class "weather" :orientation "h" :halign "start"
+				; 		(label :class "weather-icon" :style "color: ${weather_hex};" :text weather_icon)
+				; 		(box :class "weather-data" :orientation "v" :space-evenly "false"
+				; 			(label :class "weather-temp" :text "${weather_temp}°C")
+				; 			(label :class "weather-desc" :text "${weather_desc}")
+				; 		)
+				; 	)
+				; 	(box :class "date" :orientation "h" :halign "start"  :space-evenly "false"
+				; 		(box :class "date-data" :orientation "v" :space-evenly "true"
+				; 			(label :class "date-md" :text "${monthday}")
+				; 			(label :class "date-weekday" :text "${weekday}")
+				; 		)
+				; 		(label :class "current-time" :text "${hour}:${minute}")
+				; 	)
+				; )
+				(box :orientation "h"
+					(cc_button :title {strlength(network_name) >= 13 ? network_name_truncated : network_name} :icon network_icon
+						:is_active {network_name != ""} :onclick "iwgtk &"
+						:tooltip "Connected to ${network_name}"
+					)
+					(cc_button :title {bluetooth_status != "Off" ? hostname : "Bluetooth"} :icon bluetooth_icon
+						:is_active {bluetooth_status != "Off"} :onclick "blueman-manager &"
+						:tooltip "Status: ${bluetooth_status}"
+					)
+					(cc_button :title "Airplane Mode" :icon airplane_mode_status
+						:is_active {airplane_mode_status == ""}:onclick "sh ./scripts/dashActions.sh am"
+						:tooltip "Status: ${airplane_mode_status == '' ? 'On' : 'Off'}"
+					)
+				)
+				(box :orientation "h"
+					(cc_button :title "Night Light" :icon ""
+						:is_active {redshift_status == "#1c2325"} :onclick "sh ./scripts/getRedshift.sh toggle"
+						:tooltip "Status: ${redshift_status == '#1c2325' ? 'On' : 'Off'}"
+					)
+					(cc_button :title "Do Not Disturb" :icon ""
+						:is_active {dnd_status == "#1c2325"} :onclick "sh ./scripts/dashActions.sh dnd"
+						:tooltip "Status: ${dnd_status == '#1c2325' ? 'On' : 'Off'}"
+					)
+					(cc_button :disabled "true")
+				)
 			)
-			(notification-center)
+			(box :class "second-row" :orientation "v"
+				(box :class "volume-slider" :orientation "h" :space-evenly "false"
+					(label :class "volume-icon" :text "")
+					(scale :min 0
+						:max 101
+						:value volume
+						:orientation "h"
+						:tooltip "Volume: ${volume}%"
+						:onchange "amixer -D pulse sset Master {}%"
+					)
+					(button :class "slider-clicker" :onclick "pavucontrol &" "")
+				)
+				(box :class "brightness-slider" :orientation "h" :space-evenly "false"
+					(label :class "brightness-icon" :text "")
+					(scale :min 0
+						:max 101
+						:value brightness
+						:orientation "h"
+						:tooltip "Brightness: ${brightness}%"
+						:onchange "brightnessctl set {}%"
+					)
+					(button :class "slider-clicker" :style "color: #6e7071;" "")
+				)
+			)
+			(box :class "third-row" :orientation "h" :space-evenly "true"
+				(box :class "user-info" :orientation "h" :halign "start" :space-evenly "false"
+					(box :class "user-info-avatar")
+					(label :class "user-info-label" :halign "start" :text "${fullname}")
+				)
+				(box :class "system-btn" :halign "end" :orientation "h" :space-evenly "false"
+					(button :class "edit-btn" :onclick "xdg-open ${EWW_CONFIG_DIR} &" "")
+					(button :class "exit-btn" :onclick "sh ./scripts/openExitScreen.sh &" "")
+				)
+			)
+		)
+		(revealer :reveal mp :transition "crossfade"
+			(box :class "music-player" :orientation "h" :space-evenly "false"
+				(box :class "song-art" :orientation "v" :style "background-image: url('${art}')"
+					(box :class "music-info" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false"
+						(label :class "now-playing" :halign "start" :text player_status_text)
+						(label :class "song-title" :halign "start"
+							:text song_title
+							:limit-width 30)
+						(label :class "song-artist" :halign "start"
+							:text song_artist
+							:limit-width 35)
+						(box :orientation "h"
+							(label :class "song-position" :halign "start"
+								:text song_position)
+							song_art
+						)
+					)
+				)
+				(box :class "song-controls" :orientation "v"
+					(button :onclick "playerctl previous" "")
+					(button :class "play-pause" :onclick "playerctl play-pause" player_status)
+					(button :onclick "playerctl next" "")
+				)
+			)
 		)
 	)
 )
 (defvar ccenter false)
+(defvar mp false)

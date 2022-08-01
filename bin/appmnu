@@ -1,7 +1,6 @@
 #!/bin/bash
 
 rofi -disable-history -no-lazy-grab \
--modi "drun" -show drun \
+-modi "drun,run" -show drun \
 -location 8 \
 -theme $HOME/.config/rofi/appmnu.rasi \
--xoffset +57 
