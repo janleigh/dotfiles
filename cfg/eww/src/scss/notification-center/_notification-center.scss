@@ -5,7 +5,7 @@
 
 	.notification-center-box {
 		border-radius: 10px;
-		padding: 2em;
+		padding: 1em .75em;
 
 		background-color: $darker-background;
 
@@ -13,14 +13,14 @@
 		font-family: "DM Sans";
 
 		.notification-text {
-			margin: .5em 0em;
+			margin: 1em 0em .5em;
 			font-size: 22px;
 			font-weight: bold;
 		}
 	
 		.notification-scroller {
 			margin-top: .75em;
-			min-height: 40em;
+			min-height: 494px;
 			// background-color: $background-secondary;
 			border-radius: 6px;
 	
