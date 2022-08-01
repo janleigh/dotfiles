@@ -8,7 +8,7 @@ configuration {
 	display-drun: "Applications";
 	display-run: "CMD";
 	drun-display-format: "{name}";
-	font: "DM Sans 9";
+	font: "DM Sans 10";
 }
 
 window {    
