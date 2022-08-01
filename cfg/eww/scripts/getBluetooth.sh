@@ -7,4 +7,7 @@ case $1 in
 	"status")
 		[[ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]] && echo "Off" || echo "On"
 		;;
+	"supported")
+		[[ ! -z $(lsusb | grep "Bluetooth") ]] && echo true || echo false
+		;;
 esac

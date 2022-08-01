@@ -94,12 +94,16 @@
 (defpoll reveal_no_notification_text :interval "5m"
 	"./scripts/getNotificationCount.sh")
 
-;; UNSORTED VARS
-(defpoll layout_icon :interval "250ms"
-	"./scripts/bspLayout.sh icon")
+;; BLUETOOTH VARS
 (defpoll bluetooth_icon :interval "1s"
 	"./scripts/getBluetooth.sh icon")
 (defpoll bluetooth_status :interval "1s"
 	"./scripts/getBluetooth.sh status")
+(defpoll bluetooth_supported :interval "1s"
+	"./scripts/getBluetooth.sh supported")
+
+;; UNSORTED VARS
+(defpoll layout_icon :interval "250ms"
+	"./scripts/bspLayout.sh icon")
 (defpoll airplane_mode_status :interval "1s"
 	"./scripts/dashActions.sh amstat")

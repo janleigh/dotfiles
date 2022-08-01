@@ -26,11 +26,11 @@
 					)
 					(cc_button :title {bluetooth_status != "Off" ? hostname : "Bluetooth"} :icon bluetooth_icon
 						:is_active {bluetooth_status != "Off"} :onclick "blueman-manager &"
-						:tooltip "Status: ${bluetooth_status}"
+						:tooltip "Status: ${bluetooth_status}" :disabled {bluetooth_supported == "false"}
 					)
 					(cc_button :title "Airplane Mode" :icon airplane_mode_status
 						:is_active {airplane_mode_status == ""}:onclick "sh ./scripts/dashActions.sh am"
-						:tooltip "Status: ${airplane_mode_status == '' ? 'On' : 'Off'}"
+						:tooltip "Status: ${airplane_mode_status == '' ? 'On' : 'Off'}" :disabled {bluetooth_supported == "false"}
 					)
 				)
 				(box :orientation "h"
@@ -87,7 +87,7 @@
 						(label :class "now-playing" :halign "start" :text player_status_text)
 						(label :class "song-title" :halign "start"
 							:text song_title
-							:limit-width 30)
+							:limit-width 27)
 						(label :class "song-artist" :halign "start"
 							:text song_artist
 							:limit-width 35)
