@@ -1,5 +1,5 @@
 [global]
-	font = Roboto 10
+	font = DM Sans 10
 
 	# Allow a small subset of html markup:
 	# <b>bold</b>
@@ -59,17 +59,17 @@
 	width = 300
 
 	# The maximum height of a single notification, excluding the frame.
-	height = 300
+	height = 500
 
 	# Position of the notification
 	origin = bottom-right
 
 	# Offset from the origin
-	offset = 10x-400
+	offset = 10x-300
 
 	# Frame
-	frame_width = 3
-	frame_color = "#192022"
+	frame_width = 0
+	frame_color = "#131718"
 
 	# The transparency of the window. range: [0; 100]
 	# This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -112,10 +112,13 @@
 	separator_height = 3
 
 	# Padding between text and separator
-	padding = 8
+	padding = 16
 
 	# Horizontal padding
-	horizontal_padding = 8
+	horizontal_padding = 12
+
+    # Padding between text and icon.
+    text_icon_padding = 4
 
 	# Define a color for the separator.
 	# possible values are:
@@ -134,7 +137,7 @@
 	icon_position = left
 
 	# Scale larger icons down to this size, set to 0 to disable
-	max_icon_size = 48
+	max_icon_size = 64
 
 	# Define the corner radius of the notification window
 	# in pixel size. If the radius is 0, you have no rounded
@@ -146,16 +149,15 @@
 	# Always run rule-defined scripts, even if the notification is suppressed
 	always_run_script = true
 
-
 [openEwwPopup]
-	script = ~/.config/dunst/scripts/openEwwPopup.sh
+    script = ~/.config/dunst/scripts/openEwwPopup.sh
 
 [songArtLogger]
 	script = ~/.config/dunst/scripts/songArtLogger.sh
 
 [urgency_low]
 	background = "#0B0F10"
-	foreground = "#6e7071"
+	foreground = "#9fa0a0"
 	timeout = 1
 
 [urgency_normal]

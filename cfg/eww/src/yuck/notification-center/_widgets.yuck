@@ -28,7 +28,7 @@
 						)
 						(revealer :reveal reveal_no_notification_text
 							(box :orientation "v" :space-evenly "false"
-								:style {reveal_no_notification_text ? "margin: 11em 0em;" : "margin: 0em 0em;"}
+								:style {reveal_no_notification_text ? "margin: 12em 0em;" : "margin: 0em 0em;"}
 								(image :style "margin-bottom: 2em;" :path "./assets/ui/wedding-bells.png")
 								(label :class "eon" 
 									:valign "center"

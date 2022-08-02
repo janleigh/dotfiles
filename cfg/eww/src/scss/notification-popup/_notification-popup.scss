@@ -1,7 +1,12 @@
 .notification-scroller {
 	min-height: 140px;
+	transition: all 0.6s cubic-bezier(0.455, 0.03, 0.515, 1);
 
 	.notification-history {
 		margin: 1em 0em;
 	}
+}
+
+.notification-scroller-spacer {
+	transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 1);
 }

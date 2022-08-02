@@ -2,7 +2,7 @@
 	font-family: "DM Sans", "Sarasa Mono CL Nerd Font";
 	background-color: $darker-background;
 	border-radius: 10px;
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 
 	// box-shadow: 4px 3px 8px 1px rgba(0, 0, 0, 0.55);
 
@@ -79,7 +79,6 @@
 		margin: .5em;
 		border-radius: 6px;
 		font-size: 18px;
-		// color: $darker-background;
 
 		.sep-column {
 			font-size: 24px;
@@ -99,16 +98,13 @@
 
 	.cc-button-btn {
 		font-family: "Material Icons";
-		padding: .75em 2.25em;
+		padding: .5em 1.75em;
 		margin: .5em;
 		border-radius: 6px;
 		font-size: 18px;
-		// color: $darker-background;
 
-		.sep-column {
+		.cc-button-clicker {
 			font-size: 24px;
-			margin: 0em .05em;
-			color: $foreground-tertiary;
 		}
 	}
 
