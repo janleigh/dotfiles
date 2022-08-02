@@ -1,7 +1,8 @@
 * {
-	font-family: "Iosevka", sans-serif !important;
-	font-weight: 500 !important;
-	font-size: 12px !important;
+	font-family: "Sarasa Mono CL Nerd Font" !important;
+    /* font-family: "DM Sans" !important; */
+    /* font-weight: 500 !important; */
+	font-size: 13px !important;
 	--arrowpanel-background: #0B0F10 !important;
 	--arrowpanel-border-color: #101415 !important;
 	--autocomplete-popup-highlight-background: #101415 !important;
@@ -200,12 +201,12 @@ window,
 
 #urlbar ::-moz-selection,
 .searchbar-textbox ::-moz-selection {
-	background-color: #dddddd !important;
+	background-color: #cccccc !important;
 	color: #000 !important;
 }
 
 #tabbrowser-tabpanels {
-	background-color: #ffffff !important;
+	background-color: #c5c8c9 !important;
 }
 
 urlbar > #urlbar-background {
