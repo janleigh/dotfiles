@@ -5,6 +5,5 @@
 						:height "40%"
 						:anchor "top left")
 	:windowtype "dock"
-	:stacking "fg"
 	:wm-ignore false
 	(info-center))

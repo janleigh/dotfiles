@@ -5,6 +5,5 @@
 						:height "84%"
 						:anchor "center right")
 	:windowtype "dock"
-	:stacking "fg"
 	:wm-ignore false
 	(notification-center))

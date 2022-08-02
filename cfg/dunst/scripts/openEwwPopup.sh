@@ -26,7 +26,7 @@ else
 				kill -9 $pid
 				KILLED=true
 			fi
-		done >/dev/nullx
+		done >/dev/null
 
 		if ! $KILLED; then
 			sleep 0.5

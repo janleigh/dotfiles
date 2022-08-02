@@ -9,10 +9,7 @@ JEFF_LOCK_FILE="$HOME/.cache/jeff-lock.lock"
 
 pre_run() {
 	if [[ -f "$HOME/.cache/eww-control-center.lock" ]]; then
-		${EWW_BIN} update ccenter=false
-		sleep 0.8
-		${EWW_BIN} close control-center
-		rm "$HOME/.cache/eww-control-center.lock"
+		sh "$HOME/.config/eww/scripts/openControlCenter.sh"
 	fi
 }
 
@@ -27,14 +24,14 @@ run_dnd() {
 }
 
 run_scrot() {
-	pre_run & sleep 0.8
+	pre_run && sleep 0.8
 
 	maim -us "$HOME/Pictures/Screenshots/$DATE";
 	sh $HOME/.local/bin/viewscr $HOME/Pictures/Screenshots/$DATE
 }
 
 run_giph() {
-	pre_run & sleep 0.8
+	pre_run && sleep 0.8
 
 	if [[ ! -f "$JEFF_LOCK_FILE" ]]; then
 		touch "$JEFF_LOCK_FILE"
@@ -59,6 +56,11 @@ run_am() {
 	fi
 }
 
+run_ocd() {
+	pre_run && sleep 0.2
+	xdg-open "$HOME/.config/eww"
+}
+
 case $1 in
 	"dnd")
 		run_dnd
@@ -80,4 +82,8 @@ case $1 in
 		;;
 	"amstat")
 		[[ ! -f "$AIRPLANE_MODE_LOCK_FILE" ]] && echo "" || echo ""
+		;;
+	"ocd")
+		run_ocd &
+		;;
 esac

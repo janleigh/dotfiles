@@ -37,4 +37,8 @@ case $1 in
 	"hibernate")
 		run "hibernate" &
 		;;
+	"logout")
+		pre_run && sleep 0.2
+		bspc quit
+		;;
 esac

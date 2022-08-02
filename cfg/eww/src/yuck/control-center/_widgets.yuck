@@ -1,6 +1,8 @@
 (defwidget control-center []
 	(box :class "control-center-window" :space-evenly "false" :orientation "v"
-		(box :class "control-center-spacer" :style {ccenter ? "padding-top: 43em;" : "padding-top: 0em;"})
+		(eventbox :onclick "sh ./scripts/openControlCenter.sh &"
+			(box :class "control-center-spacer" :style {ccenter ? "padding-top: 43em;" : "padding-top: 0em;"})
+		)
 		(box :class "control-center" :orientation "v" :space-evenly "false" :style "margin-top: 5px;"
 			(box :class "first-row" :orientation "v" :space-evenly "false"
 				; (box :orientation "h" :space-evenly "true"
@@ -75,7 +77,7 @@
 					(label :class "user-info-label" :halign "start" :text "${fullname}")
 				)
 				(box :class "system-btn" :halign "end" :orientation "h" :space-evenly "false"
-					(button :class "edit-btn" :onclick "xdg-open ${EWW_CONFIG_DIR} &" "")
+					(button :class "edit-btn" :onclick "sh ./scripts/dashActions.sh ocd" "")
 					(button :class "exit-btn" :onclick "sh ./scripts/openExitScreen.sh &" "")
 				)
 			)
