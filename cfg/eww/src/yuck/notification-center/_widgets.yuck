@@ -41,7 +41,7 @@
 			)
 			(box :class "quick-utilities" :orientation "h" :space-evenly "true"
 				(box :halign "end" :orientation "h" :space-evenly "false"
-					(cc_button_icon_only :title "Clear All" :icon "" :onclick "pkill dunst")
+					(cc_button_icon_only :title "Clear All" :icon "" :onclick "sh ./scripts/dashActions.sh clrnotf &")
 				)
 			)
 		)

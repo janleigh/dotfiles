@@ -86,4 +86,11 @@ case $1 in
 	"ocd")
 		run_ocd &
 		;;
+	"clrnotf")
+		pkill dunst && sleep 0.6 && ${EWW_BIN} update reveal_no_notification_text=true
+		;;
+	"clntfpop")
+		${EWW_BIN} update noti=false && sleep 0.275; ${EWW_BIN} close notification-popup; ${EWW_BIN} update has_another_notif=false; pkill openEwwPopup.sh
+		rm "$HOME/.cache/eww-notif-popup.lock"
+		;;
 esac

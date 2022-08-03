@@ -1,6 +1,6 @@
 (defwidget notification-popup []
 	(revealer :transition "crossfade" :duration "500ms" :reveal noti
-		(eventbox :onclick "${EWW_CMD} update noti=false; sleep 0.270; ${EWW_CMD} close notification-popup; pkill openEwwPopup.sh; ${EWW_CMD} update has_another_notif=false"
+		(eventbox :onclick "sh ./scripts/dashActions.sh clntfpop &"
 			(box :orientation "v" :space-evenly "false"
 				(scroll :class "notification-scroller" :vscroll "true"
 					:style {has_another_notif ? "min-height: 300px" : "min-height: 150px;"}
@@ -13,7 +13,6 @@
 								:icon {entry["appname"]["data"] == "Spotify" ? "../../.cache/dunst/${entry['summary']['data']}.png" :
 									entry["appname"]["data"] == "discord" ? "./assets/applications/discord.png" :
 									(entry["icon_path"]["data"] ?: "../dunst/assets/notification/fallback.png")}
-								:LC "${EWW_CMD} update noti=false; sleep 0.270; ${EWW_CMD} close notification-popup; pkill openEwwPopup.sh; ${EWW_CMD} update has_another_notif=false"
 								:reveal_close_icon "false"
 							)
 						)

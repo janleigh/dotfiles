@@ -158,8 +158,8 @@ super + ctrl + e
 #	bspc query -D -d .focused.!occupied && $HOME/.local/bin/eww update noti=false; sleep 0.270; $HOME/.local/bin/eww close notification-popup; pkill openEwwPopup.sh
 
 # Toggle control center using middle click.
-~button2
-	bspc query -D -d .focused.!occupied && sh $HOME/.config/eww/scripts/openControlCenter.sh
+# ~button2
+# 	bspc query -D -d .focused.!occupied && sh $HOME/.config/eww/scripts/openControlCenter.sh
 
 # Toggle right click context menu.
 ~button3

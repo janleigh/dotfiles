@@ -19,6 +19,8 @@ artist() {
 title() {
 	if [[ -z "$TITLE" ]]; then
 		echo "Nothing Playing"
+		
+		[[ -f "$HOME/.cache/eww-control-center.lock" ]] && $HOME/.local/bin/eww update mp=false
 	else
 		# Eww can't truncate Japanese and Chinese characters.
 		if [[ "$TITLE" =~ ^[一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+ ]]; then
@@ -26,6 +28,8 @@ title() {
 		else
 			echo $TITLE
 		fi
+
+		[[ -f "$HOME/.cache/eww-control-center.lock" ]] && $HOME/.local/bin/eww update mp=true
 	fi
 }
 
