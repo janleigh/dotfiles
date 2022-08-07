@@ -5,16 +5,15 @@ EWW_BIN="$HOME/.local/bin/eww"
 ACTIVE_PLAYERS=$(playerctl -l | head -n 1)
 
 fix_stacking_bug() {
-	for entry in $(xdotool search --pid $(pidof eww)); do 
-    	xdo below -N eww-control-panel $entry
+	for entry in $(xdotool search --pid $(pidof eww)); do
+		xdo below -N eww-control-panel $entry
 	done
 }
 
 run() {
 	${EWW_BIN} open control-center
 	sleep 0.2
-	xdo raise -N eww-bar
-	${EWW_BIN} update ccenter=true; fix_stacking_bug
+	fix_stacking_bug; ${EWW_BIN} update ccenter=true; xdo raise -N eww-bar
 
 	sleep 1 && [[ ! -z "$ACTIVE_PLAYERS" ]] && ${EWW_BIN} update mp=true
 	touch "$LOCK_FILE"

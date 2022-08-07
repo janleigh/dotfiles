@@ -25,17 +25,8 @@ run() {
 }
 
 case $1 in
-	"poweroff")
-		run "poweroff" &
-		;;
-	"reboot")
-		run "reboot" &
-		;;
-	"suspend")
-		run "suspend" &
-		;;
-	"hibernate")
-		run "hibernate" &
+	*)
+		run $1 &
 		;;
 	"logout")
 		pre_run && sleep 0.2

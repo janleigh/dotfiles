@@ -12,13 +12,13 @@
 
 (defwidget workspaces []
 	(literal :content workspace))
-(deflisten workspace "scripts/getWorkspaces.sh")
+(deflisten workspace "./scripts/getWorkspaces.sh")
 
 (defwidget time []
 	(box :orientation "h"
 		:class "time"
 		:halign "start"
-		(button :onclick "sh scripts/openInfoCenter.sh &"
+		(button :onclick "sh ./scripts/openInfoCenter.sh &"
 			"${monthday}, ${hour}:${minute}"
 		)
 	)
@@ -47,20 +47,18 @@
 (defwidget action-center []
 	(box :class "action-center"
 		:orientation "h"
-		:space-evenly "true"
+		:space-evenly "false"
 		(button :class "control-center-btn"
-			:onclick "sh scripts/openControlCenter.sh &"
+			:onclick "sh ./scripts/openControlCenter.sh &"
 			:tooltip "Control Center"
 			"${network_icon}  ${bluetooth_icon}  ${airplane_mode_status}"
 		)
-		; (button :class "wifi-btn" :tooltip "Connected to ${network_name}"
-		; 	:onclick "sh scripts/openControlCenter.sh &"
-		; 	network_icon
-		; )
-		; (button :class "bluetooth-btn" :tooltip "Powered: ${bluetooth_status}"
-		; 	:onclick "sh scripts/openControlCenter.sh &"
-		; 	bluetooth_icon
-		; )
+		(button :class "notification-center-btn"
+			:onclick "sh ./scripts/openNotificationCenter.sh &"
+			:tooltip "Notification Center"
+			:style "margin: 0em .25em 0em .75em;"
+			"${dunst_count != 0 ? '' : ''}"
+		)
 	)
 )
 
@@ -80,7 +78,6 @@
 		(action-center)
 		(separator :text "‏ ‏ ‏")
 		(battery)
-		; (time)
 		(separator :text "‏ ‏ ‏")
 		(layout)))
 	

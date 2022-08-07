@@ -26,7 +26,7 @@
 								)
 							)
 						)
-						(revealer :reveal reveal_no_notification_text
+						(revealer :reveal reveal_no_notification_text :transition "crossfade"
 							(box :orientation "v" :space-evenly "false"
 								:style {reveal_no_notification_text ? "margin: 12em 0em;" : "margin: 0em 0em;"}
 								(image :style "margin-bottom: 2em;" :path "./assets/ui/wedding-bells.png")

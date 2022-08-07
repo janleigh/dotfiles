@@ -23,7 +23,7 @@
 				; )
 				(box :orientation "h"
 					(cc_button :title {strlength(network_name) >= 13 ? network_name_truncated : network_name} :icon network_icon
-						:is_active {network_name != ""} :onclick "iwgtk &"
+						:is_active {network_name != "Wi-Fi"} :onclick "iwgtk &"
 						:tooltip "Connected to ${network_name}"
 					)
 					(cc_button :title {bluetooth_status != "Off" ? hostname : "Bluetooth"} :icon bluetooth_icon

@@ -15,7 +15,6 @@
 				(box :class "notification-image" :orientation "h" :valign "center" :style "background-image: url('${icon}')")
 				(box
 					(box :class "notification-content" :orientation "v" :space-evenly "true"
-						; WIP!!! Still finding a way to remove the extra margin on a multi-line label.
 						(label :class "notification-summary" :halign "start" :valign "start"
 							:limit-width 15
 							:text summary)

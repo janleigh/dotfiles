@@ -38,7 +38,7 @@
 			(box :class "third-row" :orientation "h" :space-evenly "true"
 				(box :class "weather" :orientation "h"
 					(box :class "weather-details" :space-evenly "false"
-						; (label :class "weather-icon" :style "color: ${weather_hex};" :text weather_icon)
+						; (label :class "weather-icon" :style "color: ${weather_hex};" :text {weather_icon != "" ? weather_icon : " "})
 						(box :class "weather-data" :orientation "v" :space-evenly "false"
 							(label :class "weather-desc" :halign "start" :text "${weather_desc}")
 							(label :class "weather-humi" :halign "start" :text "Humidity: ${weather_humidity}%")

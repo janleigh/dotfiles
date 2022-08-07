@@ -16,7 +16,7 @@ if [[ ! `pidof eww` ]]; then
 	sleep 1
 else
 	if [[ -f "$LOCK_FILE" ]]; then
-		sleep 0.275 && ${EWW_BIN} update has_another_notif=true
+		sleep 0.275 && ${EWW_BIN} update has_another_notif=true && canberra-gtk-play -i message-new-instant
 	fi
 
 	if [[ ! -f "$DND_LOCK_FILE" ]]; then

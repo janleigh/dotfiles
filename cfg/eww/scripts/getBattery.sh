@@ -13,7 +13,7 @@ case $1 in
 	"icon")
 		if [[ -d /sys/class/power_supply/ACAD ]]; then
 			echo ""
-		elif [[ -d /sys/class/power_supply/BAT ]]; then
+		elif [[ -d /sys/class/power_supply/BAT0 ]]; then
 			[[ $(cat /sys/class/power_supply/BAT/status) == "Discharging" ]] && echo "" || echo ""
 		else
 			echo ""
@@ -26,7 +26,7 @@ case $1 in
 			fi
 		elif [[ -f /sys/class/power_supply/BAT0/capacity ]]; then
 			echo $(cat /sys/class/power_supply/BAT0/capacity)
-        elif [[ ! -d /sys/class/power_supply/BAT ]]; then
+        elif [[ ! -d /sys/class/power_supply/BAT0 ]]; then
             echo "100"
 		fi
 		;;

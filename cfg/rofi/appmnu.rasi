@@ -6,7 +6,7 @@ configuration {
 	hide-scrollbar: false;
 	sidebar-mode: false;
 	display-drun: "Applications";
-	display-run: "CMD";
+	display-run: "Commands";
 	drun-display-format: "{name}";
 	font: "DM Sans 10";
 }

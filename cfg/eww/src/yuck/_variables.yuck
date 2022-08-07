@@ -91,6 +91,8 @@
 ;; NOTIFICATION CENTER/POPUP VARS
 (defpoll dunst_history :interval "250ms"
 	"dunstctl history")
+(defpoll dunst_count :interval "250ms"
+	"dunstctl count history")
 (defpoll reveal_no_notification_text :interval "5m"
 	"./scripts/getNotificationCount.sh")
 

@@ -5,6 +5,7 @@ Favorites,^checkout(favorites),user-bookmarks
 Launch Terminal,tabbed -n "term" alacritty -t "term" --embed,utilities-terminal
 Lock Screen,~/.local/bin/lck,xfsm-lock
 ^sep()
+# Info Center,~/.config/eww/scripts/openInfoCenter.sh,internet-feed-reader
 Control Center,~/.config/eww/scripts/openControlCenter.sh,applications-system-orange
 Notification Center,~/.config/eww/scripts/openNotificationCenter.sh,bell
 ^sep()
