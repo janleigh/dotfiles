@@ -1,0 +1,124 @@
+@import "../_variables.rasi"
+
+configuration {
+	font: "DM Sans 10";
+	show-icons: true;
+	display-run: "Commands";
+	display-drun: "Applications";
+    display-window: "Windows";
+	drun-display-format: "{name}";
+}
+
+window {    
+	width: 35%;
+    x-offset: 0px;
+	y-offset: 62px;
+	location: north;
+	anchor: north;
+	border: 2px;
+	border-color: @darker-background;
+	border-radius: 10px;
+	transparency: "real";
+}
+
+prompt {
+	enabled: false;
+	text-color: @darker-background;
+    background-color: @accent;
+	padding: 1.5% 0.75%;
+}
+
+entry {
+    expand: true;
+	blink: true;
+	text-color: @foreground-primary;
+	background-color: @background-tertiary;
+	placeholder-color: @foreground-tertiary;
+	placeholder: "   Type to search... ";
+	horizontal-align: 0.5;
+	padding: 10px 8px;
+	border: 0px 0px 2px 0px;
+	border-radius: 6px;
+	border-color: @accent;
+}
+
+inputbar {
+	expand: false;
+	children: [ prompt, entry ];
+    text-color: @darker-background;
+	background-color: @darker-background;
+	padding: 16px;
+	margin: 2px 1.25em;
+}
+
+listview {
+    cycle: false;
+	dynamic: true;
+	layout: vertical;
+    columns: 2;
+	lines: 6;
+	background-color: @darker-background;
+	padding: 0px 1em 1em;
+	spacing: 0%;
+}
+
+mode-switcher {
+    background-color: @darker-background;
+    margin: 0em 2.5em 0.75em;
+}
+
+button {
+    background-color: @background-primary;
+    padding: 0.5em;
+    margin: 0em 0.25em;
+    border-radius: 6px;
+}
+
+button selected {
+    background-color: @lighter-background;
+    border: 0px 0px;
+    border-color: @green;
+    border-radius: 6px;
+}
+
+mainbox {
+	children: [ inputbar, listview, mode-switcher ];
+	background-color: @darker-background;
+	spacing: 0%;
+    border: 0px;
+	border-color: @border-color;
+}
+
+element {
+	orientation: horizontal;
+	text-color: @foreground-primary;
+	background-color: @background-primary;
+	margin: 4px 6px;
+	border-radius: 6px;
+}
+
+element-icon, element-text {
+	text-color: inherit;
+	background-color: inherit;
+}
+
+element-icon {
+	size: 28px;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+	border: 8px 0px 8px 12px;
+	border-color: transparent;
+}
+
+element-text {
+	expand: true;
+	vertical-align: 0.5;
+	margin: 0px 12px 0px 8px;
+}
+
+element selected {
+	text-color: @green;
+	background-color: @lighter-background;
+	border: 0px 0px 0px 2px;
+	border-color: @green;
+}

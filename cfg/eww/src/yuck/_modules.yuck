@@ -1,4 +1,4 @@
-(defwidget notification [title summary body icon ?LC ?reveal_close_icon]
+(defwidget notification [title summary body icon ?LC ?reveal_close_icon ?is_ss]
 	(box :class "notification" :orientation "v" :space-evenly "false"
 		(box :class "notification-title"
 			(label :class "notification-title-text" :halign "start" :text title)
@@ -25,8 +25,8 @@
 				)
 			)
 			; (box :class "notification-screenshot-opt" :space-evenly "true" :orientation "h" :visible {is_ss ?: false} 
-			; 	(button :onclick "viewnior '${icon}' &" "Open")
-			; 	(button :onclick "rm -f '${icon}'" "Delete")
+			; 	(button :visible {is_ss ?: false} :onclick "viewnior '${icon}' &" "Open")
+			; 	(button :visible {is_ss ?: false} :onclick "rm -f '${icon}'" "Delete")
 			; )
 			; (box :class "notification-opt" :space-evenly "true" :orientation "h" :visible {!is_ss ?: true} 
 			; 	(button :onclick "notify-send \"To be implemented.\"" "Dismiss")

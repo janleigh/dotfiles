@@ -30,19 +30,23 @@
 		:space-evenly "false"
 		:tooltip "Battery: ${battery_capacity}%"
 		
-		(overlay
-			(scale :class "battery-scale"
-				:min 0
-				:max 100
-				:orientation "h"
-				:value battery_capacity
-			)
-			(label :class "battery-label"
-				:text ""
+		(eventbox
+			:onclick "${EWW_CMD} update bat=${!bat}"
+			(overlay
+				(scale :class "battery-scale"
+					:min 0
+					:max 100
+					:orientation "h"
+					:value battery_capacity
+				)
+				(label :class "battery-label"
+					:text {bat ? "${battery_capacity}%" : ""}
+				)
 			)
 		)
 	)
 )
+(defvar bat false)
 
 (defwidget action-center []
 	(box :class "action-center"

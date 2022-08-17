@@ -57,11 +57,11 @@
 	}
 
 	.notification-screenshot-opt, .notification-opt {
-		margin: 1em 1em 0em;
+		margin: 0em 1em 1em;
 		border-radius: inherit;
 
 		button {
-			background-color: $background-tertiary;
+			background-color: $lighter-background;
 			border-radius: 6px;
 			padding: .5em;
 			margin: 0em .5em;

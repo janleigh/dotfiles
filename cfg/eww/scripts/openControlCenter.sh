@@ -15,7 +15,7 @@ run() {
 	sleep 0.2
 	fix_stacking_bug; ${EWW_BIN} update ccenter=true; xdo raise -N eww-bar
 
-	sleep 1 && [[ ! -z "$ACTIVE_PLAYERS" ]] && ${EWW_BIN} update mp=true
+	sleep 0.8 && [[ ! -z "$ACTIVE_PLAYERS" ]] && ${EWW_BIN} update mp=true
 	touch "$LOCK_FILE"
 }
 

@@ -1,6 +1,5 @@
 #!/bin/bash
 
 rofi -disable-history -no-lazy-grab \
--modi "drun,run" -show drun \
--location 8 \
--theme $HOME/.config/rofi/appmnu.rasi \
+-modi "run,drun,window" -show drun \
+-theme $HOME/.config/rofi/themes/appmnu.rasi \

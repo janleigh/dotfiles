@@ -3,7 +3,11 @@
 	background-primary: #101415;
 	background-secondary: #131718;
 	background-tertiary: #151A1C;
+	lighter-background: #1C2325;
+
 	foreground-primary: #C5C8C9;
+	foreground-secondary: #9fa0a0;
+	foreground-tertiary: #6e7071;
 	accent: #7BA5DD;
 
 	text-color: @foreground-primary;

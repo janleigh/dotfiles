@@ -12,32 +12,32 @@
 	}
 
 	.shutdown-btn {
-		color: $red;
 		&:hover {
+			color: $red;
 			border-color: $red;
 		}
 	}
 	.reboot-btn {
-		color: $green;
 		&:hover {
+			color: $green;
 			border-color: $green;
 		}
 	}
 	.sleep-btn {
-		color: $yellow;
 		&:hover {
+			color: $yellow;
 			border-color: $yellow;
 		}
 	}
 	.hibernate-btn {
-		color: $blue;
 		&:hover {
+			color: $blue;
 			border-color: $blue;
 		}
 	}
 	.logout-btn {
-		color: $magenta;
 		&:hover {
+			color: $magenta;
 			border-color: $magenta;
 		}
 	}

@@ -35,11 +35,11 @@ title() {
 
 player_status() {
 	if [[ "$STATUS" = "Playing" ]]; then
-		echo ""
+		echo ""
 	elif [[ "$STATUS" = "Paused" ]]; then
-		echo ""
+		echo ""
 	else
-		echo ""
+		echo ""
 	fi
 }
 

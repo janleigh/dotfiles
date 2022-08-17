@@ -10,59 +10,66 @@
 		font-family: "DM Sans";
 	}
 
-	.music-player {
-		background-color: $darker-background;
-		margin-top: 1.5em;
-		padding: 1em;
-		min-height: 158px;
-		border-radius: 6px;
-		font-family: "DM Sans", "Sarasa Mono CL Nerd Font";
+	.mp-revealer {
+		// padding-top: 1.5em;
 
-		.song-art {
+		.music-player {
 			background-color: $darker-background;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
+			padding: 1em;
+			min-height: 158px;
 			border-radius: 6px;
+			font-family: "DM Sans", "Sarasa Mono CL Nerd Font";
 
-			margin-right: 5px;
-			min-width: 24em;
+			.song-art {
+				background-color: $darker-background;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				border-radius: 6px;
 
-			.music-info {
-				border-radius: 4px 6px 6px 4px;
-				background: linear-gradient(to right, rgba(16, 20, 21, 1), rgba(16, 20, 21, 0.5));
+				margin-right: 5px;
+				min-width: 24em;
 
-				padding-top: 10px;
-				padding-left: 1em;
+				.music-info {
+					border-radius: 4px 6px 6px 4px;
+					background: linear-gradient(to right, rgba(16, 20, 21, 1), rgba(16, 20, 21, 0.5));
 
-				.now-playing {
-					margin-bottom: 6px;
-				}
-				.song-title {
-					font-size: 16px;
-					font-weight: bolder;
-				}
-				.song-artist, .song-position {
-					color: $foreground-secondary;
-				}
-				.song-position {
-					margin-top: 5.4em;
+					padding-top: 10px;
+					padding-left: 1em;
+
+					.now-playing {
+						margin-bottom: 6px;
+					}
+					.song-title {
+						font-size: 16px;
+						font-weight: bolder;
+					}
+					.song-artist, .song-position {
+						color: $foreground-secondary;
+					}
+					.song-position {
+						margin-top: 5.4em;
+					}
 				}
 			}
-		}
-		
-		.song-controls {
-			background-color: $background-secondary;
-			padding: 0em 1em;
-			margin-left: 10px;
-			border-radius: 5px;
+			
+			.song-controls {
+				background-color: $background-tertiary;
+				padding: 0em 1em;
+				margin-left: 10px;
+				border-radius: 5px;
 
-			button {
-				font-family: "Material Icons";
-				font-size: 24px;
-	
-				&:hover {
-					color: $accent;
+				button {
+					font-family: "Material Icons";
+					font-size: 24px;
+		
+					&:hover {
+						color: $accent;
+					}
+
+					&:nth-child(2) {
+						font-size: 26px;
+					}
 				}
 			}
 		}

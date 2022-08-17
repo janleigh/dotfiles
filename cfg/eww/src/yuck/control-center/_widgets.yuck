@@ -35,7 +35,7 @@
 						:tooltip "Status: ${airplane_mode_status == '' ? 'On' : 'Off'}" :disabled {bluetooth_supported == "false"}
 					)
 				)
-				(box :orientation "h"
+				(box :orientation "h" :style "margin-top: -1em;"
 					(cc_button :title "Night Light" :icon ""
 						:is_active {redshift_status == "#1c2325"} :onclick "sh ./scripts/getRedshift.sh toggle"
 						:tooltip "Status: ${redshift_status == '#1c2325' ? 'On' : 'Off'}"
@@ -49,7 +49,9 @@
 			)
 			(box :class "second-row" :orientation "v"
 				(box :class "volume-slider" :orientation "h" :space-evenly "false"
-					(label :class "volume-icon" :text "")
+					(label :class "volume-icon" :text {volume_muted ? "" : 
+						volume <= 30 ? "" : volume <= 60 ? "" : ""
+					})
 					(scale :min 0
 						:max 101
 						:value volume
@@ -60,7 +62,9 @@
 					(button :class "slider-clicker" :onclick "pavucontrol &" "")
 				)
 				(box :class "brightness-slider" :orientation "h" :space-evenly "false"
-					(label :class "brightness-icon" :text "")
+					(label :class "brightness-icon" :text {
+						brightness <= 30 ? "" : brightness <= 60 ? "" : ""
+					})
 					(scale :min 0
 						:max 101
 						:value brightness
@@ -82,7 +86,8 @@
 				)
 			)
 		)
-		(revealer :reveal mp :transition "crossfade"
+		(box :class "mp-separator" :style "margin-top: 1.5em;")
+		(revealer :class "mp-revealer" :reveal mp :transition "slideup" :duration "600ms"
 			(box :class "music-player" :orientation "h" :space-evenly "false"
 				(box :class "song-art" :orientation "v" :style "background-image: url('${art}')"
 					(box :class "music-info" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false"
@@ -102,7 +107,7 @@
 				)
 				(box :class "song-controls" :orientation "v"
 					(button :onclick "playerctl previous" "")
-					(button :class "play-pause" :onclick "playerctl play-pause" player_status)
+					(button :onclick "playerctl play-pause" player_status)
 					(button :onclick "playerctl next" "")
 				)
 			)

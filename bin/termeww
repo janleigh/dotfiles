@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[[ -f "$HOME/.cache/eww-info-center.lock" ]] && sh $HOME/.config/eww/scripts/openInfoCenter.sh &
+[[ -f "$HOME/.cache/eww-control-center.lock" ]] && sh $HOME/.config/eww/scripts/openControlCenter.sh &
+[[ -f "$HOME/.cache/eww-notification-center.lock" ]] && sh $HOME/.config/eww/scripts/openNotificationCenter.sh &
