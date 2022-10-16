@@ -19,5 +19,5 @@
 (include "./src/yuck/notification-center/_widgets.yuck")
 (include "./src/yuck/notification-center/_windows.yuck")
 
-(include "./src/yuck/notification-popup/_widgets.yuck")
-(include "./src/yuck/notification-popup/_windows.yuck")
+; (include "./src/yuck/notification-popup/_widgets.yuck")
+; (include "./src/yuck/notification-popup/_windows.yuck")

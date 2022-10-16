@@ -1,6 +1,6 @@
 (defwindow notification-popup
 	:geometry (geometry :x "-1%"
-						:y "-1%" 
+						:y "-8%" 
 						:width "25%" 
 						:height "20%"
 						:anchor "bottom right")

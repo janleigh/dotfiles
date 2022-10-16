@@ -1,5 +1,5 @@
 [global]
-	font = DM Sans 10
+	font = "DM Sans 10"
 
 	# Allow a small subset of html markup:
 	# <b>bold</b>
@@ -56,20 +56,37 @@
 	# dynamic width from 0 to 300
 	# width = (0, 300)
 	# constant width of 300
-	width = 300
+	width = 320
 
 	# The maximum height of a single notification, excluding the frame.
 	height = 500
 
 	# Position of the notification
-	origin = bottom-right
+	origin = top-right
 
 	# Offset from the origin
-	offset = 10x-300
+	offset = 10x12
+
+    # Turn on the progess bar. It appears when a progress hint is passed with
+    # for example dunstify -h int:value:12
+    progress_bar = true
+
+    # Set the progress bar height. This includes the frame, so make sure
+    # it's at least twice as big as the frame width.
+    progress_bar_height = 14
+
+    # Set the frame width of the progress bar
+    progress_bar_frame_width = 1
+
+    # Set the minimum width for the progress bar
+    progress_bar_min_width = 150
+
+    # Set the maximum width for the progress bar
+    progress_bar_max_width = 300
 
 	# Frame
-	frame_width = 0
-	frame_color = "#131718"
+	frame_width = 3
+	frame_color = "#1C2325"
 
 	# The transparency of the window. range: [0; 100]
 	# This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -117,8 +134,8 @@
 	# Horizontal padding
 	horizontal_padding = 12
 
-    # Padding between text and icon.
-    text_icon_padding = 4
+	# Padding between text and icon.
+	text_icon_padding = 16
 
 	# Define a color for the separator.
 	# possible values are:
@@ -136,8 +153,13 @@
 	# Align icons left/right/off
 	icon_position = left
 
+    # Scale small icons up to this size, set to 0 to disable. Helpful
+    # for e.g. small files or high-dpi screens. In case of conflict,
+    # max_icon_size takes precedence over this.
+    min_icon_size = 32
+
 	# Scale larger icons down to this size, set to 0 to disable
-	max_icon_size = 64
+	max_icon_size = 48
 
 	# Define the corner radius of the notification window
 	# in pixel size. If the radius is 0, you have no rounded
@@ -149,23 +171,54 @@
 	# Always run rule-defined scripts, even if the notification is suppressed
 	always_run_script = true
 
-[openEwwPopup]
-    script = ~/.config/dunst/scripts/openEwwPopup.sh
+	# Mouse actions
+	mouse_left_click = close_current
+	mouse_middle_click = do_action, close_current
+	mouse_right_click = close_all
+
+# [openEwwPopup]
+# 	script = ~/.config/dunst/scripts/openEwwPopup.sh
 
 [songArtLogger]
 	script = ~/.config/dunst/scripts/songArtLogger.sh
 
 [urgency_low]
-	background = "#0B0F10"
+	timeout = 6
+	background = "#0b0f10"
 	foreground = "#9fa0a0"
-	timeout = 1
+	frame_color = "#192022"
+	highlight = "#7ba5dd"
 
 [urgency_normal]
-	background = "#0B0F10"
-	foreground = "#9fa0a0"
-	timeout = 1
+	# script = ~/.config/dunst/scripts/playNotificationSound.sh
+	timeout = 6
+	background = "#0b0f10"
+	foreground = "#c5c8c9"
+	frame_color = "#192022"
+	highlight = "#7ba5dd"
 
 [urgency_critical]
-	background = "#0B0F10"
+	script = ~/.config/dunst/scripts/playNotificationSound.sh
+	timeout = 6
+	background = "#0b0f10"
 	foreground = "#c5c8c9"
-	timeout = 1
+	frame_color = "#192022"
+	highlight = "#ee6a70"
+
+[backlight]
+	summary = "Backlight"
+	highlight = "#ffb29b"
+	set_stack_tag = "backlight"
+
+[volume]
+	summary = "Volume"
+	set_stack_tag = "volume"
+
+[volume-muted]
+	summary = "Volume Muted"
+	highlight = "#ee6a70"
+
+[volume-unmuted]
+	summary = "Volume Unmuted"
+	highlight = "#ee6a70"
+	

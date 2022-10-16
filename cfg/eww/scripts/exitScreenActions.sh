@@ -24,12 +24,16 @@ run() {
 	systemctl $1
 }
 
+run_logout() {
+	pre_run && sleep 0.2
+	bspc quit
+}
+
 case $1 in
 	*)
 		run $1 &
 		;;
 	"logout")
-		pre_run && sleep 0.2
-		bspc quit
+		run_logout &
 		;;
 esac

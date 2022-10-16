@@ -6,7 +6,7 @@
 				(button :class "reboot-btn" :onclick "sh $HOME/.config/eww/scripts/exitScreenActions.sh reboot" :tooltip "Reboot" "")
 				(button :class "sleep-btn" :onclick "sh $HOME/.config/eww/scripts/exitScreenActions.sh suspend" :tooltip "Sleep" "")
 				(button :class "hibernate-btn" :onclick "sh $HOME/.config/eww/scripts/exitScreenActions.sh hibernate" :tooltip "Hibernate" "")
-				(button :class "logout-btn" :onclick "sh $HOME/.config/eww/scripts/exitScreenActions.sh logout &" :tooltip "Logout" "")
+				(button :class "logout-btn" :onclick "sh $HOME/.config/eww/scripts/exitScreenActions.sh logout" :tooltip "Logout" "")
 				; (button :class "lock-btn" :onclick "sh $HOME/.local/bin/lck" "")
 			)
 		)

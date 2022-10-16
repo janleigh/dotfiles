@@ -7,10 +7,12 @@
 		border-radius: 10px;
 		padding: 1em .75em;
 
-		background-color: $darker-background;
+		// background-color: $darker-background;
 
-		min-width: 310px;
+		min-width: 340px;
 		font-family: "DM Sans";
+
+		background-color: $darker-background;
 
 		.notification-text {
 			margin: 1em 0em .5em;
@@ -19,19 +21,18 @@
 		}
 	
 		.notification-scroller {
-			margin-top: .75em;
-			min-height: 494px;
-			// background-color: $background-secondary;
+			margin: .75em 0em;
+			min-height: 28em;
 			border-radius: 6px;
 	
 			.notification-history {
 				.eon {
-					font-size: 18px;
+					font-size: 20px;
 					font-weight: bold;
 				}
 
 				.notification {
-					margin: .25em 1em .75em;
+					margin: .75em 1em 1em;
 					box-shadow: none;
 
 					background-color: $background-secondary;
@@ -40,9 +41,46 @@
 		}
 	}
 
-	.quick-utilities {
-		// background-color: $background-primary;
-		border-radius: 5px;
-		// margin-top: 2em;
+	calendar {
+		font-family: "DM Sans";
+		font-weight: bold;
+	
+		&:selected {
+			color: $accent;
+		}
+		&:indeterminate {
+			color: rgba(205, 219, 249, 0.3);
+		}
+	}
+
+	.calendar {
+		background-color: $background-secondary;
+		border-radius: 10px;
+		margin: 1em;
+		
+		.cal-box {
+			background-color: $lighter-background;
+			border-radius: inherit;
+	
+			padding: .5em;
+			margin: 1em;
+	
+			.month-year {
+				font-size: 18px;
+				font-weight: bold;
+				margin: 0.5em 0em 0em;
+			}
+	
+			.day-names {
+				margin: 1em 1em 0em;
+				font-size: 14px;
+				font-weight: bold;
+				color: $green;
+			}
+		
+			.cal {
+				padding: 1em .75em 0em;
+			}
+		}
 	}
 }

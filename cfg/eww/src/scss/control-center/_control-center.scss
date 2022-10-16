@@ -11,13 +11,11 @@
 	}
 
 	.mp-revealer {
-		// padding-top: 1.5em;
-
 		.music-player {
 			background-color: $darker-background;
 			padding: 1em;
 			min-height: 158px;
-			border-radius: 6px;
+			border-radius: 10px;
 			font-family: "DM Sans", "Sarasa Mono CL Nerd Font";
 
 			.song-art {
@@ -28,7 +26,8 @@
 				border-radius: 6px;
 
 				margin-right: 5px;
-				min-width: 24em;
+				margin-left: 1px;
+				min-width: 23em;
 
 				.music-info {
 					border-radius: 4px 6px 6px 4px;
@@ -54,7 +53,7 @@
 			}
 			
 			.song-controls {
-				background-color: $background-tertiary;
+				background-color: $background-secondary;
 				padding: 0em 1em;
 				margin-left: 10px;
 				border-radius: 5px;

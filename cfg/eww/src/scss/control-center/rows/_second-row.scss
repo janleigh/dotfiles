@@ -7,16 +7,28 @@
 			margin: .25em 0em;
 		}
 
-		scale trough {
-			background-color: $background-primary;
-			border-radius: 10px;
-			min-height: 1em;
-			min-width: 20em;
-			margin: 0em 1em;
+		scale {
+			marks {
+				mark {
+					indicator {
+						min-height: 8px;
+						min-width: 1px;
+					}
+				}
+			}
+			trough {
+				background-color: $background-primary;
+				border: 2px solid $lighter-background;
+				border-radius: 10px;
+				min-height: 1.25em;
+				min-width: 18em;
+				margin: 0em 1em;
 
-			highlight {
-				margin: .25em;
-				border-radius: inherit;
+				highlight {
+					// margin: .25em;
+					background-image: linear-gradient(to right, $blue-desaturated, $blue);
+					border-radius: inherit;
+				}
 			}
 		}
 
@@ -27,24 +39,25 @@
 			padding: .25em;
 		}
 
+		.volume-text, .brightness-text {
+			font-family: "DM Sans";
+			font-size: 16px;
+			font-weight: bold;
+			margin-left: .25em;
+		}
+
 		.volume-slider {
 			margin-left: 2em;
 
 			.volume-icon {
 				padding: .25em;
 				border-radius: 2em;
-				// background-color: $background-primary;
 				color: $foreground-tertiary;
 				font-size: 20px;
 			}
 
 			.volume-level {
 				color: wheat;
-			}
-
-			trough highlight {
-				// background-image: linear-gradient(to top, #df5b61, $red);
-				background-color: #7ba5dd;
 			}
 		}
 		.brightness-slider {
@@ -53,14 +66,8 @@
 			.brightness-icon {
 				padding: .25em;
 				border-radius: 2em;
-				// background-color: $background-primary;
 				color: $foreground-tertiary;
 				font-size: 20px;
-			}
-
-			trough highlight {
-				// background-image: linear-gradient(to top, #de8f78, $yellow);
-				background-color: #96d6b0;
 			}
 		}		
 	}

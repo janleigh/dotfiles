@@ -1,6 +1,7 @@
 #!/bin/sh
 
 SSID=$(iwgetid -r)
+[[ "$SSID" = "KaliboCable_317C" ]] && SSID="Virus5G"
 
 case $1 in
 	"icon")

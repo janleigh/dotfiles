@@ -10,14 +10,13 @@ configuration {
 }
 
 window {    
-	width: 35%;
+	width: 41%;
     x-offset: 0px;
-	y-offset: 62px;
-	location: north;
-	anchor: north;
-	border: 2px;
+	y-offset: -24px;
+	location: center;
+	border: 12px;
 	border-color: @darker-background;
-	border-radius: 10px;
+	border-radius: 0px;
 	transparency: "real";
 }
 
@@ -25,6 +24,7 @@ prompt {
 	enabled: false;
 	text-color: @darker-background;
     background-color: @accent;
+    border-radius: 6px 0px 0px 6px;
 	padding: 1.5% 0.75%;
 }
 
@@ -37,7 +37,7 @@ entry {
 	placeholder: "   Type to search... ";
 	horizontal-align: 0.5;
 	padding: 10px 8px;
-	border: 0px 0px 2px 0px;
+	border: 0px 0px 0px 0px;
 	border-radius: 6px;
 	border-color: @accent;
 }
@@ -48,15 +48,15 @@ inputbar {
     text-color: @darker-background;
 	background-color: @darker-background;
 	padding: 16px;
-	margin: 2px 1.25em;
+	margin: 2px 1.75em;
 }
 
 listview {
     cycle: false;
 	dynamic: true;
 	layout: vertical;
-    columns: 2;
-	lines: 6;
+    columns: 4;
+	lines: 3;
 	background-color: @darker-background;
 	padding: 0px 1em 1em;
 	spacing: 0%;
@@ -64,7 +64,7 @@ listview {
 
 mode-switcher {
     background-color: @darker-background;
-    margin: 0em 2.5em 0.75em;
+    margin: 0em 6.5em 0.75em;
 }
 
 button {
@@ -76,7 +76,7 @@ button {
 
 button selected {
     background-color: @lighter-background;
-    border: 0px 0px;
+    border: 0px 0px 0px 2px;
     border-color: @green;
     border-radius: 6px;
 }
@@ -85,15 +85,16 @@ mainbox {
 	children: [ inputbar, listview, mode-switcher ];
 	background-color: @darker-background;
 	spacing: 0%;
-    border: 0px;
+    border: 4px;
 	border-color: @border-color;
 }
 
 element {
-	orientation: horizontal;
+	orientation: vertical;
 	text-color: @foreground-primary;
-	background-color: @background-primary;
-	margin: 4px 6px;
+	background-color: @darker-background;
+	// margin: 4px 6px;
+    padding: 6px;
 	border-radius: 6px;
 }
 
@@ -103,22 +104,24 @@ element-icon, element-text {
 }
 
 element-icon {
-	size: 28px;
+	size: 42px;
 	horizontal-align: 0.5;
 	vertical-align: 0.5;
-	border: 8px 0px 8px 12px;
+	border: 12px;
 	border-color: transparent;
 }
 
 element-text {
+    font: "DM Sans 10";
 	expand: true;
+    horizontal-align: 0.5;
 	vertical-align: 0.5;
-	margin: 0px 12px 0px 8px;
+	margin: 0px 12px 8px 12px;
 }
 
 element selected {
 	text-color: @green;
 	background-color: @lighter-background;
-	border: 0px 0px 0px 2px;
+	border: 0px 0px 2px 0px;
 	border-color: @green;
 }

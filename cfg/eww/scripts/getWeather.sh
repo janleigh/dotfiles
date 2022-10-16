@@ -9,7 +9,7 @@ check_if_empty() {
 }
 
 KEY=""
-CITY=""
+CITY="Province of Aklan"
 CITY=$(encode_to_url_format "$CITY")
 WEATHER=$(curl -sf "api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$KEY&units=metric")
 
@@ -23,79 +23,79 @@ WEATHER_HEX=""
 
 case $WEATHER_ICON_CODE in
 	"01d")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#ffd86b"
 		;;
 	"01n")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#fcdcf6"
 		;;
 	"02d")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#adadff"
 		;;
 	"02n")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#adadff"
 		;;
 	"03d")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#adadff"
 		;;
 	"03n")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#adadff"
 		;;
 	"04d")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#adadff"
 		;;
 	"04n")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#adadff"
 		;;
 	"09d")
-		WEATHER_ICON=""
+		WEATHER_ICON=""
 		WEATHER_HEX="#6b95ff"
 		;;
 	"09n")
-		WEATHER_ICON=""
+		WEATHER_ICON=""
 		WEATHER_HEX="#6b95ff"
 		;;
 	"10d")
-		WEATHER_ICON=""
+		WEATHER_ICON=""
 		WEATHER_HEX="#6b95ff"
 		;;
 	"10n")
-		WEATHER_ICON=""
+		WEATHER_ICON=""
 		WEATHER_HEX="#6b95ff"
 		;;
 	"11d")
-		WEATHER_ICON=""
+		WEATHER_ICON=""
 		WEATHER_HEX="#ffeb57"
 		;;
 	"11n")
-		WEATHER_ICON=""
+		WEATHER_ICON=""
 		WEATHER_HEX="#ffeb57"
 		;;
 	"13d")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#e3e6fc"
 		;;
 	"13n")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#e3e6fc"
 		;;
 	"40d")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#84afdb"
 		;;
 	"40n")
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#84afdb"
 		;;
 	*)
-		WEATHER_ICON=" "
+		WEATHER_ICON=""
 		WEATHER_HEX="#adadff"
 		;;
 esac
@@ -115,7 +115,7 @@ case $1 in
 		check_if_empty $WEATHER_HUMIDITY
 		;;
 	"weather_desc")
-		[[ -z $WEATHER_DESC ]] && echo "Not Available." || echo "$WEATHER_DESC"
+		[[ -z $WEATHER_DESC ]] && echo "N/A" || echo "$WEATHER_DESC"
 		;;
 	"icon")
 		echo $WEATHER_ICON

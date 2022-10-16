@@ -1,10 +1,11 @@
 .ws {
 	font-size: 1.1em;
 	font-family: "Sarasa Mono CL Nerd Font";
-	margin: .5em;
+	margin: .5em .5em .5em;
 	padding: .25em .5em;
-	border-radius: 24px;
-	// background-color: $background-tertiary;
+	border-radius: 10px;
+	// border: 2px solid $lighter-background;
+	// background-color: $background-secondary;
 
 	.0, .01, .02, .03, .04, .05, .06,
 	.011, .022, .033, .044, .055, .066 {
@@ -13,7 +14,7 @@
 
 	/* Unoccupied */
 	.0 {
-		color: #32393b;
+		color: lighten(#32393b, 5);
 	}
 
 	/* Occupied */

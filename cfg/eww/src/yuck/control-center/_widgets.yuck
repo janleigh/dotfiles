@@ -1,93 +1,9 @@
 (defwidget control-center []
 	(box :class "control-center-window" :space-evenly "false" :orientation "v"
 		(eventbox :onclick "sh ./scripts/openControlCenter.sh &"
-			(box :class "control-center-spacer" :style {ccenter ? "padding-top: 43em;" : "padding-top: 0em;"})
+			(box :class "control-center-spacer" :style {ccenter ? "padding-bottom: 0em;" : "padding-bottom: calc(43em - 1px);"})
 		)
-		(box :class "control-center" :orientation "v" :space-evenly "false" :style "margin-top: 5px;"
-			(box :class "first-row" :orientation "v" :space-evenly "false"
-				; (box :orientation "h" :space-evenly "true"
-				; 	(box :class "weather" :orientation "h" :halign "start"
-				; 		(label :class "weather-icon" :style "color: ${weather_hex};" :text weather_icon)
-				; 		(box :class "weather-data" :orientation "v" :space-evenly "false"
-				; 			(label :class "weather-temp" :text "${weather_temp}°C")
-				; 			(label :class "weather-desc" :text "${weather_desc}")
-				; 		)
-				; 	)
-				; 	(box :class "date" :orientation "h" :halign "start"  :space-evenly "false"
-				; 		(box :class "date-data" :orientation "v" :space-evenly "true"
-				; 			(label :class "date-md" :text "${monthday}")
-				; 			(label :class "date-weekday" :text "${weekday}")
-				; 		)
-				; 		(label :class "current-time" :text "${hour}:${minute}")
-				; 	)
-				; )
-				(box :orientation "h"
-					(cc_button :title {strlength(network_name) >= 13 ? network_name_truncated : network_name} :icon network_icon
-						:is_active {network_name != "Wi-Fi"} :onclick "iwgtk &"
-						:tooltip "Connected to ${network_name}"
-					)
-					(cc_button :title {bluetooth_status != "Off" ? hostname : "Bluetooth"} :icon bluetooth_icon
-						:is_active {bluetooth_status != "Off"} :onclick "blueman-manager &"
-						:tooltip "Status: ${bluetooth_status}" :disabled {bluetooth_supported == "false"}
-					)
-					(cc_button :title "Airplane Mode" :icon airplane_mode_status
-						:is_active {airplane_mode_status == ""}:onclick "sh ./scripts/dashActions.sh am"
-						:tooltip "Status: ${airplane_mode_status == '' ? 'On' : 'Off'}" :disabled {bluetooth_supported == "false"}
-					)
-				)
-				(box :orientation "h" :style "margin-top: -1em;"
-					(cc_button :title "Night Light" :icon ""
-						:is_active {redshift_status == "#1c2325"} :onclick "sh ./scripts/getRedshift.sh toggle"
-						:tooltip "Status: ${redshift_status == '#1c2325' ? 'On' : 'Off'}"
-					)
-					(cc_button :title "Do Not Disturb" :icon ""
-						:is_active {dnd_status == "#1c2325"} :onclick "sh ./scripts/dashActions.sh dnd"
-						:tooltip "Status: ${dnd_status == '#1c2325' ? 'On' : 'Off'}"
-					)
-					(cc_button :disabled "true")
-				)
-			)
-			(box :class "second-row" :orientation "v"
-				(box :class "volume-slider" :orientation "h" :space-evenly "false"
-					(label :class "volume-icon" :text {volume_muted ? "" : 
-						volume <= 30 ? "" : volume <= 60 ? "" : ""
-					})
-					(scale :min 0
-						:max 101
-						:value volume
-						:orientation "h"
-						:tooltip "Volume: ${volume}%"
-						:onchange "amixer -D pulse sset Master {}%"
-					)
-					(button :class "slider-clicker" :onclick "pavucontrol &" "")
-				)
-				(box :class "brightness-slider" :orientation "h" :space-evenly "false"
-					(label :class "brightness-icon" :text {
-						brightness <= 30 ? "" : brightness <= 60 ? "" : ""
-					})
-					(scale :min 0
-						:max 101
-						:value brightness
-						:orientation "h"
-						:tooltip "Brightness: ${brightness}%"
-						:onchange "brightnessctl set {}%"
-					)
-					(button :class "slider-clicker" :style "color: #6e7071;" "")
-				)
-			)
-			(box :class "third-row" :orientation "h" :space-evenly "true"
-				(box :class "user-info" :orientation "h" :halign "start" :space-evenly "false"
-					(box :class "user-info-avatar")
-					(label :class "user-info-label" :halign "start" :text "${fullname}")
-				)
-				(box :class "system-btn" :halign "end" :orientation "h" :space-evenly "false"
-					(button :class "edit-btn" :onclick "sh ./scripts/dashActions.sh ocd" "")
-					(button :class "exit-btn" :onclick "sh ./scripts/openExitScreen.sh &" "")
-				)
-			)
-		)
-		(box :class "mp-separator" :style "margin-top: 1.5em;")
-		(revealer :class "mp-revealer" :reveal mp :transition "slideup" :duration "600ms"
+		(revealer :class "mp-revealer" :reveal mp :transition "crossfade" :duration "600ms"
 			(box :class "music-player" :orientation "h" :space-evenly "false"
 				(box :class "song-art" :orientation "v" :style "background-image: url('${art}')"
 					(box :class "music-info" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false"
@@ -112,6 +28,80 @@
 				)
 			)
 		)
+		(box :class "mp-separator" :style "margin-top: 1em;")
+		(box :class "control-center" :orientation "v" :space-evenly "false"
+			;; Too lazy to change the name of the class. :P
+			;; Please make a PR if you want to change it. ;)
+			(box :class "third-row" :orientation "h" :space-evenly "true"
+				(box :class "user-info" :orientation "h" :halign "start" :space-evenly "false"
+					(box :class "user-info-avatar")
+					(box :orientation "v" :space-evenly "false" :style "margin-top: .25em;"
+						(label :class "user-info-label" :halign "start" :text "${fullname}")
+						(label :class "user-info-hostname" :halign "start" :text "@${hostname}")
+					)
+				)
+				(box :class "system-btn" :halign "end" :orientation "h" :space-evenly "false"
+					(button :class "exit-btn" :onclick "sh $HOME/.local/bin/lck &" "")
+					(button :class "lock-btn" :onclick "bspc quit &" "")
+				)
+			)
+			(box :class "first-row" :orientation "v" :space-evenly "false"
+				(box :orientation "h"
+					(cc_button :title {strlength(network_name) >= 13 ? network_name_truncated : network_name} :icon network_icon
+						:is_active {network_name != "Wi-Fi"} :onclick "iwgtk &"
+						:tooltip "Connected to ${network_name}"
+					)
+					(cc_button :title {bluetooth_status != "Off" ? hostname : "Bluetooth"} :icon bluetooth_icon
+						:is_active {bluetooth_status != "Off"} :onclick "blueman-manager &"
+						:tooltip "Status: ${bluetooth_status}" :disabled {bluetooth_supported == "false"}
+					)
+					(cc_button :title "Airplane Mode" :icon airplane_mode_status
+						:is_active {airplane_mode_status == ""} :onclick "sh ./scripts/dashActions.sh am"
+						:tooltip "Status: ${airplane_mode_status == '' ? 'On' : 'Off'}" :disabled {bluetooth_supported == "false"}
+					)
+				)
+				(box :orientation "h" :style "margin-top: -1.5em;"
+					(cc_button :title "Night Light" :icon ""
+						:is_active {redshift_status == "#1c2325"} :onclick "sh ./scripts/getRedshift.sh toggle"
+						:tooltip "Status: ${redshift_status == '#1c2325' ? 'On' : 'Off'}"
+					)
+					(cc_button :title "Do Not Disturb" :icon ""
+						:is_active {dnd_status == "#1c2325"} :onclick "sh ./scripts/dashActions.sh dnd"
+						:tooltip "Status: ${dnd_status == '#1c2325' ? 'On' : 'Off'}"
+					)
+					(cc_button :disabled "true")
+				)
+			)
+			(box :class "second-row" :orientation "v"
+				(box :class "volume-slider" :orientation "h" :space-evenly "false"
+					(label :class "volume-icon" :text {volume_muted ? "" : 
+						volume <= 30 ? "" : volume <= 60 ? "" : ""
+					})
+					(scale :min 0
+						:max 101
+						:value volume
+						:orientation "h"
+						:tooltip "Volume: ${volume}%"
+						:onchange "amixer -D pulse sset Master {}%"
+					)
+					(label :class "volume-text" :text "${volume}%")
+				)
+				(box :class "brightness-slider" :orientation "h" :space-evenly "false"
+					(label :class "brightness-icon" :text {
+						brightness <= 30 ? "" : brightness <= 60 ? "" : ""
+					})
+					(scale :min 0
+						:max 101
+						:value brightness
+						:orientation "h"
+						:tooltip "Brightness: ${brightness}%"
+						:onchange "brightnessctl set {}%"
+					)
+					(label :class "brightness-text" :text "${brightness}%")
+				)
+			)
+		)
+		(box :class "mp-separator" :style "margin-top: .5em;")
 	)
 )
 (defvar ccenter false)

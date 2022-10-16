@@ -11,7 +11,7 @@
 	accent: #7BA5DD;
 
 	text-color: @foreground-primary;
-	border-color: @background-secondary;
+	border-color: @background-tertiary;
 	javacafe-blue: #BAC8EF;
 	green: #96D6B0;
 	magenta: #CB92D2;

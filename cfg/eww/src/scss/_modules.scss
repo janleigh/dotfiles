@@ -26,7 +26,7 @@
 	}
 
 	.notification-body {
-		padding: .05em 0em .15em;
+		padding: .05em 0em .9em;
 		font-size: 14px;
 		border-radius: 0px 0px 10px 10px;
 
@@ -41,12 +41,12 @@
 		}
 
 		.notification-content {
-			margin: 1em;
+			margin: .5em 1em 1em;
 
 			.notification-summary {
 				font-size: 16px;
 				font-weight: bold;
-				margin: .25em 0em .5em;
+				margin: .25em 0em;
 			}
 
 			.notification-message {
@@ -83,27 +83,6 @@
 		.sep-column {
 			font-size: 24px;
 			color: $foreground-tertiary;
-		}
-	}
-
-	.cc-button-title {
-		font-size: 13px;
-	}
-}
-
-.cc-button-icon-only {
-	font-family: "DM Sans";
-	margin: 1em .5;
-
-	.cc-button-btn {
-		font-family: "Material Icons";
-		padding: .5em 1.75em;
-		margin: .5em;
-		border-radius: 6px;
-		font-size: 18px;
-
-		.cc-button-clicker {
-			font-size: 24px;
 		}
 	}
 

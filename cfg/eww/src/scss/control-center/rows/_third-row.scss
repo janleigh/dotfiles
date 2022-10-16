@@ -1,15 +1,16 @@
 .control-center {
 	.third-row {
-		margin-bottom: .5em;
+		margin-top: 1.5em;
+		border-bottom: 3px solid $background-tertiary;
 		
 		.user-info {
-			margin: 0em 0em 1.25em 2.5em;
+			margin: .25em 0em 1.5em 2.5em;
 
 			.user-info-avatar {
 				background-image: url("./assets/avatar.png");
 				background-size: cover;
-				min-height: 36px;
-				min-width: 36px;
+				min-height: 48px;
+				min-width: 48px;
 				border-radius: 100%;
 			}
 
@@ -18,20 +19,31 @@
 				font-size: 16px;
 				font-weight: bold;
 			}
+
+			.user-info-hostname {
+				margin: 0em 0em 0em .8em;
+				font-size: 13px;
+				color: #6e7071;
+			}
 		}
 
 		.system-btn {
-			background-color: $background-tertiary;
-			padding: .5em;
-			border-radius: 12px;
-			margin: 0em 2.5em 1.25em 0em;
+			margin: 0em 1.5em 1.25em 0em;
 
 			button {
-				margin: 0em .25em;
+				background-color: $background-tertiary;
+				padding: 0em .5em;
+				margin: .5em .25em;
+				border-radius: 10px;
+
+				font-family: "Material Icons";
 			}
 
-			.edit-btn, .exit-btn {
+			.exit-btn, .lock-btn {
 				font-size: 20px;
+			}
+
+			.lock-btn {
 				font-weight: bold;
 			}
 		}

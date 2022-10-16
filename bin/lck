@@ -7,9 +7,7 @@ hide_unhide_windows() {
 }
 
 lock() {
-	# hsetroot -fill "$LOCKSCREEN_WALLPAPER"
-	# Wait for eww to finish load widget
-	sleep 0.5
+    sleep 1.5
 	$HOME/.local/bin/eww open-many lock-screen
 
 	i3lock -n -c 00000000 -t -e --pass-media-keys --pass-power-keys --pass-volume-keys --indicator --force-clock \
@@ -17,13 +15,13 @@ lock() {
 		\
 		--time-str="%H:%M" \
 		--time-pos="w/2:h/4" \
-		--time-color=c5c8c9 \
+		--time-color=0b0f10 \
 		--time-size=120 \
 		--time-font="DM Sans" \
 		\
 		--date-str="%A, %B %d" \
 		--date-pos="w/2:h/4+40" \
-		--date-color=c5c8c9 \
+		--date-color=0b0f10 \
 		--date-size=35 \
 		--date-font="DM Sans" \
 		\
@@ -61,14 +59,14 @@ lock() {
 }
 
 finish() {
-	rm "$LOCK_FILE"
-	hsetroot -solid "#1C2325"
 	$HOME/.local/bin/eww close-all
-	sleep 0.2 && hide_unhide_windows
 	$HOME/.local/bin/tglbar
+	hide_unhide_windows
+	rm "$LOCK_FILE"
 }
 
 run() {
+    $HOME/.local/bin/termeww
 	$HOME/.local/bin/tglbar
 	hide_unhide_windows
 	lock

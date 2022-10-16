@@ -1,4 +1,4 @@
-(defwidget notification [title summary body icon ?LC ?reveal_close_icon ?is_ss]
+(defwidget notification [title summary body icon ?LC ?reveal_close_icon]
 	(box :class "notification" :orientation "v" :space-evenly "false"
 		(box :class "notification-title"
 			(label :class "notification-title-text" :halign "start" :text title)
@@ -19,40 +19,34 @@
 							:limit-width 15
 							:text summary)
 						(label :class "notification-message" :halign "start" :valign "start"
-							:limit-width 25 :wrap true :tooltip body
+							:limit-width 45 :wrap true :tooltip body
+							:xalign 0
 							:text body)
 					)
 				)
 			)
-			; (box :class "notification-screenshot-opt" :space-evenly "true" :orientation "h" :visible {is_ss ?: false} 
-			; 	(button :visible {is_ss ?: false} :onclick "viewnior '${icon}' &" "Open")
-			; 	(button :visible {is_ss ?: false} :onclick "rm -f '${icon}'" "Delete")
-			; )
-			; (box :class "notification-opt" :space-evenly "true" :orientation "h" :visible {!is_ss ?: true} 
-			; 	(button :onclick "notify-send \"To be implemented.\"" "Dismiss")
-			; )
 		)
 	)
 )
 
-(defwidget cc_button [?title ?icon ?is_active ?onclick ?disabled ?tooltip]
+(defwidget cc_button [?title ?icon ?is_active ?has_arrow_if_active ?onclick ?disabled ?tooltip]
 	(box :orientation "v" :space-evenly "false" :class "cc-button" :tooltip {tooltip ?: "Disabled"}
-		(box :orientation "h" :class "cc-button-btn" :style {disabled == true ? "background-color: #101415;" : (is_active == true ? "background-color: #1C2325;" : "background-color: #131718;")}
-			(label :class "cc-button-icon" :text {icon ?: ""} :style {disabled == true ? "color: #6e7071;" : ""})
-			(box :class "sep-column"
-				(label :text "｜")
-			)
-			(button :class "cc-button-clicker" :onclick {onclick ?: "echo 'debugger'"} 
+		(box :orientation "h" :class "cc-button-btn" :style {disabled == true ? "background-color: #101415;" : (is_active == true ? "background-color: #1C2325;" : "background-color: #151a1c;")}
+			(box
+				:orientation "h"
+				:style {disabled == true ? "" : (is_active == true ? "background-color: #96D6B0; margin: 0em .75em 0em .25em; border-radius: 6px;" : "")})
+			(button
+				:class "cc-button-icon"
+				:style {disabled == true ? "color: #6e7071;" : ""}
+				:onclick {onclick ?: "echo 'debugger'"} 
+				{icon ?: ""})
+			(box
+				:class "sep-column"
+				:style "min-height: calc(16px + 8px);")
+			(button
+				:visible {has_arrow_if_active == false ? false : (is_active == true ?: false)}
+				:class "cc-button-clicker" :onclick {onclick ?: "echo 'debugger'"} 
 				:style {disabled == true ? "color: #6e7071;" : ""} "")
-		)
-		(label :class "cc-button-title" :text {title ?: ""} :style {disabled == true ? "color: #6e7071;" : ""})
-	)
-)
-
-(defwidget cc_button_icon_only [?title ?icon ?is_active ?onclick ?disabled]
-	(box :orientation "v" :space-evenly "false" :class "cc-button-icon-only"
-		(box :orientation "h" :class "cc-button-btn" :style {disabled == true ? "background-color: #101415;" : (is_active == true ? "background-color: #1C2325;" : "background-color: #131718;")}
-			(button :class "cc-button-clicker" :onclick {onclick ?: "echo 'debugger'"} :style {disabled == true ? "color: #6e7071;" : ""} {icon ?: ""})
 		)
 		(label :class "cc-button-title" :text {title ?: ""} :style {disabled == true ? "color: #6e7071;" : ""})
 	)

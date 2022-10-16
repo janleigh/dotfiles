@@ -5,13 +5,13 @@ LAYOUT=$(bsp-layout get $FOCUSED_DESKTOP)
 
 case $1 in
 	"icon")
-		if [ $LAYOUT = "rtall" ]; then
+		if [[ $LAYOUT = "rtall" ]]; then
 			echo ""
-		elif [ $LAYOUT = "grid" ]; then
+		elif [[ $LAYOUT = "grid" ]]; then
 			echo ""
-		elif [ $LAYOUT = "tiled" ]; then
+		elif [[ $LAYOUT = "tiled" ]]; then
 			echo ""
-		elif [ $LAYOUT = "wide" ]; then
+		elif [[ $LAYOUT = "wide" ]]; then
 			echo ""
 		fi
 		;;

@@ -29,7 +29,6 @@
 		:orientation "h"
 		:space-evenly "false"
 		:tooltip "Battery: ${battery_capacity}%"
-		
 		(eventbox
 			:onclick "${EWW_CMD} update bat=${!bat}"
 			(overlay
@@ -70,12 +69,14 @@
 ;; TOP WIDGETS
 (defwidget top []
 	(box :class "top" :orientation "h" :space-evenly "false" :halign "start"
-		(time)))
+		(launcher)
+		(workspaces)))
 
 ;; CENTER WIDGETS
 (defwidget center []
 	(box :orientation "h" :space-evenly "false" :halign "center"
-		(workspaces)))
+		(time)))
+			
 ;; BOTTOM WIDGETS
 (defwidget bottom []
 	(box :orientation "h" :space-evenly "false" :halign "end"

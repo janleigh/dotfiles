@@ -1,7 +1,7 @@
 ;; DATE VARS 
-(defpoll minute :interval "1s"
+(defpoll minute :interval "5s"
 	"date '+%M'")
-(defpoll hour :interval "1s"
+(defpoll hour :interval "5s"
 	"date '+%H'")
 (defpoll weekday :interval "24h"
 	"date '+%A'")
@@ -10,7 +10,7 @@
 (defpoll month_year :interval "24h"
     "date '+%B %Y'")
 (defpoll wd-m-d :interval "24h"
-	"date '+%A, %d %B'")
+	"date '+%d %B %Y'")
 
 ;; SYSTEM INFO VARS
 (defpoll volume :interval "500ms"
@@ -49,9 +49,9 @@
 	"hostname")
 
 ;; WEATHER VARS
-(defpoll weather_temp :interval "3h"
+(defpoll weather_temp :interval "3h" :initial "0"
 	"./scripts/getWeather.sh current_temp")
-(defpoll weather_temp_f :interval "3h"
+(defpoll weather_temp_f :interval "3h" :initial "0"
 	"./scripts/getWeather.sh current_temp_fahrenheit")
 (defpoll weather_desc :interval "3h"
 	"./scripts/getWeather.sh weather_desc")
@@ -68,7 +68,7 @@
 (defpoll calendar_day :interval "10h"
 	"date '+%d'")
 (defpoll calendar_month :interval "10h"
-	"MONTH=$(date +%m) && MONTH=$((MONTH - 1)) && echo $MONTH")
+	"date '+%m'")
 (defpoll calendar_year :interval "10h"
 	"date '+%Y'")
 
@@ -85,13 +85,11 @@
 	"./scripts/getRedshift.sh color")
 (defpoll dnd_status :interval "1s"
 	"./scripts/dashActions.sh dndstat")
-(defpoll jeff_status :interval "1s"
-	"./scripts/dashActions.sh jstat")
 
 ;; NOTIFICATION CENTER/POPUP VARS
-(defpoll dunst_history :interval "250ms"
+(defpoll dunst_history :interval "250ms" :run-while noticenter
 	"dunstctl history")
-(defpoll dunst_count :interval "250ms"
+(defpoll dunst_count :interval "250ms" :run-while noticenter
 	"dunstctl count history")
 (defpoll reveal_no_notification_text :interval "5m"
 	"./scripts/getNotificationCount.sh")
@@ -109,3 +107,5 @@
 	"./scripts/bspLayout.sh icon")
 (defpoll airplane_mode_status :interval "1s"
 	"./scripts/dashActions.sh amstat")
+(defpoll uptime :interval "30s"
+	"./scripts/getUptime.sh")
