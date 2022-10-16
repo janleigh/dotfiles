@@ -132,6 +132,15 @@ window,
 	border-radius: 10px !important;
 }
 
+#TabsToolbar .toolbarbutton-1 {
+    display: none !important;
+}
+:root:not([privatebrowsingmode="temporary"]):not([firefoxviewhidden]) :is(#firefox-view-button, #wrapper-firefox-view-button) + #tabbrowser-tabs {
+    border-inline-start: 0px !important;
+    padding-inline-start: 0px !important;
+    margin-inline-start: 0px !important;
+}
+
 #identity-box,
 #tracking-protection-icon-container {
 	display: none !important;
