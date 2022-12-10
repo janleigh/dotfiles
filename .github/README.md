@@ -26,6 +26,11 @@
 
 <h2></h2>
 
+<!-- NOTICE -->
+## :warning: <samp>README</samp>
+
+   This repository is no longer actively maintained as I no longer use Linux for daily use. Use at your own risk.
+
 <!-- INFORMATION -->
 ## :herb: <samp>INFORMATION</samp> <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=A7D9B2&logoColor=white&labelColor=1C2325"/>
 
